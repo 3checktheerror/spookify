@@ -57,6 +57,7 @@ public class TestController {
     public void testParseObject2(){
         //testDao.updateInfo("Ellie", 1);
         List<TestPlusDO> testPlus = testPlusDAO.selectList(null);
+        System.out.println(testPlus);
     }
 
     @SpookifyInfo
