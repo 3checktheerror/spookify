@@ -12,6 +12,7 @@
 
     <modules>
         <module>portfolio-provider</module>
+        <module>common-infrastructure</module>
     </modules>
 
     <properties>
@@ -55,7 +56,6 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
-                <version>${spring-aop.version}</version>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
