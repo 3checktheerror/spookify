@@ -19,7 +19,7 @@ public class SpringBootJSPController {
         Map<String, Object> map = new HashMap<>();
         map.put("TestVO", new TestVO(100, "Qiu"));
         mv.addAllObjects(map);
-        mv.setViewName("/test");
+        mv.setViewName("/test2");
         return mv;
     }
 }

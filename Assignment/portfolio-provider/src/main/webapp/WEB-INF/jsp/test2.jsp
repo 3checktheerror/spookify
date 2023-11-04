@@ -1,0 +1,50 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 123
+  Date: 2023/11/4
+  Time: 21:03
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+<div id="app"><button @click="sendDataToBackend">Send Data to Backend</button></div>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            sendDataToBackend() {
+                const jsonData = {
+                    key1: "value1",
+                    key2: "value2",
+                    key3: [1, 2, 3],
+                    key4: {
+                        nestedKey: "nestedValue"
+                    }
+                };
+
+                axios.post('/api/submit', jsonData, {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(response => {
+                        console.log("Response from the backend:", response.data);
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+            }
+        }
+    });
+</script>
+</body>
+</html>
