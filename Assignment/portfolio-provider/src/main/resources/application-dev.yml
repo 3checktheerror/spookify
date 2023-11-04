@@ -21,7 +21,8 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
-mybatis-plus:
-  coniguration:
-    map-underscore-to-camel-case: true
 
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
