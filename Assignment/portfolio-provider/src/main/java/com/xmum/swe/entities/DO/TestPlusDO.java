@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName(value = "t_testPlus")
-public class TestPlusDo{
-    @TableId
+public class TestPlusDO{
+    @TableId(value = "number")
     private int number;
     private String user_name;
 }

@@ -3,6 +3,7 @@ package com.xmum.swe.controller;
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.dao.TestDao;
 import com.xmum.swe.entities.CommonResult;
+import com.xmum.swe.entities.DO.TestPlusDO;
 import com.xmum.swe.entities.VO.UserVO;
 import com.xmum.swe.listener.SpooifyEvent;
 import com.xmum.swe.listener.impl.SpookifyEventDataImpl;
@@ -12,6 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @RestController
@@ -26,7 +28,7 @@ public class TestController {
     private TestDao testDao;
 
     @Resource
-    private TestPlusMapper testPlusDao;
+    private TestPlusMapper testPlusDAO;
 
     @SpookifyInfo(desc = "method")
     @GetMapping("testOk")
@@ -51,10 +53,10 @@ public class TestController {
     }
 
     @SpookifyInfo
-    @PostMapping ("f")
+    @GetMapping ("f")
     public void testParseObject2(){
-        //testDao.updateInfo("Qiu", 1);
-        //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
+        //testDao.updateInfo("Ellie", 1);
+        List<TestPlusDO> testPlus = testPlusDAO.selectList(null);
     }
 
     @SpookifyInfo
