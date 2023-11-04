@@ -5,10 +5,14 @@ server:
 spring:
   banner:
     location: classpath:banner/banner.txt
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp
+      suffix: .jsp
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
 
