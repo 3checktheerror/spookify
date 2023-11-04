@@ -1,14 +1,15 @@
 package com.xmum.swe.controller;
 
 import com.xmum.swe.annotation.SpookifyInfo;
+import com.xmum.swe.dao.TestDao;
 import com.xmum.swe.entities.CommonResult;
+import com.xmum.swe.entities.VO.UserVO;
 import com.xmum.swe.listener.SpooifyEvent;
 import com.xmum.swe.listener.impl.SpookifyEventDataImpl;
+import com.xmum.swe.dao.TestPlusMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -17,8 +18,15 @@ import javax.annotation.Resource;
 @Slf4j
 @RequestMapping("test")
 public class TestController {
+
     @Resource
     ApplicationContext context;
+
+    @Resource
+    private TestDao testDao;
+
+    @Resource
+    private TestPlusMapper testPlusDao;
 
     @SpookifyInfo(desc = "method")
     @GetMapping("testOk")
@@ -40,5 +48,26 @@ public class TestController {
         SpooifyEvent event = new SpooifyEvent(this, eventData);
         context.publishEvent(event);
         return CommonResult.ok("end");
+    }
+
+    @SpookifyInfo
+    @PostMapping ("f")
+    public void testParseObject2(){
+        //testDao.updateInfo("Qiu", 1);
+        //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
+    }
+
+    @SpookifyInfo
+    @PostMapping("e")
+    public void testParseObject(@RequestBody UserVO userVO){
+        testDao.updateInfo(userVO.getName(), userVO.getAge());
+        //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
+    }
+
+    @SpookifyInfo
+    @PostMapping ("g?name={name}&age={age}")
+    public void testParseObject(@PathVariable("name") String name, @PathVariable("age") int age){
+        testDao.updateInfo(name, age);
+        //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
 }
