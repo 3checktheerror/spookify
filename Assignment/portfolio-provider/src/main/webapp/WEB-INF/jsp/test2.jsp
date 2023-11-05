@@ -17,17 +17,43 @@
 
 <div id="app"><button @click="sendDataToBackend">Send Data to Backend</button></div>
 
+<%--<script>--%>
+<%--    new Vue({--%>
+<%--        el: '#app',--%>
+<%--        methods: {--%>
+<%--            sendDataToBackend() {--%>
+<%--                const jsonData = {--%>
+<%--                    "name": "Qiu",--%>
+<%--                    "number": "1",--%>
+<%--                };--%>
+
+<%--                axios.post('/test/e', jsonData, {--%>
+<%--                    headers: {--%>
+<%--                        'Content-Type': 'application/json'--%>
+<%--                    }--%>
+<%--                })--%>
+<%--                    .then(response => {--%>
+<%--                        console.log("Response from the backend:", response.data);--%>
+<%--                    })--%>
+<%--                    .catch(error => {--%>
+<%--                        console.error("Error:", error);--%>
+<%--                    });--%>
+<%--            }--%>
+<%--        }--%>
+<%--    });--%>
+<%--</script>--%>
+
+
 <script>
     new Vue({
         el: '#app',
         methods: {
             sendDataToBackend() {
-                const jsonData = {
-                    "name": "Qiu",
-                    "age": "1",
-                };
-
-                axios.post('/test/e', jsonData, {
+                axios.get('/test/g?', {
+                    params: {
+                        "name": "Qiu",
+                        "number": 1,
+                    },
                     headers: {
                         'Content-Type': 'application/json'
                     }

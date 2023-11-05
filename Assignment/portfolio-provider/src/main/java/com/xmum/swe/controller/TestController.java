@@ -13,12 +13,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 
 @RestController
 @Slf4j
-@RequestMapping("test")
+@RequestMapping("/test")
 public class TestController {
 
     @Resource
@@ -55,7 +56,7 @@ public class TestController {
     @SpookifyInfo
     @GetMapping ("f")
     public void testParseObject2(){
-        //testDao.updateInfo("Ellie", 1);
+        testDao.updateInfo("Ellie", 1);
         List<TestPlusDO> testPlus = testPlusDAO.selectList(null);
         System.out.println(testPlus);
     }
@@ -63,15 +64,14 @@ public class TestController {
     @SpookifyInfo
     @PostMapping("e")
     public void testParseObject(@RequestBody UserVO userVO){
-        testDao.updateInfo(userVO.getName(), userVO.getAge());
-        System.out.println(userVO.getName()+userVO.getAge());
+        testDao.updateInfo(userVO.getName(), userVO.getNumber());
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
 
     @SpookifyInfo
-    @PostMapping ("g?name={name}&age={age}")
-    public void testParseObject(@PathVariable("name") String name, @PathVariable("age") int age){
-        //testDao.updateInfo(name, age);
+    @GetMapping ("g")
+    public void testParseObject3(@PathParam("name") String name, @PathParam("number") Integer number){
+        testDao.updateInfo(name, number);
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
 }

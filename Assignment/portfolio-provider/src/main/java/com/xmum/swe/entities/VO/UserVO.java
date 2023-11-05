@@ -10,5 +10,5 @@ import java.io.Serializable;
 public class UserVO implements Serializable {
    // @JSONField("")
     private String name;
-    private int age;
+    private int number;
 }
