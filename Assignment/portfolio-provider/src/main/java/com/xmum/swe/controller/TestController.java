@@ -13,6 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 
@@ -63,13 +64,13 @@ public class TestController {
     @SpookifyInfo
     @PostMapping("e")
     public void testParseObject(@RequestBody UserVO userVO){
-        testDao.updateInfo(userVO.getName(), userVO.getAge());
+        testDao.updateInfo(userVO.getName(), userVO.getNumber());
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
 
     @SpookifyInfo
-    @PostMapping ("g?name={name}&age={number}")
-    public void testParseObject(@PathVariable("name") String name, @PathVariable("number") int number){
+    @GetMapping ("g")
+    public void testParseObject3(@PathParam("name") String name, @PathParam("number") Integer number){
         testDao.updateInfo(name, number);
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
