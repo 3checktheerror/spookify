@@ -64,13 +64,13 @@ public class TestController {
     @SpookifyInfo
     @PostMapping("e")
     public void testParseObject(@RequestBody UserVO userVO){
-        testDao.updateInfo(userVO.getName(), userVO.getAge());
+        testDao.updateInfo(userVO.getName(), userVO.getNumber());
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
 
     @SpookifyInfo
     @GetMapping ("g")
-    public void testParseObject3(@PathParam("name") String name, @PathParam("number") int number){
+    public void testParseObject3(@PathParam("name") String name, @PathParam("number") Integer number){
         testDao.updateInfo(name, number);
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
