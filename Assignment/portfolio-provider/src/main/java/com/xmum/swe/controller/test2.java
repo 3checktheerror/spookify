@@ -18,6 +18,7 @@ public class test2 {
     public ResponseEntity<String> receiveJsonDataFromFrontend(@RequestBody Map<String, Object> jsonData) {
         // 处理接收到的JSON数据
         String message = "Received JSON data from the frontend: " + jsonData.toString();
+        System.out.println(message);
         return ResponseEntity.ok(message);
     }
 }

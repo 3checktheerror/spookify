@@ -23,15 +23,11 @@
         methods: {
             sendDataToBackend() {
                 const jsonData = {
-                    key1: "value1",
-                    key2: "value2",
-                    key3: [1, 2, 3],
-                    key4: {
-                        nestedKey: "nestedValue"
-                    }
+                    "name": "Qiu",
+                    "age": "1",
                 };
 
-                axios.post('/api/submit', jsonData, {
+                axios.post('/test/e', jsonData, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
