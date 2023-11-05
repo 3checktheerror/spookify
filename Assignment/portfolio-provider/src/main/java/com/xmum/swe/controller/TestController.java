@@ -18,7 +18,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
-@RequestMapping("test")
+@RequestMapping("/test")
 public class TestController {
 
     @Resource
@@ -55,7 +55,7 @@ public class TestController {
     @SpookifyInfo
     @GetMapping ("f")
     public void testParseObject2(){
-        //testDao.updateInfo("Ellie", 1);
+        testDao.updateInfo("Ellie", 1);
         List<TestPlusDO> testPlus = testPlusDAO.selectList(null);
         System.out.println(testPlus);
     }
@@ -68,9 +68,9 @@ public class TestController {
     }
 
     @SpookifyInfo
-    @PostMapping ("g?name={name}&age={age}")
-    public void testParseObject(@PathVariable("name") String name, @PathVariable("age") int age){
-        testDao.updateInfo(name, age);
+    @PostMapping ("g?name={name}&age={number}")
+    public void testParseObject(@PathVariable("name") String name, @PathVariable("number") int number){
+        testDao.updateInfo(name, number);
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
 }

@@ -12,10 +12,10 @@ import java.util.Map;
 
 
 @Controller
-@RequestMapping("/a")
+@RequestMapping("a")
 public class SpringBootJSPController {
 
-    @GetMapping("/b")
+    @GetMapping("b")
     public ModelAndView helloWorld() {
         ModelAndView mv = new ModelAndView();
         Map<String, Object> map = new HashMap<>();
@@ -25,7 +25,7 @@ public class SpringBootJSPController {
         return mv;
     }
 
-    @GetMapping("/c")
+    @GetMapping("c")
     public void testGetObject(HttpServletRequest rq){
        rq.getSession().getAttribute("code");
     }
