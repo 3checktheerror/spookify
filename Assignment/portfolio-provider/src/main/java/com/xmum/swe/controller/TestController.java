@@ -70,7 +70,7 @@ public class TestController {
 
     @SpookifyInfo
     @GetMapping ("g")
-    public void testParseObject3(@PathParam("name") String name, @PathParam("number") Integer number){
+    public void testParseObject3(@RequestParam("name") String name, @RequestParam("number") Integer number){
         testDao.updateInfo(name, number);
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
