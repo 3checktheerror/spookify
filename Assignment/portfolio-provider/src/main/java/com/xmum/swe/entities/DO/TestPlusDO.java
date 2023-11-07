@@ -14,7 +14,7 @@ import org.apache.ibatis.type.JdbcType;
 @TableName(value = "t_testPlus")
 public class TestPlusDO{
     @TableId(value = "number")
-    private int number;
+    private Integer number;
     @TableField(value = "user_name", jdbcType = JdbcType.VARCHAR)
     private String userName;
 }
