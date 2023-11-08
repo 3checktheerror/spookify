@@ -13,6 +13,8 @@ import com.xmum.swe.service.ItemService;
 import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
@@ -24,6 +26,7 @@ import java.util.*;
 @RestController
 @RequestMapping("/item")
 @Slf4j
+@Api(value = "Item Query Interface", tags = {"Item Query Interface"})
 public class ItemController {
 
     @Resource
@@ -46,7 +49,7 @@ public class ItemController {
         return CommonResult.ok(items);
     }
 
-
+    @ApiOperation("deprecated")
     @SpookifyInfo
     @GetMapping("/containsItemName")
     public boolean containsItemWithName(@RequestParam("ItemName") String name){

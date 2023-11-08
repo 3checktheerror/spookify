@@ -63,6 +63,6 @@ public class CustomerService {
         Map<String, Object> map = new HashMap<>();
         map.put("name", name);
         List<CustomerDO> res = customerDao.selectByMap(map);
-        if(ObjectUtil.isNotNull(res)) throw new SpookifyBusinessException("customer name cannot be duplicated!");
+        if(!res.isEmpty()) throw new SpookifyBusinessException("customer name cannot be duplicated!");
     }
 }

@@ -14,6 +14,7 @@ import com.xmum.swe.service.ItemService;
 import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
@@ -25,6 +26,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/visitor")
 @Slf4j
+@Api(value = "Visitor Query Interface", tags = {"Visitor Query Interface"})
 public class VisitorController {
 
     @Resource
