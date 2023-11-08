@@ -16,6 +16,7 @@ import com.xmum.swe.entities.VO.ItemInsertVO;
 import com.xmum.swe.entities.VO.ItemModifyVO;
 import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
+import com.xmum.swe.service.ItemService;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
@@ -34,37 +35,29 @@ import java.util.*;
 public class ItemController {
     @Resource
     private ItemDao itemDao;
-
+    @Resource
+    private ItemService itemService;
 
     @SpookifyInfo
     @GetMapping("/getItemById/{id}")
     public CommonResult getItem(@PathVariable("id") String id){
-        ItemDO item = itemDao.selectById(id);
-        Optional.ofNullable(item)
-                .orElseThrow(() -> new SpookifyBusinessException("No such item!"));
+        ItemDO item = itemService.getItemWithId(id);
         return CommonResult.ok(item);
     }
 
     @SpookifyInfo
     @GetMapping("/getAllItems")
     public CommonResult getAllItems(){
-        List<ItemDO> items = itemDao.selectList(null);
-        Optional.ofNullable(items)
-                .orElseThrow(() -> new SpookifyBusinessException("items list is empty!"));
+        List<ItemDO> items = itemService.getAllItems();
         return CommonResult.ok(items);
     }
-
 
 
     @SpookifyInfo
     @GetMapping("/containsItemName")
     public boolean containsItemWithName(@RequestParam("ItemName") String name){
-        QueryWrapper<ItemDO> wrapper = new QueryWrapper<>();
-        ItemDO[] items = itemDao
-                .selectList(wrapper.select("name")
-                                    .and(i -> i.eq("name", name)))
-                .toArray(new ItemDO[0]);
-        return items.length > 0;
+        boolean hasItem = itemService.containsItemName(name);
+        return hasItem;
     }
 
     //注意，插入时map中有关键字段会覆盖，里面覆盖外面
@@ -73,11 +66,10 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/insertItem")
     public CommonResult insertItem(@RequestBody ItemInsertVO itemVO){
+
+
         //get new id
-        ItemDO maxIdItem = (ItemDO)itemDao.selectList(new QueryWrapper<ItemDO>().orderByDesc("i_id"))
-                                            .stream().
-                                            limit(1)
-                                            .toArray()[0];
+        ItemDO maxIdItem = itemService.getItemWithMaxId();
         String itemId = maxIdItem.getIId();
         String oldSubString = itemId.substring(IdPos.ID_ENTITY_NUM.getPos(), IdPos.ID_END.getPos());
         String newSubString = String.valueOf(String.format("%06d", Integer.parseInt(oldSubString) + 1));
@@ -98,7 +90,7 @@ public class ItemController {
         //Insert data (updated fields + user input)
         Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemDO), Map.class), preMap);
         itemDO.setData(JSON.toJSONString(curMap));
-        int num = itemDao.insert(itemDO);
+        int num = itemService.insertItem(itemDO);
         return num == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(num);
     }
 
@@ -106,7 +98,7 @@ public class ItemController {
     @GetMapping("/modifyItem")
     public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO){
         String id = itemVO.getIId();
-        ItemDO preDO = itemDao.selectById(id);
+        ItemDO preDO = itemService.getItemWithId(id);
         if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
         Map preMap = JSON.parseObject(preDO.getData(), Map.class);
 
@@ -114,24 +106,22 @@ public class ItemController {
         BeanUtils.copyProperties(itemVO, itemNoMapBO);
         Map map1 = JSON.parseObject(JSON.toJSONString(itemNoMapBO), Map.class);
         Map map2 = MapUtil.merge(map1, itemVO.getMap());
-
-
         Map map = MapUtil.merge(preMap, map2);
         map.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         map.put("status", "modified");
         map.put("opType", "modify");
         ItemDO itemDO = JSON.parseObject(JSON.toJSONString(map), ItemDO.class);
         itemDO.setData(JSON.toJSONString(map));
-        int num = itemDao.updateById(itemDO);
+        int num = itemService.updateItemById(itemDO);
         return num == 0 ? CommonResult.fail("update failed") : CommonResult.ok(num);
     }
 
     @SpookifyInfo
     @GetMapping("/deleteItem/{id}")
     public CommonResult deleteItem(@PathVariable("id") String id){
-        ItemDO preDO = itemDao.selectById(id);
+        ItemDO preDO = itemService.getItemWithId(id);
         if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
-        int num = itemDao.deleteById(id);
+        int num = itemService.deleteItemWithId(id);
         return num == 0 ? CommonResult.fail("delete failed") : CommonResult.ok(num);
     }
 
