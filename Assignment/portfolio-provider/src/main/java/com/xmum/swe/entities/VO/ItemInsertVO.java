@@ -1,5 +1,6 @@
 package com.xmum.swe.entities.VO;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import java.sql.Blob;
 import java.util.Map;
@@ -12,11 +13,9 @@ public class ItemInsertVO {
     private String email;
     private Blob file;
     private String md5;
-    //private Timestamp itCreate;
-   // private Timestamp itModified;
-//    private String opType;
     private Map<String, Object> map;
     private String token;
     private String sessionId;
-    //private String status;
+    @JsonProperty("vIdFk")
+    private String vIdFk;
 }

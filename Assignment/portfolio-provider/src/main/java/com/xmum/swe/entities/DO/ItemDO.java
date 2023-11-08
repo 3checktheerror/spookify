@@ -29,4 +29,5 @@ public class ItemDO {
     private String token;
     private String sessionId;
     private String status;
+    private String vIdFk;
 }

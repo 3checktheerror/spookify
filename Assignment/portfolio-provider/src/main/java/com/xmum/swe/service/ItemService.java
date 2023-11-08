@@ -60,11 +60,4 @@ public class ItemService {
         int num = itemDao.deleteById(id);
         return num;
     }
-
-    public List<ItemDO> getItemsWithVisitorName(String name){
-        List<ItemDO> items = itemDao.selectList(new QueryWrapper<ItemDO>().and(i -> i.eq("name", name)));
-        Optional.ofNullable(items)
-                .orElseThrow(() -> new SpookifyBusinessException("items list is empty!"));
-        return items;
-    }
 }

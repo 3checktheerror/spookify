@@ -41,11 +41,4 @@ public class VisitorController {
         return CommonResult.ok(visitors);
     }
 
-    @SpookifyInfo
-    @GetMapping("/getItem/{id}")
-    public CommonResult getVisitorItems(@PathVariable("id") String vid){
-        VisitorDO visitor = visitorService.getIidsWithVid(vid);
-        List<ItemDO> items = itemService.getItemsWithVisitorName(visitor.getName());
-        return CommonResult.ok(items);
-    }
 }

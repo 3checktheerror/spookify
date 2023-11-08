@@ -3,6 +3,7 @@ package com.xmum.swe.controller;
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
 import com.xmum.swe.annotation.SpookifyInfo;
+import com.xmum.swe.dao.ItemDao;
 import com.xmum.swe.entities.BO.ItemNoMapBO;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.ItemDO;
@@ -16,13 +17,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+
 import javax.annotation.Resource;
+
 import java.util.*;
 
 @RestController
 @RequestMapping("/item")
 @Slf4j
 public class ItemController {
+    @Resource
+    private ItemDao itemDao;
     @Resource
     private ItemService itemService;
 
@@ -54,6 +59,7 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/insertItem")
     public CommonResult insertItem(@RequestBody ItemInsertVO itemVO){
+
 
         //get new id
         ItemDO maxIdItem = itemService.getItemWithMaxId();

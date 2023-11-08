@@ -1,5 +1,6 @@
 package com.xmum.swe.entities.BO;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.sql.Blob;
@@ -8,7 +9,9 @@ import java.util.Map;
 
 @Data
 public class ItemNoMapBO {
+    @JsonProperty("iId")
     private String iId;
+    @JsonProperty("igroupId")
     private String igroupId;
     private String name;
     private String gender;
@@ -22,4 +25,5 @@ public class ItemNoMapBO {
     private String token;
     private String sessionId;
     private String status;
+    private String vIdFk;
 }

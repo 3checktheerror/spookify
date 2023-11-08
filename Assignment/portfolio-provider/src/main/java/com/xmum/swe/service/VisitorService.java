@@ -36,11 +36,4 @@ public class VisitorService {
         return visitors;
     }
 
-    public List<String> getIidsWithVid(String vid) {
-//        VisitorDO visitor = this.getVisitorById(vid);
-//        VisitorDO visitor = itemDao.selectList(new QueryWrapper<VisitorDO>().eq("v_id", vid).select("i_id_fk")).var
-//        Optional.ofNullable(visitor)
-//                .orElseThrow(() -> new SpookifyBusinessException("No such visitor!"));
-//        return visitor;
-    }
 }

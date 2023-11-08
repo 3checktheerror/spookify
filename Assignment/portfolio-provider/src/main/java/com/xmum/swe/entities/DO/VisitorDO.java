@@ -30,5 +30,4 @@ public class VisitorDO {
     private String data;
     private String token;
     private String sessionId;
-    private String iIdFk;
 }
