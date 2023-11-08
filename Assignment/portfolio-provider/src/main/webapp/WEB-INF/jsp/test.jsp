@@ -8,59 +8,113 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <title>hello</title>
 </head>
 <body>
-success
-<span> ${requestScope.TestVO }</span>
-<button onclick="getData()">获取数据</button>
-<script>
-    function getData() {
-        fetch('http://localhost:8082/test/testOk')
-            .then(response => response.json())
-            .then(data => {
-                // 对数据进行处理和展示
-                // 例如，假设数据为JSON格式，可以直接操作数据
-                console.log(data); // 在控制台打印数据
-                // 进行页面操作，将数据展示在页面上
-                //document.getElementById('dataElement').innerText = data.property; // 展示数据中的某个属性值
-            })
-            .catch(error => console.error('发生错误:', error));
-    }
-
-</script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <div id="app">
+    <el-form :model="formData" label-width="100px">
+        <el-form-item label="Name">
+            <el-input v-model="formData.name"></el-input>
+        </el-form-item>
+        <el-form-item label="Gender">
+            <el-select v-model="formData.gender" placeholder="Select">
+                <el-option label="Male" value="male"></el-option>
+                <el-option label="Female" value="female"></el-option>
+            </el-select>
+        </el-form-item>
+        <el-form-item label="Email">
+            <el-input v-model="formData.email"></el-input>
+        </el-form-item>
+        <el-form-item label="Message">
+            <el-input type="textarea" v-model="formData.message"></el-input>
+        </el-form-item>
+        <el-form-item label="Phone">
+            <el-input v-model="formData.phone"></el-input>
+        </el-form-item>
+        <el-form-item label="Occupation">
+            <el-input v-model="formData.occupation"></el-input>
+        </el-form-item>
+        <el-form-item>
+            <el-button type="primary" @click="submitForm">Submit</el-button>
+        </el-form-item>
+    </el-form>
+    <el-dialog
+            title="Insert Successful"
+            :visible.sync="successDialogVisible"
+            width="40%"
+    >
+        <p>Data has been successfully inserted.</p>
+        <p v-if="responseData">Insert {{ responseData }} item</p>
+        <div slot="footer" class="dialog-footer">
+            <el-button type="primary" @click="closeSuccessDialog">OK</el-button>
+        </div>
+    </el-dialog>
+
 </div>
 <script>
-    new Vue({
-        el:'#app',
-   data:{
-       //定义初始值
-       userList:[]  //接收接口返回的data数据
-   },
-    created(){
-        //在页面渲染之前执行
-        //调用方法
-        this.getList()
 
-    },
-    methods:{
-        //定义方法
-        getList(){
-            axios.get('http://localhost:8082/test/testOk')  //url是后端提供的接口地址    除了get（）还有post（）
-                .then(res=>{
-                    this.userList = res.data  //赋值
-                })  //请求接口成功会触发
-                .catch(
-                    error=>{
-                        console.log(error)
-                    }
-                ) //请求接口失败会触发
+    new Vue( {
+        el: '#app',
+        data() {
+            return {
+                formData: {
+                    name: '',
+                    gender: '',
+                    email: '',
+                    message: '',
+                    phone: '',
+                    occupation: ''
+                },
+                successDialogVisible: false, // 控制弹窗显示/隐藏
+                responseData: null // 存储后端响应数据
+            };
+        },
+        methods: {
+            submitForm() {
+                // 构建要提交的数据
+                const postData = {
+                    name: "b",
+                    gender: "a",
+                    email: "a",
+                    message: "a",
+                    map: {
+                        "phone": "a",
+                        "occupation": "a"
+                    },
+                    igroupId: "a",
+                    file: null,
+                    md5: null,
+                    token: null,
+                    sessionId: null,
+                    vIdFk: "SPVT000001"
+                };
+                console.log(postData);
+                // 使用 Axios 发送 GET 请求到后端
+                axios.post('/item/insertItem', postData)
+                    .then(response => {
+                        // 请求成功的处理逻辑
+                        console.log('后端响应:', response.data);
+                        this.responseData = response.data.data.num;
+                        this.showSuccessDialog();
+                    })
+                    .catch(error => {
+                        // 请求失败的处理逻辑
+                        console.error('请求失败:', error);
+                    });
+            },
+            showSuccessDialog() {
+                this.successDialogVisible = true;
+            },
+            closeSuccessDialog() {
+                this.successDialogVisible = false;
+                this.responseData = null; // 关闭弹窗时清空响应数据
+            }
         }
-    }
-    })
+    });
 </script>
 
 </body>
