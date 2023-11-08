@@ -69,7 +69,7 @@ public class TestController {
     }
 
     @SpookifyInfo
-    @GetMapping ("g")
+    @PostMapping ("g")
     public void testParseObject3(@RequestParam("name") String name, @RequestParam("number") Integer number){
         testDao.updateInfo(name, number);
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
