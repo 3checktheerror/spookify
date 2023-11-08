@@ -13,8 +13,8 @@ public class SpookifyListener implements ApplicationListener<ApplicationEvent> {
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
 
-        log.info("---SpookifyListener starts working---");
         if(event instanceof SpooifyEvent){  //to ensure other events are not captured
+            log.info("---SpookifyListener starts working---");
             SpookifyEventData eventData = ((SpooifyEvent) event).getEventData();
             eventData.run();
         }
