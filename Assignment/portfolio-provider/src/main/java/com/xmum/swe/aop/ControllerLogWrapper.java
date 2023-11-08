@@ -31,7 +31,6 @@ public class ControllerLogWrapper {
         } else if (spookifyInfo.desc().equals("method")){
             log.info("---Method: " + methodName + " begin---");
         }
-
     }
 
     @After("pointCut()")
