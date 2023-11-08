@@ -9,7 +9,6 @@ import com.xmum.swe.entities.DO.VisitorDO;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;

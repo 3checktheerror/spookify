@@ -18,7 +18,7 @@ public class ItemService {
     @Resource
     private ItemDao itemDao;
 
-    public ItemDO getItemWithId(String id) {
+    public ItemDO getItemById(String id) {
         ItemDO item = itemDao.selectById(id);
         Optional.ofNullable(item)
                 .orElseThrow(() -> new SpookifyBusinessException("No such item!"));

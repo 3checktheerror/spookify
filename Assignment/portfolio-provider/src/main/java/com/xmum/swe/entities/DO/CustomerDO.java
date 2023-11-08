@@ -11,22 +11,20 @@ import java.sql.Timestamp;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "contact_item_1")
-public class ItemDO {
-    @TableId("i_id")
-    private String iId;
-    private String igroupId;
+@TableName(value = "contact_customer_1")
+public class CustomerDO {
+    @TableId("c_id")
+    private String cId;
+    private String cgroupId;
     private String name;
+    private int age;
     private String gender;
-    private String email;
     private Blob file;
     private String md5;
-    private Timestamp itCreate;
-    private Timestamp itModified;
-    private String opType;
+    private Timestamp csCreate;
+    private Timestamp csModified;
+    private String csType;
     private String data;
     private String token;
     private String sessionId;
-    private String status;
-    private String vIdFk;
 }
