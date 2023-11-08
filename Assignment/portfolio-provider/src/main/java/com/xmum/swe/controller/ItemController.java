@@ -98,6 +98,7 @@ public class ItemController {
     public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO){
         String id = itemVO.getIId();
         ItemDO preDO = itemDao.selectById(id);
+        if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
         Map preMap = JSON.parseObject(preDO.getData(), Map.class);
 
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
@@ -116,5 +117,13 @@ public class ItemController {
         return num == 0 ? CommonResult.fail("update failed") : CommonResult.ok(num);
     }
 
+    @SpookifyInfo
+    @GetMapping("/deleteItem/{id}")
+    public CommonResult deleteItem(@PathVariable("id") String id){
+        ItemDO preDO = itemDao.selectById(id);
+        if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
+        int num = itemDao.deleteById(id);
+        return num == 0 ? CommonResult.fail("delete failed") : CommonResult.ok(num);
+    }
 
 }
