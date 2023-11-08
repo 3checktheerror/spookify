@@ -37,6 +37,15 @@ public class ItemController {
 
 
     @SpookifyInfo
+    @GetMapping("/getItemById/{id}")
+    public CommonResult getItem(@PathVariable("id") String id){
+        ItemDO item = itemDao.selectById(id);
+        Optional.ofNullable(item)
+                .orElseThrow(() -> new SpookifyBusinessException("No such item!"));
+        return CommonResult.ok(item);
+    }
+
+    @SpookifyInfo
     @GetMapping("/getAllItems")
     public CommonResult getAllItems(){
         List<ItemDO> items = itemDao.selectList(null);
