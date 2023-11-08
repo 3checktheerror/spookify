@@ -14,6 +14,7 @@ import com.xmum.swe.entities.DO.ItemDO;
 import com.xmum.swe.entities.DO.VisitorDO;
 import com.xmum.swe.entities.VO.ItemModifyVO;
 import com.xmum.swe.entities.VO.VisitorInsertVO;
+import com.xmum.swe.entities.VO.VisitorModifyVO;
 import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.ItemService;
