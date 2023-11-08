@@ -6,33 +6,33 @@ import java.sql.Blob;
 import java.sql.Timestamp;
 
 @Data
-public class ItemNoMapBO {
-    @JsonProperty("iId")
-    private String iId;
-    @JsonProperty("igroupId")
-    private String igroupId;
+public class VisitorNoMapBO {
+    @JsonProperty("vId")
+    private String vId;
+    @JsonProperty("vgroupId")
+    private String vgroupId;
     @JsonProperty("name")
     private String name;
+    @JsonProperty("username")
+    private String username;
+    @JsonProperty("password")
+    private String password;
+    @JsonProperty("age")
+    private int age;
     @JsonProperty("gender")
     private String gender;
-    @JsonProperty("email")
-    private String email;
     @JsonProperty("file")
     private Blob file;
     @JsonProperty("md5")
     private String md5;
-    @JsonProperty("itCreate")
-    private Timestamp itCreate;
-    @JsonProperty("itModified")
-    private Timestamp itModified;
+    @JsonProperty("vtCreate")
+    private Timestamp vtCreate;
+    @JsonProperty("vtModified")
+    private Timestamp vtModified;
     @JsonProperty("opType")
     private String opType;
     @JsonProperty("token")
     private String token;
     @JsonProperty("sessionId")
     private String sessionId;
-    @JsonProperty("status")
-    private String status;
-    @JsonProperty("vIdFk")
-    private String vIdFk;
 }

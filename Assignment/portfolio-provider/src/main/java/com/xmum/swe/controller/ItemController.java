@@ -1,47 +1,41 @@
 package com.xmum.swe.controller;
 
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.util.ObjectUtil;
-import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson2.JSON;
-import com.alibaba.fastjson2.JSONReader;
-import com.alibaba.fastjson2.JSONWriter;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.annotation.SpookifyInfo;
-import com.xmum.swe.dao.ItemDao;
+import com.xmum.swe.entities.BO.ItemBO;
 import com.xmum.swe.entities.BO.ItemNoMapBO;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.ItemDO;
 import com.xmum.swe.entities.VO.ItemInsertVO;
 import com.xmum.swe.entities.VO.ItemModifyVO;
 import com.xmum.swe.enums.IdPos;
-import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.ItemService;
+import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
-import java.lang.reflect.Type;
+
 import java.util.*;
 
 @RestController
 @RequestMapping("/item")
 @Slf4j
 public class ItemController {
-    @Resource
-    private ItemDao itemDao;
+
     @Resource
     private ItemService itemService;
+
+    @Resource
+    private VisitorService visitorService;
 
     @SpookifyInfo
     @GetMapping("/getItemById/{id}")
     public CommonResult getItem(@PathVariable("id") String id){
-        ItemDO item = itemService.getItemWithId(id);
+        ItemDO item = itemService.getItemById(id);
         return CommonResult.ok(item);
     }
 
@@ -66,8 +60,8 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/insertItem")
     public CommonResult insertItem(@RequestBody ItemInsertVO itemVO){
-
-
+        //check if the foreign key exists
+        visitorService.getVisitorById(itemVO.getVIdFk());
         //get new id
         ItemDO maxIdItem = itemService.getItemWithMaxId();
         String itemId = maxIdItem.getIId();
@@ -80,49 +74,52 @@ public class ItemController {
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
         BeanUtils.copyProperties(itemVO, itemNoMapBO);  //filter
         //Insert user input fields (exclude data)
-        ItemDO itemDO = new ItemDO();
-        BeanUtils.copyProperties(itemNoMapBO, itemDO);
-        itemDO.setIId(newItemId);
-        itemDO.setItCreate(SpookifyTimeStamp.getInstance().getTimeStamp());
-        itemDO.setItModified(SpookifyTimeStamp.getInstance().getTimeStamp());
-        itemDO.setStatus("Submit");
-        itemDO.setOpType("Insert");
+        ItemBO itemBO = new ItemBO();
+        BeanUtils.copyProperties(itemNoMapBO, itemBO);
+        itemBO.setIId(newItemId);
+        itemBO.setItCreate(SpookifyTimeStamp.getInstance().getTimeStamp());
+        itemBO.setItModified(SpookifyTimeStamp.getInstance().getTimeStamp());
+        itemBO.setStatus("Submit");
+        itemBO.setOpType("Insert");
         //Insert data (updated fields + user input)
-        Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemDO), Map.class), preMap);
-        itemDO.setData(JSON.toJSONString(curMap));
-        int num = itemService.insertItem(itemDO);
-        return num == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(num);
+        Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemBO), Map.class), preMap);
+        itemBO.setData(JSON.toJSONString(curMap));
+        ItemDO itemDO = new ItemDO();
+        BeanUtils.copyProperties(itemBO, itemDO);
+        Map<String, Object> map = itemService.insertItem(itemDO);
+        return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
     @GetMapping("/modifyItem")
     public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO){
         String id = itemVO.getIId();
-        ItemDO preDO = itemService.getItemWithId(id);
-        if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
+        ItemDO preDO = itemService.getItemById(id);
         Map preMap = JSON.parseObject(preDO.getData(), Map.class);
-
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
         BeanUtils.copyProperties(itemVO, itemNoMapBO);
         Map map1 = JSON.parseObject(JSON.toJSONString(itemNoMapBO), Map.class);
         Map map2 = MapUtil.merge(map1, itemVO.getMap());
         Map map = MapUtil.merge(preMap, map2);
+        //map中并不需要放全部字段，只要放状态相关状态即可，也即状态还是需要手动更新
         map.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         map.put("status", "modified");
         map.put("opType", "modify");
-        ItemDO itemDO = JSON.parseObject(JSON.toJSONString(map), ItemDO.class);
-        itemDO.setData(JSON.toJSONString(map));
-        int num = itemService.updateItemById(itemDO);
-        return num == 0 ? CommonResult.fail("update failed") : CommonResult.ok(num);
+        ItemBO itemBO = JSON.parseObject(JSON.toJSONString(map), ItemBO.class);
+        itemBO.setData(JSON.toJSONString(map));
+        ItemDO itemDO = new ItemDO();
+        BeanUtils.copyProperties(itemBO, itemDO);
+        Map<String, Object> res = itemService.updateItemById(itemDO);
+        return (int)res.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(res);
     }
 
     @SpookifyInfo
     @GetMapping("/deleteItem/{id}")
     public CommonResult deleteItem(@PathVariable("id") String id){
-        ItemDO preDO = itemService.getItemWithId(id);
-        if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
+        //Just check whether id exists
+        itemService.getItemById(id);
         int num = itemService.deleteItemWithId(id);
-        return num == 0 ? CommonResult.fail("delete failed") : CommonResult.ok(num);
+        return num == 0 ? CommonResult.ok("nothing to be deleted") : CommonResult.ok(num);
     }
 
 }

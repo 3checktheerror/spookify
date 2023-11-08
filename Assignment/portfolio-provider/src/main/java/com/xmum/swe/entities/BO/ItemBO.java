@@ -6,7 +6,7 @@ import java.sql.Blob;
 import java.sql.Timestamp;
 
 @Data
-public class ItemNoMapBO {
+public class ItemBO {
     @JsonProperty("iId")
     private String iId;
     @JsonProperty("igroupId")
@@ -27,6 +27,8 @@ public class ItemNoMapBO {
     private Timestamp itModified;
     @JsonProperty("opType")
     private String opType;
+    @JsonProperty("data")
+    private String data;
     @JsonProperty("token")
     private String token;
     @JsonProperty("sessionId")
