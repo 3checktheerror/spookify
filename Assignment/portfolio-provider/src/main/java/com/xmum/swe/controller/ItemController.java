@@ -61,7 +61,7 @@ public class ItemController {
     //null值的字段被自动忽略(比如file)
     //map中存了除了空值(比如file)外的所有数据
     @SpookifyInfo
-    @GetMapping("/insertItem")
+    @PostMapping("/insertItem")
     public CommonResult insertItem(@RequestBody ItemInsertVO itemVO){
         //check if the foreign key exists
         visitorService.getVisitorById(itemVO.getVIdFk());

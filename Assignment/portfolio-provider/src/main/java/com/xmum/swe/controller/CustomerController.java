@@ -46,7 +46,7 @@ public class CustomerController {
     }
 
     @SpookifyInfo
-    @GetMapping("/insertCustomer")
+    @PostMapping("/insertCustomer")
     public CommonResult insertItem(@RequestBody CustomerInsertVO cusVO){
         //check if customer name already exists
         customerService.getCustomerName(cusVO.getName());

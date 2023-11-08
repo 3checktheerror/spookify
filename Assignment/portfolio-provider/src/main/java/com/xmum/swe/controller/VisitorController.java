@@ -64,7 +64,7 @@ public class VisitorController {
     }
 
     @SpookifyInfo
-    @GetMapping("/insertVisitor")
+    @PostMapping("/insertVisitor")
     public CommonResult insertVisitor(@RequestBody VisitorInsertVO visitorVO){
         //first check if vistor's name exists
         if(visitorService.checkVisitorName(visitorVO.getName())) return CommonResult.fail("visitor name exists!");
