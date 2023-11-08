@@ -7,12 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @className: SwaggerController
- * @description: swagger 接口测试
- * @author: sh.Liu
- * @date: 2022-03-22 19:18
- */
+
 @RestController
 @RequestMapping("/swagger")
 @Api(value = "用户接口", tags = {"用户接口"})

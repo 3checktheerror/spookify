@@ -11,9 +11,7 @@ import com.xmum.swe.dao.TestPlusMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 
@@ -69,8 +67,13 @@ public class TestController {
     }
 
     @SpookifyInfo
+<<<<<<< HEAD
     @PostMapping ("g")
     public void testParseObject3(@RequestParam("name") String name, @RequestParam("number") Integer number){
+=======
+    @GetMapping ("g")
+    public void testParseObject3(@RequestParam("name") String name, @RequestParam("number") int number){
+>>>>>>> 274636290f2501181b6304ce2b0b9bda304c7c40
         testDao.updateInfo(name, number);
         //List<TestPlusDo> testPlusDos = testPlusDao.selectList(null);
     }
