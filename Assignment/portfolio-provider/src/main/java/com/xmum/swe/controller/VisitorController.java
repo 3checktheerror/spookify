@@ -7,6 +7,8 @@ import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.ItemDO;
 import com.xmum.swe.entities.DO.VisitorDO;
 import com.xmum.swe.exception.SpookifyBusinessException;
+import com.xmum.swe.service.ItemService;
+import com.xmum.swe.service.VisitorService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,36 +20,32 @@ import java.util.Optional;
 @RequestMapping("/visitor")
 @Slf4j
 public class VisitorController {
+
     @Resource
-    private VisitorDao visitorDao;
+    private ItemService itemService;
+
+    @Resource
+    private VisitorService visitorService;
 
     @SpookifyInfo
-    @GetMapping("/getItemById/{id}")
+    @GetMapping("/getVisitorById/{id}")
     public CommonResult getVisitor(@PathVariable("id") String id){
-        VisitorDO visitor = visitorDao.selectById(id);
-        Optional.ofNullable(visitor)
-                .orElseThrow(() -> new SpookifyBusinessException("No such visitor!"));
+        VisitorDO visitor = visitorService.getVisitorById(id);
         return CommonResult.ok(visitor);
     }
 
     @SpookifyInfo
     @GetMapping("/getAllVisitors")
     public CommonResult getAllVisitors(){
-        List<VisitorDO> visitors = visitorDao.selectList(null);
-        Optional.ofNullable(visitors)
-                .orElseThrow(() -> new SpookifyBusinessException("items list is empty!"));
+        List<VisitorDO> visitors = visitorService.getAllVisitors();
         return CommonResult.ok(visitors);
     }
 
     @SpookifyInfo
     @GetMapping("/getItem/{id}")
-    public List<ItemDO> getItemsByVisitorId(@PathVariable("id") String vid){
-        VisitorDO visitor = visitorDao.selectById(vid);
-        Optional.ofNullable(visitor)
-                .orElseThrow(() -> new SpookifyBusinessException("No such visitor!"));
-        return null;
+    public CommonResult getVisitorItems(@PathVariable("id") String vid){
+        VisitorDO visitor = visitorService.getIidsWithVid(vid);
+        List<ItemDO> items = itemService.getItemsWithVisitorName(visitor.getName());
+        return CommonResult.ok(items);
     }
-
-
-
 }
