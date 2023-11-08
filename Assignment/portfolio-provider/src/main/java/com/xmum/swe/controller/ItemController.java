@@ -4,6 +4,7 @@ import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.dao.ItemDao;
+import com.xmum.swe.entities.BO.ItemBO;
 import com.xmum.swe.entities.BO.ItemNoMapBO;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.ItemDO;
@@ -59,8 +60,6 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/insertItem")
     public CommonResult insertItem(@RequestBody ItemInsertVO itemVO){
-
-
         //get new id
         ItemDO maxIdItem = itemService.getItemWithMaxId();
         String itemId = maxIdItem.getIId();
@@ -73,16 +72,18 @@ public class ItemController {
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
         BeanUtils.copyProperties(itemVO, itemNoMapBO);  //filter
         //Insert user input fields (exclude data)
-        ItemDO itemDO = new ItemDO();
-        BeanUtils.copyProperties(itemNoMapBO, itemDO);
-        itemDO.setIId(newItemId);
-        itemDO.setItCreate(SpookifyTimeStamp.getInstance().getTimeStamp());
-        itemDO.setItModified(SpookifyTimeStamp.getInstance().getTimeStamp());
-        itemDO.setStatus("Submit");
-        itemDO.setOpType("Insert");
+        ItemBO itemBO = new ItemBO();
+        BeanUtils.copyProperties(itemNoMapBO, itemBO);
+        itemBO.setIId(newItemId);
+        itemBO.setItCreate(SpookifyTimeStamp.getInstance().getTimeStamp());
+        itemBO.setItModified(SpookifyTimeStamp.getInstance().getTimeStamp());
+        itemBO.setStatus("Submit");
+        itemBO.setOpType("Insert");
         //Insert data (updated fields + user input)
-        Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemDO), Map.class), preMap);
-        itemDO.setData(JSON.toJSONString(curMap));
+        Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemBO), Map.class), preMap);
+        itemBO.setData(JSON.toJSONString(curMap));
+        ItemDO itemDO = new ItemDO();
+        BeanUtils.copyProperties(itemBO, itemDO);
         int num = itemService.insertItem(itemDO);
         return num == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(num);
     }
@@ -103,8 +104,10 @@ public class ItemController {
         map.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         map.put("status", "modified");
         map.put("opType", "modify");
-        ItemDO itemDO = JSON.parseObject(JSON.toJSONString(map), ItemDO.class);
-        itemDO.setData(JSON.toJSONString(map));
+        ItemBO itemBO = JSON.parseObject(JSON.toJSONString(map), ItemBO.class);
+        itemBO.setData(JSON.toJSONString(map));
+        ItemDO itemDO = new ItemDO();
+        BeanUtils.copyProperties(itemBO, itemDO);
         int num = itemService.updateItemById(itemDO);
         return num == 0 ? CommonResult.fail("update failed") : CommonResult.ok(num);
     }
