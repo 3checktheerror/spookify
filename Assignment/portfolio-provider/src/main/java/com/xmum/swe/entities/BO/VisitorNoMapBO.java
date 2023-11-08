@@ -7,22 +7,21 @@ import java.sql.Blob;
 import java.sql.Timestamp;
 
 @Data
-public class ItemBO {
-    @JsonProperty("iId")
-    private String iId;
-    @JsonProperty("igroupId")
-    private String igroupId;
+public class VisitorNoMapBO {
+    @JsonProperty("vId")
+    private String vId;
+    @JsonProperty("vgroupId")
+    private String vgroupId;
     private String name;
+    private String username;
+    private String password;
+    private int age;
     private String gender;
-    private String email;
     private Blob file;
     private String md5;
-    private Timestamp itCreate;
-    private Timestamp itModified;
+    private Timestamp vtCreate;
+    private Timestamp vtModified;
     private String opType;
-    private String data;
     private String token;
     private String sessionId;
-    private String status;
-    private String vIdFk;
 }
