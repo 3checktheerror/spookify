@@ -13,18 +13,31 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @TableName(value = "contact_customer_1")
 public class CustomerDO {
+
     @TableId("c_id")
     private String cId;
+
     private String cgroupId;
+
     private String name;
+
     private int age;
+
     private String gender;
+
     private Blob file;
+
     private String md5;
+
     private Timestamp csCreate;
+
     private Timestamp csModified;
+
     private String csType;
+
     private String data;
+
     private String token;
+
     private String sessionId;
 }

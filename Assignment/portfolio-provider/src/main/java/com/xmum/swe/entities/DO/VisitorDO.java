@@ -14,20 +14,35 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @TableName(value = "contact_visitor_1")
 public class VisitorDO {
+
     @TableId("v_id")
     private String vId;
+
     private String vgroupId;
+
     private String name;
+
     private String username;
+
     private String password;
+
     private int age;
+
     private String gender;
+
     private Blob file;
+
     private String md5;
+
     private Timestamp vtCreate;
+
     private Timestamp vtModified;
+
     private String opType;
+
     private String data;
+
     private String token;
+
     private String sessionId;
 }

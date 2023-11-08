@@ -12,6 +12,8 @@ import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.service.CustomerService;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
@@ -23,6 +25,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/customer")
 @Slf4j
+@Api(value = "Customer Query Interface", tags = {"Customer Query Interface"})
 public class CustomerController {
 
     @Resource
