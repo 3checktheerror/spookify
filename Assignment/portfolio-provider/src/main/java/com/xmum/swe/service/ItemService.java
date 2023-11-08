@@ -7,7 +7,9 @@ import com.xmum.swe.exception.SpookifyBusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -39,9 +41,12 @@ public class ItemService {
         return items.length > 0;
     }
 
-    public int insertItem(ItemDO itemDO) {
+    public Map<String, Object> insertItem(ItemDO itemDO) {
         int num = itemDao.insert(itemDO);
-        return num;
+        Map<String, Object> map = new HashMap<>();
+        map.put("num", num);
+        map.put("id", itemDO.getIId());
+        return map;
     }
 
     public ItemDO getItemWithMaxId(){
@@ -51,9 +56,12 @@ public class ItemService {
                 .toArray()[0];
     }
 
-    public int updateItemById(ItemDO itemDO) {
+    public Map<String, Object> updateItemById(ItemDO itemDO) {
         int num = itemDao.updateById(itemDO);
-        return num;
+        Map<String, Object> map = new HashMap<>();
+        map.put("num", num);
+        map.put("id", itemDO.getIId());
+        return map;
     }
 
     public int deleteItemWithId(String id) {

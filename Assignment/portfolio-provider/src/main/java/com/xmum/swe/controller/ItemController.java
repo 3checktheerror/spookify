@@ -1,6 +1,5 @@
 package com.xmum.swe.controller;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.dao.ItemDao;
@@ -84,8 +83,8 @@ public class ItemController {
         itemBO.setData(JSON.toJSONString(curMap));
         ItemDO itemDO = new ItemDO();
         BeanUtils.copyProperties(itemBO, itemDO);
-        int num = itemService.insertItem(itemDO);
-        return num == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(num);
+        Map<String, Object> map = itemService.insertItem(itemDO);
+        return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
@@ -93,9 +92,7 @@ public class ItemController {
     public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO){
         String id = itemVO.getIId();
         ItemDO preDO = itemService.getItemWithId(id);
-        if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
         Map preMap = JSON.parseObject(preDO.getData(), Map.class);
-
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
         BeanUtils.copyProperties(itemVO, itemNoMapBO);
         Map map1 = JSON.parseObject(JSON.toJSONString(itemNoMapBO), Map.class);
@@ -108,17 +105,17 @@ public class ItemController {
         itemBO.setData(JSON.toJSONString(map));
         ItemDO itemDO = new ItemDO();
         BeanUtils.copyProperties(itemBO, itemDO);
-        int num = itemService.updateItemById(itemDO);
-        return num == 0 ? CommonResult.fail("update failed") : CommonResult.ok(num);
+        Map<String, Object> res = itemService.updateItemById(itemDO);
+        return (int)res.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(res);
     }
 
     @SpookifyInfo
     @GetMapping("/deleteItem/{id}")
     public CommonResult deleteItem(@PathVariable("id") String id){
-        ItemDO preDO = itemService.getItemWithId(id);
-        if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
+        //Just check whether id exists
+        itemService.getItemWithId(id);
         int num = itemService.deleteItemWithId(id);
-        return num == 0 ? CommonResult.fail("delete failed") : CommonResult.ok(num);
+        return num == 0 ? CommonResult.ok("nothing to be deleted") : CommonResult.ok(num);
     }
 
 }

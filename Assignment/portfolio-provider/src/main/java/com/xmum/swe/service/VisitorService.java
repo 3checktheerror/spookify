@@ -11,7 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -57,13 +59,35 @@ public class VisitorService {
                 .toArray()[0];
     }
 
-    public int insertVisitor(VisitorDO visitorDO) {
+    public Map<String, Object> insertVisitor(VisitorDO visitorDO) {
         int num = visitorDao.insert(visitorDO);
-        return num;
+        Map<String, Object> map = new HashMap<>();
+        map.put("num", num);
+        map.put("id", visitorDO.getVId());
+        return map;
     }
 
     public boolean checkVisitorName(String name) {
         VisitorDO visitor = visitorDao.selectOne(new QueryWrapper<VisitorDO>().eq("name", name));
         return !ObjectUtil.isNull(visitor);
+    }
+
+
+    public Map<String, Object> updateVisitorById(VisitorDO visitorDO) {
+        int num = visitorDao.updateById(visitorDO);
+        Map<String, Object> map = new HashMap<>();
+        map.put("num", num);
+        map.put("id", visitorDO.getVId());
+        return map;
+    }
+
+    public Map<String, Object> deleteVisitorWithItems(String id) {
+        int itemNum = itemDao.delete(new QueryWrapper<ItemDO>().and(i -> i.eq("v_id_fk", id)));
+        int visitorNum = visitorDao.delete(new QueryWrapper<VisitorDO>().and(i -> i.eq("v_id", id)));
+        if(visitorNum != 1) throw new SpookifyBusinessException("delete more than one visitor at time???");
+        Map<String, Object> map = new HashMap<>();
+        map.put("itemNum", itemNum);
+        map.put("visitorNum", visitorNum);
+        return map;
     }
 }

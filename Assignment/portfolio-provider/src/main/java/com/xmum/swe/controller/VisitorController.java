@@ -1,22 +1,15 @@
 package com.xmum.swe.controller;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.annotation.SpookifyInfo;
-import com.xmum.swe.dao.VisitorDao;
-import com.xmum.swe.entities.BO.ItemBO;
-import com.xmum.swe.entities.BO.ItemNoMapBO;
 import com.xmum.swe.entities.BO.VisitorBO;
 import com.xmum.swe.entities.BO.VisitorNoMapBO;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.ItemDO;
 import com.xmum.swe.entities.DO.VisitorDO;
-import com.xmum.swe.entities.VO.ItemModifyVO;
 import com.xmum.swe.entities.VO.VisitorInsertVO;
 import com.xmum.swe.entities.VO.VisitorModifyVO;
 import com.xmum.swe.enums.IdPos;
-import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.ItemService;
 import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.MapUtil;
@@ -25,12 +18,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
-import java.time.temporal.ValueRange;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/visitor")
@@ -99,34 +89,38 @@ public class VisitorController {
         visitorBO.setData(JSON.toJSONString(curMap));
         VisitorDO visitorDO = new VisitorDO();
         BeanUtils.copyProperties(visitorBO, visitorDO);
-        int num = visitorService.insertVisitor(visitorDO);
-        return num == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(num);
+        Map<String, Object> map = visitorService.insertVisitor(visitorDO);
+        return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
     @GetMapping("/modifyVisitor")
-    public CommonResult modifyItem(@RequestBody VisitorModifyVO visitorVO){
-        String id = itemVO.getIId();
-        ItemDO preDO = itemService.getItemWithId(id);
-        if(ObjectUtil.isNull(preDO)) return CommonResult.fail("no such id");
+    public CommonResult modifyVisitor(@RequestBody VisitorModifyVO visitorVO){
+        String id = visitorVO.getVId();
+        VisitorDO preDO = visitorService.getVisitorById(id);
         Map preMap = JSON.parseObject(preDO.getData(), Map.class);
-
-        ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
-        BeanUtils.copyProperties(itemVO, itemNoMapBO);
-        Map map1 = JSON.parseObject(JSON.toJSONString(itemNoMapBO), Map.class);
-        Map map2 = MapUtil.merge(map1, itemVO.getMap());
+        VisitorNoMapBO visitorNoMapBO = new VisitorNoMapBO();
+        BeanUtils.copyProperties(visitorVO, visitorNoMapBO);
+        Map map1 = JSON.parseObject(JSON.toJSONString(visitorNoMapBO), Map.class);
+        Map map2 = MapUtil.merge(map1, visitorVO.getMap());
         Map map = MapUtil.merge(preMap, map2);
-        map.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
+        map.put("vtModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         map.put("status", "modified");
         map.put("opType", "modify");
-        ItemBO itemBO = JSON.parseObject(JSON.toJSONString(map), ItemBO.class);
-        itemBO.setData(JSON.toJSONString(map));
-        ItemDO itemDO = new ItemDO();
-        BeanUtils.copyProperties(itemBO, itemDO);
-        int num = itemService.updateItemById(itemDO);
-        return num == 0 ? CommonResult.fail("update failed") : CommonResult.ok(num);
+        VisitorBO visitorBO = JSON.parseObject(JSON.toJSONString(map), VisitorBO.class);
+        visitorBO.setData(JSON.toJSONString(map));
+        VisitorDO visitorDO = new VisitorDO();
+        BeanUtils.copyProperties(visitorBO, visitorDO);
+        Map<String, Object> res = visitorService.updateVisitorById(visitorDO);
+        return (int)res.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(res);
     }
 
-
-
+    @SpookifyInfo
+    @GetMapping("/deleteVisitor/{id}")
+    public CommonResult deleteVisitor(@PathVariable("id") String id){
+        //Just check whether id exists
+        visitorService.getVisitorById(id);
+        Map<String, Object> map = visitorService.deleteVisitorWithItems(id);
+        return (int)map.get("itemNum") == 0 ? CommonResult.ok("nothing to be deleted") : CommonResult.ok(map);
+    }
 }
