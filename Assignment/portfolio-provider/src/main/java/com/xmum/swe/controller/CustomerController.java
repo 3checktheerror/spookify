@@ -78,7 +78,7 @@ public class CustomerController {
     }
 
     @SpookifyInfo
-    @GetMapping("/modifyCustomer")
+    @PostMapping("/modifyCustomer")
     public CommonResult modifyItem(@RequestBody CustomerModifyVO cusVO){
         String id = cusVO.getCId();
         CustomerDO preDO = customerService.getCustomerById(id);

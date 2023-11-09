@@ -5,22 +5,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
-
 
 @Controller
-@RequestMapping("a")
-public class TestController {
+@RequestMapping("getPage")
+public class DirectPageController {
 
-    @GetMapping("b")
-    public ModelAndView helloWorld() {
+    @GetMapping("cm")
+    public ModelAndView accessContactMe() {
         ModelAndView mv = new ModelAndView();
-
-        mv.setViewName("/test");
+        mv.setViewName("/contactMe");
         return mv;
     }
-
-
 }

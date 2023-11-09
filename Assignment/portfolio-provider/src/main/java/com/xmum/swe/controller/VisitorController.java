@@ -96,7 +96,7 @@ public class VisitorController {
     }
 
     @SpookifyInfo
-    @GetMapping("/modifyVisitor")
+    @PostMapping("/modifyVisitor")
     public CommonResult modifyVisitor(@RequestBody VisitorModifyVO visitorVO){
         String id = visitorVO.getVId();
         VisitorDO preDO = visitorService.getVisitorById(id);

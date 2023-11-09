@@ -94,7 +94,7 @@ public class ItemController {
     }
 
     @SpookifyInfo
-    @GetMapping("/modifyItem")
+    @PostMapping("/modifyItem")
     public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO){
         String id = itemVO.getIId();
         ItemDO preDO = itemService.getItemById(id);
