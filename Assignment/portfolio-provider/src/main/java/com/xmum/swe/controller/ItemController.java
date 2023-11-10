@@ -139,12 +139,7 @@ public class ItemController {
     public CommonResult modifyItem(@Valid ItemModifyVO itemVO, @RequestParam("file") MultipartFile multipartFile) throws IOException {
         String id = itemVO.getIId();
         ItemDO preDO = itemService.getItemById(id);
-        if(ObjectUtil.isNotNull(multipartFile)) {
-            preDO.setFileName(multipartFile.getOriginalFilename());
-            preDO.setFile(multipartFile.getBytes());
-            preDO.setFileName(multipartFile.getOriginalFilename());
-            preDO.setFile(multipartFile.getBytes());
-        }
+
         Map preMap = JSON.parseObject(preDO.getData(), Map.class);
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
         BeanUtils.copyProperties(itemVO, itemNoMapBO);
@@ -160,9 +155,12 @@ public class ItemController {
         map.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         map.put("status", "modified");
         map.put("opType", "modify");
+        if(ObjectUtil.isNotNull(map.get("fileName"))){
+            map.put("fileName", multipartFile.getOriginalFilename());
+        }
         ItemBO itemBO = JSON.parseObject(JSON.toJSONString(map), ItemBO.class);
         //set file
-        if(!StringUtils.isEmpty(multipartFile.getOriginalFilename())){
+        if(!StringUtils.isEmpty(multipartFile)){
             itemBO.setFileName(multipartFile.getOriginalFilename());
             itemBO.setFile(multipartFile.getBytes());
         }
