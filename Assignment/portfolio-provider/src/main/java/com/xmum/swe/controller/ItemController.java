@@ -42,8 +42,8 @@ import java.util.*;
 @Slf4j
 @Api(value = "Item Query Interface", tags = {"Item Query Interface"})
 public class ItemController {
-    private String fileName;
-    private String  fileSuffix;
+
+
 
     @Resource
     private ItemService itemService;
@@ -61,10 +61,12 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/download/{id}")
     public void downLoadItem(@PathVariable("id") String id, HttpServletResponse response) throws IOException {
-        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(this.fileName + this.fileSuffix, "UTF-8"));
+        ItemDO item = itemService.getItemById(id);
+        String fileName = item.getFileName();
+        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
         response.setContentType("application/octet-stream");
         ServletOutputStream os = response.getOutputStream();
-        ItemDO item = itemService.getItemById(id);
+
         byte[] file = item.getFile();
         os.write(file);
         os.flush();
@@ -91,7 +93,8 @@ public class ItemController {
     //map中存了除了空值(比如file)外的所有数据
     @SpookifyInfo
     @PostMapping("/insertItem")
-    public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam MultipartFile multipartFile){
+    public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam("file") MultipartFile multipartFile){
+        itemVO.setFileName(multipartFile.getOriginalFilename());
         //check if the foreign key exists
         visitorService.getVisitorById(itemVO.getVIdFk());
         //get new id
@@ -122,8 +125,8 @@ public class ItemController {
         BeanUtils.copyProperties(itemBO, itemDO);
         //file insert at last
         try {
-            this.fileName = multipartFile.getOriginalFilename();
             itemDO.setFile(multipartFile.getBytes());
+            itemDO.setFileName(multipartFile.getOriginalFilename());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
