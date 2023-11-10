@@ -23,6 +23,8 @@ public class ItemNoMapBO {
     @JsonProperty("email")
     private String email;
 
+
+
 //    @JsonProperty("file")
 //    private byte[] file;
 
@@ -49,4 +51,7 @@ public class ItemNoMapBO {
 
     @JsonProperty("vIdFk")
     private String vIdFk;
+
+    @JsonProperty("fileName")
+    private String fileName;
 }

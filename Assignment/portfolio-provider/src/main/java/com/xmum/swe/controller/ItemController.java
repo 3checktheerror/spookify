@@ -43,6 +43,7 @@ import java.util.*;
 @Api(value = "Item Query Interface", tags = {"Item Query Interface"})
 public class ItemController {
     private String fileName;
+    private String  fileSuffix;
 
     @Resource
     private ItemService itemService;
@@ -60,7 +61,7 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/download/{id}")
     public void downLoadItem(@PathVariable("id") String id, HttpServletResponse response) throws IOException {
-        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(this.fileName, "UTF-8"));
+        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(this.fileName + this.fileSuffix, "UTF-8"));
         response.setContentType("application/octet-stream");
         ServletOutputStream os = response.getOutputStream();
         ItemDO item = itemService.getItemById(id);
@@ -90,7 +91,7 @@ public class ItemController {
     //map中存了除了空值(比如file)外的所有数据
     @SpookifyInfo
     @PostMapping("/insertItem")
-    public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam("file") MultipartFile multipartFile){
+    public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam MultipartFile multipartFile){
         //check if the foreign key exists
         visitorService.getVisitorById(itemVO.getVIdFk());
         //get new id

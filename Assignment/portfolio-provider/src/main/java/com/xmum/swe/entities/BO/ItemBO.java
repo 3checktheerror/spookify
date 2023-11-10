@@ -52,4 +52,7 @@ public class ItemBO {
 
     @JsonProperty("vIdFk")
     private String vIdFk;
+
+    @JsonProperty("fileName")
+    private String fileName;
 }
