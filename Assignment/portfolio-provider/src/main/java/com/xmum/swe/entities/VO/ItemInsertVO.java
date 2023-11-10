@@ -28,9 +28,6 @@ public class ItemInsertVO {
     @JsonProperty("email")
     private String email;
 
-    @JsonProperty("file")
-    private MultipartFile file;
-
     @JsonProperty("md5")
     private String md5;
 
