@@ -22,6 +22,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.annotation.Resource;
 import javax.validation.Valid;
 
@@ -68,7 +70,7 @@ public class ItemController {
     //map中存了除了空值(比如file)外的所有数据
     @SpookifyInfo
     @PostMapping("/insertItem")
-    public CommonResult insertItem(@RequestBody @Valid ItemInsertVO itemVO){
+    public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam MultipartFile multipartFile){
         //check if the foreign key exists
         visitorService.getVisitorById(itemVO.getVIdFk());
         //get new id
@@ -91,18 +93,18 @@ public class ItemController {
         itemBO.setStatus("Submit");
         itemBO.setOpType("Insert");
         //Insert data (updated fields + user input)
-        Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemBO), Map.class), preMap);
-        itemBO.setData(JSON.toJSONString(curMap));
-        //set file data
-        if(ObjectUtil.isNotNull(itemVO.getFile())){
-            try {
-                itemBO.setFile(itemVO.getFile().getBytes());
-            } catch (IOException e) {
-                throw new SpookifyBusinessException("itemBo setfile error");
-            }
+        if(ObjectUtil.isNotNull(preMap)){
+            Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemBO), Map.class), preMap);
+            itemBO.setData(JSON.toJSONString(curMap));
         }
         ItemDO itemDO = new ItemDO();
         BeanUtils.copyProperties(itemBO, itemDO);
+        //file insert at last
+        try {
+            itemDO.setFile(multipartFile.getBytes());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         Map<String, Object> map = itemService.insertItem(itemDO);
         return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
     }
