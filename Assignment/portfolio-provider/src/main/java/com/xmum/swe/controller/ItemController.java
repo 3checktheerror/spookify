@@ -142,6 +142,8 @@ public class ItemController {
         if(ObjectUtil.isNotNull(multipartFile)) {
             preDO.setFileName(multipartFile.getOriginalFilename());
             preDO.setFile(multipartFile.getBytes());
+            preDO.setFileName(multipartFile.getOriginalFilename());
+            preDO.setFile(multipartFile.getBytes());
         }
         Map preMap = JSON.parseObject(preDO.getData(), Map.class);
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
