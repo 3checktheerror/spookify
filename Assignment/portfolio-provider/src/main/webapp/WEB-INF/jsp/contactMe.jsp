@@ -104,13 +104,11 @@
                     vIdFk: "SPVT000001"
                 };
                 console.log(postData);
+                //console.log(decodeURIComponent(escape(atob("5rWL6K+V"))));
                 // 使用 Axios 发送 GET 请求到后端
-                axios.post('/item/insertItem', postData,
-                //     {headers: {
-                //     'Content-Type': 'multipart/form-data'
-                // }
-                // }
-                )
+                axios.post('/item/insertItem', postData, {headers: {
+                    'Content-Type': 'multipart/form-data'
+                }})
                     .then(response => {
                         // 请求成功的处理逻辑
                         console.log('后端响应:', response.data);
