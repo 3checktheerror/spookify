@@ -23,8 +23,8 @@ public class ItemBO {
     @JsonProperty("email")
     private String email;
 
-//    @JsonProperty("file")
-//    private byte[] file;
+    @JsonProperty("file")
+    private byte[] file;
 
     @JsonProperty("md5")
     private String md5;
