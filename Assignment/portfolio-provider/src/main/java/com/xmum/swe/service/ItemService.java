@@ -2,11 +2,16 @@ package com.xmum.swe.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.dao.ItemDao;
+import com.xmum.swe.entities.BO.ItemBO;
 import com.xmum.swe.entities.DO.ItemDO;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import javax.sql.rowset.serial.SerialException;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

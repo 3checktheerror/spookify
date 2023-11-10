@@ -14,6 +14,7 @@ import com.xmum.swe.service.ItemService;
 import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
@@ -25,6 +26,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/visitor")
 @Slf4j
+@Api(value = "Visitor Query Interface", tags = {"Visitor Query Interface"})
 public class VisitorController {
 
     @Resource
@@ -62,7 +64,7 @@ public class VisitorController {
     }
 
     @SpookifyInfo
-    @GetMapping("/insertVisitor")
+    @PostMapping("/insertVisitor")
     public CommonResult insertVisitor(@RequestBody VisitorInsertVO visitorVO){
         //first check if vistor's name exists
         if(visitorService.checkVisitorName(visitorVO.getName())) return CommonResult.fail("visitor name exists!");
@@ -94,7 +96,7 @@ public class VisitorController {
     }
 
     @SpookifyInfo
-    @GetMapping("/modifyVisitor")
+    @PostMapping("/modifyVisitor")
     public CommonResult modifyVisitor(@RequestBody VisitorModifyVO visitorVO){
         String id = visitorVO.getVId();
         VisitorDO preDO = visitorService.getVisitorById(id);

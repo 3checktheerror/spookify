@@ -1,5 +1,6 @@
 package com.xmum.swe.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.entities.BO.ItemBO;
@@ -9,21 +10,29 @@ import com.xmum.swe.entities.DO.ItemDO;
 import com.xmum.swe.entities.VO.ItemInsertVO;
 import com.xmum.swe.entities.VO.ItemModifyVO;
 import com.xmum.swe.enums.IdPos;
+import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.ItemService;
 import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
+import java.io.IOException;
 import java.util.*;
 
 @RestController
 @RequestMapping("/item")
+@Validated
 @Slf4j
+@Api(value = "Item Query Interface", tags = {"Item Query Interface"})
 public class ItemController {
 
     @Resource
@@ -46,7 +55,7 @@ public class ItemController {
         return CommonResult.ok(items);
     }
 
-
+    @ApiOperation("deprecated")
     @SpookifyInfo
     @GetMapping("/containsItemName")
     public boolean containsItemWithName(@RequestParam("ItemName") String name){
@@ -58,8 +67,8 @@ public class ItemController {
     //null值的字段被自动忽略(比如file)
     //map中存了除了空值(比如file)外的所有数据
     @SpookifyInfo
-    @GetMapping("/insertItem")
-    public CommonResult insertItem(@RequestBody ItemInsertVO itemVO){
+    @PostMapping("/insertItem")
+    public CommonResult insertItem(@RequestBody @Valid ItemInsertVO itemVO){
         //check if the foreign key exists
         visitorService.getVisitorById(itemVO.getVIdFk());
         //get new id
@@ -84,6 +93,14 @@ public class ItemController {
         //Insert data (updated fields + user input)
         Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemBO), Map.class), preMap);
         itemBO.setData(JSON.toJSONString(curMap));
+        //set file data
+        if(ObjectUtil.isNotNull(itemVO.getFile())){
+            try {
+                itemBO.setFile(itemVO.getFile().getBytes());
+            } catch (IOException e) {
+                throw new SpookifyBusinessException("itemBo setfile error");
+            }
+        }
         ItemDO itemDO = new ItemDO();
         BeanUtils.copyProperties(itemBO, itemDO);
         Map<String, Object> map = itemService.insertItem(itemDO);
@@ -91,7 +108,7 @@ public class ItemController {
     }
 
     @SpookifyInfo
-    @GetMapping("/modifyItem")
+    @PostMapping("/modifyItem")
     public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO){
         String id = itemVO.getIId();
         ItemDO preDO = itemService.getItemById(id);
