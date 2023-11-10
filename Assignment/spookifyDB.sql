@@ -61,7 +61,8 @@ CREATE TABLE contact_item_1 (
                                 `name` varchar(32) NOT NULL,
                                 `gender` varchar(16),
                                 `email` varchar(128),
-                                `file` BLOB,
+                                `file` LONGBLOB,
+                                `file_name` VARCHAR(128),
                                 `md5` varchar(32),
                                 `it_create` timestamp NOT NULL DEFAULT '2023-01-01 00:00:00.000',
                                 `it_modified` timestamp NOT NULL DEFAULT '2023-01-01 00:00:00.000',
@@ -95,13 +96,14 @@ INSERT INTO contact_visitor_1 (v_id, vgroup_id, name, username, password, age, g
                                                                                                                                                                     }',NULL,NULL);
 
 -- i_id: 2位应用名(SP) + 2位简写(IT) + 6位自增长数字
-INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000001', 'ITG1', 'QIU_FORM', 'Male', 'swe2109562@xmu.edu.my',NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000001', 'ITG1', 'QIU_FORM', 'Male', 'swe2109562@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
   "i_id":"SPIT000001",
   "igroup_id":"ITG1",
   "name":"QIU_ITEM",
   "gender":"Male",
   "email":"swe2109562@xmu.edu.my",
   "file":"",
+  "file_name":"",
   "md5":"",
   "token":"",
   "op_type":"Insert",
@@ -109,13 +111,14 @@ INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, md5, it_
   "status":"Submit"
 }',NULL,NULL,'Submit','SPVT000001');
 
-INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000002', 'ITG1', 'QIU_FORM', 'Male', 'swe2109562@xmu.edu.my',NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000002', 'ITG1', 'QIU_FORM', 'Male', 'swe2109562@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
   "i_id":"SPIT000002",
   "igroup_id":"ITG2",
   "name":"QIU_ITEM",
   "gender":"Male",
   "email":"swe2109562@xmu.edu.my",
   "file":"",
+  "file_name":"",
   "md5":"",
   "token":"",
   "op_type":"Insert",
