@@ -44,4 +44,7 @@ public class ItemInsertVO {
     @ApiModelProperty("visitor id(for this item)")
     @JsonProperty("vIdFk")
     private String vIdFk;
+
+    @JsonProperty("fileName")
+    private String fileName;
 }

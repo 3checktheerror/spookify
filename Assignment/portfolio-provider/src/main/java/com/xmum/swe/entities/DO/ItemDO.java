@@ -48,4 +48,7 @@ public class ItemDO {
     private String status;
 
     private String vIdFk;
+
+    @TableField("file_name")
+    private String fileName;
 }
