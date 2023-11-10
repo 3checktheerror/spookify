@@ -1,5 +1,6 @@
 package com.xmum.swe.controller;
 
+import cn.hutool.core.img.Img;
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
 import com.xmum.swe.annotation.SpookifyInfo;
@@ -25,9 +26,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @RestController
@@ -36,6 +42,8 @@ import java.util.*;
 @Slf4j
 @Api(value = "Item Query Interface", tags = {"Item Query Interface"})
 public class ItemController {
+    private String fileName;
+    private String  fileSuffix;
 
     @Resource
     private ItemService itemService;
@@ -45,9 +53,22 @@ public class ItemController {
 
     @SpookifyInfo
     @GetMapping("/getItemById/{id}")
-    public CommonResult getItem(@PathVariable("id") String id){
+    public CommonResult getItem(@PathVariable("id") String id) throws UnsupportedEncodingException {
         ItemDO item = itemService.getItemById(id);
         return CommonResult.ok(item);
+    }
+
+    @SpookifyInfo
+    @GetMapping("/download/{id}")
+    public void downLoadItem(@PathVariable("id") String id, HttpServletResponse response) throws IOException {
+        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(this.fileName + this.fileSuffix, "UTF-8"));
+        response.setContentType("application/octet-stream");
+        ServletOutputStream os = response.getOutputStream();
+        ItemDO item = itemService.getItemById(id);
+        byte[] file = item.getFile();
+        os.write(file);
+        os.flush();
+        os.close();
     }
 
     @SpookifyInfo
@@ -101,6 +122,9 @@ public class ItemController {
         BeanUtils.copyProperties(itemBO, itemDO);
         //file insert at last
         try {
+            this.fileName = multipartFile.getName();
+            String name = multipartFile.getOriginalFilename();
+            this.fileSuffix = name.substring(name.lastIndexOf("."));
             itemDO.setFile(multipartFile.getBytes());
         } catch (IOException e) {
             throw new RuntimeException(e);
