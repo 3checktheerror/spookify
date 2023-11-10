@@ -33,7 +33,6 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @RestController
@@ -42,8 +41,6 @@ import java.util.*;
 @Slf4j
 @Api(value = "Item Query Interface", tags = {"Item Query Interface"})
 public class ItemController {
-
-
 
     @Resource
     private ItemService itemService;
@@ -94,6 +91,7 @@ public class ItemController {
     @SpookifyInfo
     @PostMapping("/insertItem")
     public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam("file") MultipartFile multipartFile){
+        //first assign fileName because front-end won't pass this
         itemVO.setFileName(multipartFile.getOriginalFilename());
         //check if the foreign key exists
         visitorService.getVisitorById(itemVO.getVIdFk());
@@ -136,9 +134,13 @@ public class ItemController {
 
     @SpookifyInfo
     @PostMapping("/modifyItem")
-    public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO){
+    public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO, @RequestParam("file") MultipartFile multipartFile) throws IOException {
         String id = itemVO.getIId();
         ItemDO preDO = itemService.getItemById(id);
+        if(ObjectUtil.isNotNull(multipartFile)) {
+            preDO.setFileName(multipartFile.getOriginalFilename());
+            preDO.setFile(multipartFile.getBytes());
+        }
         Map preMap = JSON.parseObject(preDO.getData(), Map.class);
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
         BeanUtils.copyProperties(itemVO, itemNoMapBO);
