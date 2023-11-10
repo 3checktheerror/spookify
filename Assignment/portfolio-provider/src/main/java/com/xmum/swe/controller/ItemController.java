@@ -118,6 +118,8 @@ public class ItemController {
         if(ObjectUtil.isNotNull(preMap)){
             Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemBO), Map.class), preMap);
             itemBO.setData(JSON.toJSONString(curMap));
+        } else {
+            itemBO.setData(JSON.toJSONString(itemBO));
         }
         ItemDO itemDO = new ItemDO();
         BeanUtils.copyProperties(itemBO, itemDO);
@@ -134,7 +136,7 @@ public class ItemController {
 
     @SpookifyInfo
     @PostMapping("/modifyItem")
-    public CommonResult modifyItem(@RequestBody ItemModifyVO itemVO, @RequestParam("file") MultipartFile multipartFile) throws IOException {
+    public CommonResult modifyItem(@Valid ItemModifyVO itemVO, @RequestParam("file") MultipartFile multipartFile) throws IOException {
         String id = itemVO.getIId();
         ItemDO preDO = itemService.getItemById(id);
         if(ObjectUtil.isNotNull(multipartFile)) {
@@ -145,13 +147,23 @@ public class ItemController {
         ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
         BeanUtils.copyProperties(itemVO, itemNoMapBO);
         Map map1 = JSON.parseObject(JSON.toJSONString(itemNoMapBO), Map.class);
-        Map map2 = MapUtil.merge(map1, itemVO.getMap());
+        Map map2 = null;
+        if(ObjectUtil.isNotNull(itemVO.getMap())){
+            map2 = MapUtil.merge(map1, itemVO.getMap());
+        } else {
+            map2 = map1;
+        }
         Map map = MapUtil.merge(preMap, map2);
         //map中并不需要放全部字段，只要放状态相关状态即可，也即状态还是需要手动更新
         map.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         map.put("status", "modified");
         map.put("opType", "modify");
         ItemBO itemBO = JSON.parseObject(JSON.toJSONString(map), ItemBO.class);
+        //set file
+        if(!StringUtils.isEmpty(multipartFile.getOriginalFilename())){
+            itemBO.setFileName(multipartFile.getOriginalFilename());
+            itemBO.setFile(multipartFile.getBytes());
+        }
         itemBO.setData(JSON.toJSONString(map));
         ItemDO itemDO = new ItemDO();
         BeanUtils.copyProperties(itemBO, itemDO);
