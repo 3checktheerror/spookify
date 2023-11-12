@@ -16,6 +16,9 @@
 </head>
 <body>
 <div id="app">
+    <el-header>
+        <h2>Contact Me</h2>
+    </el-header>
     <el-form :model="formData" label-width="100px">
         <el-form-item label="Name">
             <el-input v-model="formData.name"></el-input>
@@ -25,6 +28,9 @@
                 <el-option label="Male" value="male"></el-option>
                 <el-option label="Female" value="female"></el-option>
             </el-select>
+        </el-form-item>
+        <el-form-item label="Age">
+            <el-input v-model="formData.age"></el-input>
         </el-form-item>
         <el-form-item label="Email">
             <el-input v-model="formData.email"></el-input>
@@ -41,12 +47,14 @@
         <el-form-item label="File">
             <el-upload
                     class="upload-demo"
-                    action="/item/insertItem"
-                    :show-file-list="false"
-                    :on-success="handleUploadSuccess"
+                    action="#"
+                    :file-list="fileList"
+                    :show-file-list="true"
                     :before-upload="beforeUpload"
+                    :on-remove="handleRemove"
             >
                 <el-button size="small" type="primary">Click to Upload</el-button>
+                <div slot="tip" class="el-upload__tip">(Only one file can be uploaded)</div>
             </el-upload>
         </el-form-item>
         <el-form-item>
@@ -54,18 +62,25 @@
         </el-form-item>
     </el-form>
     <el-dialog
-            title="Insert Successful"
+            title="Create Successful"
             :visible.sync="successDialogVisible"
-            width="40%"
+            width="50%"
     >
-        <p>Data has been successfully inserted.</p>
-        <p v-if="responseData">Insert {{ responseData }} item</p>
+        <p v-if="responseData">Successfully submitted {{ responseData }} form</p>
         <div slot="footer" class="dialog-footer">
             <el-button type="primary" @click="closeSuccessDialog">OK</el-button>
         </div>
     </el-dialog>
 
 </div>
+<style>
+    .el-upload-list__item-name [class^=el-icon] {
+        height: 5%;
+        margin-right: 7px;
+        color: #909399;
+        line-height: inherit;
+    }
+</style>
 <script>
 
     new Vue( {
@@ -75,12 +90,15 @@
                 formData: {
                     name: '',
                     gender: '',
+                    age:'',
                     email: '',
                     message: '',
                     phone: '',
                     occupation: ''
                 },
+                fileList: [],
                 successDialogVisible: false, // 控制弹窗显示/隐藏
+                beforeUploadCancelled: true, // 添加标志，记录是否因为 before-upload 取消上传
                 responseData: null // 存储后端响应数据
             };
         },
@@ -93,11 +111,12 @@
                     email: this.formData.name,
                     message: this.formData.message,
                     map: {
-                        "phone": "a",
-                        "occupation": "a"
+                        "phone": this.formData.phone,
+                        "occupation": this.formData.occupation,
+                        "age": this.formData.age
                     },
                     igroupId: "a",
-                    file: this.file,
+                    file: this.fileList[0],
                     md5: null,
                     token: null,
                     sessionId: null,
@@ -111,7 +130,7 @@
                 }})
                     .then(response => {
                         // 请求成功的处理逻辑
-                        console.log('后端响应:', response.data);
+                        console.log('Response from backend:', response.data);
                         this.responseData = response.data.data.num;
                         this.showSuccessDialog();
                     })
@@ -128,14 +147,28 @@
                 this.responseData = null; // 关闭弹窗时清空响应数据
             },
             beforeUpload(file) {
-                // 预处理上传的文件
-                this.file = file;
-                return false; // 防止自动上传
+
+                if(this.fileList.length>=1){
+                    this.$message.error('Only one file can be uploaded');
+                }else{
+                    this.fileList.push(file);
+                }
+                if (this.beforeUploadCancelled) {
+                    this.beforeUploadCancelled = false; // 重置标志
+                }
+                return false;
             },
-            handleUploadSuccess(response, file) {
-                // 处理文件上传成功后的逻辑
-                console.log('文件上传成功:', response);
-            }
+            handleRemove() {
+
+                    // 如果是因为 before-upload 返回 false 取消上传导致的删除，则不执行删除逻辑
+                    if (this.beforeUploadCancelled) {
+                        this.fileList=[];
+                    } else {
+                        this.beforeUploadCancelled = true; // 重置标志
+                    }
+                }
+
+
         }
     });
 </script>
