@@ -15,5 +15,4 @@ public class Testcontroller {
         mv.setViewName("/contactMe");
         return mv;
     }
-
 }

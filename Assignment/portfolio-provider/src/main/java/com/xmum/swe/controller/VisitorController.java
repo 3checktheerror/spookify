@@ -1,5 +1,6 @@
 package com.xmum.swe.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.entities.BO.VisitorBO;
@@ -87,8 +88,12 @@ public class VisitorController {
         visitorBO.setVtModified(SpookifyTimeStamp.getInstance().getTimeStamp());
         visitorBO.setOpType("Insert");
         //Insert data (updated fields + user input)
-        Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(visitorBO), Map.class), preMap);
-        visitorBO.setData(JSON.toJSONString(curMap));
+        if(ObjectUtil.isNotNull(preMap)) {
+            Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(visitorBO), Map.class), preMap);
+            visitorBO.setData(JSON.toJSONString(curMap));
+        } else {
+            visitorBO.setData(JSON.toJSONString(visitorBO));
+        }
         VisitorDO visitorDO = new VisitorDO();
         BeanUtils.copyProperties(visitorBO, visitorDO);
         Map<String, Object> map = visitorService.insertVisitor(visitorDO);

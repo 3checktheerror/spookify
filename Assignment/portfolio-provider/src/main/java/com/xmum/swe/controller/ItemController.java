@@ -63,7 +63,6 @@ public class ItemController {
         response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
         response.setContentType("application/octet-stream");
         ServletOutputStream os = response.getOutputStream();
-
         byte[] file = item.getFile();
         os.write(file);
         os.flush();
@@ -90,9 +89,11 @@ public class ItemController {
     //map中存了除了空值(比如file)外的所有数据
     @SpookifyInfo
     @PostMapping("/insertItem")
-    public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam("file") MultipartFile multipartFile){
-        //first assign fileName because front-end won't pass this
-        itemVO.setFileName(multipartFile.getOriginalFilename());
+    public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam(value = "file", required = false) MultipartFile multipartFile){
+        if(ObjectUtil.isNotNull(multipartFile)){
+            //first assign fileName because front-end won't pass this
+            itemVO.setFileName(multipartFile.getOriginalFilename());
+        }
         //check if the foreign key exists
         visitorService.getVisitorById(itemVO.getVIdFk());
         //get new id
@@ -124,11 +125,13 @@ public class ItemController {
         ItemDO itemDO = new ItemDO();
         BeanUtils.copyProperties(itemBO, itemDO);
         //file insert at last
-        try {
-            itemDO.setFile(multipartFile.getBytes());
-            itemDO.setFileName(multipartFile.getOriginalFilename());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if(ObjectUtil.isNotNull(multipartFile)){
+            try {
+                itemDO.setFile(multipartFile.getBytes());
+                itemDO.setFileName(multipartFile.getOriginalFilename());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         Map<String, Object> map = itemService.insertItem(itemDO);
         return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
