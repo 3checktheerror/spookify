@@ -17,7 +17,7 @@
 <body>
 <div id="app">
     <el-header>
-        <h2>Contact Me</h2>
+        <h2>Add a new form</h2>
     </el-header>
     <el-form :model="formData" label-width="100px">
         <el-col :span="15">
@@ -191,20 +191,14 @@
                                 'Content-Type': 'multipart/form-data'
                             }})
                             .then(response => {
-                                // 请求成功的处理逻辑
-                                console.log('Response from backend:', response.data);
                                 this.ID = response.data.data.id;
+                                a.href=("http://localhost:8082/item/download/"+this.ID);
+                                a.dispatchEvent(event);
+                                axios.get('/item/deleteItem/'+this.ID);
                             })
                             .catch(error => {
                                 console.error('请求失败:', error);
                             });
-                        console.log(this.ID);
-                        a.href=("http://localhost:8082/a/b/download/"+this.ID);
-                        console.log(a.href);
-                        // 触发模拟点击事件
-                        a.dispatchEvent(event);
-
-
                 }
 
             }

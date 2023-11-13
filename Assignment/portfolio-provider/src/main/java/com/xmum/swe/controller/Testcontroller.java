@@ -12,7 +12,7 @@ public class Testcontroller {
     @GetMapping("b")
     public ModelAndView helloWorld() {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("/contactMe");
+        mv.setViewName("/manageForm");
         return mv;
     }
 }
