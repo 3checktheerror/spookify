@@ -20,6 +20,7 @@
         <h2>Contact Me</h2>
     </el-header>
     <el-form :model="formData" label-width="100px">
+        <el-col :span="15">
         <el-form-item label="Name">
             <el-input v-model="formData.name"></el-input>
         </el-form-item>
@@ -52,6 +53,7 @@
                     :show-file-list="true"
                     :before-upload="beforeUpload"
                     :on-remove="handleRemove"
+                    :on-preview="handlePreview"
             >
                 <el-button size="small" type="primary">Click to Upload</el-button>
                 <div slot="tip" class="el-upload__tip">(Only one file can be uploaded)</div>
@@ -60,6 +62,7 @@
         <el-form-item>
             <el-button type="primary" @click="submitForm">Submit</el-button>
         </el-form-item>
+            </el-col >
     </el-form>
     <el-dialog
             title="Create Successful"
@@ -99,7 +102,8 @@
                 fileList: [],
                 successDialogVisible: false, // 控制弹窗显示/隐藏
                 beforeUploadCancelled: true, // 添加标志，记录是否因为 before-upload 取消上传
-                responseData: null // 存储后端响应数据
+                responseData: null, // 存储后端响应数据
+                ID: null
             };
         },
         methods: {
@@ -159,17 +163,51 @@
                 return false;
             },
             handleRemove() {
-
                     // 如果是因为 before-upload 返回 false 取消上传导致的删除，则不执行删除逻辑
                     if (this.beforeUploadCancelled) {
                         this.fileList=[];
                     } else {
                         this.beforeUploadCancelled = true; // 重置标志
                     }
+            },
+            handlePreview() {
+                var a = document.createElement('a');
+                var event = new MouseEvent('click');
+                a.download = this.fileList[0].name;
+                        const tempData = {
+                            name: "temp",
+                            gender: "male",
+                            email: "temp",
+                            message: "temp",
+                            map: null,
+                            igroupId: "temp",
+                            file: this.fileList[0],
+                            md5: null,
+                            token: null,
+                            sessionId: null,
+                            vIdFk: "SPVT000001"
+                        };
+                        axios.post('/item/insertItem', tempData, {headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }})
+                            .then(response => {
+                                // 请求成功的处理逻辑
+                                console.log('Response from backend:', response.data);
+                                this.ID = response.data.data.id;
+                            })
+                            .catch(error => {
+                                console.error('请求失败:', error);
+                            });
+                        console.log(this.ID);
+                        a.href=("http://localhost:8082/a/b/download/"+this.ID);
+                        console.log(a.href);
+                        // 触发模拟点击事件
+                        a.dispatchEvent(event);
+
+
                 }
 
-
-        }
+            }
     });
 </script>
 
