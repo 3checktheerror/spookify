@@ -31,9 +31,6 @@ import java.util.Map;
 public class VisitorController {
 
     @Resource
-    private ItemService itemService;
-
-    @Resource
     private VisitorService visitorService;
 
     @SpookifyInfo
@@ -67,58 +64,14 @@ public class VisitorController {
     @SpookifyInfo
     @PostMapping("/insertVisitor")
     public CommonResult insertVisitor(@RequestBody VisitorInsertVO visitorVO){
-        //first check if vistor's name exists
-        if(visitorService.checkVisitorName(visitorVO.getName())) return CommonResult.fail("visitor name exists!");
-        //get new id
-        VisitorDO maxIdVt = visitorService.getVisitorWithMaxId();
-        String visitorId = maxIdVt.getVId();
-        String oldSubString = visitorId.substring(IdPos.ID_ENTITY_NUM.getPos(), IdPos.ID_END.getPos());
-        String newSubString = String.valueOf(String.format("%06d", Integer.parseInt(oldSubString) + 1));
-        String newVisitorId = StringUtils.replace(visitorId, oldSubString, newSubString);
-        log.info("----------VisitorId:old-new: " + visitorId + "-" + newVisitorId + "------------------");
-        //Eliminate and store map
-        Map<String, Object> preMap = visitorVO.getMap();
-        VisitorNoMapBO visitorNoMapBO = new VisitorNoMapBO();
-        BeanUtils.copyProperties(visitorVO, visitorNoMapBO);  //filter
-        //Insert user input fields (exclude data)
-        VisitorBO visitorBO = new VisitorBO();
-        BeanUtils.copyProperties(visitorNoMapBO, visitorBO);
-        visitorBO.setVId(newVisitorId);
-        visitorBO.setVtCreate(SpookifyTimeStamp.getInstance().getTimeStamp());
-        visitorBO.setVtModified(SpookifyTimeStamp.getInstance().getTimeStamp());
-        visitorBO.setOpType("Insert");
-        //Insert data (updated fields + user input)
-        if(ObjectUtil.isNotNull(preMap)) {
-            Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(visitorBO), Map.class), preMap);
-            visitorBO.setData(JSON.toJSONString(curMap));
-        } else {
-            visitorBO.setData(JSON.toJSONString(visitorBO));
-        }
-        VisitorDO visitorDO = new VisitorDO();
-        BeanUtils.copyProperties(visitorBO, visitorDO);
-        Map<String, Object> map = visitorService.insertVisitor(visitorDO);
-        return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
+        Map<String, Object> map = visitorService.insertVisitor(visitorVO);
+        return map.get("Error") == "visitor name exists!" ? CommonResult.fail("visitor name exists!") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
     @PostMapping("/modifyVisitor")
     public CommonResult modifyVisitor(@RequestBody VisitorModifyVO visitorVO){
-        String id = visitorVO.getVId();
-        VisitorDO preDO = visitorService.getVisitorById(id);
-        Map preMap = JSON.parseObject(preDO.getData(), Map.class);
-        VisitorNoMapBO visitorNoMapBO = new VisitorNoMapBO();
-        BeanUtils.copyProperties(visitorVO, visitorNoMapBO);
-        Map map1 = JSON.parseObject(JSON.toJSONString(visitorNoMapBO), Map.class);
-        Map map2 = MapUtil.merge(map1, visitorVO.getMap());
-        Map map = MapUtil.merge(preMap, map2);
-        map.put("vtModified", SpookifyTimeStamp.getInstance().getTimeStamp());
-        map.put("status", "modified");
-        map.put("opType", "modify");
-        VisitorBO visitorBO = JSON.parseObject(JSON.toJSONString(map), VisitorBO.class);
-        visitorBO.setData(JSON.toJSONString(map));
-        VisitorDO visitorDO = new VisitorDO();
-        BeanUtils.copyProperties(visitorBO, visitorDO);
-        Map<String, Object> res = visitorService.updateVisitorById(visitorDO);
+        Map<String, Object> res = visitorService.modifyVisitor(visitorVO);
         return (int)res.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(res);
     }
 
