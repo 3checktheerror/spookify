@@ -6,8 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -19,50 +21,50 @@
     <el-header>
         <h2>Add a new form</h2>
     </el-header>
-    <el-form :model="formData" label-width="100px">
+    <el-form :model="formData" ref="form" :rules="formRules" label-width="100px">
         <el-col :span="15">
-        <el-form-item label="Name">
-            <el-input v-model="formData.name"></el-input>
-        </el-form-item>
-        <el-form-item label="Gender">
-            <el-select v-model="formData.gender" placeholder="Select">
-                <el-option label="Male" value="male"></el-option>
-                <el-option label="Female" value="female"></el-option>
-            </el-select>
-        </el-form-item>
-        <el-form-item label="Age">
-            <el-input v-model="formData.age"></el-input>
-        </el-form-item>
-        <el-form-item label="Email">
-            <el-input v-model="formData.email"></el-input>
-        </el-form-item>
-        <el-form-item label="Message">
-            <el-input type="textarea" v-model="formData.message"></el-input>
-        </el-form-item>
-        <el-form-item label="Phone">
-            <el-input v-model="formData.phone"></el-input>
-        </el-form-item>
-        <el-form-item label="Occupation">
-            <el-input v-model="formData.occupation"></el-input>
-        </el-form-item>
-        <el-form-item label="File">
-            <el-upload
-                    class="upload-demo"
-                    action="#"
-                    :file-list="fileList"
-                    :show-file-list="true"
-                    :before-upload="beforeUpload"
-                    :on-remove="handleRemove"
-                    :on-preview="handlePreview"
-            >
-                <el-button size="small" type="primary">Click to Upload</el-button>
-                <div slot="tip" class="el-upload__tip">(Only one file can be uploaded)</div>
-            </el-upload>
-        </el-form-item>
-        <el-form-item>
-            <el-button type="primary" @click="submitForm">Submit</el-button>
-        </el-form-item>
-            </el-col >
+            <el-form-item label="Name" prop="name">
+                <el-input v-model="formData.name"></el-input>
+            </el-form-item>
+            <el-form-item label="Gender" prop="gender">
+                <el-select v-model="formData.gender" placeholder="Select">
+                    <el-option label="Male" value="male"></el-option>
+                    <el-option label="Female" value="female"></el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="Age" prop="age">
+                <el-input v-model.number="formData.age"></el-input>
+            </el-form-item>
+            <el-form-item label="Email" prop="email">
+                <el-input v-model="formData.email"></el-input>
+            </el-form-item>
+            <el-form-item label="Message" prop="message">
+                <el-input type="textarea" v-model="formData.message"></el-input>
+            </el-form-item>
+            <el-form-item label="Phone" prop="phone">
+                <el-input v-model="formData.phone"></el-input>
+            </el-form-item>
+            <el-form-item label="Occupation" prop="occupation">
+                <el-input v-model="formData.occupation"></el-input>
+            </el-form-item>
+            <el-form-item label="File" prop="file">
+                <el-upload
+                        class="upload-demo"
+                        action="#"
+                        :file-list="fileList"
+                        :show-file-list="true"
+                        :before-upload="beforeUpload"
+                        :on-remove="handleRemove"
+                        :on-preview="handlePreview"
+                >
+                    <el-button size="small" type="primary">Click to Upload</el-button>
+                    <div slot="tip" class="el-upload__tip">(Only one file can be uploaded)</div>
+                </el-upload>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="validateAndSubmit()">Submit</el-button>
+            </el-form-item>
+        </el-col >
     </el-form>
     <el-dialog
             title="Create Successful"
@@ -103,10 +105,35 @@
                 successDialogVisible: false, // 控制弹窗显示/隐藏
                 beforeUploadCancelled: true, // 添加标志，记录是否因为 before-upload 取消上传
                 responseData: null, // 存储后端响应数据
-                ID: null
+                ID: null,
+                formRules: {
+                    name: [
+                        { required: true, message: 'Please enter your name', trigger: 'blur' },
+                        // Add other validation rules as needed
+                    ],
+                    age: [
+                        { type: 'number', message: 'Age must be a number', trigger: 'blur' },
+                        // Add other validation rules as needed
+                    ],
+                    // Add rules for other form fields as needed
+                },
             };
+
+
+
         },
         methods: {
+            validateAndSubmit() {
+                this.$refs.form.validate((valid) => {
+                    if (valid) {
+                        // 所有表单项验证通过，执行提交逻辑
+                        this.submitForm();
+                    } else {
+                        // 有表单项验证失败，不执行提交逻辑
+                        console.log('Form validation failed');
+                    }
+                });
+            },
             submitForm() {
                 // 构建要提交的数据
                 const postData = {
@@ -130,8 +157,8 @@
                 //console.log(decodeURIComponent(escape(atob("5rWL6K+V"))));
                 // 使用 Axios 发送 GET 请求到后端
                 axios.post('/item/insertItem', postData, {headers: {
-                    'Content-Type': 'multipart/form-data'
-                }})
+                        'Content-Type': 'multipart/form-data'
+                    }})
                     .then(response => {
                         // 请求成功的处理逻辑
                         console.log('Response from backend:', response.data);
@@ -163,47 +190,48 @@
                 return false;
             },
             handleRemove() {
-                    // 如果是因为 before-upload 返回 false 取消上传导致的删除，则不执行删除逻辑
-                    if (this.beforeUploadCancelled) {
-                        this.fileList=[];
-                    } else {
-                        this.beforeUploadCancelled = true; // 重置标志
-                    }
+                // 如果是因为 before-upload 返回 false 取消上传导致的删除，则不执行删除逻辑
+                if (this.beforeUploadCancelled) {
+                    this.fileList=[];
+                } else {
+                    this.beforeUploadCancelled = true; // 重置标志
+                }
             },
             handlePreview() {
                 var a = document.createElement('a');
                 var event = new MouseEvent('click');
                 a.download = this.fileList[0].name;
-                        const tempData = {
-                            name: "temp",
-                            gender: "male",
-                            email: "temp",
-                            message: "temp",
-                            map: null,
-                            igroupId: "temp",
-                            file: this.fileList[0],
-                            md5: null,
-                            token: null,
-                            sessionId: null,
-                            vIdFk: "SPVT000001"
-                        };
-                        axios.post('/item/insertItem', tempData, {headers: {
-                                'Content-Type': 'multipart/form-data'
-                            }})
-                            .then(response => {
-                                this.ID = response.data.data.id;
-                                a.href=("http://localhost:8082/item/download/"+this.ID);
-                                a.dispatchEvent(event);
-                                axios.get('/item/deleteItem/'+this.ID);
-                            })
-                            .catch(error => {
-                                console.error('请求失败:', error);
-                            });
-                }
-
+                const tempData = {
+                    name: "temp",
+                    gender: "male",
+                    email: "temp",
+                    message: "temp",
+                    map: null,
+                    igroupId: "temp",
+                    file: this.fileList[0],
+                    md5: null,
+                    token: null,
+                    sessionId: null,
+                    vIdFk: "SPVT000001"
+                };
+                axios.post('/item/insertItem', tempData, {headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }})
+                    .then(response => {
+                        this.ID = response.data.data.id;
+                        a.href=("http://localhost:8082/item/download/"+this.ID);
+                        a.dispatchEvent(event);
+                        axios.get('/item/deleteItem/'+this.ID);
+                    })
+                    .catch(error => {
+                        console.error('请求失败:', error);
+                    });
             }
+
+        }
     });
 </script>
 
 </body>
 </html>
+
