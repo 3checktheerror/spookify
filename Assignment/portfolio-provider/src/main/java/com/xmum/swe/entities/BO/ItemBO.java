@@ -24,7 +24,7 @@ public class ItemBO {
     private String email;
 
     @JsonProperty("file")
-    private Blob file;
+    private byte[] file;
 
     @JsonProperty("md5")
     private String md5;
@@ -52,4 +52,7 @@ public class ItemBO {
 
     @JsonProperty("vIdFk")
     private String vIdFk;
+
+    @JsonProperty("fileName")
+    private String fileName;
 }

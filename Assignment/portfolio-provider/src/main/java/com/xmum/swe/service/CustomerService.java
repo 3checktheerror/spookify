@@ -1,68 +1,33 @@
 package com.xmum.swe.service;
 
-import cn.hutool.core.util.ObjectUtil;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.xmum.swe.dao.CustomerDao;
+import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.CustomerDO;
-import com.xmum.swe.exception.SpookifyBusinessException;
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.HashMap;
+import com.xmum.swe.entities.VO.CustomerInsertVO;
+import com.xmum.swe.entities.VO.CustomerModifyVO;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
-@Service
-public class CustomerService {
-    @Resource
-    private CustomerDao customerDao;
 
-    public CustomerDO getCustomerById(String id) {
-        CustomerDO customer = customerDao.selectById(id);
-        Optional.ofNullable(customer)
-                .orElseThrow(() -> new SpookifyBusinessException("No such customer!"));
-        return customer;
-    }
 
-    public List<CustomerDO> getAllCustomers(){
-        List<CustomerDO> customers = customerDao.selectList(null);
-        Optional.ofNullable(customers)
-                .orElseThrow(() -> new SpookifyBusinessException("No customer!"));
-        return customers;
-    }
+public interface CustomerService {
 
-    public CustomerDO getCustomerWithMaxId() {
-        return (CustomerDO) customerDao.selectList(new QueryWrapper<CustomerDO>().orderByDesc("c_id"))
-                .stream().
-                limit(1)
-                .toArray()[0];
-    }
-    public Map<String, Object> insertICustomer(CustomerDO cusDO){
-        int num = customerDao.insert(cusDO);
-        Map<String, Object> map = new HashMap<>();
-        map.put("num", num);
-        map.put("id", cusDO.getCId());
-        return map;
+    CustomerDO getCustomerById(String id);
 
-    }
+    List<CustomerDO> getAllCustomers();
 
-    public Map<String, Object> updateCustomerById(CustomerDO cusDO) {
-        int num = customerDao.updateById(cusDO);
-        Map<String, Object> map = new HashMap<>();
-        map.put("num", num);
-        map.put("id", cusDO.getCId());
-        return map;
-    }
+    CustomerDO getCustomerWithMaxId();
 
-    public int deleteCustomerWithId(String id) {
-        int num = customerDao.deleteById(id);
-        return num;
-    }
+    Map<String, Object> insertICustomer(CustomerDO cusDO);
 
-    public void getCustomerName(String name) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", name);
-        List<CustomerDO> res = customerDao.selectByMap(map);
-        if(!res.isEmpty()) throw new SpookifyBusinessException("customer name cannot be duplicated!");
-    }
+    Map<String, Object> updateCustomerById(CustomerDO cusDO);
+
+    int deleteCustomerWithId(String id);
+
+    void getCustomerName(String name);
+
+    Map<String, Object> insertItem(CustomerInsertVO cusVO);
+
+    Map<String, Object> modifyItem(CustomerModifyVO cusVO);
 }

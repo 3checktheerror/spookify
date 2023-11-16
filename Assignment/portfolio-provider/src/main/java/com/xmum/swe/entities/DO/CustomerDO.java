@@ -33,7 +33,7 @@ public class CustomerDO {
 
     private Timestamp csModified;
 
-    private String csType;
+//    private String csType;
 
     private String data;
 

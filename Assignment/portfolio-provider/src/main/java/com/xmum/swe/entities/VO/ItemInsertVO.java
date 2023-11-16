@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.validation.constraints.NotBlank;
 import java.sql.Blob;
 import java.util.Map;
 
@@ -24,9 +28,6 @@ public class ItemInsertVO {
     @JsonProperty("email")
     private String email;
 
-    @JsonProperty("file")
-    private Blob file;
-
     @JsonProperty("md5")
     private String md5;
 
@@ -43,4 +44,7 @@ public class ItemInsertVO {
     @ApiModelProperty("visitor id(for this item)")
     @JsonProperty("vIdFk")
     private String vIdFk;
+
+    @JsonProperty("fileName")
+    private String fileName;
 }

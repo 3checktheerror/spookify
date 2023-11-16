@@ -27,10 +27,13 @@ public class ItemModifyVO {
     @JsonProperty("email")
     private String email;
 
-    @JsonProperty("file")
-    private Blob file;
+//    @JsonProperty("file")
+//    private byte[] file;
 
     @ApiModelProperty("additional params")
     @JsonProperty("map")
     private Map<String, Object> map;
+
+    @JsonProperty("fileName")
+    private String fileName;
 }

@@ -1,10 +1,13 @@
 package com.xmum.swe.entities.DO;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.ibatis.type.BlobTypeHandler;
+
 import java.sql.Blob;
 import java.sql.Timestamp;
 
@@ -25,7 +28,8 @@ public class ItemDO {
 
     private String email;
 
-    private Blob file;
+    @TableField(typeHandler = BlobTypeHandler.class)
+    private byte[] file;
 
     private String md5;
 
@@ -44,4 +48,7 @@ public class ItemDO {
     private String status;
 
     private String vIdFk;
+
+    @TableField("file_name")
+    private String fileName;
 }
