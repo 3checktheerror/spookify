@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b0dd825-f14a-482d-9c9e-7c62ea2f6712" name="Changes" comment="" />
+    <list default="true" id="69c6736f-9d4c-4180-81ef-504ae8d021b9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +13,24 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-hotfix" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;3checktheerror&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="33d8838d-bcb1-401a-b35d-b5ebdb143fb8" />
+        <option name="url" value="https://github.com/3checktheerror/spookify.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -24,9 +38,8 @@
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2YD87FcwRbnBX7GlrFsc14QOaKM" />
+  <component name="ProjectId" id="2XbuCv9zzVDUw9wK01HlNPNCx5L" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
@@ -34,9 +47,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Rebasing dev-hotfix-Luo",
-    "last_opened_file_path": "E:/Study_material/202309/Programming-Elective-II/Assignment1/Code/spookify",
+    "git-widget-placeholder": "dev-hotfix-Qiu",
+    "last_opened_file_path": "E:/code/myProject/spookify/Assignment",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
@@ -45,13 +59,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3b0dd825-f14a-482d-9c9e-7c62ea2f6712" name="Changes" comment="" />
-      <created>1700048623076</created>
+      <changelist id="69c6736f-9d4c-4180-81ef-504ae8d021b9" name="Changes" comment="" />
+      <created>1698909976665</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1700048623076</updated>
-      <workItem from="1700048624892" duration="910000" />
-      <workItem from="1700050776442" duration="645000" />
+      <updated>1698909976665</updated>
+      <workItem from="1698909978155" duration="6858000" />
+      <workItem from="1698917319846" duration="136000" />
+      <workItem from="1698921739165" duration="134000" />
+      <workItem from="1698971299151" duration="654000" />
+      <workItem from="1699230410917" duration="114000" />
     </task>
     <servers />
   </component>
@@ -59,20 +76,62 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dev-test-bak" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/dev-test" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/dev" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/dev-test-bak" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
-              <option name="FILTERS">
+              <option name="COLUMN_ID_WIDTH">
                 <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="dev-hotfix-Luo" />
-                      </list>
-                    </value>
-                  </entry>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="108" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="110" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="109" />
                 </map>
               </option>
             </State>
@@ -80,8 +139,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
