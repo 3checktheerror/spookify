@@ -21,20 +21,17 @@ import java.util.Map;
 public class DirectPageController {
 
     @Resource
-    SaveService service;
+    private SaveService saveService;
 
-    @GetMapping("cm")
-    public ModelAndView accessContactMe() {
+    @GetMapping("{page}")
+    public ModelAndView accessPage(@PathVariable("page") String page)  {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("/contactMe");
+        StringBuilder sb = new StringBuilder();
+        sb.append("/").append(page);
+        mv.setViewName(sb.toString());
         return mv;
     }
 
-    @GetMapping
-    public String index(){
-
-        return "index";
-    }
 
     @PostMapping("/upload")
     @ResponseBody
@@ -55,7 +52,7 @@ public class DirectPageController {
             Save save = new Save();
             save.setId(2);
             save.setImg(imgByte);
-            boolean b = service.save(save);
+            boolean b = saveService.save(save);
             map.put("result", b);
             return map;
         }
