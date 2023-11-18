@@ -7,32 +7,51 @@ import java.sql.Timestamp;
 
 @Data
 public class ItemNoMapBO {
+
     @JsonProperty("iId")
     private String iId;
+
     @JsonProperty("igroupId")
     private String igroupId;
+
     @JsonProperty("name")
     private String name;
+
     @JsonProperty("gender")
     private String gender;
+
     @JsonProperty("email")
     private String email;
-    @JsonProperty("file")
-    private Blob file;
+
+
+
+//    @JsonProperty("file")
+//    private byte[] file;
+
     @JsonProperty("md5")
     private String md5;
+
     @JsonProperty("itCreate")
     private Timestamp itCreate;
+
     @JsonProperty("itModified")
     private Timestamp itModified;
+
     @JsonProperty("opType")
     private String opType;
+
     @JsonProperty("token")
     private String token;
+
     @JsonProperty("sessionId")
     private String sessionId;
+
     @JsonProperty("status")
     private String status;
+
     @JsonProperty("vIdFk")
     private String vIdFk;
+
+    @JsonProperty("fileName")
+    private String fileName;
 }
