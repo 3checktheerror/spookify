@@ -8,6 +8,7 @@ import com.xmum.swe.dao.VisitorDao;
 import com.xmum.swe.entities.BO.VisitorBO;
 import com.xmum.swe.entities.BO.VisitorNoMapBO;
 import com.xmum.swe.entities.CommonResult;
+import com.xmum.swe.entities.DO.CustomerDO;
 import com.xmum.swe.entities.DO.ItemDO;
 import com.xmum.swe.entities.DO.VisitorDO;
 import com.xmum.swe.entities.VO.VisitorInsertVO;
@@ -65,10 +66,16 @@ public class VisitorServiceImpl implements VisitorService {
     }
 
     public VisitorDO getVisitorWithMaxId() {
-        return (VisitorDO) visitorDao.selectList(new QueryWrapper<VisitorDO>().orderByDesc("v_id"))
+        VisitorDO[] arr = (VisitorDO[])visitorDao.selectList(new QueryWrapper<VisitorDO>().orderByDesc("v_id"))
                 .stream().
                 limit(1)
-                .toArray()[0];
+                .toArray(VisitorDO[]::new);
+        if(ObjectUtil.isNotEmpty(arr)) return arr[0];
+        else {
+            VisitorDO visitorDO = new VisitorDO();
+            visitorDO.setVId("SPVT000001");
+            return visitorDO;
+        }
     }
 
     public Map<String, Object> insertVisitor(VisitorDO visitorDO) {

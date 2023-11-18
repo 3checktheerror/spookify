@@ -9,6 +9,7 @@ spring:
     view:
       prefix: /WEB-INF/jsp
       suffix: .jsp
+    static-path-pattern: /**
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

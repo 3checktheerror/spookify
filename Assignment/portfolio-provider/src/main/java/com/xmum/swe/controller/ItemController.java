@@ -79,7 +79,7 @@ public class ItemController {
 
     @SpookifyInfo
     @PostMapping("/modifyItem")
-    public CommonResult modifyItem(@Valid ItemModifyVO itemVO, @RequestParam("file") MultipartFile multipartFile) throws IOException {
+    public CommonResult modifyItem(@Valid ItemModifyVO itemVO, @RequestParam(value ="file", required = false) MultipartFile multipartFile) throws IOException {
 
         Map<String, Object> map = itemService.modifyItem(itemVO, multipartFile);
         return (int)map.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(map);
