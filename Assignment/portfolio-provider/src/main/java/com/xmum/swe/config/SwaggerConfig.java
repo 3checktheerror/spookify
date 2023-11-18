@@ -68,14 +68,15 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Spookify").description("swagger for Spookify").termsOfServiceUrl("")
+        return new ApiInfoBuilder().title("Spookify").description("swagger for Spookify").termsOfServiceUrl("https://github.com/3checktheerror/spookify")
+                .license("GPL")
                 .version("1.0").build();
     }
 
     private List<Parameter> setHeaderToken() {
         List<Parameter> pars = new ArrayList<>();
         ParameterBuilder userId = new ParameterBuilder();
-        userId.name("token").description("USER TOKEN").modelRef(new ModelRef("string")).parameterType("header")
+        userId.name("token").description("user token").modelRef(new ModelRef("string")).parameterType("header")
                 .required(true).build();
         pars.add(userId.build());
         return pars;

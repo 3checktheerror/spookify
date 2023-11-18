@@ -45,19 +45,16 @@
 
 
 <script>
+    const params= {
+        "name": "Qiu",
+        "number": 1,
+    };
+
     new Vue({
         el: '#app',
         methods: {
             sendDataToBackend() {
-                axios.get('/test/g?', {
-                    params: {
-                        "name": "Qiu",
-                        "number": 1,
-                    },
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
+                axios.post('/test/g',null,{params})
                     .then(response => {
                         console.log("Response from the backend:", response.data);
                     })
