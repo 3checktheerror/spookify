@@ -73,10 +73,17 @@ public class ItemServiceImpl implements ItemService {
     }
 
     public ItemDO getItemWithMaxId(){
-        return (ItemDO)itemDao.selectList(new QueryWrapper<ItemDO>().orderByDesc("i_id"))
+        ItemDO[] arr = (ItemDO[])itemDao.selectList(new QueryWrapper<ItemDO>().orderByDesc("i_id"))
                 .stream().
                 limit(1)
-                .toArray()[0];
+                .toArray(ItemDO[]::new);
+        if(ObjectUtil.isNotEmpty(arr)) return arr[0];
+        else {
+            ItemDO itemDO = new ItemDO();
+            itemDO.setIId("SPIT000001");
+            return itemDO;
+        }
+
     }
 
     public Map<String, Object> updateItemById(ItemDO itemDO) {
@@ -165,7 +172,7 @@ public class ItemServiceImpl implements ItemService {
         }
         ItemBO itemBO = JSON.parseObject(JSON.toJSONString(map), ItemBO.class);
         //set file
-        if(!StringUtils.isEmpty(multipartFile)){
+        if(ObjectUtil.isNotNull(multipartFile)){
             itemBO.setFileName(multipartFile.getOriginalFilename());
             itemBO.setFile(multipartFile.getBytes());
         }
