@@ -5,31 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/DirectPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/DirectPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/ItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/VisitorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/VisitorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/addForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/addForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/CustomerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/DirectPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/DirectPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/ItemController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/VisitorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/VisitorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/BO/ItemBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/BO/ItemBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/BO/ItemNoMapBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/BO/ItemNoMapBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/DO/ItemDO.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/DO/ItemDO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/VO/ItemInsertVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/VO/ItemInsertVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/VO/ItemModifyVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/entities/VO/ItemModifyVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/VisitorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/VisitorService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +49,9 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Xu&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Qiu&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/code/myProject/spookify/Assignment&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -138,6 +118,7 @@
       <workItem from="1700103456679" duration="631000" />
       <workItem from="1700213798664" duration="24751000" />
       <workItem from="1700286326146" duration="25848000" />
+      <workItem from="1700370135772" duration="2022000" />
     </task>
     <servers />
   </component>
@@ -154,5 +135,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.xmum.swe.entities.DO.ItemDO" memberName="opType" />
+        <PinnedItemInfo parentTag="com.xmum.swe.entities.BO.ItemBO" memberName="opType" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
