@@ -1,0 +1,57 @@
+Index: Assignment/portfolio-provider/src/main/resources/application-dev.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 8082\r\n\r\n\r\nspring:\r\n  banner:\r\n    location: classpath:banner/banner.txt\r\n  mvc:\r\n    view:\r\n      prefix: /WEB-INF/jsp\r\n      suffix: .jsp\r\n\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8\r\n    username: root\r\n    password: 123456\r\n\r\nmybatis:\r\n  mapperLocations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n\r\n\r\nmybatis-plus:\r\n  mapper-locations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assignment/portfolio-provider/src/main/resources/application-dev.yml b/Assignment/portfolio-provider/src/main/resources/application-dev.yml
+--- a/Assignment/portfolio-provider/src/main/resources/application-dev.yml	
++++ b/Assignment/portfolio-provider/src/main/resources/application-dev.yml	
+@@ -14,7 +14,7 @@
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+     username: root
+-    password: 123456
++    password: lxd20030213
+ 
+ mybatis:
+   mapperLocations: classpath:mapper/*.xml
+Index: Assignment/portfolio-provider/src/main/resources/application-sit.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 8083\r\n\r\n\r\nspring:\r\n  banner:\r\n    location: classpath:banner/banner.txt\r\n\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8\r\n    username: root\r\n    password: 123456\r\n\r\nmybatis:\r\n  mapperLocations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assignment/portfolio-provider/src/main/resources/application-sit.yml b/Assignment/portfolio-provider/src/main/resources/application-sit.yml
+--- a/Assignment/portfolio-provider/src/main/resources/application-sit.yml	
++++ b/Assignment/portfolio-provider/src/main/resources/application-sit.yml	
+@@ -10,7 +10,7 @@
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+     username: root
+-    password: 123456
++    password: lxd20030213
+ 
+ mybatis:
+   mapperLocations: classpath:mapper/*.xml
+Index: Assignment/portfolio-provider/src/main/resources/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 8081\r\n\r\n\r\nspring:\r\n  banner:\r\n    location: classpath:banner/banner.txt\r\n\r\n\r\n\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8\r\n    username: root\r\n    password: 123456\r\n\r\nmybatis:\r\n  mapperLocations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assignment/portfolio-provider/src/main/resources/application.yml b/Assignment/portfolio-provider/src/main/resources/application.yml
+--- a/Assignment/portfolio-provider/src/main/resources/application.yml	
++++ b/Assignment/portfolio-provider/src/main/resources/application.yml	
+@@ -12,7 +12,7 @@
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+     username: root
+-    password: 123456
++    password: lxd20030213
+ 
+ mybatis:
+   mapperLocations: classpath:mapper/*.xml
