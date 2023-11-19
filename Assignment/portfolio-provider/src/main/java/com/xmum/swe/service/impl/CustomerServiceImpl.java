@@ -8,6 +8,7 @@ import com.xmum.swe.entities.BO.CustomerBO;
 import com.xmum.swe.entities.BO.CustomerNoMapBO;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.CustomerDO;
+import com.xmum.swe.entities.DO.ItemDO;
 import com.xmum.swe.entities.VO.CustomerInsertVO;
 import com.xmum.swe.entities.VO.CustomerModifyVO;
 import com.xmum.swe.enums.IdPos;
@@ -47,10 +48,16 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public CustomerDO getCustomerWithMaxId() {
-        return (CustomerDO) customerDao.selectList(new QueryWrapper<CustomerDO>().orderByDesc("c_id"))
+        CustomerDO[] arr = (CustomerDO[])customerDao.selectList(new QueryWrapper<CustomerDO>().orderByDesc("c_id"))
                 .stream().
                 limit(1)
-                .toArray()[0];
+                .toArray(CustomerDO[]::new);
+        if(ObjectUtil.isEmpty(arr)) return arr[0];
+        else {
+            CustomerDO cusDO = new CustomerDO();
+            cusDO.setCId("SPCT000001");
+            return cusDO;
+        }
     }
     public Map<String, Object> insertICustomer(CustomerDO cusDO){
         int num = customerDao.insert(cusDO);
