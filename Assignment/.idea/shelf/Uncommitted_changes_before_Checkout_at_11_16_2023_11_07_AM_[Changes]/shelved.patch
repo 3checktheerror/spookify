@@ -1,0 +1,33 @@
+Index: portfolio-provider/src/main/java/com/xmum/swe/entities/DO/CustomerDO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xmum.swe.entities.DO;\r\n\r\nimport com.baomidou.mybatisplus.annotation.TableId;\r\nimport com.baomidou.mybatisplus.annotation.TableName;\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\nimport lombok.NoArgsConstructor;\r\nimport java.sql.Blob;\r\nimport java.sql.Timestamp;\r\n\r\n@Data\r\n@AllArgsConstructor\r\n@NoArgsConstructor\r\n@TableName(value = \"contact_customer_1\")\r\npublic class CustomerDO {\r\n\r\n    @TableId(\"c_id\")\r\n    private String cId;\r\n\r\n    private String cgroupId;\r\n\r\n    private String name;\r\n\r\n    private int age;\r\n\r\n    private String gender;\r\n\r\n    private Blob file;\r\n\r\n    private String md5;\r\n\r\n    private Timestamp csCreate;\r\n\r\n    private Timestamp csModified;\r\n\r\n    private String csType;\r\n\r\n    private String data;\r\n\r\n    private String token;\r\n\r\n    private String sessionId;\r\n}\r\n
+===================================================================
+diff --git a/portfolio-provider/src/main/java/com/xmum/swe/entities/DO/CustomerDO.java b/portfolio-provider/src/main/java/com/xmum/swe/entities/DO/CustomerDO.java
+--- a/portfolio-provider/src/main/java/com/xmum/swe/entities/DO/CustomerDO.java	
++++ b/portfolio-provider/src/main/java/com/xmum/swe/entities/DO/CustomerDO.java	
+@@ -33,7 +33,7 @@
+ 
+     private Timestamp csModified;
+ 
+-    private String csType;
++//    private String csType;
+ 
+     private String data;
+ 
+Index: portfolio-provider/src/main/java/com/xmum/swe/entities/VO/ItemInsertVO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.xmum.swe.entities.VO;\r\n\r\nimport com.fasterxml.jackson.annotation.JsonProperty;\r\nimport io.swagger.annotations.ApiModel;\r\nimport io.swagger.annotations.ApiModelProperty;\r\nimport lombok.Data;\r\nimport java.sql.Blob;\r\nimport java.util.Map;\r\n\r\n@Data\r\n@ApiModel(\"Params for item insertion\")\r\npublic class ItemInsertVO {\r\n\r\n    @ApiModelProperty(\"item group\")\r\n    @JsonProperty(\"igroupId\")\r\n    private String igroupId;\r\n\r\n    @JsonProperty(\"name\")\r\n    private String name;\r\n\r\n    @JsonProperty(\"gender\")\r\n    private String gender;\r\n\r\n    @JsonProperty(\"email\")\r\n    private String email;\r\n\r\n    @JsonProperty(\"file\")\r\n    private Blob file;\r\n\r\n    @JsonProperty(\"md5\")\r\n    private String md5;\r\n\r\n    @ApiModelProperty(\"additional params\")\r\n    @JsonProperty(\"map\")\r\n    private Map<String, Object> map;\r\n\r\n    @JsonProperty(\"token\")\r\n    private String token;\r\n\r\n    @JsonProperty(\"sessionId\")\r\n    private String sessionId;\r\n\r\n    @ApiModelProperty(\"visitor id(for this item)\")\r\n    @JsonProperty(\"vIdFk\")\r\n    private String vIdFk;\r\n}\r\n
+===================================================================
+diff --git a/portfolio-provider/src/main/java/com/xmum/swe/entities/VO/ItemInsertVO.java b/portfolio-provider/src/main/java/com/xmum/swe/entities/VO/ItemInsertVO.java
+--- a/portfolio-provider/src/main/java/com/xmum/swe/entities/VO/ItemInsertVO.java	
++++ b/portfolio-provider/src/main/java/com/xmum/swe/entities/VO/ItemInsertVO.java	
+@@ -41,6 +41,6 @@
+     private String sessionId;
+ 
+     @ApiModelProperty("visitor id(for this item)")
+-    @JsonProperty("vIdFk")
++    @JsonProperty("vidFk")
+     private String vIdFk;
+ }
