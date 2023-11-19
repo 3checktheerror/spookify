@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/fox.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/lake.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/lion.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,18 +56,23 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev-hotfix-Luo",
-    "last_opened_file_path": "E:/code/myProject/spookify/Assignment",
+    "git-widget-placeholder": "dev-hotfix",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/test-zzw/spookify/Assignment/portfolio-provider/src/main/resources/static/images/imagesForPortfolio",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "spring.configuration.checksum": "194d8b3ef17557479d28014505148fd7",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\test-zzw\spookify\Assignment\portfolio-provider\src\main\resources\static\images\imagesForPortfolio" />
+      <recent name="C:\Users\Administrator\Desktop\test-zzw\spookify\Assignment\portfolio-provider\src\main\webapp\WEB-INF\jsp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\resources\static" />
       <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src" />
