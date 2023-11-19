@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="dev-hotfix" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_372/src.zip!/java/lang/String.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2XmNudR3Z4wx7qSSce0VWy2gaOh" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Qiu&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/code/myProject/spookify/Assignment&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;194d8b3ef17557479d28014505148fd7&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\resources\static" />
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src" />
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\webapp\WEB-INF\jsp" />
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\webapp" />
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\assets\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="portfolio-provider" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="portfolio-provider" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PortforlioServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
+      <module name="portfolio-provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xmum.swe.PortforlioServer" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_WORKING_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="" />
+      <created>1699230519355</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699230519355</updated>
+      <workItem from="1699230520535" duration="101000" />
+      <workItem from="1699231478454" duration="2854000" />
+      <workItem from="1699369368751" duration="783000" />
+      <workItem from="1699426423850" duration="6692000" />
+      <workItem from="1699435718571" duration="1991000" />
+      <workItem from="1699492434717" duration="2316000" />
+      <workItem from="1699521355471" duration="164000" />
+      <workItem from="1699524431893" duration="5585000" />
+      <workItem from="1699838151022" duration="557000" />
+      <workItem from="1699920949113" duration="1285000" />
+      <workItem from="1700007659288" duration="2447000" />
+      <workItem from="1700103456679" duration="631000" />
+      <workItem from="1700213798664" duration="24751000" />
+      <workItem from="1700286326146" duration="25848000" />
+      <workItem from="1700370135772" duration="2022000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.xmum.swe.entities.DO.ItemDO" memberName="opType" />
+        <PinnedItemInfo parentTag="com.xmum.swe.entities.BO.ItemBO" memberName="opType" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>
