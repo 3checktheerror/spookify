@@ -5,7 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1976.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1985.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1986.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1996.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/AppleStore-and-iTunes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple_and_Jobs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Appstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_High_School.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_Kid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_Young.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_teenager.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iMac.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iPad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iPhone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iTunes.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/Biography.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/Biography.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +130,8 @@
       <workItem from="1700369083341" duration="2454000" />
       <workItem from="1700372033697" duration="3985000" />
       <workItem from="1700405762569" duration="615000" />
+      <workItem from="1700457749622" duration="1237000" />
+      <workItem from="1700459615157" duration="306000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,22 +8,62 @@
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="root">
     <el-container>
-        <el-aside class="Asidef-direction" width="100px">
-            Direction
+        <el-aside width="isCollapse ? '64px' : '150px'">
+            <template>
+                <div>
+                    <el-radio-group v-model="isCollapse"
+                                    style="margin-bottom: 20px;display: flex; flex-direction: column;">
+                        <el-radio-button :label="false">展开</el-radio-button>
+                        <el-radio-button :label="true">收起</el-radio-button>
+                    </el-radio-group>
+                    <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen"
+                             @close="handleClose" :collapse="isCollapse">
+                        <el-submenu index="1">
+                            <template slot="title">
+                                <i class="el-icon-location"></i>
+                                <a v-if="!isCollapse" @click="handleIndexPage1">导航页1</a>
+                            </template>
+                            <el-menu-item-group>
+                                <span slot="title">分组一</span>
+                                <el-menu-item index="1-1">选项1</el-menu-item>
+                                <el-menu-item index="1-2">选项2</el-menu-item>
+                            </el-menu-item-group>
+                            <el-menu-item-group title="分组2">
+                                <el-menu-item index="1-3">选项3</el-menu-item>
+                            </el-menu-item-group>
+                            <el-submenu index="1-4">
+                                <span slot="title">选项4</span>
+                                <el-menu-item index="1-4-1">选项1</el-menu-item>
+                            </el-submenu>
+                        </el-submenu>
+                        <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                        <el-menu-item index="3" disabled>
+                            <i class="el-icon-document"></i>
+                            <span slot="title">导航三</span>
+                        </el-menu-item>
+                        <el-menu-item index="4">
+                            <i class="el-icon-setting"></i>
+                            <span slot="title">导航四</span>
+                        </el-menu-item>
+                    </el-menu>
+                </div>
+            </template>
         </el-aside>
-        <el-container >
+        <el-container>
             <el-header height="100px">
                 Steven Paul Jobs
             </el-header>
             <el-container>
                 <el-aside width="600px">
                     <h1>Brief Introduction</h1>
-                    <img src="Bimages/Jobs.png" alt="Jobs">
+                    <img src="/images/Bimage/Jobs.png" alt="Jobs">
                     <h1>Steven Jobs</h1>
                     <h2>Business Investor, Co-founder of Apple</h2>
                     <el-card class="basic-info-card" shadow="always">
@@ -36,7 +77,8 @@
                             <i class="el-icon-sunset"></i> Date of death: 5 October 2011<br>
                             <i class="el-icon-school"></i> Education: Reed College, University of California, Berkeley
                         </div>
-                    </el-card><br><br>
+                    </el-card>
+                    <br><br>
 
                     <el-card class="skills-certificate-card" shadow="always">
                         <div slot="header" class="clearfix">
@@ -56,21 +98,28 @@
                             </span>
 
                         </div>
-                    </el-card><br><br>
+                    </el-card>
+                    <br><br>
 
                     <el-card class="self-esteem-card" shadow="always">
                         <div slot="header" class="clearfix">
                             <h3>Comment</h3>
                         </div>
                         <div class="self-text">
-                            <p>He is a <span class="emphasized-text">Dreamer and Creator</span> in the pursuit of excellence.
-                                He values <span class="emphasized-text">Innovative Spirit</span> in the field of technology, has the courage to disrupt traditions and keep pushing technology forward.
-                                As well, he has a unique perspective on art and technology, as well as a high level of commitment to product design and user experience.
-                                At the same time, he continues to inspire creativity and drive the <span class="emphasized-text">Collaborative aspect</span> of the team.
-                                Generally, he is a <span class="emphasized-text">Practitioner</span> who is constantly challenging himself in the fields of technology, design and business.
+                            <p>He is a <span class="emphasized-text">Dreamer and Creator</span> in the pursuit of
+                                excellence.
+                                He values <span class="emphasized-text">Innovative Spirit</span> in the field of
+                                technology, has the courage to disrupt traditions and keep pushing technology forward.
+                                As well, he has a unique perspective on art and technology, as well as a high level of
+                                commitment to product design and user experience.
+                                At the same time, he continues to inspire creativity and drive the <span
+                                        class="emphasized-text">Collaborative aspect</span> of the team.
+                                Generally, he is a <span class="emphasized-text">Practitioner</span> who is constantly
+                                challenging himself in the fields of technology, design and business.
                             </p>
                         </div>
-                    </el-card><br><br>
+                    </el-card>
+                    <br><br>
                 </el-aside>
                 <el-container>
                     <el-main>
@@ -80,83 +129,98 @@
                             </div>
                             <div class="text">
                                 High School Education: <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;Steve Jobs received his high school education at <span class="emphasized-text">Homestead</span> High School in Cupertino, California.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Steve Jobs received his high school education at <span
+                                    class="emphasized-text">Homestead</span> High School in Cupertino, California.<br>
                                 COLLEGE EXPERIENCE: <br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;He is enrolled at <span class="emphasized-text">Reed College</span> in 1972, but dropped out after only one semester. While in college <span class="emphasized-text">Berkeley</span>, he took a number of computer science-related classes and befriended <span class="emphasized-text">Steve Wozniak</span>, who would later become a partner.
+                                &nbsp;&nbsp;&nbsp;&nbsp;He is enrolled at <span
+                                    class="emphasized-text">Reed College</span> in 1972, but dropped out after only one
+                                semester. While in college <span class="emphasized-text">Berkeley</span>, he took a
+                                number of computer science-related classes and befriended <span class="emphasized-text">Steve Wozniak</span>,
+                                who would later become a partner.
                                 <div class="block">
                                     <el-carousel height="300px">
                                         <el-carousel-item v-for="item in image_ED" :key="item">
-                                            <img :src="item" alt="carousel-image" >
+                                            <img :src="item" alt="carousel-image">
                                         </el-carousel-item>
                                     </el-carousel>
-                                    <p class="emphasized-text-image" >Young Steve Jobs</p>
+                                    <p class="emphasized-text-image">Young Steve Jobs</p>
                                 </div>
                             </div>
-                        </el-card><br><br>
+                        </el-card>
+                        <br><br>
 
                         <el-card class="Experience-card" shadow="always">
                             <div slot="header" class="clearfix">
-                                <h3>Entrepreneurial & Investment  Experience</h3>
+                                <h3>Entrepreneurial & Investment Experience</h3>
                             </div>
                             <div class="text">
-                                &nbsp;&nbsp;&nbsp;&nbsp;Steve Jobs' entrepreneurial and investment history demonstrates that he has not only achieved great success in hardware and software,
+                                &nbsp;&nbsp;&nbsp;&nbsp;Steve Jobs' entrepreneurial and investment history demonstrates
+                                that he has not only achieved great success in hardware and software,
                                 but also has had a profound impact on the <span class="emphasized-text">Entertainment and Animation Industries</span>.<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;His innovative spirit and focus on the user experience have laid a solid foundation for his influence in technology and entertainment.
+                                &nbsp;&nbsp;&nbsp;&nbsp;His innovative spirit and focus on the user experience have laid
+                                a solid foundation for his influence in technology and entertainment.
                             </div>
 
-                            <el-button type="text" @click="dialogVisible_EI = true">Click here to Check the Timeline</el-button>
+                            <el-button type="text" @click="dialogVisible_EI = true">Click here to Check the Timeline
+                            </el-button>
                             <el-dialog
                                     title="Timeline of Entrepreneurial & Investment"
                                     :visible.sync="dialogVisible_EI"
                                     width="80%"
-                                    :before-close="handleClose">
+                                    :before-close="handleCloseT">
                                 <div class="timeline">
                                     <el-timeline>
                                         <el-timeline-item timestamp="1976" placement="top" class="Timeline_subtitle">
                                             <el-card>
                                                 <h4>Apple Inc.</h4>
-                                                <el-row type="flex" class="image_in_box" >
+                                                <el-row type="flex" class="image_in_box">
                                                     <el-col :span="16">
-                                                        <p>Co-founded Apple Computer Inc. with Steve Wozniak and<br> Ronald Wayne.
-                                                            They initially introduced the Apple I and later <br>developed the successful Apple II.
-                                                            However, internal conflicts <br>led to Jobs being ousted by the board in 1985.</p>
+                                                        <p>Co-founded Apple Computer Inc. with Steve Wozniak and<br>
+                                                            Ronald Wayne.
+                                                            They initially introduced the Apple I and later <br>developed
+                                                            the successful Apple II.
+                                                            However, internal conflicts <br>led to Jobs being ousted by
+                                                            the board in 1985.</p>
                                                     </el-col>
                                                     <el-col :span="8">
-                                                        <img src="Bimages/1976.png" alt="Apple_and_Jobs">
+                                                        <img src="/images/Bimage/1976.png" alt="Apple_and_Jobs">
                                                     </el-col>
                                                 </el-row>
                                             </el-card>
                                         </el-timeline-item>
-                                        <el-timeline-item timestamp="1985" placement="top"class="Timeline_subtitle">
+                                        <el-timeline-item timestamp="1985" placement="top" class="Timeline_subtitle">
                                             <el-card>
                                                 <h4>NeXT Computer Inc</h4>
-                                                <el-row type="flex" class="image_in_box" >
+                                                <el-row type="flex" class="image_in_box">
                                                     <el-col :span="16">
                                                         <p>After leaving Apple, Jobs founded NeXT Computer Inc.,
                                                             <br>focusing on advanced workstations.
                                                             Although NeXT's computers had a modest market presence,
-                                                            the company's operating <br>system became the foundation for Apple's macOS.</p>
+                                                            the company's operating <br>system became the foundation for
+                                                            Apple's macOS.</p>
                                                     </el-col>
                                                     <el-col :span="8">
-                                                        <img src="Bimages/1985.png" alt="Apple_and_Jobs">
+                                                        <img src="/images/Bimage/1985.png" alt="Apple_and_Jobs">
                                                     </el-col>
                                                 </el-row>
                                             </el-card>
                                         </el-timeline-item>
-                                        <el-timeline-item timestamp="1986" placement="top"class="Timeline_subtitle">
+                                        <el-timeline-item timestamp="1986" placement="top" class="Timeline_subtitle">
                                             <el-card>
                                                 <h4>Pixar Animation Studios</h4>
                                                 <el-col :span="16">
-                                                    <p>Jobs acquired The Graphics Group, later known as Pixar <br>Animation Studios.
-                                                        Pixar achieved tremendous success in the <br>animated film industry with classics like <br>
+                                                    <p>Jobs acquired The Graphics Group, later known as Pixar <br>Animation
+                                                        Studios.
+                                                        Pixar achieved tremendous success in the <br>animated film
+                                                        industry with classics like <br>
                                                         "Toy Story," "The Incredibles," and "Monsters, Inc."</p>
                                                 </el-col>
                                                 <el-col :span="8">
-                                                    <img src="Bimages/1986.png" alt="Apple_and_Jobs">
+                                                    <img src="/images/Bimage/1986.png" alt="Apple_and_Jobs">
                                                 </el-col>
                                             </el-card>
                                         </el-timeline-item>
-                                        <el-timeline-item timestamp="1996" placement="top"class="Timeline_subtitle">
+                                        <el-timeline-item timestamp="1996" placement="top" class="Timeline_subtitle">
                                             <el-card>
                                                 <h4>Return to Apple and Innovation</h4>
                                                 <el-col :span="16">
@@ -166,11 +230,12 @@
                                                         <br>the iMac, iPod, iPhone, and iPad.</p>
                                                 </el-col>
                                                 <el-col :span="8">
-                                                    <img src="Bimages/1996.png" alt="Apple_and_Jobs">
+                                                    <img src="/images/Bimage/1996.png" alt="Apple_and_Jobs">
                                                 </el-col>
                                             </el-card>
                                         </el-timeline-item>
-                                        <el-timeline-item timestamp="2001, 2008" placement="top"class="Timeline_subtitle">
+                                        <el-timeline-item timestamp="2001, 2008" placement="top"
+                                                          class="Timeline_subtitle">
                                             <el-card>
                                                 <h4>iTunes and App Store</h4>
                                                 <el-col :span="16">
@@ -180,20 +245,21 @@
                                                         <br>performance.</p>
                                                 </el-col>
                                                 <el-col :span="8">
-                                                    <img src="Bimages/AppleStore-and-iTunes.png" alt="Apple_and_Jobs">
+                                                    <img src="/images/Bimage/AppleStore-and-iTunes.png" alt="Apple_and_Jobs">
                                                 </el-col>
                                             </el-card>
                                         </el-timeline-item>
-                                        <el-timeline-item timestamp="1986" placement="top"class="Timeline_subtitle">
+                                        <el-timeline-item timestamp="1986" placement="top" class="Timeline_subtitle">
                                             <el-card>
                                                 <h4>Disney and Personal Success</h4>
                                                 <el-col :span="16">
                                                     <p>Due to Pixar's success, Jobs became Disney's largest
                                                         <br>shareholder and joined the board in 2006. His influence on
-                                                        <br>Disney's animation and entertainment industry was significant.</p>
+                                                        <br>Disney's animation and entertainment industry was
+                                                        significant.</p>
                                                 </el-col>
                                                 <el-col :span="8">
-                                                    <img src="Bimages/Apple_and_Jobs.png" alt="Apple_and_Jobs">
+                                                    <img src="/images/Bimage/Apple_and_Jobs.png" alt="Apple_and_Jobs">
                                                 </el-col>
                                             </el-card>
                                         </el-timeline-item>
@@ -203,66 +269,102 @@
                                 <el-button type="primary" @click="dialogVisible_EI = false">Leave</el-button>
                                 </span>
                             </el-dialog>
-                        </el-card><br><br>
+                        </el-card>
+                        <br><br>
 
                         <el-card class="Practice-card" shadow="always">
                             <div slot="header" class="clearfix">
                                 <h3>Apple and Steve Jobs</h3>
                             </div>
                             <div class="text">
-                                &nbsp;&nbsp;&nbsp;&nbsp;The story of Steve Jobs and Apple is a remarkable journey marked by innovation and challenges. Co-founding Apple in 1976, Jobs, along with Steve Wozniak,
+                                &nbsp;&nbsp;&nbsp;&nbsp;The story of Steve Jobs and Apple is a remarkable journey marked
+                                by innovation and challenges. Co-founding Apple in 1976, Jobs, along with Steve Wozniak,
                                 introduced groundbreaking products like the Apple I and II.<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;Despite early success, internal conflicts led to Jobs' ousting in the 1980s.
-                                He then founded NeXT and acquired Pixar, contributing to advancements in computing and animation.
-                                Jobs returned to Apple in 1996, becoming CEO in 1997, ushering in an era of iconic products such as the iMac, iPod, iPhone, and iPad.
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;Despite health struggles, Jobs continued to lead until his passing in 2011,
-                                leaving a lasting legacy as a visionary entrepreneur who transformed the tech industry.<br>
-                                <el-button type="text" @click="dialogVisible_Apple_Jobs = true">Click Here to Check the Timeline</el-button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Despite early success, internal conflicts led to Jobs' ousting
+                                in the 1980s.
+                                He then founded NeXT and acquired Pixar, contributing to advancements in computing and
+                                animation.
+                                Jobs returned to Apple in 1996, becoming CEO in 1997, ushering in an era of iconic
+                                products such as the iMac, iPod, iPhone, and iPad.
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;Despite health struggles, Jobs continued to lead until his
+                                passing in 2011,
+                                leaving a lasting legacy as a visionary entrepreneur who transformed the tech
+                                industry.<br>
+                                <el-button type="text" @click="dialogVisible_Apple_Jobs = true">Click Here to Check the
+                                    Timeline
+                                </el-button>
                                 <el-dialog
                                         title="Timeline "
                                         :visible.sync="dialogVisible_Apple_Jobs"
                                         width="60%"
-                                        :before-close="handleClose">
+                                        :before-close="handleCloseT">
                                     <div class="timeline">
                                         <el-timeline>
-                                            <el-timeline-item timestamp="1976" placement="top" class="Timeline_subtitle">
+                                            <el-timeline-item timestamp="1976" placement="top"
+                                                              class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>Co-founding Apple</h4>
-                                                    <el-row type="flex" class="image_in_box" >
-                                                        <p>Steve Jobs, along with Steve Wozniak and Ronald Wayne, co-founded Apple Computer Inc. in Jobs' parents' garage. They introduced the Apple I and later the Apple II, which played a significant role in the personal computer revolution.</p>
+                                                    <el-row type="flex" class="image_in_box">
+                                                        <p>Steve Jobs, along with Steve Wozniak and Ronald Wayne,
+                                                            co-founded Apple Computer Inc. in Jobs' parents' garage.
+                                                            They introduced the Apple I and later the Apple II, which
+                                                            played a significant role in the personal computer
+                                                            revolution.</p>
                                                     </el-row>
                                                 </el-card>
                                             </el-timeline-item>
-                                            <el-timeline-item timestamp="1980s" placement="top"class="Timeline_subtitle">
+                                            <el-timeline-item timestamp="1980s" placement="top"
+                                                              class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>NeXT Computer Inc</h4>
-                                                    <el-row type="flex" class="image_in_box" >
-                                                        <p>Apple experienced substantial success in the early years, but internal conflicts arose. In 1985, Jobs was ousted from the company by the board of directors due to disagreements over the company's direction and leadership style.</p>
+                                                    <el-row type="flex" class="image_in_box">
+                                                        <p>Apple experienced substantial success in the early years, but
+                                                            internal conflicts arose. In 1985, Jobs was ousted from the
+                                                            company by the board of directors due to disagreements over
+                                                            the company's direction and leadership style.</p>
                                                     </el-row>
                                                 </el-card>
                                             </el-timeline-item>
-                                            <el-timeline-item timestamp="1985-1986" placement="top"class="Timeline_subtitle">
+                                            <el-timeline-item timestamp="1985-1986" placement="top"
+                                                              class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>NeXT and Pixar</h4>
-                                                    <p>After leaving Apple, Jobs founded NeXT Computer Inc., a company focused on creating advanced workstations. Simultaneously, he purchased The Graphics Group, later renamed Pixar Animation Studios. While NeXT had a limited impact on the computer market, Pixar became a powerhouse in the animation industry.</p>
+                                                    <p>After leaving Apple, Jobs founded NeXT Computer Inc., a company
+                                                        focused on creating advanced workstations. Simultaneously, he
+                                                        purchased The Graphics Group, later renamed Pixar Animation
+                                                        Studios. While NeXT had a limited impact on the computer market,
+                                                        Pixar became a powerhouse in the animation industry.</p>
                                                 </el-card>
                                             </el-timeline-item>
-                                            <el-timeline-item timestamp="1996" placement="top"class="Timeline_subtitle">
+                                            <el-timeline-item timestamp="1996" placement="top"
+                                                              class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>Return to Apple and Innovation</h4>
-                                                    <p>Apple faced financial challenges in the 1990s, and in 1996, the company acquired NeXT. This move brought Jobs back to Apple, and in 1997, he became the CEO again. His return marked a period of significant innovation and revitalization for the company.</p>
+                                                    <p>Apple faced financial challenges in the 1990s, and in 1996, the
+                                                        company acquired NeXT. This move brought Jobs back to Apple, and
+                                                        in 1997, he became the CEO again. His return marked a period of
+                                                        significant innovation and revitalization for the company.</p>
                                                 </el-card>
                                             </el-timeline-item>
-                                            <el-timeline-item timestamp="Late 1990s to 2011" placement="top"class="Timeline_subtitle">
+                                            <el-timeline-item timestamp="Late 1990s to 2011" placement="top"
+                                                              class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>iMac, iPod, iPhone, and iPad Era</h4>
-                                                    <p>  Under Jobs' leadership, Apple introduced iconic products, including the colorful iMac, the revolutionary iPod, the game-changing iPhone, and the iPad. These products not only transformed Apple's fortunes but also had a profound impact on the entire tech industry.</p>
+                                                    <p> Under Jobs' leadership, Apple introduced iconic products,
+                                                        including the colorful iMac, the revolutionary iPod, the
+                                                        game-changing iPhone, and the iPad. These products not only
+                                                        transformed Apple's fortunes but also had a profound impact on
+                                                        the entire tech industry.</p>
                                                 </el-card>
                                             </el-timeline-item>
-                                            <el-timeline-item timestamp="1986" placement="top"class="Timeline_subtitle">
+                                            <el-timeline-item timestamp="1986" placement="top"
+                                                              class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>Struggles and Health Issues</h4>
-                                                    <p>Jobs faced health challenges, including a rare type of pancreatic cancer known as a pancreatic neuroendocrine tumor. Despite his health struggles, he continued to lead Apple and participate in product launches.</p>
+                                                    <p>Jobs faced health challenges, including a rare type of pancreatic
+                                                        cancer known as a pancreatic neuroendocrine tumor. Despite his
+                                                        health struggles, he continued to lead Apple and participate in
+                                                        product launches.</p>
                                                 </el-card>
                                             </el-timeline-item>
                                         </el-timeline>
@@ -273,15 +375,16 @@
                                 </el-dialog>
 
                                 <div class="block">
-                                    <el-carousel height="400px" >
+                                    <el-carousel height="400px">
                                         <el-carousel-item v-for="item in image_AP" :key="item">
                                             <img :src="item" alt="carousel-image" class="carousel-image">
                                         </el-carousel-item>
                                     </el-carousel>
-                                    <p class="emphasized-text-image" >Jobs and His Masterpieces </p>
+                                    <p class="emphasized-text-image">Jobs and His Masterpieces </p>
                                 </div>
                             </div>
-                        </el-card><br><br>
+                        </el-card>
+                        <br><br>
 
                         <el-card class="Award-card" shadow="always">
                             <div slot="header" class="clearfix">
@@ -289,13 +392,28 @@
                             </div>
                             <div class="text">
                                 Helped the environment<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;Jobs' innovation led to the creation of products that save trees and help the environment. In situations where someone would typically use paper, such as in a presentation or a script reading, technology on devices like the iPad replaced it. The iPhone and iPad – groundbreaking products that ushered in a new generation of smart mobile technologies – ensure "paperless" is more and more the status quo. [Learn how to create a paperless office for your business.]<br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Jobs' innovation led to the creation of products that save trees
+                                and help the environment. In situations where someone would typically use paper, such as
+                                in a presentation or a script reading, technology on devices like the iPad replaced it.
+                                The iPhone and iPad – groundbreaking products that ushered in a new generation of smart
+                                mobile technologies – ensure "paperless" is more and more the status quo. [Learn how to
+                                create a paperless office for your business.]<br><br>
 
                                 Revolutionized technology<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;While the iPhone wasn't the first smartphone, it catapulted the mobile revolution forward and gave more freedom to individuals in their professional and personal lives. With an iPhone, professionals could answer calls, respond to emails, join webinars and more from their cellular device – in addition to having immediate access to music, movies and messages that fulfill their personal likes, needs and passions. [These are the tech trends we're seeing in 2023.]<br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;While the iPhone wasn't the first smartphone, it catapulted the
+                                mobile revolution forward and gave more freedom to individuals in their professional and
+                                personal lives. With an iPhone, professionals could answer calls, respond to emails,
+                                join webinars and more from their cellular device – in addition to having immediate
+                                access to music, movies and messages that fulfill their personal likes, needs and
+                                passions. [These are the tech trends we're seeing in 2023.]<br><br>
 
                                 Created a faster world<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;Today's world is more instantaneous than ever before, thanks to advancements by Jobs. His innovations ensure productivity thrives, like being able to make an appointment or reservation from your mobile phone and use your iPad as a point-of-sale (POS) system. With Jobs' technology, businesses and customers have much smoother and quicker interactions. [Don't miss our picks for the best POS systems.]<br><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Today's world is more instantaneous than ever before, thanks to
+                                advancements by Jobs. His innovations ensure productivity thrives, like being able to
+                                make an appointment or reservation from your mobile phone and use your iPad as a
+                                point-of-sale (POS) system. With Jobs' technology, businesses and customers have much
+                                smoother and quicker interactions. [Don't miss our picks for the best POS
+                                systems.]<br><br>
                             </div>
                         </el-card>
                     </el-main>
@@ -312,31 +430,42 @@
 </div>
 <script>
 
-    const vm= new Vue({
-        data(){
-            return{
-                name:'Steve Jobs',
-                intro:'Steven Paul Jobs (February 24, 1955 – October 5, 2011) was an American business magnate, inventor, and investor best known as the co-founder of Apple. ' +
-                    'Jobs was also chairman and majority shareholder of Pixar, and the founder of NeXT. He was a pioneer of the personal computer revolution of the 1970s and 1980s, along with his early business partner and fellow Apple co-founder Steve Wozniak.',
-                image_ED:['Bimages/Jobs_Kid.png','Bimages/Jobs_High_School.png','Bimages/Jobs_teenager.png','Bimages/Jobs_Young.png'],
-                dialogVisible_EI:false,
-                dialogVisible_Apple_Jobs:false,
-                image_AP:['Bimages/Apple1.png','Bimages/Apple2.png','Bimages/iMac.png','Bimages/iPhone.png','Bimages/iPad.png']
+    const vm = new Vue({
+        data() {
+            return {
+                image_ED: ['/images/Bimage/Jobs_Kid.png', '/images/Bimage/Jobs_High_School.png', '/images/Bimage/Jobs_teenager.png', '/images/Bimage/Jobs_Young.png'],
+                dialogVisible_EI: false,
+                dialogVisible_Apple_Jobs: false,
+                image_AP: ['/images/Bimage/Apple1.png', '/images/Bimage/Apple2.png', '/images/Bimage/iMac.png', '/images/Bimage/iPhone.png', '/images/Bimage/iPad.png'],
+                isCollapse: true
             }
         },
         methods: {
-            handleClose(done) {
+            handleCloseT(done) {
                 this.$confirm('Confirm to Leave？')
                     .then(_ => {
                         done();
                     })
-                    .catch(_ => {});
+                    .catch(_ => {
+                    });
+            },
+            handleOpen(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            handleClose(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            handleIndexPage1() {
+                window.location.href = 'http://www.baidu.com';
+            },
+            setIscollapse() {
+                this.isCollapse = false;
+                console.log(this.isCollapse)
             }
         }
     }).$mount('#root')
 </script>
 </body>
-
 <style>
     .el-header, .el-footer {
         background-color: #B3C0D1;
