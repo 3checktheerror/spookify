@@ -1,49 +1,90 @@
-# spookify
-**Assignment for Program Ellective**
+# Spookify
 
-1. 基本介绍
+**Program Elective Assignment**
 
-   常规JavaWeb项目
+1. **Basic Introduction**
 
-   使用的技术：SpringBoot + Vue + Docker(待定) + MyBatis(Plus) + SpringCloud(待定)
+   Conventional JavaWeb project
 
-2. 注意事项
+   Technologies used: SpringBoot + Vue + Docker (to be confirmed) + MyBatis(Plus) + SpringCloud (to be confirmed)
 
-   * **所有提交都提交到dev分支**，远程合并master由组长负责
+2. **How to run**
 
-   * 大文件自己本地建一个文件夹，自己写.gitignore，不要上传到仓库！
-   * 每次提交都必须详细写明提交信息，否则无法追溯
-   * 推荐本地多建几个开发分支
+   1. Open the `spookifyDB.sql`, copy all the code.
 
-3. 相关资源
+      ![image-20231120154511548](README.assets/image-20231120154511548.png)
 
-   [SpringBoot学习资源](https://www.yuque.com/leifengyang/springboot3/vznmdeb4kgn90vrx)：有些深入，SpringBoot是Spring生态中的重要组成部分，优点是快速集成各种常见技术
+   2. Execute sql
 
-   [JavaScript学习资源](https://www.runoob.com/jsref/dom-obj-attributes.html)：虽然烂大街，但有效
+      * if you have DBMS like `DataGrip`, paste the sql code to it and execute the code.
 
-   [JavaScript查询资料](https://developer.mozilla.org/zh-CN/)：供查阅
+        ![image-20231120154651533](README.assets/image-20231120154651533.png)
 
-   [Git文档](https://git-scm.com/book/zh/v2)：查阅命令，了解原理
+      * if you want to execute the sql code in  `Command Prompt`, follow this steps:
 
-   [MyBatis](https://www.cnblogs.com/diffx/p/10611082.html)：MyBatis是常见的持久层框架，用于数据存取，我们需要用它和MySQL数据库打交道
+        1. open task manager, make sure mysql service has started.
 
-   [SpringCloud]()：也是Spring生态中的重要组成，用于微服务架构的快速搭建
+           ![image-20231120155019446](README.assets/image-20231120155019446.png)
 
-   [Docker](https://learn.lianglianglee.com/%E4%B8%93%E6%A0%8F/%E7%94%B1%E6%B5%85%E5%85%A5%E6%B7%B1%E5%90%83%E9%80%8F%20Docker-%E5%AE%8C)：推荐下载[Docker Desktop for Window](https://www.docker.com/products/docker-desktop/)，用于持续集成和部署。以后的数据库、消息队列都下载到Docker中。Docker极其轻量化，真香（下面是我本机Docker上的4台nacos和2个MySQL数据库）
+        2. open command prompt, type `mysql -uroot -p`, and then enter the password to log in mysql.
+
+           after logging in, paste sql code and press `enter`.
+
+           ![image-20231120155355568](README.assets/image-20231120155355568.png)
+
+   3. Open our project, click `PortforlioServer`, and **right click** the run button.
+
+      ![image-20231120155812297](README.assets/image-20231120155812297.png)
+
+      select `Modify Run Configuration`:
+
+      ![image-20231120155647966](README.assets/image-20231120155647966.png)
+
+      In the popping window, click `Modify options`, select `Working directory`, and the rest of the configuration is shown below:
+
+      ![image-20231120160036885](README.assets/image-20231120160036885.png)
+
+   4. Go to `application-dev.yml`, change the `username` and `password` to those in **your MySQL**
+
+      ![image-20231120160539408](README.assets/image-20231120160539408.png)
+
+   5. Run `PortforlioServer`, wait until it fully starts
+
+      ![image-20231120160340454](README.assets/image-20231120160340454.png)
+
+      ![image-20231120160806874](README.assets/image-20231120160806874.png)
+
+3. **Important Notes**
+
+   - **All submissions should be made to the dev branch**; remote merging into master is the responsibility of the team leader.
+   - For large files, create a local folder, write your own `.gitignore`, and do not upload it to the repository!
+   - Provide detailed commit messages with each submission, for traceability.
+   - It is recommended to create multiple development branches locally.
+
+4. **Relevant Resources**
+
+   [SpringBoot Learning Resources](https://www.yuque.com/leifengyang/springboot3/vznmdeb4kgn90vrx): In-depth content on SpringBoot, a crucial component in the Spring ecosystem, known for its rapid integration of various common technologies.
+
+   [JavaScript Learning Resources](https://www.runoob.com/jsref/dom-obj-attributes.html): Commonly used resources, effective for learning.
+
+   [JavaScript Documentation](https://developer.mozilla.org/zh-CN/): Reference material for JavaScript queries.
+
+   [Git Documentation](https://git-scm.com/book/zh/v2): Reference for Git commands and principles.
+
+   [MyBatis](https://www.cnblogs.com/diffx/p/10611082.html): A commonly used persistence framework for data access, used in conjunction with the MySQL database.
+
+   [SpringCloud](https://chat.openai.com/c/dcb26dce-4948-4847-b2f8-80c7a09ddd2f): Another essential component in the Spring ecosystem, used for the rapid construction of microservices architecture.
+
+   [Docker](https://learn.lianglianglee.com/专栏/由浅入深吃透 Docker-完): Recommend downloading [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/) for continuous integration and deployment. In the future, databases and message queues can be downloaded into Docker. Docker is extremely lightweight and efficient (see image below of 4 Nacos and 2 MySQL databases on my local Docker).
 
    ![image-20231031091542274](README.assets/image-20231031091542274.png)
 
-4. 其他
+5. **Others**
 
-   下载配置完Docker后可以自己装MySQL，各种MQ，注册中心之类的组件，**然后你就可以删除本地庞大的MySQL之类的大容量程序了**。通过**IDEA连接Docker**，你可以快速启动任何容器。
+   After downloading and configuring Docker, you can install MySQL, various message queues, and registry centers, and **then you can delete large local programs like MySQL**. By connecting to Docker through IDEA, you can quickly start any container.
 
-   上述所有步骤本人均试过，能够正常跑起来。有任何疑问，欢迎咨询QJY。
+   I have personally tested all the steps mentioned above, and everything runs smoothly. If you have any questions, feel free to consult QJY.
 
-   最后祝大家成功！！！！！
-
-   
+   Best of luck to everyone!!!
 
    <img src="README.assets/image-20231031090703069.png" alt="image-20231031090703069" style="zoom: 25%;" />
-
-   
-
