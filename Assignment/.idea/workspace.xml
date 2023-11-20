@@ -4,150 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1976.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1985.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1986.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1996.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/AppleStore-and-iTunes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple_and_Jobs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Appstore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_High_School.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_Kid.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_Young.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_teenager.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iMac.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iPad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iPhone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iTunes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/Biography.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/Biography.jsp" afterDir="false" />
+    <list default="true" id="df19cac4-7c3c-496d-b4f7-7c51d62c0a94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="JavaScript File" />
-        <option value="Jsp File" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$/.." value="dev-hotfix" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_372/src.zip!/java/lang/String.java" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
-  <component name="ProjectId" id="2XmNudR3Z4wx7qSSce0VWy2gaOh" />
-  <component name="ProjectViewState">
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Liu&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/ProgramEProjectfile/spookify/Assignment/portfolio-provider/src/main/resources/static/images/Bimage&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;194d8b3ef17557479d28014505148fd7&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "dev-hotfix"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images\Bimage" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images\Bimage" />
-      <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images" />
-      <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\webapp\WEB-INF\jsp" />
-      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\resources\static" />
-      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="PortforlioServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="ACTIVE_PROFILES" value="dev" />
-      <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
-      <module name="portfolio-provider" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xmum.swe.PortforlioServer" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_WORKING_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="" />
-      <created>1699230519355</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1699230519355</updated>
-      <workItem from="1699230520535" duration="101000" />
-      <workItem from="1699231478454" duration="2854000" />
-      <workItem from="1699369368751" duration="783000" />
-      <workItem from="1699426423850" duration="6692000" />
-      <workItem from="1699435718571" duration="1991000" />
-      <workItem from="1699492434717" duration="2316000" />
-      <workItem from="1699521355471" duration="164000" />
-      <workItem from="1699524431893" duration="5585000" />
-      <workItem from="1699838151022" duration="557000" />
-      <workItem from="1699920949113" duration="1285000" />
-      <workItem from="1700007659288" duration="2447000" />
-      <workItem from="1700103456679" duration="631000" />
-      <workItem from="1700213798664" duration="24751000" />
-      <workItem from="1700286326146" duration="25848000" />
-      <workItem from="1700369083341" duration="2454000" />
-      <workItem from="1700372033697" duration="3985000" />
-      <workItem from="1700405762569" duration="615000" />
-      <workItem from="1700457749622" duration="1237000" />
-      <workItem from="1700459615157" duration="306000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
