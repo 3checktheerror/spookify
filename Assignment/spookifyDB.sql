@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS spookify;
 CREATE DATABASE spookify;
 USE spookify;
 
@@ -95,11 +96,63 @@ INSERT INTO contact_visitor_1 (v_id, vgroup_id, name, username, password, age, g
                                                                                                                                                                       "session_id":""
                                                                                                                                                                     }',NULL,NULL);
 
+INSERT INTO contact_visitor_1 (v_id, vgroup_id, name, username, password, age, gender, file, md5, vt_create, vt_modified, op_type, data, token, session_id) VALUES ('SPVT000002','VTG1','Xu Zixiang','Watson','book659',20,'Male',NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert',
+                                                                                                                                                                    '{
+                                                                                                                                                                      "name":"Xu Zixiang",
+                                                                                                                                                                      "username":"Watson",
+                                                                                                                                                                      "password":"book659",
+                                                                                                                                                                      "gender":"Male",
+                                                                                                                                                                      "age":20,
+                                                                                                                                                                      "file":"",
+                                                                                                                                                                      "md5":"",
+                                                                                                                                                                      "token":"",
+                                                                                                                                                                      "op_type":"Insert",
+                                                                                                                                                                      "session_id":""
+                                                                                                                                                                    }',NULL,NULL);
+INSERT INTO contact_visitor_1 (v_id, vgroup_id, name, username, password, age, gender, file, md5, vt_create, vt_modified, op_type, data, token, session_id) VALUES ('SPVT000003','VTG1','Luo Xudong','BrightFall','victor',20,'Male',NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert',
+                                                                                                                                                                    '{
+                                                                                                                                                                      "name":"Luo Xudong",
+                                                                                                                                                                      "username":"BrightFall",
+                                                                                                                                                                      "password":"victor",
+                                                                                                                                                                      "gender":"Male",
+                                                                                                                                                                      "age":20,
+                                                                                                                                                                      "file":"",
+                                                                                                                                                                      "md5":"",
+                                                                                                                                                                      "token":"",
+                                                                                                                                                                      "op_type":"Insert",
+                                                                                                                                                                      "session_id":""
+                                                                                                                                                                    }',NULL,NULL);
+INSERT INTO contact_visitor_1 (v_id, vgroup_id, name, username, password, age, gender, file, md5, vt_create, vt_modified, op_type, data, token, session_id) VALUES ('SPVT000004','VTG1','Zhou Ziwei','HookWei','dggbb',20,'Male',NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert',
+                                                                                                                                                                    '{
+                                                                                                                                                                      "name":"Zhou Ziwei",
+                                                                                                                                                                      "username":"HookWei",
+                                                                                                                                                                      "password":"dggbb",
+                                                                                                                                                                      "gender":"Male",
+                                                                                                                                                                      "age":20,
+                                                                                                                                                                      "file":"",
+                                                                                                                                                                      "md5":"",
+                                                                                                                                                                      "token":"",
+                                                                                                                                                                      "op_type":"Insert",
+                                                                                                                                                                      "session_id":""
+                                                                                                                                                                    }',NULL,NULL);
+INSERT INTO contact_visitor_1 (v_id, vgroup_id, name, username, password, age, gender, file, md5, vt_create, vt_modified, op_type, data, token, session_id) VALUES ('SPVT000005','VTG1','Liu Can','Can.View','footprint659',20,'Male',NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert',
+                                                                                                                                                                    '{
+                                                                                                                                                                      "name":"Liu Can",
+                                                                                                                                                                      "username":"Can.View",
+                                                                                                                                                                      "password":"footprint659",
+                                                                                                                                                                      "gender":"Male",
+                                                                                                                                                                      "age":20,
+                                                                                                                                                                      "file":"",
+                                                                                                                                                                      "md5":"",
+                                                                                                                                                                      "token":"",
+                                                                                                                                                                      "op_type":"Insert",
+                                                                                                                                                                      "session_id":""
+                                                                                                                                                                    }',NULL,NULL);
 -- i_id: 2位应用名(SP) + 2位简写(IT) + 6位自增长数字
 INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000001', 'ITG1', 'QIU_FORM', 'Male', 'swe2109562@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
   "i_id":"SPIT000001",
   "igroup_id":"ITG1",
-  "name":"QIU_ITEM",
+  "name":"QIU_FORM",
   "gender":"Male",
   "email":"swe2109562@xmu.edu.my",
   "file":"",
@@ -108,30 +161,58 @@ INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_nam
   "token":"",
   "op_type":"Insert",
   "session_id":"",
-  "status":"Submit"
+  "status":"Submit",
+  "phone": "124628349",
+  "occupation": "back-end developer",
+  "age": "21",
+  "message": "please contact me"
 }',NULL,NULL,'Submit','SPVT000001');
 
-INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000002', 'ITG1', 'QIU_FORM', 'Male', 'swe2109562@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000002', 'ITG1', 'Xu_FORM', 'Male', 'swe2109568@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
   "i_id":"SPIT000002",
   "igroup_id":"ITG2",
-  "name":"QIU_ITEM",
+  "name":"Xu_FORM",
   "gender":"Male",
-  "email":"swe2109562@xmu.edu.my",
+  "email":"swe2109568@xmu.edu.my",
   "file":"",
   "file_name":"",
   "md5":"",
   "token":"",
   "op_type":"Insert",
   "session_id":"",
-  "status":"Submit"
+  "status":"Submit",
+  "phone": "129234823",
+  "occupation": "front-end developer",
+  "age": "20",
+  "message": "you are brilliant"
+
+}',NULL,NULL,'Submit','SPVT000001');
+
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000003', 'ITG1', 'Liu_FORM', 'Male', 'swe2109560@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+  "i_id":"SPIT000003",
+  "igroup_id":"ITG2",
+  "name":"Liu_FORM",
+  "gender":"Male",
+  "email":"swe2109560@xmu.edu.my",
+  "file":"",
+  "file_name":"",
+  "md5":"",
+  "token":"",
+  "op_type":"Insert",
+  "session_id":"",
+  "status":"Submit",
+  "phone": "129654823",
+  "occupation": "front-end developer",
+  "age": "20",
+  "message": "please call me"
 }',NULL,NULL,'Submit','SPVT000001');
 -- c_id: 2位应用名(SP) + 2位简写(CS) + 6位自增长数字
 
-INSERT INTO contact_customer_1 (c_id, cgroup_id, name, age, gender, file, md5, cs_create, cs_modified, op_type, data, token, session_id) VALUES ('SPCS000001','CSG1','Qiu Junyi',21,'Male',NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert',
+INSERT INTO contact_customer_1 (c_id, cgroup_id, name, age, gender, file, md5, cs_create, cs_modified, op_type, data, token, session_id) VALUES ('SPCS000001','CSG1','Steve Jobs',21,'Male',NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert',
                                                                                                                                                  '{
-                                                                                                                                                   "name":"Qiu Junyi",
+                                                                                                                                                   "name":"Steve Jobs",
                                                                                                                                                    "gender":"Male",
-                                                                                                                                                   "age":21,
+                                                                                                                                                   "age":66,
                                                                                                                                                    "file":"",
                                                                                                                                                    "md5":"",
                                                                                                                                                    "token":"",
