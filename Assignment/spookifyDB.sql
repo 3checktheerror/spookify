@@ -161,7 +161,11 @@ INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_nam
   "token":"",
   "op_type":"Insert",
   "session_id":"",
-  "status":"Submit"
+  "status":"Submit",
+  "phone": "124628349",
+  "occupation": "back-end developer",
+  "age": "21",
+  "message": "please contact me"
 }',NULL,NULL,'Submit','SPVT000001');
 
 INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000002', 'ITG1', 'Xu_FORM', 'Male', 'swe2109568@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
@@ -176,7 +180,12 @@ INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_nam
   "token":"",
   "op_type":"Insert",
   "session_id":"",
-  "status":"Submit"
+  "status":"Submit",
+  "phone": "129234823",
+  "occupation": "front-end developer",
+  "age": "20",
+  "message": "you are brilliant"
+
 }',NULL,NULL,'Submit','SPVT000001');
 
 INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000003', 'ITG1', 'Liu_FORM', 'Male', 'swe2109560@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
@@ -191,7 +200,11 @@ INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_nam
   "token":"",
   "op_type":"Insert",
   "session_id":"",
-  "status":"Submit"
+  "status":"Submit",
+  "phone": "129654823",
+  "occupation": "front-end developer",
+  "age": "20",
+  "message": "please call me"
 }',NULL,NULL,'Submit','SPVT000001');
 -- c_id: 2位应用名(SP) + 2位简写(CS) + 6位自增长数字
 
