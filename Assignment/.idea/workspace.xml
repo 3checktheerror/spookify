@@ -13,11 +13,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "dev-hotfix"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="PortforlioServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="portfolio-provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xmum.swe.PortforlioServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="TaskManager">
     <servers />
   </component>
