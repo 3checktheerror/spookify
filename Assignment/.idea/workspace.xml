@@ -5,15 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/fox.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/lake.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/lion.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1976.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1985.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1986.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/1996.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/AppleStore-and-iTunes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Apple_and_Jobs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Appstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_High_School.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_Kid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_Young.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/Jobs_teenager.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iMac.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iPad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iPhone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/iTunes.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/Bimage/img_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/Biography.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/Biography.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +39,7 @@
       <list>
         <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -46,55 +61,39 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev-hotfix",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/test-zzw/spookify/Assignment/portfolio-provider/src/main/resources/static/images/imagesForPortfolio",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "194d8b3ef17557479d28014505148fd7",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Liu&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/ProgramEProjectfile/spookify/Assignment/portfolio-provider/src/main/resources/static/images/Bimage&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;194d8b3ef17557479d28014505148fd7&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\test-zzw\spookify\Assignment\portfolio-provider\src\main\resources\static\images\imagesForPortfolio" />
-      <recent name="C:\Users\Administrator\Desktop\test-zzw\spookify\Assignment\portfolio-provider\src\main\webapp\WEB-INF\jsp" />
+      <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images\Bimage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images\Bimage" />
+      <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images" />
+      <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\webapp\WEB-INF\jsp" />
       <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\resources\static" />
       <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src" />
-      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\webapp\WEB-INF\jsp" />
-      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\webapp" />
-      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\assets\images" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="portfolio-provider" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="portfolio-provider" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PortforlioServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="dev" />
       <option name="ENABLE_LAUNCH_OPTIMIZATION" value="false" />
@@ -128,7 +127,11 @@
       <workItem from="1700103456679" duration="631000" />
       <workItem from="1700213798664" duration="24751000" />
       <workItem from="1700286326146" duration="25848000" />
-      <workItem from="1700370135772" duration="2022000" />
+      <workItem from="1700369083341" duration="2454000" />
+      <workItem from="1700372033697" duration="3985000" />
+      <workItem from="1700405762569" duration="615000" />
+      <workItem from="1700457749622" duration="1237000" />
+      <workItem from="1700459615157" duration="306000" />
     </task>
     <servers />
   </component>
