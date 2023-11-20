@@ -2,6 +2,7 @@ package com.xmum.swe.controller;
 
 import com.xmum.swe.entities.DO.Save;
 import com.xmum.swe.service.SaveService;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,6 +32,8 @@ public class DirectPageController {
         mv.setViewName(sb.toString());
         return mv;
     }
+
+
 
 
     @PostMapping("/upload")

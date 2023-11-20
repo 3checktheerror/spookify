@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/fox.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/lake.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/imagesForPortfolio/lion.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/DirectPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/DirectPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/Testcontroller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +24,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="dev-hotfix-Qiu" />
+        <entry key="$PROJECT_DIR$/.." value="dev-hotfix" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -49,26 +54,34 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "dev-hotfix",
-    "last_opened_file_path": "E:/code/myProject/spookify/Assignment",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/test-zzw/spookify/Assignment/portfolio-provider/src/main/resources/static/images/imagesForPortfolio",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "spring.configuration.checksum": "194d8b3ef17557479d28014505148fd7",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test" />
-      <module name="portfolio-provider" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\test-zzw\spookify\Assignment\portfolio-provider\src\main\resources\static\images\imagesForPortfolio" />
+      <recent name="C:\Users\Administrator\Desktop\test-zzw\spookify\Assignment\portfolio-provider\src\main\webapp\WEB-INF\jsp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\resources\static" />
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src" />
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\webapp\WEB-INF\jsp" />
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\webapp" />
+      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\assets\images" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="portfolio-provider" />
       <method v="2">
@@ -92,13 +105,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.Test" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -120,6 +126,9 @@
       <workItem from="1699920949113" duration="1285000" />
       <workItem from="1700007659288" duration="2447000" />
       <workItem from="1700103456679" duration="631000" />
+      <workItem from="1700213798664" duration="24751000" />
+      <workItem from="1700286326146" duration="25848000" />
+      <workItem from="1700370135772" duration="2022000" />
     </task>
     <servers />
   </component>
@@ -136,5 +145,13 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.xmum.swe.entities.DO.ItemDO" memberName="opType" />
+        <PinnedItemInfo parentTag="com.xmum.swe.entities.BO.ItemBO" memberName="opType" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
