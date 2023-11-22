@@ -21,7 +21,7 @@ CREATE TABLE contact_customer_1 (
                                     `token` varchar(128),
                                     `session_id` varchar(128),
                                     PRIMARY KEY (c_id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;;
 
 CREATE INDEX contact_customer_1_cid_idx ON contact_customer_1(c_id);
 
@@ -47,7 +47,7 @@ CREATE TABLE contact_visitor_1 (
                                    `token` varchar(128),
                                    `session_id` varchar(128),
                                    PRIMARY KEY (v_id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;;
 
 CREATE INDEX contact_visitor_1_vid_idx ON contact_visitor_1(v_id);
 
@@ -160,18 +160,29 @@ INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_nam
   "md5":"",
   "token":"",
   "op_type":"Insert",
+  "data":{
+    "i_id":"SPIT000001",
+    "igroup_id":"ITG1",
+    "name":"QIU_FORM",
+    "gender":"Male",
+    "email":"swe2109562@xmu.edu.my",
+    "file_name":"",
+    "md5":"",
+    "it_create": "2023-11-22 00:00:00.000",
+    "it_modified": "2023-11-22 00:00:00.000",
+    "token":"",
+    "op_type":"Insert",
+    "session_id":"",
+    "status":"Submit"
+  },
   "session_id":"",
-  "status":"Submit",
-  "phone": "124628349",
-  "occupation": "back-end developer",
-  "age": "21",
-  "message": "please contact me"
+  "status":"Submit"
 }',NULL,NULL,'Submit','SPVT000001');
 
-INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000002', 'ITG1', 'Xu_FORM', 'Male', 'swe2109568@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000002', 'ITG1', 'XU_FORM', 'Male', 'swe2109568@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
   "i_id":"SPIT000002",
   "igroup_id":"ITG2",
-  "name":"Xu_FORM",
+  "name":"XU_FORM",
   "gender":"Male",
   "email":"swe2109568@xmu.edu.my",
   "file":"",
@@ -179,19 +190,29 @@ INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_nam
   "md5":"",
   "token":"",
   "op_type":"Insert",
+  "data":{
+    "i_id":"SPIT000002",
+    "igroup_id":"ITG2",
+    "name":"XU_FORM",
+    "gender":"Male",
+    "email":"swe2109568@xmu.edu.my",
+    "file_name":"",
+    "md5":"",
+    "it_create": "2023-11-22 00:00:00.000",
+    "it_modified": "2023-11-22 00:00:00.000",
+    "token":"",
+    "op_type":"Insert",
+    "session_id":"",
+    "status":"Submit"
+  },
   "session_id":"",
-  "status":"Submit",
-  "phone": "129234823",
-  "occupation": "front-end developer",
-  "age": "20",
-  "message": "you are brilliant"
-
+  "status":"Submit"
 }',NULL,NULL,'Submit','SPVT000001');
 
-INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000003', 'ITG1', 'Liu_FORM', 'Male', 'swe2109560@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000003', 'ITG1', 'LIU_FORM', 'Male', 'swe2109560@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
   "i_id":"SPIT000003",
   "igroup_id":"ITG2",
-  "name":"Liu_FORM",
+  "name":"LIU_FORM",
   "gender":"Male",
   "email":"swe2109560@xmu.edu.my",
   "file":"",
@@ -199,12 +220,113 @@ INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_nam
   "md5":"",
   "token":"",
   "op_type":"Insert",
+  "data":{
+    "i_id":"SPIT000003",
+    "igroup_id":"ITG2",
+    "name":"LIU_FORM",
+    "gender":"Male",
+    "email":"swe2109560@xmu.edu.my",
+    "file_name":"",
+    "md5":"",
+    "it_create": "2023-11-22 00:00:00.000",
+    "it_modified": "2023-11-22 00:00:00.000",
+    "token":"",
+    "op_type":"Insert",
+    "session_id":"",
+    "status":"Submit"
+  },
   "session_id":"",
-  "status":"Submit",
-  "phone": "129654823",
-  "occupation": "front-end developer",
-  "age": "20",
-  "message": "please call me"
+  "status":"Submit"
+}',NULL,NULL,'Submit','SPVT000001');
+
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000004', 'ITG1', 'ZHOU_FORM', 'Male', 'swe2109551@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+  "i_id":"SPIT000004",
+  "igroup_id":"ITG1",
+  "name":"ZHOU_FORM",
+  "gender":"Male",
+  "email":"swe2109551@xmu.edu.my",
+  "file":"",
+  "file_name":"",
+  "md5":"",
+  "token":"",
+  "op_type":"Insert",
+  "data":{
+    "i_id":"SPIT000004",
+    "igroup_id":"ITG1",
+    "name":"ZHOU_FORM",
+    "gender":"Male",
+    "email":"swe2109551@xmu.edu.my",
+    "file_name":"",
+    "md5":"",
+    "it_create": "2023-11-22 00:00:00.000",
+    "it_modified": "2023-11-22 00:00:00.000",
+    "token":"",
+    "op_type":"Insert",
+    "session_id":"",
+    "status":"Submit"
+  },
+  "session_id":"",
+  "status":"Submit"
+}',NULL,NULL,'Submit','SPVT000001');
+
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000005', 'ITG1', 'LUO_FORM', 'Male', 'swe2109561@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+  "i_id":"SPIT000005",
+  "igroup_id":"ITG1",
+  "name":"LUO_FORM",
+  "gender":"Male",
+  "email":"swe2109561@xmu.edu.my",
+  "file":"",
+  "file_name":"",
+  "md5":"",
+  "token":"",
+  "op_type":"Insert",
+  "data":{
+    "i_id":"SPIT000005",
+    "igroup_id":"ITG1",
+    "name":"LUO_FORM",
+    "gender":"Male",
+    "email":"swe2109561@xmu.edu.my",
+    "file_name":"",
+    "md5":"",
+    "it_create": "2023-11-22 00:00:00.000",
+    "it_modified": "2023-11-22 00:00:00.000",
+    "token":"",
+    "op_type":"Insert",
+    "session_id":"",
+    "status":"Submit"
+  },
+  "session_id":"",
+  "status":"Submit"
+}',NULL,NULL,'Submit','SPVT000001');
+
+INSERT INTO contact_item_1 (i_id, igroup_id, name, gender, email, file, file_name, md5, it_create, it_modified, op_type, data, token, session_id, status, v_id_fk) VALUES ('SPIT000006', 'ITG1', 'TEST_FORM', 'Male', 'swe2109551@xmu.edu.my',NULL,NULL,NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert','{
+  "i_id":"SPIT000006",
+  "igroup_id":"ITG1",
+  "name":"Tester",
+  "gender":"Male",
+  "email":"swe2109599@xmu.edu.my",
+  "file":"",
+  "file_name":"",
+  "md5":"",
+  "token":"",
+  "op_type":"Insert",
+  "data":{
+    "i_id":"SPIT000006",
+    "igroup_id":"ITG1",
+    "name":"TEST_FORM",
+    "gender":"Male",
+    "email":"swe2109551@xmu.edu.my",
+    "file_name":"",
+    "md5":"",
+    "it_create": "2023-11-22 00:00:00.000",
+    "it_modified": "2023-11-22 00:00:00.000",
+    "token":"",
+    "op_type":"Insert",
+    "session_id":"",
+    "status":"Submit"
+  },
+  "session_id":"",
+  "status":"Submit"
 }',NULL,NULL,'Submit','SPVT000001');
 -- c_id: 2位应用名(SP) + 2位简写(CS) + 6位自增长数字
 
