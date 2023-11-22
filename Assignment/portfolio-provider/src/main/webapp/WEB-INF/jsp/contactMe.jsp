@@ -591,11 +591,9 @@
             },
             closeDialog(){
                 this.addDialogVisible = false;
-                this.$refs.form.resetFields();
             },
             closeDialog2(){
                 this.modifyDialogVisible = false;
-                this.$refs.newform.resetFields();
             },
             beforeUpload(file) {
 

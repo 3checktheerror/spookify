@@ -21,6 +21,7 @@ import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.IdService;
 import com.xmum.swe.service.VisitorService;
+import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
@@ -161,7 +162,7 @@ public class VisitorServiceImpl implements VisitorService {
         JSONObject VO_data = JSON.parseObject(JSON.toJSONString(visitorVO, filter));
         if(ObjectUtil.isNotNull(visitorVO.getMap())) VO_data.putAll(visitorVO.getMap());     //get whole VO data
         //Layer 2
-        preData.putAll(VO_data);
+        JsonUtil.merge(preData, VO_data);
         preData.put("status", "modified");
         preData.put("opType", "modify");
         preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());

@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df19cac4-7c3c-496d-b4f7-7c51d62c0a94" name="Changes" comment="" />
+    <list default="true" id="df19cac4-7c3c-496d-b4f7-7c51d62c0a94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/DirectPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/DirectPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/ItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/VisitorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/VisitorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/DirectPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/DirectPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/controller/ItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/ItemService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/impl/ItemServiceImpl.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
