@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,6 +49,7 @@
         }
 
         .feedback-container {
+            margin-left: 100px;
             overflow-y: auto;
         }
 
@@ -96,12 +98,36 @@
 
         .fixed-aside {
             position: fixed;
+            z-index: 1;
             top: 40px;
             left: 0;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
         }
+        .el-radio-button__inner{
+            width: 100%;
+        }
+        .el-header, .el-footer {
+            background-color: #B3C0D1;
+            color: #333;
+            text-align: center;
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            line-height: 90px;
+            font-size: 30px;
+            letter-spacing: 0px;
+        }
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: left;
+            line-height: 50px;
+        }
+
+
+
 
     </style>
 </head>
@@ -109,13 +135,13 @@
 
 <div id="app">
     <el-container>
-        <el-aside width="isCollapse ? '64px' : '150px'" >
+        <el-aside width="isCollapse ? '64px' : '150px'">
             <template>
                 <div class="fixed-aside">
-                    <el-radio-group v-model="isCollapse" :collapse-transition="false"
-                                    style="display: flex; flex-direction: column;">
-                        <el-radio-button :label="false">展开</el-radio-button>
-                        <el-radio-button :label="true">收起</el-radio-button>
+                    <el-radio-group v-model="isCollapse" :collapse-transition="false" style="display: flex; flex-direction: column;">
+                        <el-radio-button :label="!isCollapse" width="100">
+                            <i :class="isCollapse ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'" style="color: #333"></i>
+                        </el-radio-button>
                     </el-radio-group>
                     <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen"
                              @close="handleClose" :collapse="isCollapse">
@@ -144,19 +170,17 @@
             </template>
         </el-aside>
 
-        <el-container :style="{ marginLeft: isCollapse ? '0px' : '100px' }">
-            <el-header :style="{marginLeft: '100px'}">
-
+        <el-container >
+            <el-header height="100px">
                 <h2>Feedback</h2>
-
             </el-header>
-            <el-main :style="{ width: '90%',marginLeft: '100px' }">
+            <el-main :style="{ width: '100%'}">
 
 
                 <div class="feedback-container" ref="feedbackContainer">
 
                     <el-row type="flex">
-                        <el-col :style="{ width: '300%'}">
+                        <el-col style="margin-left: 0px;width: 1000px">
                             <el-card class="review-card" v-for="(feedback, index) in otherFeedbackList" :key="index">
                                 <el-row type="flex">
                                     <el-col span="20px">
@@ -186,7 +210,7 @@
 
                             </el-card>
                         </el-col>
-                        <el-col style="margin-left: 20px;">
+                        <el-col style="margin-left: 40px; width: 350px">
                             <el-card class="review-card">
                                 <div class="review-header">Statistics</div>
                                 <div>
@@ -301,15 +325,6 @@
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
                     },
                     {
-                        userName: 'TechInnovator',
-                        rating: 5,
-                        content: 'Your interests section shows a diverse range of skills and passion for innovation. Impressive!',
-                        timestamp: '2023-01-01 12:45',
-                        isLiked: false,
-                        likeCount: 10,
-                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
-                    },
-                    {
                         userName: 'CodeEnthusiast',
                         rating: 5,
                         content: 'Your coding skills are exceptional! The code samples in your projects showcase a high level of proficiency.',
@@ -322,7 +337,7 @@
                         userName: 'UXDesigner',
                         rating: 4,
                         content: 'Great attention to user experience! Your design choices demonstrate a thoughtful and user-friendly approach.',
-                        timestamp: '2023-10-05 14:15',
+                        timestamp: '2022-10-05 14:15',
                         isLiked: false,
                         likeCount: 9,
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
@@ -331,7 +346,7 @@
                         userName: 'OpenSourceContributor',
                         rating: 5,
                         content: 'Impressive contributions to open-source projects! Your commitment to the community is commendable.',
-                        timestamp: '2023-09-18 20:00',
+                        timestamp: '2021-09-18 20:00',
                         isLiked: false,
                         likeCount: 15,
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
@@ -349,7 +364,7 @@
                         userName: 'TeamPlayer',
                         rating: 5,
                         content: 'Excellent teamwork demonstrated in collaborative projects! Your ability to work effectively with others is commendable.',
-                        timestamp: '2023-08-15 17:45',
+                        timestamp: '2022-02-15 17:45',
                         isLiked: false,
                         likeCount: 14,
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
@@ -358,7 +373,7 @@
                         userName: 'InnovationMaestro',
                         rating: 5,
                         content: 'The showcased projects are a testament to your unparalleled innovation and vision. Truly inspiring work!',
-                        timestamp: '2023-11-25 14:00',
+                        timestamp: '2022-05-25 14:00',
                         isLiked: false,
                         likeCount: 8,
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
@@ -367,7 +382,7 @@
                         userName: 'TechAficionado',
                         rating: 4,
                         content: 'Your work experience speaks volumes! The detailed project descriptions showcase a deep understanding of technology.',
-                        timestamp: '2023-11-20 12:15',
+                        timestamp: '2022-09-20 12:15',
                         isLiked: false,
                         likeCount: 5,
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
@@ -376,16 +391,16 @@
                         userName: 'EducationExplorer',
                         rating: 3,
                         content: 'Thorough documentation in the education section, but there\'s room for more detail on technical skills.',
-                        timestamp: '2023-11-18 09:45',
+                        timestamp: '2021-11-18 09:45',
                         isLiked: false,
                         likeCount: 25,
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
                     },
                     {
                         userName: 'DesignAesthete',
-                        rating: 4,
+                        rating: 5,
                         content: 'Impeccably designed portfolio! It reflects a keen sense of aesthetics and design.',
-                        timestamp: '2023-11-12 16:30',
+                        timestamp: '2022-11-12 16:30',
                         isLiked: false,
                         likeCount: 17,
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
@@ -394,11 +409,85 @@
                         userName: 'InnovationEnthusiast',
                         rating: 5,
                         content: 'Your interests section showcases a diverse range of skills and an unwavering passion for innovation. Impressive!',
-                        timestamp: '2023-11-05 10:00',
+                        timestamp: '2022-12-05 10:00',
                         isLiked: false,
                         likeCount: 21,
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
-                    }
+                    },
+                    {
+                        userName: 'TechEnthusiast123',
+                        rating: 5,
+                        content: "Apple's products are always cutting-edge and user-friendly. The attention to detail in design is remarkable.",
+                        timestamp: '2023-01-30 14:45',
+                        isLiked: false,
+                        likeCount: 8,
+                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                    },
+                    {
+                        userName: 'AppleFanatic789',
+                        rating: 4,
+                        content: "The innovation showcased in Apple's products is unmatched. Each release sets new standards in the tech industry.",
+                        timestamp: '2023-11-22 12:30',
+                        isLiked: false,
+                        likeCount: 5,
+                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                    },
+                    {
+                        userName: 'GadgetGuru456',
+                        rating: 5,
+                        content: "As a tech enthusiast, I appreciate Apple's commitment to quality. Their products seamlessly integrate into my digital lifestyle.",
+                        timestamp: '2022-11-28 09:15',
+                        isLiked: false,
+                        likeCount: 12,
+                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                    },
+                    {
+                        userName: 'DesignAficionado789',
+                        rating: 5,
+                        content: "Apple's design philosophy is inspiring. The sleek and intuitive designs of their products elevate the user experience.",
+                        timestamp: '2023-03-27 17:30',
+                        isLiked: false,
+                        likeCount: 7,
+                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                    },
+                    {
+                        userName: 'AndroidUser456',
+                        rating: 2,
+                        content: "As an Android user, I find Apple products overpriced. Comparable features can be found in more affordable Android devices.",
+                        timestamp: '2022-08-15 10:30',
+                        isLiked: false,
+                        likeCount: 3,
+                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                    },
+                    {
+                        userName: 'BudgetConsciousUser',
+                        rating: 3,
+                        content: "The cost of Apple products is a major drawback. While the quality is good, more budget-friendly options are available in the market.",
+                        timestamp: '2022-06-27 20:12',
+                        isLiked: false,
+                        likeCount: 2,
+                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                    },
+
+                    {
+                        userName: 'CriticaliPhoneUser',
+                        rating: 2,
+                        content: "One major drawback of iPhones is the limited customization options. Android devices offer more flexibility in personalization.",
+                        timestamp: '2022-04-05 14:00',
+                        isLiked: false,
+                        likeCount: 4,
+                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                    },
+                    {
+                        userName: 'BatteryConcernedUser',
+                        rating: 3,
+                        content: "Battery life on iPhones could be better. Some Android devices provide longer-lasting battery performance.",
+                        timestamp: '2022-02-20 12:15',
+                        isLiked: false,
+                        likeCount: 6,
+                        avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                    },
+
 
 
                 ],
@@ -510,5 +599,8 @@
 
 </body>
 </html>
+
+
+
 
 
