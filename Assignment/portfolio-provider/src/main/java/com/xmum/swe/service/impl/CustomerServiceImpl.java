@@ -2,18 +2,23 @@ package com.xmum.swe.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
+import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.dao.CustomerDao;
 import com.xmum.swe.entities.BO.CustomerBO;
 import com.xmum.swe.entities.BO.CustomerNoMapBO;
+import com.xmum.swe.entities.BO.VisitorBO;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.CustomerDO;
 import com.xmum.swe.entities.DO.ItemDO;
+import com.xmum.swe.entities.DO.VisitorDO;
 import com.xmum.swe.entities.VO.CustomerInsertVO;
 import com.xmum.swe.entities.VO.CustomerModifyVO;
 import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.CustomerService;
+import com.xmum.swe.service.IdService;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +27,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,8 +36,12 @@ import java.util.Optional;
 @Service
 @Slf4j
 public class CustomerServiceImpl implements CustomerService {
+
     @Resource
     private CustomerDao customerDao;
+
+    @Resource
+    private IdService idService;
 
     public CustomerDO getCustomerById(String id) {
         CustomerDO customer = customerDao.selectById(id);
@@ -87,58 +97,55 @@ public class CustomerServiceImpl implements CustomerService {
         List<CustomerDO> res = customerDao.selectByMap(map);
         if(!res.isEmpty()) throw new SpookifyBusinessException("customer name cannot be duplicated!");
     }
-
     @Override
-    public Map<String, Object> insertItem(CustomerInsertVO cusVO) {
-        //check if customer name already exists
-        this.getCustomerName(cusVO.getName());
-        //get new id
-        CustomerDO maxIdCus = this.getCustomerWithMaxId();
-        String cusId = maxIdCus.getCId();
-        String oldSubString = cusId.substring(IdPos.ID_ENTITY_NUM.getPos(), IdPos.ID_END.getPos());
-        String newSubString = String.valueOf(String.format("%06d", Integer.parseInt(oldSubString) + 1));
-        String newCusId = StringUtils.replace(cusId, oldSubString, newSubString);
-        log.info("----------ItemId:old-new: " + cusId + "-" + newCusId + "------------------");
-        //Eliminate and store map
-        Map<String, Object> preMap = cusVO.getMap();
-        CustomerNoMapBO cusNoMapBO = new CustomerNoMapBO();
-        BeanUtils.copyProperties(cusVO, cusNoMapBO);  //filter
-        //Insert user input fields (exclude data)
-        CustomerBO cusBO = new CustomerBO();
-        BeanUtils.copyProperties(cusNoMapBO, cusBO);
-        cusBO.setCId(newCusId);
-        cusBO.setCsCreate(SpookifyTimeStamp.getInstance().getTimeStamp());
-        cusBO.setCsModified(SpookifyTimeStamp.getInstance().getTimeStamp());
-        cusBO.setCsType(cusVO.getCsType());
-        //Insert data (updated fields + user input)
-        if(ObjectUtil.isNotNull(preMap)){
-            Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(cusBO), Map.class), preMap);
-            cusBO.setData(JSON.toJSONString(curMap));
-        } else {
-            cusBO.setData(JSON.toJSONString(cusBO));
+    public Map<String, Object> insertCustomer(CustomerInsertVO cusVO) {
+        //Layer 1
+        try {
+            this.getCustomerName(cusVO.getName());
+        }catch (Exception ex) {
+            throw new SpookifyBusinessException("customer name cannot be duplicated!");
         }
+        String nextId = idService.getNextId(this.getCustomerWithMaxId().getCId());
+        //Layer 2
+        CustomerBO cusBO = new CustomerBO();
+        BeanUtils.copyProperties(cusVO, cusBO, "map");
+        Timestamp curTime = SpookifyTimeStamp.getInstance().getTimeStamp();
+        cusBO.setCId(nextId);
+        cusBO.setCsCreate(curTime);
+        cusBO.setCsModified(curTime);
+        cusBO.setCsType("Insert");
+        Map<String, Object> map = cusVO.getMap();
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
+        filter.getExcludes().add("data");
+        filter.getExcludes().add("file");
+        JSONObject obj = JSON.parseObject(JSON.toJSONString(cusBO, filter));
+        if(ObjectUtil.isNotNull(map)) obj.putAll(map);
+        cusBO.setData(obj.toJSONString());
+        //Layer 3
         CustomerDO cusDO = new CustomerDO();
         BeanUtils.copyProperties(cusBO, cusDO);
-        Map<String, Object> map = this.insertICustomer(cusDO);
-        return map;
+        return this.insertICustomer(cusDO);
     }
 
     @Override
-    public Map<String, Object> modifyItem(CustomerModifyVO cusVO) {
-        String id = cusVO.getCId();
-        CustomerDO preDO = this.getCustomerById(id);
-        Map preMap = JSON.parseObject(preDO.getData(), Map.class);
-        CustomerNoMapBO cusNoMapBO = new CustomerNoMapBO();
-        BeanUtils.copyProperties(cusVO, cusNoMapBO);
-        Map map1 = JSON.parseObject(JSON.toJSONString(cusNoMapBO), Map.class);
-        Map map2 = MapUtil.merge(map1, cusVO.getMap());
-        Map map = MapUtil.merge(preMap, map2);
-        map.put("csModified", SpookifyTimeStamp.getInstance().getTimeStamp());
-        CustomerBO cusBO = JSON.parseObject(JSON.toJSONString(map), CustomerBO.class);
-        cusBO.setData(JSON.toJSONString(map));
+    public Map<String, Object> modifyCustomer(CustomerModifyVO cusVO) {
+        //Layer 1
+        CustomerDO preDO = this.getCustomerById(cusVO.getCId());
+        JSONObject preData = JSON.parseObject(preDO.getData());
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
+        filter.getExcludes().add("map");
+        JSONObject VO_data = JSON.parseObject(JSON.toJSONString(cusVO, filter));
+        if(ObjectUtil.isNotNull(cusVO.getMap())) VO_data.putAll(cusVO.getMap());     //get whole VO data
+        //Layer 2
+        preData.putAll(VO_data);
+        preData.put("status", "modified");
+        preData.put("opType", "modify");
+        preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
+        CustomerBO cusBO = JSON.parseObject(preData.toJSONString(), CustomerBO.class);
+        cusBO.setData(preData.toJSONString());
+        //Layer 3
         CustomerDO cusDO = new CustomerDO();
         BeanUtils.copyProperties(cusBO, cusDO);
-        Map<String, Object> res = this.updateCustomerById(cusDO);
-        return res;
+        return this.updateCustomerById(cusDO);
     }
 }
