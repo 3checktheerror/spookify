@@ -546,7 +546,7 @@
                     map: {
                         "phone": this.modifyForm.phone,
                         "occupation": this.modifyForm.occupation,
-                        "age": this.modifyForm.afge,
+                        "age": this.modifyForm.age,
                         "message": this.modifyForm.message,
                     },
                     igroupId: "ITG1",

@@ -2,6 +2,8 @@ package com.xmum.swe.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
+import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.dao.ItemDao;
 import com.xmum.swe.dao.VisitorDao;
@@ -13,6 +15,7 @@ import com.xmum.swe.entities.VO.ItemInsertVO;
 import com.xmum.swe.entities.VO.ItemModifyVO;
 import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
+import com.xmum.swe.service.IdService;
 import com.xmum.swe.service.ItemService;
 import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.MapUtil;
@@ -25,6 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +42,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Resource
     private VisitorService visitorService;
+
+    @Resource
+    private IdService idService;
 
 
 
@@ -101,85 +108,76 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public Map<String, Object> insertItem(ItemInsertVO itemVO, MultipartFile multipartFile) {
+        //Layer 1
         if(ObjectUtil.isNotNull(multipartFile)){
-            //first assign fileName because front-end won't pass this
             itemVO.setFileName(multipartFile.getOriginalFilename());
         }
-        //check if the foreign key exists
-        visitorService.getVisitorById(itemVO.getVIdFk());
-        //get new id
-        ItemDO maxIdItem = this.getItemWithMaxId();
-        String itemId = maxIdItem.getIId();
-        String oldSubString = itemId.substring(IdPos.ID_ENTITY_NUM.getPos(), IdPos.ID_END.getPos());
-        String newSubString = String.valueOf(String.format("%06d", Integer.parseInt(oldSubString) + 1));
-        String newItemId = StringUtils.replace(itemId, oldSubString, newSubString);
-        log.info("----------ItemId:old-new: " + itemId + "-" + newItemId + "------------------");
-        //Eliminate and store map
-        Map<String, Object> preMap = itemVO.getMap();
-        ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
-        BeanUtils.copyProperties(itemVO, itemNoMapBO);  //filter
-        //Insert user input fields (exclude data)
+        try {
+            visitorService.getVisitorById(itemVO.getVIdFk());    //check if the foreign key exists
+        } catch (SpookifyBusinessException sp) {
+            sp.setMsg("Foreign key: vIdFk doesn't exist");
+        }
+        String nextId = idService.getNextId(this.getItemWithMaxId().getIId());
+        //Layer 2
         ItemBO itemBO = new ItemBO();
-        BeanUtils.copyProperties(itemNoMapBO, itemBO);
-        itemBO.setIId(newItemId);
-        itemBO.setItCreate(SpookifyTimeStamp.getInstance().getTimeStamp());
-        itemBO.setItModified(SpookifyTimeStamp.getInstance().getTimeStamp());
+        BeanUtils.copyProperties(itemVO, itemBO, "map");
+        Timestamp curTime = SpookifyTimeStamp.getInstance().getTimeStamp();
+        itemBO.setIId(nextId);
+        itemBO.setItCreate(curTime);
+        itemBO.setItModified(curTime);
         itemBO.setStatus("Submit");
         itemBO.setOpType("Insert");
-        //Insert data (updated fields + user input)
-        if(ObjectUtil.isNotNull(preMap)){
-            Map curMap = MapUtil.merge(JSON.parseObject(JSON.toJSONString(itemBO), Map.class), preMap);
-            itemBO.setData(JSON.toJSONString(curMap));
-        } else {
-            itemBO.setData(JSON.toJSONString(itemBO));
-        }
-        ItemDO itemDO = new ItemDO();
-        BeanUtils.copyProperties(itemBO, itemDO);
-        //file insert at last
         if(ObjectUtil.isNotNull(multipartFile)){
             try {
-                itemDO.setFile(multipartFile.getBytes());
-                itemDO.setFileName(multipartFile.getOriginalFilename());
+                itemBO.setFile(multipartFile.getBytes());
+                itemBO.setFileName(multipartFile.getOriginalFilename());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-        Map<String, Object> map = this.insertItem(itemDO);
-        return map;
+        Map<String, Object> map = itemVO.getMap();
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
+        filter.getExcludes().add("data");
+        filter.getExcludes().add("file");
+        JSONObject obj = JSON.parseObject(JSON.toJSONString(itemBO, filter));
+        if(ObjectUtil.isNotNull(map)) obj.putAll(map);
+        itemBO.setData(obj.toJSONString());
+        //Layer 3
+        ItemDO itemDO = new ItemDO();
+        BeanUtils.copyProperties(itemBO, itemDO);
+        return this.insertItem(itemDO);
     }
 
     @Override
     public Map<String, Object> modifyItem(ItemModifyVO itemVO, MultipartFile multipartFile) throws IOException {
-        String id = itemVO.getIId();
-        ItemDO preDO = this.getItemById(id);
-        Map preMap = JSON.parseObject(preDO.getData(), Map.class);
-        ItemNoMapBO itemNoMapBO = new ItemNoMapBO();
-        BeanUtils.copyProperties(itemVO, itemNoMapBO);
-        Map map1 = JSON.parseObject(JSON.toJSONString(itemNoMapBO), Map.class);
-        Map map2 = null;
-        if(ObjectUtil.isNotNull(itemVO.getMap())){
-            map2 = MapUtil.merge(map1, itemVO.getMap());
-        } else {
-            map2 = map1;
-        }
-        Map map = MapUtil.merge(preMap, map2);
-        //map中并不需要放全部字段，只要放状态相关状态即可，也即状态还是需要手动更新
-        map.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
-        map.put("status", "modified");
-        map.put("opType", "modify");
-        if(ObjectUtil.isNotNull(map.get("fileName"))){
-            map.put("fileName", multipartFile.getOriginalFilename());
-        }
-        ItemBO itemBO = JSON.parseObject(JSON.toJSONString(map), ItemBO.class);
-        //set file
+        //Layer 1
+        ItemDO preDO = this.getItemById(itemVO.getIId());
+        JSONObject preData = JSON.parseObject(preDO.getData());
+        String newFileName = null;
+        byte[] newFileData = null;
         if(ObjectUtil.isNotNull(multipartFile)){
-            itemBO.setFileName(multipartFile.getOriginalFilename());
-            itemBO.setFile(multipartFile.getBytes());
+            newFileName = multipartFile.getOriginalFilename();
+            newFileData = multipartFile.getBytes();
         }
-        itemBO.setData(JSON.toJSONString(map));
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
+        filter.getExcludes().add("map");
+        JSONObject VO_data = JSON.parseObject(JSON.toJSONString(itemVO, filter));
+        if(ObjectUtil.isNotNull(itemVO.getMap())) VO_data.putAll(itemVO.getMap());     //get whole VO data
+        //Layer 2
+        preData.putAll(VO_data);
+        preData.put("status", "modified");
+        preData.put("opType", "modify");
+        preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
+        if(ObjectUtil.isNotNull(multipartFile)) preData.put("fileName", newFileName);
+        else preData.put("fileName", preDO.getFileName());
+        ItemBO itemBO = JSON.parseObject(preData.toJSONString(), ItemBO.class);
+        itemBO.setData(preData.toJSONString());
+        if(ObjectUtil.isNotNull(multipartFile)) itemBO.setFile(newFileData);
+        else itemBO.setFile(preDO.getFile());
+        //Layer 3
         ItemDO itemDO = new ItemDO();
         BeanUtils.copyProperties(itemBO, itemDO);
-        Map<String, Object> res = this.updateItemById(itemDO);
-        return res;
+        return this.updateItemById(itemDO);
     }
+
 }

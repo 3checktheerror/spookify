@@ -27,7 +27,7 @@ public interface CustomerService {
 
     void getCustomerName(String name);
 
-    Map<String, Object> insertItem(CustomerInsertVO cusVO);
+    Map<String, Object> insertCustomer(CustomerInsertVO cusVO);
 
-    Map<String, Object> modifyItem(CustomerModifyVO cusVO);
+    Map<String, Object> modifyCustomer(CustomerModifyVO cusVO);
 }
