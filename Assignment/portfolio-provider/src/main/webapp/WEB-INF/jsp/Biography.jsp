@@ -488,13 +488,13 @@
         line-height: 60px;
     }
     .el-aside {
-        background-color: #D3DCE6;
+        background: linear-gradient(to right, #ffffff, #b2bfd0);
         color: #333;
         text-align: left;
         line-height: 50px;
     }
     .el-main {
-        background-color: #e5eaef;
+        background: linear-gradient(to right, #b1becf, #ffffff);
         color: #333;
         text-align: left;
         line-height: 50px;
