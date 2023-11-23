@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,7 +12,7 @@
     <title>hello</title>
 </head>
 
-<body>
+<body class="body">
 
 <div id="app">
 
@@ -52,17 +53,14 @@
                 </div>
             </template>
         </el-aside>
-        <el-container>
+        <el-container >
             <el-header>
                 <h2>Contact Me</h2>
             </el-header>
             <el-main>
-
-
-                <el-card>
-
+                <el-card style="width: 1325px; margin-left: 125px">
                     <el-row :gutter="20">
-                        <el-col :span="15">
+                        <el-col :span="15" style="width: 1000px">
                             <el-input
                                     placeholder="Please enter ID or name (support fuzzy search)"
                                     v-model="queryInfo.query"
@@ -83,24 +81,21 @@
                             >
                         </el-col>
                     </el-row>
-                    <el-row type="flex">
-                        <el-col style="width: 67%;">
                             <!--主表单-->
-                            <template>
+                            <template >
                                 <div>
-                                    <el-table
+                                    <el-table class="table" stripe
                                             :data="responseData.slice((queryInfo.currentPage -1) * queryInfo.pageSize, queryInfo.pageSize * queryInfo.currentPage)"
-                                            :default-sort="{prop: 'itModified', order: 'descending'}"
-                                            style="width: 100%">
-                                        <el-table-column prop="iId" label="ID" width="200" sortable></el-table-column>
-                                        <el-table-column prop="name" label="Name" width="200"
+                                            :default-sort="{prop: 'itModified', order: 'descending'}">
+                                        <el-table-column prop="iId" label="ID" width="250" sortable></el-table-column>
+                                        <el-table-column prop="name" label="Name" width="250"
                                                          sortable></el-table-column>
-                                        <el-table-column prop="itModified" label="Last Modified" width="280" sortable>
+                                        <el-table-column prop="itModified" label="Last Modified" width="380" sortable>
                                             <template slot-scope="{ row }">
                                                 {{ formatDate(row.itModified) }}
                                             </template>
                                         </el-table-column>
-                                        <el-table-column label="Actions" width="280">
+                                        <el-table-column label="Actions" width="380">
                                             <template slot-scope="{ row }">
                                                 <el-button type="text"
                                                            @click="viewDetail(row); detailInfoVisible = true"
@@ -118,17 +113,6 @@
                                     </el-table>
                                 </div>
                             </template>
-                        </el-col>
-                        <el-col style="margin-top: 100px;">
-
-                            <el-image
-                                    style="height: 220px;position: relative;"
-                                    :src="url"
-                                    :fit="fill"
-                            ></el-image>
-                        </el-col>
-                    </el-row>
-
                     <el-pagination
                             @size-change="handleSizeChange"
                             @current-change="handleCurrentChange"
@@ -311,7 +295,9 @@
 
 
             </el-main>
-            <el-footer>Footer</el-footer>
+            <el-footer>
+                    Copyright @ SPOOKIFY. 2023. All Rights Reserved.
+            </el-footer>
         </el-container>
     </el-container>
 
@@ -408,6 +394,7 @@
         },
         mounted() {
             this.getData();
+            document.body.style.zoom = '80%';
         },
         methods: {
             getData() {
@@ -492,7 +479,7 @@
                 const postData = {
                     name: this.addForm.name,
                     gender: this.addForm.gender,
-                    email: this.addForm.name,
+                    email: this.addForm.email,
                     map: {
                         "phone": this.addForm.phone,
                         "occupation": this.addForm.occupation,
@@ -541,20 +528,33 @@
                 const newData = {
                     iId: this.modifyForm.iId,
                     name: this.modifyForm.name,
-                    gender: this.modifyForm.gender,
-                    email: this.modifyForm.name,
+                    gender: null,
+                    email: this.modifyForm.email,
                     map: {
                         "phone": this.modifyForm.phone,
-                        "occupation": this.modifyForm.occupation,
-                        "age": this.modifyForm.age,
+                        "occupation": null,
+                        "age": null,
                         "message": this.modifyForm.message,
                     },
                     igroupId: "ITG1",
-                    file: this.fileList[0],
+                    file: null,
                     md5: null,
                     token: null,
                     sessionId: null,
                 };
+                if (this.modifyForm.occupation!== "") {
+                    newData.map.occupation = this.modifyForm.occupation;
+                }
+                if (this.modifyForm.age!== "") {
+                    newData.map.age = this.modifyForm.occupation;
+                }
+                if (this.modifyForm.gender!== "") {
+                    newData.gender = this.modifyForm.gender;
+                }
+                if (this.modifyForm.gender!== "") {
+                    newData.file = this.fileList[0];
+                }
+
                 console.log(newData);
 
                 axios.post('/item/modifyItem', newData, {
@@ -681,10 +681,10 @@
                 window.location.href = 'http://localhost:8082/getPage/blogArticles';
             },
             handleIndexPage4() {
-                window.location.href = 'http://localhost:8082/getPage/feedback';
+                window.location.href = 'http://localhost:8082/getPage/Feedback';
             },
             handleIndexPage5() {
-                // window.location.href = 'http://localhost:8082/getPage/contactMe';
+                window.location.href = 'http://localhost:8082/getPage/contactMe';
             },
 
         }
@@ -708,12 +708,34 @@
     }
 
     .el-main {
-        background-color: #E9EEF3;
+        height: 800px;
+
         color: #333;
         text-align: left;
         line-height: 50px;
+    }
+    .el-header, .el-footer {
+
+        color: #333;
+        text-align: center;
+        display: flex; /* Use flexbox */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        line-height: 90px;
+        font-size: 30px;
+        letter-spacing: 0px;
+    }
+
+    .el-card-body{
+        width:100%;
+    }
+
+
+    .body {
+        background-image: url("/images/contactMe.png");
     }
 </style>
 
 </body>
 </html>
+

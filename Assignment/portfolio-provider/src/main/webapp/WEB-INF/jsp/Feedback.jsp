@@ -7,6 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -103,13 +107,12 @@
             left: 0;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
         }
         .el-radio-button__inner{
             width: 100%;
         }
         .el-header, .el-footer {
-            background-color: #B3C0D1;
+            /*background-color: #B3C0D1;*/
             color: #333;
             text-align: center;
             display: flex; /* Use flexbox */
@@ -120,21 +123,36 @@
             letter-spacing: 0px;
         }
         .el-main {
-            background-color: #E9EEF3;
+            /*background-color: #E9EEF3;*/
             color: #333;
             text-align: left;
             line-height: 50px;
         }
+        .body {
+
+            background-image: url("/images/feedback.png");
+            background-size: 100%;
+
+        }
+        .backbutton {
+            position: fixed;
+            z-index: 1;
+            bottom: 50px;
+            right: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
 
 
 
 
     </style>
 </head>
-<body>
+<body class="body">
 
 <div id="app">
-    <el-container>
+    <el-container class="body">
         <el-aside width="isCollapse ? '64px' : '150px'">
             <template>
                 <div class="fixed-aside">
@@ -187,7 +205,7 @@
                                         <el-avatar class="avatar" :src="feedback.avatar"
                                                    :alt="feedback.userName"></el-avatar>
                                     </el-col>
-                                    <el-col>
+                                    <el-col style="margin-top: -19px">
                                         <div class="user-info">
                                             <div class="name" style="height: 25px;"
                                                  :class="{ 'you-marker': feedback.isYou }">
@@ -202,7 +220,7 @@
                                     <el-rate v-model="feedback.rating" disabled></el-rate>
                                 </div>
                                 <div class="feedback-content">{{ feedback.content }}</div>
-                                <div class="like-icon" @click="toggleLike(index)">
+                                <div class="like-icon" @click="toggleLike(index)" style="margin-top: 19px">
                                     <i :class="feedback.isLiked ? 'fa fa-thumbs-up' : 'fa fa-thumbs-o-up'"
                                        :style="{ color: feedback.isLiked ? 'red' : '' }"></i>
                                 </div>
@@ -223,7 +241,7 @@
                                 <div v-for="(percentage, index) in ratingStatistics.percentages" :key="index">
                                     <div>
                                         <el-row type="flex" style="height: 30px">
-                                            <el-col style="width: 20%">
+                                            <el-col style="width: 20%; margin-top: -19px">
                                                 {{ index + 1 }}
                                                 <i class="fa fa-star" style="color: #FFD700; margin-right: 5px;"></i>
                                                 <!-- Font Awesome star icon -->
@@ -271,12 +289,14 @@
 
 
                 </div>
-                <template>
-                    <el-backtop></el-backtop>
-                </template>
+
+
+                <el-button class="backbutton" @click="back" icon="fa fa-angle-up"></el-button>
             </el-main>
             <el-footer>
-                footer
+
+                Copyright @ SPOOKIFY. 2023. All Rights Reserved.
+
             </el-footer>
         </el-container>
     </el-container>
@@ -488,8 +508,6 @@
                         avatar: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
                     },
 
-
-
                 ],
                 newFeedback: {
                     rating: 0,
@@ -500,6 +518,7 @@
         },
         mounted() {
             this.sortFeedbackListByTimestamp();
+            document.body.style.zoom = '80%';
         },
         computed: {
             ratingStatistics() {
@@ -576,7 +595,7 @@
                 window.location.href = 'http://localhost:8082/getPage/blogArticles';
             },
             handleIndexPage4() {
-                // window.location.href = 'http://localhost:8082/getPage/feedback';
+                window.location.href = 'http://localhost:8082/getPage/Feedback';
             },
             handleIndexPage5() {
                 window.location.href = 'http://localhost:8082/getPage/contactMe';
@@ -593,12 +612,27 @@
             scrollToReviewSection() {
                 window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
             },
+            back(){
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
         }
     });
+
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
