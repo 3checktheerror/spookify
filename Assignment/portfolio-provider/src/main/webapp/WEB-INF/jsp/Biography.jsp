@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Biography page</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="//unpkg.com/element-ui/lib/umd/locale/en.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -64,7 +66,7 @@
             <el-container>
                 <el-aside width="500px">
 
-                    <h1>Brief Introduction</h1>
+                    <h1>Profile of Jobs</h1>
                     <div class="card-BI">
                         <div class="card-BI-info">
                             <div class="card-BI-avatar"></div>
@@ -262,7 +264,7 @@
                                     </el-timeline>
                                 </div>
                                 <span slot="footer" class="dialog-footer">
-                                <el-button type="primary" @click="dialogVisible_EI = false">Leave</el-button>
+                                <el-button type="primary" @click="dialogVisible_EI = false">Exit</el-button>
                                 </span>
                             </el-dialog>
                         </el-card>
@@ -366,7 +368,7 @@
                                         </el-timeline>
                                     </div>
                                     <span slot="footer" class="dialog-footer">
-                                <el-button type="primary" @click="dialogVisible_Apple_Jobs = false">Leave</el-button>
+                                <el-button type="primary" @click="dialogVisible_Apple_Jobs = false">Exit</el-button>
                                 </span>
                                 </el-dialog>
 
@@ -416,8 +418,8 @@
                 </el-container>
 
             </el-container>
-            <el-footer height="300px">
-                Privacy
+            <el-footer>
+                Copyright @ SPOOKIFY. 2023. All Rights Reserved.
             </el-footer>
         </el-container>
     </el-container>
@@ -438,7 +440,7 @@
         },
         methods: {
             handleCloseT(done) {
-                this.$confirm('Confirm to Leave？')
+                this.$confirm('Confirm to Exit？')
                     .then(_ => {
                         done();
                     })
@@ -477,24 +479,24 @@
         background-repeat: no-repeat;
         background-position: left;
         background-attachment: fixed;
-
         align-items: center;
-        text-align: center; /* 文本水平居中 */
+        text-align: center;
         line-height: 1;
     }
     .el-footer{
         background-color: #B3C0D1;
         color: #333;
         line-height: 60px;
+        text-align: center;
     }
     .el-aside {
-        background: linear-gradient(to right, #ffffff, #b2bfd0);
+        background-color: #b1becf;
         color: #333;
         text-align: left;
         line-height: 50px;
     }
     .el-main {
-        background: linear-gradient(to right, #b1becf, #ffffff);
+        background-color: #D3DCE6;
         color: #333;
         text-align: left;
         line-height: 50px;
@@ -508,17 +510,17 @@
     }
     .Beg-name{
         margin-bottom: 10px;
-        font-size: 40px; /* 调整字体大小，根据需要调整值 */
+        font-size: 40px;
         font-weight: bold;
     }
     .Beg-l{
         margin-bottom: 10px;
-        font-size: 20px; /* 调整字体大小，根据需要调整值 */
+        font-size: 20px;
         font-weight: 1;
     }
     .life{
         margin-bottom: 10px;
-        font-size: 18px; /* 调整字体大小，根据需要调整值 */
+        font-size: 18px;
         font-weight: normal;
     }
 
@@ -786,7 +788,7 @@
     .card-BI-avatar {
         --size: 80px;
         background-image: url("/images/Bimage/Jobs.png");
-        background-position: center; /* 可选：将图像置于容器中央 */
+        background-position: center;
         background-size: 80px;
         background-repeat: no-repeat;
         width: var(--size);

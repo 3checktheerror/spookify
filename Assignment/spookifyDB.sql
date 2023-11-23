@@ -21,7 +21,7 @@ CREATE TABLE contact_customer_1 (
                                     `token` varchar(128),
                                     `session_id` varchar(128),
                                     PRIMARY KEY (c_id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE INDEX contact_customer_1_cid_idx ON contact_customer_1(c_id);
 
@@ -47,7 +47,7 @@ CREATE TABLE contact_visitor_1 (
                                    `token` varchar(128),
                                    `session_id` varchar(128),
                                    PRIMARY KEY (v_id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE INDEX contact_visitor_1_vid_idx ON contact_visitor_1(v_id);
 

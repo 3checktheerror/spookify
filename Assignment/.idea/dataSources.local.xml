@@ -2,13 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-232.10203.10">
     <data-source name="spookify@localhost" uuid="d4d8378e-48ba-4a5d-9750-beb2a8fb8aa9">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
       <schema-mapping />
     </data-source>
   </component>
