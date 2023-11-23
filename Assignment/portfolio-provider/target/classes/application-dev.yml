@@ -33,6 +33,9 @@ mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      update-strategy: not_empty
 
 
 

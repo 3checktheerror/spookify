@@ -40,14 +40,14 @@ public class CustomerController {
     @SpookifyInfo
     @PostMapping("/insertCustomer")
     public CommonResult insertItem(@RequestBody CustomerInsertVO cusVO){
-        Map<String, Object> map = customerService.insertItem(cusVO);
+        Map<String, Object> map = customerService.insertCustomer(cusVO);
         return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
     @PostMapping("/modifyCustomer")
     public CommonResult modifyItem(@RequestBody CustomerModifyVO cusVO){
-        Map<String, Object> map = customerService.modifyItem(cusVO);
+        Map<String, Object> map = customerService.modifyCustomer(cusVO);
         return (int)map.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(map);
     }
 
