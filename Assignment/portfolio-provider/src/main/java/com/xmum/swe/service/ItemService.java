@@ -33,5 +33,5 @@ public interface ItemService {
 
     Map<String, Object> insertItem(ItemInsertVO itemVO, MultipartFile multipartFile);
 
-    Map<String, Object> modifyItem(ItemModifyVO itemVO, MultipartFile multipartFile) throws IOException;
+    Map<String, Object> modifyItem(ItemModifyVO itemVO, MultipartFile multipartFile) throws IOException, IllegalAccessException;
 }

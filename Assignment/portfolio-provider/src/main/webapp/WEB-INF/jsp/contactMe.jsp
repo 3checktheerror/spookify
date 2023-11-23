@@ -559,7 +559,7 @@
                     map: {
                         "phone": this.modifyForm.phone,
                         "occupation": this.modifyForm.occupation,
-                        "age": this.modifyForm.afge,
+                        "age": this.modifyForm.age,
                         "message": this.modifyForm.message,
                     },
                     igroupId: "ITG1",
@@ -603,11 +603,9 @@
             },
             closeDialog() {
                 this.addDialogVisible = false;
-                this.$refs.form.resetFields();
             },
             closeDialog2() {
                 this.modifyDialogVisible = false;
-                this.$refs.newform.resetFields();
             },
             beforeUpload(file) {
 
