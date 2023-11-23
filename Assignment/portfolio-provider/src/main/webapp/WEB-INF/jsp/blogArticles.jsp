@@ -115,10 +115,10 @@
                                     <small>+012 345 6789</small>
                                 </div>
                                 <div class="h-100 d-inline-flex align-items-center">
-                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.facebook.com/stevejobsfilm/"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://twitter.com/SteveJobsFilm"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/in/steve-jobs-800510b6"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" href="https://www.instagram.com/stevejobslive/"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -137,19 +137,19 @@
                         <div class="collapse navbar-collapse" id="navbarCollapse">
                             <div class="navbar-nav ms-auto p-4 p-lg-0">
                                 <a href="blogArticles" class="nav-item nav-link active">Home</a>
-                                <a href="blogArticles" class="nav-item nav-link">About</a>
-                                <a href="blogArticles" class="nav-item nav-link">Blog</a>
+                                <a href="https://allaboutstevejobs.com/" class="nav-item nav-link">About</a>
+                                <a href="https://allaboutstevejobs.com/blog/" class="nav-item nav-link">Blog</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Achievement</a>
                                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                                        <a href="blogArticles" class="dropdown-item">Apple</a>
-                                        <a href="blogArticles" class="dropdown-item">The Origin</a>
-                                        <a href="blogArticles" class="dropdown-item">Design Idea</a>
-                                        <a href="blogArticles" class="dropdown-item">Production Chain</a>
-                                        <a href="blogArticles" class="dropdown-item">Recycling</a>
+                                        <a href="https://www.apple.com/" class="dropdown-item">Apple</a>
+                                        <a href="https://appleinsider.com/articles/18/06/29/the-story-of-the-original-iphone-that-nobody-thought-was-possible" class="dropdown-item">The Origin</a>
+                                        <a href="https://theconversation.com/understanding-the-real-innovation-behind-the-iphone-79556" class="dropdown-item">Design Idea</a>
+                                        <a href="https://www.thomasnet.com/insights/iphone-supply-chain/" class="dropdown-item">Production Chain</a>
+                                        <a href="https://www.apple.com/environment/" class="dropdown-item">Environment</a>
                                     </div>
                                 </div>
-                                <a href="blogArticles" class="nav-item nav-link">Contact</a>
+                                <a href="https://support.apple.com/contact" class="nav-item nav-link">Contact</a>
                             </div>
                             <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Ask a Question<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
@@ -213,7 +213,7 @@
                                     <p><i class="far fa-check-circle text-primary me-3"></i>Co-founder of the Apple</p>
                                     <p><i class="far fa-check-circle text-primary me-3"></i>Launcher of Pixar Animation</p>
                                     <p><i class="far fa-check-circle text-primary me-3"></i>American inventor</p>
-                                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
+                                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="https://www.britannica.com/biography/Steve-Jobs">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +236,7 @@
                                         </div>
                                         <h4 class="mb-3">How Steve Jobs' Medical Experience Informed the Apple Watch</h4>
                                         <p class="mb-4">The Apple Watch recently celebrated its first birthday. While Apple won’t say exactly how many units have been sold, we estimate the number is in the 13-15 million range, bringing in $2-3 billion in revenue. That’s not bad for what some consider a failed product.</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <a class="btn" href="https://time.com/4323318/apple-watch-steve-jobs-health/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -246,7 +246,7 @@
                                         </div>
                                         <h4 class="mb-3">The Real Leadership Lessons of Steve Jobs, a Valuable One</h4>
                                         <p class="mb-4">His saga is the entrepreneurial creation myth writ large: Steve Jobs cofounded Apple in his parents’ garage in 1976, was ousted in 1985, returned to rescue it from near bankruptcy in 1997, and by the time he died, in October 2011, had built it into the world’s most valuable...</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <a class="btn" href="https://hbr.org/2012/04/the-real-leadership-lessons-of-steve-jobs"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -256,7 +256,7 @@
                                         </div>
                                         <h4 class="mb-3">The Long Shadow of Steve Jobs Looms Over the Turmoil at OpenAI</h4>
                                         <p class="mb-4">Steve Jobs, driven by his genius and his gut, invented the iPhone and built Apple into the world’s most valuable company. He was uncompromising, larger than life and irreplaceable. His life was creating the future, which would be filled with devices controlled by their users.</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <a class="btn" href="https://dnyuz.com/2023/11/21/the-long-shadow-of-steve-jobs-looms-over-the-turmoil-at-openai/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -266,7 +266,7 @@
                                         </div>
                                         <h4 class="mb-3">The Health Journey of Steve Jobs: Navigating Challenges</h4>
                                         <p class="mb-4">Beyond the boardrooms and product launches, Steve Jobs faced health challenges that added a layer of complexity to his extraordinary life. Diagnosed with a rare form of pancreatic cancer, Jobs exemplified resilience in the face of adversity. To interact with technology, he...</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <a class="btn" href="https://www.ciol.com/steve-jobs-struggles-faced-life/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -276,7 +276,7 @@
                                         </div>
                                         <h4 class="mb-3">Steve Jobs Visionary Approach to Dentistry: Change the Industry</h4>
                                         <p class="mb-4">Steve Jobs, renowned for his visionary pursuits in technology, might seem an unlikely figure in the world of dentistry. However, much like his approach to revolutionizing the smartphone industry, Jobs' influence casts a long shadow over unexpected domains...</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <a class="btn" href="https://www.thrivingdentist.com/lessons-from-steve-jobs-applied-to-dentistry/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -286,7 +286,7 @@
                                         </div>
                                         <h4 class="mb-3">Steve Jobs: A Legacy of Innovation and Impact on Technology</h4>
                                         <p class="mb-4">Steve Jobs, a visionary and technological pioneer, left an indelible mark on the world with his groundbreaking innovations. Best known as the co-founder of Apple Inc., Jobs transformed the way we interact with technology. From the iconic iPhone to the sleek MacBook...</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <a class="btn" href="https://bnn.network/tech/steve-jobs-legacy-beyond-technology-a-blueprint-for-making-a-difference/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -380,9 +380,9 @@
                                             <h5>Laurene Powell Jobs</h5>
                                             <p class="text-primary">Wife</p>
                                             <div class="team-social text-center">
-                                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-square" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-square" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-square" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -396,9 +396,9 @@
                                             <h5>Abdulfattah Jandali</h5>
                                             <p class="text-primary">Father</p>
                                             <div class="team-social text-center">
-                                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-square" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-square" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-square" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -412,9 +412,9 @@
                                             <h5>Lisa Brennan-Jobs</h5>
                                             <p class="text-primary">Daughter</p>
                                             <div class="team-social text-center">
-                                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-square" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-square" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-square" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -428,9 +428,9 @@
                                             <h5>Reed Paul Jobs</h5>
                                             <p class="text-primary">Son</p>
                                             <div class="team-social text-center">
-                                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-square" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-square" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-square" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -530,27 +530,27 @@
                                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                                     <div class="d-flex pt-2">
-                                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-youtube"></i></a>
-                                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://twitter.com/SteveJobsFilm"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/stevejobsfilm/"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.youtube.com/watch?v=Tuw8hxrFBH8"><i class="fab fa-youtube"></i></a>
+                                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.linkedin.com/pulse/steve-jobs-leadership-jimmy-alan"><i class="fab fa-linkedin-in"></i></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Services</h5>
-                                    <a class="btn btn-link" href="">Introduction</a>
-                                    <a class="btn btn-link" href="">How to be Success</a>
-                                    <a class="btn btn-link" href="">Apply Product</a>
-                                    <a class="btn btn-link" href="">Device Repair</a>
-                                    <a class="btn btn-link" href="">Laboratory</a>
+                                    <a class="btn btn-link" href="https://allaboutstevejobs.com/">Introduction</a>
+                                    <a class="btn btn-link" href="https://allaboutstevejobs.com/bio/short_bio">How to be Success</a>
+                                    <a class="btn btn-link" href="https://www.apple.com/store">Apple Product</a>
+                                    <a class="btn btn-link" href="https://support.apple.com/">Device Repair</a>
+                                    <a class="btn btn-link" href="https://discussions.apple.com/welcome">Laboratory</a>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Quick Links</h5>
-                                    <a class="btn btn-link" href="">About Us</a>
-                                    <a class="btn btn-link" href="">Contact Us</a>
-                                    <a class="btn btn-link" href="">Our Services</a>
-                                    <a class="btn btn-link" href="">Terms & Condition</a>
-                                    <a class="btn btn-link" href="">Support</a>
+                                    <a class="btn btn-link" href="https://allaboutstevejobs.com/">About Us</a>
+                                    <a class="btn btn-link" href="https://getsupport.apple.com/?caller=support.footer">Contact Us</a>
+                                    <a class="btn btn-link" href="https://support.apple.com/">Our Services</a>
+                                    <a class="btn btn-link" href="https://www.apple.com/legal/internet-services/terms/site.html">Terms & Condition</a>
+                                    <a class="btn btn-link" href="https://support.apple.com/">Support</a>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Newsletter</h5>
