@@ -19,6 +19,7 @@ import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.CustomerService;
 import com.xmum.swe.service.IdService;
+import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
@@ -137,7 +138,7 @@ public class CustomerServiceImpl implements CustomerService {
         JSONObject VO_data = JSON.parseObject(JSON.toJSONString(cusVO, filter));
         if(ObjectUtil.isNotNull(cusVO.getMap())) VO_data.putAll(cusVO.getMap());     //get whole VO data
         //Layer 2
-        preData.putAll(VO_data);
+        JsonUtil.merge(preData, VO_data);
         preData.put("status", "modified");
         preData.put("opType", "modify");
         preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());

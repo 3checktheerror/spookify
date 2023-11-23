@@ -4,27 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df19cac4-7c3c-496d-b4f7-7c51d62c0a94" name="Changes" comment="Feedback">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="df19cac4-7c3c-496d-b4f7-7c51d62c0a94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/contactMe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/cool-background.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/Feedback.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/Feedback.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/static/images/contactMe.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -35,9 +39,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="2YU50htQOoBoAq3b615kL3T4UWp" />
+  <component name="ProjectId" id="2YROkvHZMadfviuffkY96F1vq8X" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,7 +56,6 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Xu&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/Work/assignment/spookify/Assignment/portfolio-provider/src/main/resources/static/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -60,14 +63,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\resources\static\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Desktop\Work\assignment\spookify\Assignment\portfolio-provider\src\main\resources\static\images" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="PortforlioServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="dev" />
@@ -87,42 +82,26 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PortforlioServer" />
+        <item itemvalue="Spring Boot.PortforlioServer" />
+        <item itemvalue="Spring Boot.PortforlioServer" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="df19cac4-7c3c-496d-b4f7-7c51d62c0a94" name="Changes" comment="Feedback" />
-      <created>1700567098078</created>
+      <changelist id="df19cac4-7c3c-496d-b4f7-7c51d62c0a94" name="Changes" comment="" />
+      <created>1700485075295</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1700567098078</updated>
-      <workItem from="1700567099716" duration="11607000" />
-      <workItem from="1700620617867" duration="5215000" />
-      <workItem from="1700669674979" duration="1313000" />
-      <workItem from="1700672801790" duration="435000" />
-      <workItem from="1700721213759" duration="2010000" />
+      <updated>1700485075295</updated>
+      <workItem from="1700485077380" duration="1667000" />
+      <workItem from="1700544507766" duration="3502000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feedback" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feedback" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

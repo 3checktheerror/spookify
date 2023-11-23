@@ -18,6 +18,7 @@ import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.IdService;
 import com.xmum.swe.service.ItemService;
 import com.xmum.swe.service.VisitorService;
+import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
@@ -164,7 +165,7 @@ public class ItemServiceImpl implements ItemService {
         JSONObject VO_data = JSON.parseObject(JSON.toJSONString(itemVO, filter));
         if(ObjectUtil.isNotNull(itemVO.getMap())) VO_data.putAll(itemVO.getMap());     //get whole VO data
         //Layer 2
-        preData.putAll(VO_data);
+        JsonUtil.merge(preData, VO_data);
         preData.put("status", "modified");
         preData.put("opType", "modify");
         preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
