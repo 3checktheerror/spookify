@@ -189,26 +189,6 @@
                                     <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="${pageContext.request.contextPath}/images/LuoImg/about-2.jpg" alt="" style="margin-top: -25%;">
                                 </div>
 
-                                <div class="owl-carousel header-carousel">
-                                    <div class="owl-carousel-item position-relative">
-                                        <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/carousel-1.jpg" alt="">
-                                        <div class="owl-carousel-text">
-                                            <h1 class="display-1 text-white mb-0">Cardiology</h1>
-                                        </div>
-                                    </div>
-                                    <div class="owl-carousel-item position-relative">
-                                        <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/carousel-2.jpg" alt="">
-                                        <div class="owl-carousel-text">
-                                            <h1 class="display-1 text-white mb-0">Neurology</h1>
-                                        </div>
-                                    </div>
-                                    <div class="owl-carousel-item position-relative">
-                                        <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/carousel-3.jpg" alt="">
-                                        <div class="owl-carousel-text">
-                                            <h1 class="display-1 text-white mb-0">Pulmonary</h1>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,13 +206,13 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                                    <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
-                                    <h1 class="mb-4">Why You Should Trust Us? Get Know About Us!</h1>
-                                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                                    <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>
-                                    <p><i class="far fa-check-circle text-primary me-3"></i>Quality health care</p>
-                                    <p><i class="far fa-check-circle text-primary me-3"></i>Only Qualified Doctors</p>
-                                    <p><i class="far fa-check-circle text-primary me-3"></i>Medical Research Professionals</p>
+                                    <p class="d-inline-block border rounded-pill py-1 px-4">About Steve</p>
+                                    <h1 class="mb-4">Who is Steve Jobs? Get Know About Steve!</h1>
+                                    <p>Steve Jobs was an American inventor, designer, and entrepreneur who was the cofounder, chief executive, and chairman of Apple Inc. Born in 1955 to two University of Wisconsin graduate students who gave him up for adoption, Jobs was smart but directionless, dropping out of college and experimenting with different pursuits before cofounding Apple with Steve Wozniak in 1976.</p>
+                                    <p class="mb-4">Jobs left the company in 1985, launching Pixar Animation Studios, then returned to Apple more than a decade later. The tech giant’s revolutionary products, which include the iPhone, iPad, and iPod, have dictated the evolution of modern technology. Jobs died in 2011 following a long battle with pancreatic cancer.</p>
+                                    <p><i class="far fa-check-circle text-primary me-3"></i>Co-founder of the Apple</p>
+                                    <p><i class="far fa-check-circle text-primary me-3"></i>Launcher of Pixar Animation</p>
+                                    <p><i class="far fa-check-circle text-primary me-3"></i>American inventor</p>
                                     <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
                                 </div>
                             </div>
@@ -245,8 +225,8 @@
                     <div class="container-xxl py-5">
                         <div class="container">
                             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                                <p class="d-inline-block border rounded-pill py-1 px-4">Services</p>
-                                <h1>Health Care Solutions</h1>
+                                <p class="d-inline-block border rounded-pill py-1 px-4">Articles</p>
+                                <h1>Technology Changed the Health of Humanity Forever</h1>
                             </div>
                             <div class="row g-4">
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -254,8 +234,8 @@
                                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-heartbeat text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">Cardiology</h4>
-                                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                                        <h4 class="mb-3">How Steve Jobs' Medical Experience Informed the Apple Watch</h4>
+                                        <p class="mb-4">The Apple Watch recently celebrated its first birthday. While Apple won’t say exactly how many units have been sold, we estimate the number is in the 13-15 million range, bringing in $2-3 billion in revenue. That’s not bad for what some consider a failed product.</p>
                                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
@@ -264,8 +244,8 @@
                                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-x-ray text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">Pulmonary</h4>
-                                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                                        <h4 class="mb-3">The Real Leadership Lessons of Steve Jobs, a Valuable One</h4>
+                                        <p class="mb-4">His saga is the entrepreneurial creation myth writ large: Steve Jobs cofounded Apple in his parents’ garage in 1976, was ousted in 1985, returned to rescue it from near bankruptcy in 1997, and by the time he died, in October 2011, had built it into the world’s most valuable...</p>
                                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
@@ -274,8 +254,8 @@
                                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-brain text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">Neurology</h4>
-                                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                                        <h4 class="mb-3">The Long Shadow of Steve Jobs Looms Over the Turmoil at OpenAI</h4>
+                                        <p class="mb-4">Steve Jobs, driven by his genius and his gut, invented the iPhone and built Apple into the world’s most valuable company. He was uncompromising, larger than life and irreplaceable. His life was creating the future, which would be filled with devices controlled by their users.</p>
                                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
@@ -284,8 +264,8 @@
                                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-wheelchair text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">Orthopedics</h4>
-                                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                                        <h4 class="mb-3">The Health Journey of Steve Jobs: Navigating Challenges</h4>
+                                        <p class="mb-4">Beyond the boardrooms and product launches, Steve Jobs faced health challenges that added a layer of complexity to his extraordinary life. Diagnosed with a rare form of pancreatic cancer, Jobs exemplified resilience in the face of adversity. To interact with technology, he...</p>
                                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
@@ -294,8 +274,8 @@
                                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-tooth text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">Dental Surgery</h4>
-                                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                                        <h4 class="mb-3">Steve Jobs Visionary Approach to Dentistry: Change the Industry</h4>
+                                        <p class="mb-4">Steve Jobs, renowned for his visionary pursuits in technology, might seem an unlikely figure in the world of dentistry. However, much like his approach to revolutionizing the smartphone industry, Jobs' influence casts a long shadow over unexpected domains...</p>
                                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
@@ -304,8 +284,8 @@
                                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-vials text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">Laboratory</h4>
-                                        <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                                        <h4 class="mb-3">Steve Jobs: A Legacy of Innovation and Impact on Technology</h4>
+                                        <p class="mb-4">Steve Jobs, a visionary and technological pioneer, left an indelible mark on the world with his groundbreaking innovations. Best known as the co-founder of Apple Inc., Jobs transformed the way we interact with technology. From the iconic iPhone to the sleek MacBook...</p>
                                         <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
@@ -321,9 +301,9 @@
                             <div class="row g-0 mx-lg-0">
                                 <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
                                     <div class="p-lg-5 ps-lg-0">
-                                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">Features</p>
-                                        <h1 class="text-white mb-4">Why Choose Us</h1>
-                                        <p class="text-white mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
+                                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">Achievement</p>
+                                        <h1 class="text-white mb-4">Why We Love Steve</h1>
+                                        <p class="text-white mb-4 pb-2">Steve Jobs, driven by his genius and his gut, invented the iPhone and built Apple into the world’s most valuable company. He was uncompromising, larger than life and irreplaceable. His life was creating the future, which would be filled with devices controlled by their users.</p>
                                         <div class="row g-4">
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
@@ -332,7 +312,7 @@
                                                     </div>
                                                     <div class="ms-4">
                                                         <p class="text-white mb-2">Experience</p>
-                                                        <h5 class="text-white mb-0">Doctors</h5>
+                                                        <h5 class="text-white mb-0">Programmer</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -343,7 +323,7 @@
                                                     </div>
                                                     <div class="ms-4">
                                                         <p class="text-white mb-2">Quality</p>
-                                                        <h5 class="text-white mb-0">Services</h5>
+                                                        <h5 class="text-white mb-0">Innovative</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -354,7 +334,7 @@
                                                     </div>
                                                     <div class="ms-4">
                                                         <p class="text-white mb-2">Positive</p>
-                                                        <h5 class="text-white mb-0">Consultation</h5>
+                                                        <h5 class="text-white mb-0">Joy of Creating</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -364,8 +344,8 @@
                                                         <i class="fa fa-headphones text-primary"></i>
                                                     </div>
                                                     <div class="ms-4">
-                                                        <p class="text-white mb-2">24 Hours</p>
-                                                        <h5 class="text-white mb-0">Support</h5>
+                                                        <p class="text-white mb-2">Patient</p>
+                                                        <h5 class="text-white mb-0">Opportunist</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -387,8 +367,8 @@
                     <div class="container-xxl py-5">
                         <div class="container">
                             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                                <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
-                                <h1>Our Experience Doctors</h1>
+                                <p class="d-inline-block border rounded-pill py-1 px-4">Family</p>
+                                <h1>Meet Steve's Family</h1>
                             </div>
                             <div class="row g-4">
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -397,8 +377,8 @@
                                             <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/team-1.jpg" alt="">
                                         </div>
                                         <div class="team-text bg-light text-center p-4">
-                                            <h5>Doctor Name</h5>
-                                            <p class="text-primary">Department</p>
+                                            <h5>Laurene Powell Jobs</h5>
+                                            <p class="text-primary">Wife</p>
                                             <div class="team-social text-center">
                                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -413,8 +393,8 @@
                                             <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/team-2.jpg" alt="">
                                         </div>
                                         <div class="team-text bg-light text-center p-4">
-                                            <h5>Doctor Name</h5>
-                                            <p class="text-primary">Department</p>
+                                            <h5>Abdulfattah Jandali</h5>
+                                            <p class="text-primary">Father</p>
                                             <div class="team-social text-center">
                                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -429,8 +409,8 @@
                                             <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/team-3.jpg" alt="">
                                         </div>
                                         <div class="team-text bg-light text-center p-4">
-                                            <h5>Doctor Name</h5>
-                                            <p class="text-primary">Department</p>
+                                            <h5>Lisa Brennan-Jobs</h5>
+                                            <p class="text-primary">Daughter</p>
                                             <div class="team-social text-center">
                                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -445,8 +425,8 @@
                                             <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/team-4.jpg" alt="">
                                         </div>
                                         <div class="team-text bg-light text-center p-4">
-                                            <h5>Doctor Name</h5>
-                                            <p class="text-primary">Department</p>
+                                            <h5>Reed Paul Jobs</h5>
+                                            <p class="text-primary">Son</p>
                                             <div class="team-social text-center">
                                                 <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
                                                 <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
@@ -466,9 +446,9 @@
                         <div class="container">
                             <div class="row g-5">
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                                    <p class="d-inline-block border rounded-pill py-1 px-4">Appointment</p>
-                                    <h1 class="mb-4">Make An Appointment To Visit Our Doctor</h1>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                                    <p class="d-inline-block border rounded-pill py-1 px-4">Question</p>
+                                    <h1 class="mb-4">Make Us A Question About Steve JObs</h1>
+                                    <p class="mb-4">Welcome to our interactive session where you get to steer the conversation. Have burning questions about the iconic tech visionary, Steve Jobs? Whether it's about his groundbreaking contributions to the tech industry, his leadership philosophy, or intriguing aspects of his personal life, we're here to provide answers!</p>
                                     <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
                                         <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
                                             <i class="fa fa-phone-alt text-primary"></i>
@@ -503,10 +483,10 @@
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <select class="form-select border-0" style="height: 55px;">
-                                                        <option selected>Choose Doctor</option>
-                                                        <option value="1">Doctor 1</option>
-                                                        <option value="2">Doctor 2</option>
-                                                        <option value="3">Doctor 3</option>
+                                                        <option selected>Choose Advisor</option>
+                                                        <option value="1">Bill Jobs</option>
+                                                        <option value="2">Jun Jobs</option>
+                                                        <option value="3">Loh Jobs</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
@@ -527,7 +507,7 @@
                                                     <textarea class="form-control border-0" rows="5" placeholder="Describe your problem"></textarea>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Appointment</button>
+                                                    <button class="btn btn-primary w-100 py-3" type="submit">Ask the Question</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -538,43 +518,6 @@
                     </div>
                     <!-- Appointment End -->
 
-
-                    <!-- Testimonial Start -->
-                    <div class="container-xxl py-5">
-                        <div class="container">
-                            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
-                                <h1>What Say Our Patients!</h1>
-                            </div>
-                            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="testimonial-item text-center">
-                                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="${pageContext.request.contextPath}/images/LuoImg/testimonial-1.jpg" style="width: 100px; height: 100px;">
-                                    <div class="testimonial-text rounded text-center p-4">
-                                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                                        <h5 class="mb-1">Patient Name</h5>
-                                        <span class="fst-italic">Profession</span>
-                                    </div>
-                                </div>
-                                <div class="testimonial-item text-center">
-                                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="${pageContext.request.contextPath}/images/LuoImg/testimonial-2.jpg" style="width: 100px; height: 100px;">
-                                    <div class="testimonial-text rounded text-center p-4">
-                                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                                        <h5 class="mb-1">Patient Name</h5>
-                                        <span class="fst-italic">Profession</span>
-                                    </div>
-                                </div>
-                                <div class="testimonial-item text-center">
-                                    <img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4" src="${pageContext.request.contextPath}/images/LuoImg/testimonial-3.jpg" style="width: 100px; height: 100px;">
-                                    <div class="testimonial-text rounded text-center p-4">
-                                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                                        <h5 class="mb-1">Patient Name</h5>
-                                        <span class="fst-italic">Profession</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial End -->
 
 
                     <!-- Footer Start -->
@@ -595,10 +538,10 @@
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Services</h5>
-                                    <a class="btn btn-link" href="">Cardiology</a>
-                                    <a class="btn btn-link" href="">Pulmonary</a>
-                                    <a class="btn btn-link" href="">Neurology</a>
-                                    <a class="btn btn-link" href="">Orthopedics</a>
+                                    <a class="btn btn-link" href="">Introduction</a>
+                                    <a class="btn btn-link" href="">How to be Success</a>
+                                    <a class="btn btn-link" href="">Apply Product</a>
+                                    <a class="btn btn-link" href="">Device Repair</a>
                                     <a class="btn btn-link" href="">Laboratory</a>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
@@ -611,7 +554,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Newsletter</h5>
-                                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                                    <p>Sign up and find out more about our Steve Jobs!</p>
                                     <div class="position-relative mx-auto" style="max-width: 400px;">
                                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
@@ -623,11 +566,11 @@
                             <div class="copyright">
                                 <div class="row">
                                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                                        &copy; <a class="border-bottom" href="#">SteveJobs.info</a>, All Right Reserved.
                                     </div>
                                     <div class="col-md-6 text-center text-md-end">
                                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Myself</a>
                                     </div>
                                 </div>
                             </div>

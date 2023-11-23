@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_7_43_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_7_43_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/about-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/about-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/about-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/about-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/carousel-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/carousel-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/carousel-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/feature.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/feature.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/header-page.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/team-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/team-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/team-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/team-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/team-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/team-3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/team-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/team-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/testimonial-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/testimonial-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/static/images/LuoImg/testimonial-3.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +134,8 @@
       <workItem from="1700370135772" duration="2022000" />
       <workItem from="1700641728044" duration="19477000" />
       <workItem from="1700672736766" duration="144000" />
-      <workItem from="1700711104058" duration="829000" />
+      <workItem from="1700711104058" duration="3893000" />
+      <workItem from="1700717942569" duration="4403000" />
     </task>
     <servers />
   </component>
