@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65c505c4-538e-4eb4-acc4-1f55c059845b" name="Changes" comment="2nd">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/impl/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/impl/CustomerServiceImpl.class" afterDir="false" />
-    </list>
+    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,25 +33,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev-hotfix",
-    "last_opened_file_path": "E:/ProgramEProjectfile/spookify/Assignment/portfolio-provider/src/main/resources/static/images/Bimage",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Zhou&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/ProgramEProjectfile/spookify/Assignment/portfolio-provider/src/main/resources/static/images/Bimage&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images\Bimage" />
@@ -93,21 +88,54 @@
       <created>1700485075295</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1700484145096</updated>
-      <workItem from="1700484147261" duration="1314000" />
-      <workItem from="1700667782442" duration="2309000" />
-      <workItem from="1700741383397" duration="979000" />
-      <workItem from="1700747474076" duration="693000" />
+      <updated>1699230519355</updated>
+      <workItem from="1699230520535" duration="101000" />
+      <workItem from="1699231478454" duration="2854000" />
+      <workItem from="1699369368751" duration="783000" />
+      <workItem from="1699426423850" duration="6692000" />
+      <workItem from="1699435718571" duration="1991000" />
+      <workItem from="1699492434717" duration="2316000" />
+      <workItem from="1699521355471" duration="164000" />
+      <workItem from="1699524431893" duration="5585000" />
+      <workItem from="1699838151022" duration="557000" />
+      <workItem from="1699920949113" duration="1285000" />
+      <workItem from="1700007659288" duration="2447000" />
+      <workItem from="1700103456679" duration="631000" />
+      <workItem from="1700213798664" duration="24751000" />
+      <workItem from="1700286326146" duration="25848000" />
+      <workItem from="1700370135772" duration="2022000" />
+      <workItem from="1700641728044" duration="19477000" />
+      <workItem from="1700672736766" duration="144000" />
+      <workItem from="1700711104058" duration="3893000" />
+      <workItem from="1700717942569" duration="5102000" />
+      <workItem from="1700734602442" duration="343000" />
+      <workItem from="1700741915215" duration="4153000" />
     </task>
-    <task id="LOCAL-00001" summary="2nd">
+    <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />
-      <created>1700747081116</created>
+      <created>1700749073145</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1700747081116</updated>
+      <updated>1700749073145</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
+      <option name="closed" value="true" />
+      <created>1700749107805</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700749107805</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
+      <option name="closed" value="true" />
+      <created>1700749238789</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700749238789</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,8 +153,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2nd" />
-    <option name="LAST_COMMIT_MESSAGE" value="2nd" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
