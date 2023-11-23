@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -51,25 +51,20 @@
                 <el-row style="margin-left: 50px; margin-top: 50px;">
                     <div class="social-media-icons">
                         <a href="https://github.com/3checktheerror/spookify" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-github"></i>
+                            <i class="fa-brands fa-github fa-bounce"></i>
                         </a>
-                        <div class="bubble">
-                            <div class="bubble-content">
-                                <p>Click this</p>
-                            </div>
-                            <div class="arrow"></div>
-                        </div>
+
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-twitter"></i>
+                            <i class="fa-brands fa-twitter"></i>
                         </a>
                         <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-linkedin"></i>
+                            <i class="fa-brands fa-linkedin"></i>
                         </a>
                         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-facebook"></i>
+                            <i class="fa-brands fa-facebook"></i>
                         </a>
                         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-instagram"></i>
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
                     </div>
                 </el-row>
@@ -207,6 +202,7 @@
     }
 
     .center-container {
+        margin-top: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -235,32 +231,8 @@
         background-color: #333;
         color: #fff;
     }
-    .bubble {
-        margin-top: 50px;
-        position: absolute;
-        display: block;
-    }
 
-    .bubble-content {
-        font-size: 20px;
-        margin-top: 20px;
-        background-color: #f0f0f0;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
 
-    .arrow {
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 10px;
-        border-color: transparent transparent #f0f0f0 transparent;
-        top: -1px;
-        left: 12%;
-        transform: translateX(-50%);
-    }
 </style>
 
 
