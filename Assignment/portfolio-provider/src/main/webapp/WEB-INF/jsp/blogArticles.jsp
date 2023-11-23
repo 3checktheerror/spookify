@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/wow.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -19,17 +24,24 @@
     <!-- Favicon -->
     <link href="${pageContext.request.contextPath}/images/LuoImg/favicon.ico" rel="icon">
 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
 
+    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Libraries Stylesheet -->
     <link href="${pageContext.request.contextPath}/lib/animate/animate.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
-          rel="stylesheet"/>
+    <link href="${pageContext.request.contextPath}/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
+    <!-- Customized Bootstrap Stylesheet -->
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Template Stylesheet -->
     <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
 </head>
 
@@ -96,14 +108,10 @@
                                     <small>+012 345 6789</small>
                                 </div>
                                 <div class="h-100 d-inline-flex align-items-center">
-                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i
-                                            class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" href=""><i
-                                            class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.facebook.com/stevejobsfilm/"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://twitter.com/SteveJobsFilm"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href="https://www.linkedin.com/in/steve-jobs-800510b6"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" href="https://www.instagram.com/stevejobslive/"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -116,30 +124,27 @@
                         <a href="blogArticles" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
                             <h1 class="m-0 text-primary"><i class="far fa-hospital me-3"></i>Steve Jobs</h1>
                         </a>
-                        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
-                                data-bs-target="#navbarCollapse">
+                        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarCollapse">
                             <div class="navbar-nav ms-auto p-4 p-lg-0">
                                 <a href="blogArticles" class="nav-item nav-link active">Home</a>
-                                <a href="blogArticles" class="nav-item nav-link">About</a>
-                                <a href="blogArticles" class="nav-item nav-link">Blog</a>
+                                <a href="https://allaboutstevejobs.com/" class="nav-item nav-link">About</a>
+                                <a href="https://allaboutstevejobs.com/blog/" class="nav-item nav-link">Blog</a>
                                 <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle"
-                                       data-bs-toggle="dropdown">Achievement</a>
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Achievement</a>
                                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                                        <a href="blogArticles" class="dropdown-item">Apple</a>
-                                        <a href="blogArticles" class="dropdown-item">The Origin</a>
-                                        <a href="blogArticles" class="dropdown-item">Design Idea</a>
-                                        <a href="blogArticles" class="dropdown-item">Production Chain</a>
-                                        <a href="blogArticles" class="dropdown-item">Recycling</a>
+                                        <a href="https://www.apple.com/" class="dropdown-item">Apple</a>
+                                        <a href="https://appleinsider.com/articles/18/06/29/the-story-of-the-original-iphone-that-nobody-thought-was-possible" class="dropdown-item">The Origin</a>
+                                        <a href="https://theconversation.com/understanding-the-real-innovation-behind-the-iphone-79556" class="dropdown-item">Design Idea</a>
+                                        <a href="https://www.thomasnet.com/insights/iphone-supply-chain/" class="dropdown-item">Production Chain</a>
+                                        <a href="https://www.apple.com/environment/" class="dropdown-item">Environment</a>
                                     </div>
                                 </div>
-                                <a href="blogArticles" class="nav-item nav-link">Contact</a>
+                                <a href="https://support.apple.com/contact" class="nav-item nav-link">Contact</a>
                             </div>
-                            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Ask a Question<i
-                                    class="fa fa-arrow-right ms-3"></i></a>
+                            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Ask a Question<i class="fa fa-arrow-right ms-3"></i></a>
                         </div>
                     </nav>
                     <!-- Navbar End -->
@@ -149,8 +154,7 @@
                     <div class="container-fluid header bg-primary p-0 mb-5">
                         <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
                             <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
-                                <h1 class="display-4 text-white mb-5">“The people who are crazy enough to think they can
-                                    change the world are the ones who do.” -Steve Jobs</h1>
+                                <h1 class="display-4 text-white mb-5">“The people who are crazy enough to think they can change the world are the ones who do.” -Steve Jobs</h1>
                                 <div class="row g-4">
                                     <div class="col-sm-4">
                                         <div class="border-start border-light ps-4">
@@ -174,11 +178,8 @@
                             </div>
                             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                                 <div class="d-flex flex-column">
-                                    <img class="img-fluid rounded w-75 align-self-end"
-                                         src="${pageContext.request.contextPath}/images/LuoImg/about-1.jpg" alt="">
-                                    <img class="img-fluid rounded w-50 bg-white pt-3 pe-3"
-                                         src="${pageContext.request.contextPath}/images/LuoImg/about-2.jpg" alt=""
-                                         style="margin-top: -25%;">
+                                    <img class="img-fluid rounded w-75 align-self-end" src="${pageContext.request.contextPath}/images/LuoImg/about-1.jpg" alt="">
+                                    <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="${pageContext.request.contextPath}/images/LuoImg/about-2.jpg" alt="" style="margin-top: -25%;">
                                 </div>
 
                             </div>
@@ -193,31 +194,19 @@
                             <div class="row g-5">
                                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                                     <div class="d-flex flex-column">
-                                        <img class="img-fluid rounded w-75 align-self-end"
-                                             src="${pageContext.request.contextPath}/images/LuoImg/about-1.jpg" alt="">
-                                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3"
-                                             src="${pageContext.request.contextPath}/images/LuoImg/about-2.jpg" alt=""
-                                             style="margin-top: -25%;">
+                                        <img class="img-fluid rounded w-75 align-self-end" src="${pageContext.request.contextPath}/images/LuoImg/about-1.jpg" alt="">
+                                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="${pageContext.request.contextPath}/images/LuoImg/about-2.jpg" alt="" style="margin-top: -25%;">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                                     <p class="d-inline-block border rounded-pill py-1 px-4">About Steve</p>
                                     <h1 class="mb-4">Who is Steve Jobs? Get Know About Steve!</h1>
-                                    <p>Steve Jobs was an American inventor, designer, and entrepreneur who was the
-                                        cofounder, chief executive, and chairman of Apple Inc. Born in 1955 to two
-                                        University of Wisconsin graduate students who gave him up for adoption, Jobs was
-                                        smart but directionless, dropping out of college and experimenting with
-                                        different pursuits before cofounding Apple with Steve Wozniak in 1976.</p>
-                                    <p class="mb-4">Jobs left the company in 1985, launching Pixar Animation Studios,
-                                        then returned to Apple more than a decade later. The tech giant’s revolutionary
-                                        products, which include the iPhone, iPad, and iPod, have dictated the evolution
-                                        of modern technology. Jobs died in 2011 following a long battle with pancreatic
-                                        cancer.</p>
+                                    <p>Steve Jobs was an American inventor, designer, and entrepreneur who was the cofounder, chief executive, and chairman of Apple Inc. Born in 1955 to two University of Wisconsin graduate students who gave him up for adoption, Jobs was smart but directionless, dropping out of college and experimenting with different pursuits before cofounding Apple with Steve Wozniak in 1976.</p>
+                                    <p class="mb-4">Jobs left the company in 1985, launching Pixar Animation Studios, then returned to Apple more than a decade later. The tech giant’s revolutionary products, which include the iPhone, iPad, and iPod, have dictated the evolution of modern technology. Jobs died in 2011 following a long battle with pancreatic cancer.</p>
                                     <p><i class="far fa-check-circle text-primary me-3"></i>Co-founder of the Apple</p>
-                                    <p><i class="far fa-check-circle text-primary me-3"></i>Launcher of Pixar Animation
-                                    </p>
+                                    <p><i class="far fa-check-circle text-primary me-3"></i>Launcher of Pixar Animation</p>
                                     <p><i class="far fa-check-circle text-primary me-3"></i>American inventor</p>
-                                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
+                                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="https://www.britannica.com/biography/Steve-Jobs">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -228,99 +217,69 @@
                     <!-- Service Start -->
                     <div class="container-xxl py-5">
                         <div class="container">
-                            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
-                                 style="max-width: 600px;">
+                            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                                 <p class="d-inline-block border rounded-pill py-1 px-4">Articles</p>
                                 <h1>Technology Changed the Health of Humanity Forever</h1>
                             </div>
                             <div class="row g-4">
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="service-item bg-light rounded h-100 p-5">
-                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
-                                             style="width: 65px; height: 65px;">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-heartbeat text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">How Steve Jobs' Medical Experience Informed the Apple
-                                            Watch</h4>
-                                        <p class="mb-4">The Apple Watch recently celebrated its first birthday. While
-                                            Apple won’t say exactly how many units have been sold, we estimate the
-                                            number is in the 13-15 million range, bringing in $2-3 billion in revenue.
-                                            That’s not bad for what some consider a failed product.</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <h4 class="mb-3">How Steve Jobs' Medical Experience Informed the Apple Watch</h4>
+                                        <p class="mb-4">The Apple Watch recently celebrated its first birthday. While Apple won’t say exactly how many units have been sold, we estimate the number is in the 13-15 million range, bringing in $2-3 billion in revenue. That’s not bad for what some consider a failed product.</p>
+                                        <a class="btn" href="https://time.com/4323318/apple-watch-steve-jobs-health/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                                     <div class="service-item bg-light rounded h-100 p-5">
-                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
-                                             style="width: 65px; height: 65px;">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-x-ray text-primary fs-4"></i>
                                         </div>
                                         <h4 class="mb-3">The Real Leadership Lessons of Steve Jobs, a Valuable One</h4>
-                                        <p class="mb-4">His saga is the entrepreneurial creation myth writ large: Steve
-                                            Jobs cofounded Apple in his parents’ garage in 1976, was ousted in 1985,
-                                            returned to rescue it from near bankruptcy in 1997, and by the time he died,
-                                            in October 2011, had built it into the world’s most valuable...</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <p class="mb-4">His saga is the entrepreneurial creation myth writ large: Steve Jobs cofounded Apple in his parents’ garage in 1976, was ousted in 1985, returned to rescue it from near bankruptcy in 1997, and by the time he died, in October 2011, had built it into the world’s most valuable...</p>
+                                        <a class="btn" href="https://hbr.org/2012/04/the-real-leadership-lessons-of-steve-jobs"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                                     <div class="service-item bg-light rounded h-100 p-5">
-                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
-                                             style="width: 65px; height: 65px;">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-brain text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">The Long Shadow of Steve Jobs Looms Over the Turmoil at
-                                            OpenAI</h4>
-                                        <p class="mb-4">Steve Jobs, driven by his genius and his gut, invented the
-                                            iPhone and built Apple into the world’s most valuable company. He was
-                                            uncompromising, larger than life and irreplaceable. His life was creating
-                                            the future, which would be filled with devices controlled by their
-                                            users.</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <h4 class="mb-3">The Long Shadow of Steve Jobs Looms Over the Turmoil at OpenAI</h4>
+                                        <p class="mb-4">Steve Jobs, driven by his genius and his gut, invented the iPhone and built Apple into the world’s most valuable company. He was uncompromising, larger than life and irreplaceable. His life was creating the future, which would be filled with devices controlled by their users.</p>
+                                        <a class="btn" href="https://dnyuz.com/2023/11/21/the-long-shadow-of-steve-jobs-looms-over-the-turmoil-at-openai/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="service-item bg-light rounded h-100 p-5">
-                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
-                                             style="width: 65px; height: 65px;">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-wheelchair text-primary fs-4"></i>
                                         </div>
                                         <h4 class="mb-3">The Health Journey of Steve Jobs: Navigating Challenges</h4>
-                                        <p class="mb-4">Beyond the boardrooms and product launches, Steve Jobs faced
-                                            health challenges that added a layer of complexity to his extraordinary
-                                            life. Diagnosed with a rare form of pancreatic cancer, Jobs exemplified
-                                            resilience in the face of adversity. To interact with technology, he...</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <p class="mb-4">Beyond the boardrooms and product launches, Steve Jobs faced health challenges that added a layer of complexity to his extraordinary life. Diagnosed with a rare form of pancreatic cancer, Jobs exemplified resilience in the face of adversity. To interact with technology, he...</p>
+                                        <a class="btn" href="https://www.ciol.com/steve-jobs-struggles-faced-life/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                                     <div class="service-item bg-light rounded h-100 p-5">
-                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
-                                             style="width: 65px; height: 65px;">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-tooth text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">Steve Jobs Visionary Approach to Dentistry: Change the
-                                            Industry</h4>
-                                        <p class="mb-4">Steve Jobs, renowned for his visionary pursuits in technology,
-                                            might seem an unlikely figure in the world of dentistry. However, much like
-                                            his approach to revolutionizing the smartphone industry, Jobs' influence
-                                            casts a long shadow over unexpected domains...</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <h4 class="mb-3">Steve Jobs Visionary Approach to Dentistry: Change the Industry</h4>
+                                        <p class="mb-4">Steve Jobs, renowned for his visionary pursuits in technology, might seem an unlikely figure in the world of dentistry. However, much like his approach to revolutionizing the smartphone industry, Jobs' influence casts a long shadow over unexpected domains...</p>
+                                        <a class="btn" href="https://www.thrivingdentist.com/lessons-from-steve-jobs-applied-to-dentistry/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                                     <div class="service-item bg-light rounded h-100 p-5">
-                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
-                                             style="width: 65px; height: 65px;">
+                                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
                                             <i class="fa fa-vials text-primary fs-4"></i>
                                         </div>
-                                        <h4 class="mb-3">Steve Jobs: A Legacy of Innovation and Impact on
-                                            Technology</h4>
-                                        <p class="mb-4">Steve Jobs, a visionary and technological pioneer, left an
-                                            indelible mark on the world with his groundbreaking innovations. Best known
-                                            as the co-founder of Apple Inc., Jobs transformed the way we interact with
-                                            technology. From the iconic iPhone to the sleek MacBook...</p>
-                                        <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                                        <h4 class="mb-3">Steve Jobs: A Legacy of Innovation and Impact on Technology</h4>
+                                        <p class="mb-4">Steve Jobs, a visionary and technological pioneer, left an indelible mark on the world with his groundbreaking innovations. Best known as the co-founder of Apple Inc., Jobs transformed the way we interact with technology. From the iconic iPhone to the sleek MacBook...</p>
+                                        <a class="btn" href="https://bnn.network/tech/steve-jobs-legacy-beyond-technology-a-blueprint-for-making-a-difference/"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -335,19 +294,13 @@
                             <div class="row g-0 mx-lg-0">
                                 <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
                                     <div class="p-lg-5 ps-lg-0">
-                                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">
-                                            Achievement</p>
+                                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">Achievement</p>
                                         <h1 class="text-white mb-4">Why We Love Steve</h1>
-                                        <p class="text-white mb-4 pb-2">Steve Jobs, driven by his genius and his gut,
-                                            invented the iPhone and built Apple into the world’s most valuable company.
-                                            He was uncompromising, larger than life and irreplaceable. His life was
-                                            creating the future, which would be filled with devices controlled by their
-                                            users.</p>
+                                        <p class="text-white mb-4 pb-2">Steve Jobs, driven by his genius and his gut, invented the iPhone and built Apple into the world’s most valuable company. He was uncompromising, larger than life and irreplaceable. His life was creating the future, which would be filled with devices controlled by their users.</p>
                                         <div class="row g-4">
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
-                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
-                                                         style="width: 55px; height: 55px;">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
                                                         <i class="fa fa-user-md text-primary"></i>
                                                     </div>
                                                     <div class="ms-4">
@@ -358,8 +311,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
-                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
-                                                         style="width: 55px; height: 55px;">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
                                                         <i class="fa fa-check text-primary"></i>
                                                     </div>
                                                     <div class="ms-4">
@@ -370,8 +322,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
-                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
-                                                         style="width: 55px; height: 55px;">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
                                                         <i class="fa fa-comment-medical text-primary"></i>
                                                     </div>
                                                     <div class="ms-4">
@@ -382,8 +333,7 @@
                                             </div>
                                             <div class="col-6">
                                                 <div class="d-flex align-items-center">
-                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light"
-                                                         style="width: 55px; height: 55px;">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
                                                         <i class="fa fa-headphones text-primary"></i>
                                                     </div>
                                                     <div class="ms-4">
@@ -395,12 +345,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s"
-                                     style="min-height: 400px;">
+                                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100"
-                                             src="${pageContext.request.contextPath}/images/LuoImg/feature.jpg"
-                                             style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="${pageContext.request.contextPath}/images/LuoImg/feature.jpg" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -412,8 +359,7 @@
                     <!-- Team Start -->
                     <div class="container-xxl py-5">
                         <div class="container">
-                            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
-                                 style="max-width: 600px;">
+                            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                                 <p class="d-inline-block border rounded-pill py-1 px-4">Family</p>
                                 <h1>Meet Steve's Family</h1>
                             </div>
@@ -421,17 +367,15 @@
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="team-item position-relative rounded overflow-hidden">
                                         <div class="overflow-hidden">
-                                            <img class="img-fluid"
-                                                 src="${pageContext.request.contextPath}/images/LuoImg/team-1.jpg"
-                                                 alt="">
+                                            <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/team-1.jpg" alt="">
                                         </div>
                                         <div class="team-text bg-light text-center p-4">
                                             <h5>Laurene Powell Jobs</h5>
                                             <p class="text-primary">Wife</p>
                                             <div class="team-social text-center">
-                                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-square" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-square" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-square" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -439,17 +383,15 @@
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                                     <div class="team-item position-relative rounded overflow-hidden">
                                         <div class="overflow-hidden">
-                                            <img class="img-fluid"
-                                                 src="${pageContext.request.contextPath}/images/LuoImg/team-2.jpg"
-                                                 alt="">
+                                            <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/team-2.jpg" alt="">
                                         </div>
                                         <div class="team-text bg-light text-center p-4">
                                             <h5>Abdulfattah Jandali</h5>
                                             <p class="text-primary">Father</p>
                                             <div class="team-social text-center">
-                                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-square" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-square" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-square" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -457,17 +399,15 @@
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                                     <div class="team-item position-relative rounded overflow-hidden">
                                         <div class="overflow-hidden">
-                                            <img class="img-fluid"
-                                                 src="${pageContext.request.contextPath}/images/LuoImg/team-3.jpg"
-                                                 alt="">
+                                            <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/team-3.jpg" alt="">
                                         </div>
                                         <div class="team-text bg-light text-center p-4">
                                             <h5>Lisa Brennan-Jobs</h5>
                                             <p class="text-primary">Daughter</p>
                                             <div class="team-social text-center">
-                                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-square" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-square" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-square" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -475,17 +415,15 @@
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                                     <div class="team-item position-relative rounded overflow-hidden">
                                         <div class="overflow-hidden">
-                                            <img class="img-fluid"
-                                                 src="${pageContext.request.contextPath}/images/LuoImg/team-4.jpg"
-                                                 alt="">
+                                            <img class="img-fluid" src="${pageContext.request.contextPath}/images/LuoImg/team-4.jpg" alt="">
                                         </div>
                                         <div class="team-text bg-light text-center p-4">
                                             <h5>Reed Paul Jobs</h5>
                                             <p class="text-primary">Son</p>
                                             <div class="team-social text-center">
-                                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
-                                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                                <a class="btn btn-square" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                                <a class="btn btn-square" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                                <a class="btn btn-square" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -502,15 +440,10 @@
                             <div class="row g-5">
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <p class="d-inline-block border rounded-pill py-1 px-4">Question</p>
-                                    <h1 class="mb-4">Make Us A Question About Steve JObs</h1>
-                                    <p class="mb-4">Welcome to our interactive session where you get to steer the
-                                        conversation. Have burning questions about the iconic tech visionary, Steve
-                                        Jobs? Whether it's about his groundbreaking contributions to the tech industry,
-                                        his leadership philosophy, or intriguing aspects of his personal life, we're
-                                        here to provide answers!</p>
+                                    <h1 class="mb-4">Ask A Question About Steve Jobs</h1>
+                                    <p class="mb-4">Welcome to our interactive session where you get to steer the conversation. Have burning questions about the iconic tech visionary, Steve Jobs? Whether it's about his groundbreaking contributions to the tech industry, his leadership philosophy, or intriguing aspects of his personal life, we're here to provide answers!</p>
                                     <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
-                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
-                                             style="width: 55px; height: 55px;">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
                                             <i class="fa fa-phone-alt text-primary"></i>
                                         </div>
                                         <div class="ms-4">
@@ -519,8 +452,7 @@
                                         </div>
                                     </div>
                                     <div class="bg-light rounded d-flex align-items-center p-5">
-                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
-                                             style="width: 55px; height: 55px;">
+                                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
                                             <i class="fa fa-envelope-open text-primary"></i>
                                         </div>
                                         <div class="ms-4">
@@ -534,16 +466,13 @@
                                         <form>
                                             <div class="row g-3">
                                                 <div class="col-12 col-sm-6">
-                                                    <input type="text" class="form-control border-0"
-                                                           placeholder="Your Name" style="height: 55px;">
+                                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
                                                 </div>
                                                 <div class="col-12 col-sm-6">
-                                                    <input type="email" class="form-control border-0"
-                                                           placeholder="Your Email" style="height: 55px;">
+                                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
                                                 </div>
                                                 <div class="col-12 col-sm-6">
-                                                    <input type="text" class="form-control border-0"
-                                                           placeholder="Your Mobile" style="height: 55px;">
+                                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <select class="form-select border-0" style="height: 55px;">
@@ -557,26 +486,21 @@
                                                     <div class="date" id="date" data-target-input="nearest">
                                                         <input type="text"
                                                                class="form-control border-0 datetimepicker-input"
-                                                               placeholder="Choose Date" data-target="#date"
-                                                               data-toggle="datetimepicker" style="height: 55px;">
+                                                               placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;">
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-6">
                                                     <div class="time" id="time" data-target-input="nearest">
                                                         <input type="text"
                                                                class="form-control border-0 datetimepicker-input"
-                                                               placeholder="Choose Date" data-target="#time"
-                                                               data-toggle="datetimepicker" style="height: 55px;">
+                                                               placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <textarea class="form-control border-0" rows="5"
-                                                              placeholder="Describe your problem"></textarea>
+                                                    <textarea class="form-control border-0" rows="5" placeholder="Describe your problem"></textarea>
                                                 </div>
                                                 <div class="col-12">
-                                                    <button class="btn btn-primary w-100 py-3" type="submit">Ask the
-                                                        Question
-                                                    </button>
+                                                    <button class="btn btn-primary w-100 py-3" type="submit">Ask the Question</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -588,53 +512,45 @@
                     <!-- Appointment End -->
 
 
+
                     <!-- Footer Start -->
                     <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
                         <div class="container py-5">
                             <div class="row g-5">
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Address</h5>
-                                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
-                                    </p>
+                                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                                     <div class="d-flex pt-2">
-                                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                                                class="fab fa-twitter"></i></a>
-                                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                                                class="fab fa-facebook-f"></i></a>
-                                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                                                class="fab fa-youtube"></i></a>
-                                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                                                class="fab fa-linkedin-in"></i></a>
+                                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://twitter.com/SteveJobsFilm"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.facebook.com/stevejobsfilm/"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.youtube.com/watch?v=Tuw8hxrFBH8"><i class="fab fa-youtube"></i></a>
+                                        <a class="btn btn-outline-light btn-social rounded-circle" href="https://www.linkedin.com/pulse/steve-jobs-leadership-jimmy-alan"><i class="fab fa-linkedin-in"></i></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Services</h5>
-                                    <a class="btn btn-link" href="">Introduction</a>
-                                    <a class="btn btn-link" href="">How to be Success</a>
-                                    <a class="btn btn-link" href="">Apply Product</a>
-                                    <a class="btn btn-link" href="">Device Repair</a>
-                                    <a class="btn btn-link" href="">Laboratory</a>
+                                    <a class="btn btn-link" href="https://allaboutstevejobs.com/">Introduction</a>
+                                    <a class="btn btn-link" href="https://allaboutstevejobs.com/bio/short_bio">How to be Success</a>
+                                    <a class="btn btn-link" href="https://www.apple.com/store">Apple Product</a>
+                                    <a class="btn btn-link" href="https://support.apple.com/">Device Repair</a>
+                                    <a class="btn btn-link" href="https://discussions.apple.com/welcome">Laboratory</a>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Quick Links</h5>
-                                    <a class="btn btn-link" href="">About Us</a>
-                                    <a class="btn btn-link" href="">Contact Us</a>
-                                    <a class="btn btn-link" href="">Our Services</a>
-                                    <a class="btn btn-link" href="">Terms & Condition</a>
-                                    <a class="btn btn-link" href="">Support</a>
+                                    <a class="btn btn-link" href="https://allaboutstevejobs.com/">About Us</a>
+                                    <a class="btn btn-link" href="https://getsupport.apple.com/?caller=support.footer">Contact Us</a>
+                                    <a class="btn btn-link" href="https://support.apple.com/">Our Services</a>
+                                    <a class="btn btn-link" href="https://www.apple.com/legal/internet-services/terms/site.html">Terms & Condition</a>
+                                    <a class="btn btn-link" href="https://support.apple.com/">Support</a>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
                                     <h5 class="text-light mb-4">Newsletter</h5>
                                     <p>Sign up and find out more about our Steve Jobs!</p>
                                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
-                                               placeholder="Your email">
-                                        <button type="button"
-                                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
-                                            SignUp
-                                        </button>
+                                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                                     </div>
                                 </div>
                             </div>
@@ -643,7 +559,8 @@
                             <div class="copyright">
                                 <div class="row">
                                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                                        &copy; <a class="border-bottom" href="#">SteveJobs.info</a>, All Right Reserved.
+                                        Copyright &copy; <a class="border-bottom" href=https://github.com/3checktheerror/spookify>
+                                        SPOOKIFY</a>. 2023. All Right Reserved.
                                     </div>
                                     <div class="col-md-6 text-center text-md-end">
                                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
@@ -657,8 +574,7 @@
 
 
                     <!-- Back to Top -->
-                    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
-                            class="bi bi-arrow-up"></i></a>
+                    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
                     <!-- JavaScript Libraries -->
@@ -686,30 +602,16 @@
 </div>
 
 
+
 <script>
     new Vue({
         el: '#app',
         data() {
             return {
                 blogPosts: [
-                    {
-                        id: 1,
-                        title: 'The Quantum Leap of Artificial Intelligence',
-                        content: 'Introduction: Explore the cutting-edge intersection of quantum computing and artificial intelligence. This article delves into the potential of quantum computing to revolutionize AI algorithms, unlocking unprecedented computational power and solving complex problems that were once deemed impossible.',
-                        showDetails: false
-                    },
-                    {
-                        id: 2,
-                        title: 'Mindfulness in the Digital Age',
-                        content: 'Introduction: In an era dominated by constant digital stimuli, this article explores the importance of mindfulness practices to maintain focus and well-being. Discover strategies for navigating information overload, fostering digital mindfulness, and striking a balance between technology and mental health.',
-                        showDetails: false
-                    },
-                    {
-                        id: 3,
-                        title: 'The Next Frontiers of Space Exploration',
-                        content: 'Introduction: Journey beyond the red planet as we unravel the exciting prospects and challenges of future space exploration. From the exploration of distant exoplanets to the establishment of lunar colonies, this article paints a visionary picture of humanity next great leaps into the cosmos.',
-                        showDetails: false
-                    }
+                    { id: 1, title: 'The Quantum Leap of Artificial Intelligence', content: 'Introduction: Explore the cutting-edge intersection of quantum computing and artificial intelligence. This article delves into the potential of quantum computing to revolutionize AI algorithms, unlocking unprecedented computational power and solving complex problems that were once deemed impossible.', showDetails: false },
+                    { id: 2, title: 'Mindfulness in the Digital Age', content: 'Introduction: In an era dominated by constant digital stimuli, this article explores the importance of mindfulness practices to maintain focus and well-being. Discover strategies for navigating information overload, fostering digital mindfulness, and striking a balance between technology and mental health.', showDetails: false },
+                    { id: 3, title: 'The Next Frontiers of Space Exploration', content: 'Introduction: Journey beyond the red planet as we unravel the exciting prospects and challenges of future space exploration. From the exploration of distant exoplanets to the establishment of lunar colonies, this article paints a visionary picture of humanity next great leaps into the cosmos.', showDetails: false }
                 ],
                 isCollapse: true
             };
@@ -757,7 +659,7 @@
             scrollToTop() {
                 "use strict";
                 $('.back-to-top').click(function () {
-                    $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+                    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
                     return false;
                 });
             },
@@ -825,6 +727,9 @@
             toggleDetails(post) {
                 post.showDetails = !post.showDetails;
             },
+            handleIndexPage1() {
+                window.location.href = 'https://www.baidu.com';
+            },
             handleOpen(key, keyPath) {
                 console.log(key, keyPath);
             },
@@ -857,10 +762,11 @@
             this.initDateTimePicker();
             this.initHeaderCarousel();
             this.initTestimonialsCarousel();
-            document.body.style.zoom = '80%';
         }
     });
 </script>
+
+
 
 
 <style>
@@ -970,7 +876,7 @@
     }
 
     @media (max-width: 991.98px) {
-        .navbar .navbar-nav .nav-link {
+        .navbar .navbar-nav .nav-link  {
             margin-right: 0;
             padding: 10px 0;
         }
@@ -1011,20 +917,6 @@
             visibility: visible;
             transition: .5s;
             opacity: 1;
-        }
-
-        .fixed-aside {
-            position: fixed;
-            z-index: 1;
-            top: 40px;
-            left: 0;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-        }
-
-        .el-radio-button__inner {
-            width: 100%;
         }
     }
 
@@ -1158,19 +1050,19 @@
             max-width: 100% !important;
         }
 
-        .feature-text {
+        .feature-text  {
             padding-left: calc(((100% - 960px) / 2) + .75rem);
         }
     }
 
     @media (min-width: 1200px) {
-        .feature-text {
+        .feature-text  {
             padding-left: calc(((100% - 1140px) / 2) + .75rem);
         }
     }
 
     @media (min-width: 1400px) {
-        .feature-text {
+        .feature-text  {
             padding-left: calc(((100% - 1320px) / 2) + .75rem);
         }
     }
@@ -1397,7 +1289,20 @@
     .footer .copyright a:hover {
         color: var(--primary);
     }
+    .fixed-aside {
+        position: fixed;
+        z-index: 1;
+        top: 40px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .el-radio-button__inner {
+        width: 100%;
+    }
 </style>
+
 
 
 </body>
