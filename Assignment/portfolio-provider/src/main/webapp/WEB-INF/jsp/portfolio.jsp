@@ -12,7 +12,6 @@
     <script src="//unpkg.com/element-ui/lib/umd/locale/en.js"></script>
     <!-- Custom CSS -->
     <style>
-
         .carousel-item.active {
             opacity: 1;
         }
