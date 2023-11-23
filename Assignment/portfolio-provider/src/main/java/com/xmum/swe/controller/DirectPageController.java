@@ -33,9 +33,6 @@ public class DirectPageController {
         return mv;
     }
 
-
-
-
     @PostMapping("/upload")
     @ResponseBody
     public Map<String, Object> upload(@RequestPart MultipartFile file) throws IOException {
