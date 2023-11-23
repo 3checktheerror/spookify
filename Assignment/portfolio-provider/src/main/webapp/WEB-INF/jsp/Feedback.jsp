@@ -8,16 +8,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
-
-
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Review Section</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/wow.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <link href="${pageContext.request.contextPath}/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+          rel="stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
@@ -108,9 +118,11 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .el-radio-button__inner{
+
+        .el-radio-button__inner {
             width: 100%;
         }
+
         .el-header, .el-footer {
             /*background-color: #B3C0D1;*/
             color: #333;
@@ -122,18 +134,21 @@
             font-size: 30px;
             letter-spacing: 0px;
         }
+
         .el-main {
             /*background-color: #E9EEF3;*/
             color: #333;
             text-align: left;
             line-height: 50px;
         }
+
         .body {
 
             background-image: url("/images/feedback.png");
             background-size: 100%;
 
         }
+
         .backbutton {
             position: fixed;
             z-index: 1;
@@ -142,9 +157,6 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-
-
 
 
     </style>
@@ -156,9 +168,11 @@
         <el-aside width="isCollapse ? '64px' : '150px'">
             <template>
                 <div class="fixed-aside">
-                    <el-radio-group v-model="isCollapse" :collapse-transition="false" style="display: flex; flex-direction: column;">
+                    <el-radio-group v-model="isCollapse" :collapse-transition="false"
+                                    style="display: flex; flex-direction: column;">
                         <el-radio-button :label="!isCollapse" width="100">
-                            <i :class="isCollapse ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'" style="color: #333"></i>
+                            <i :class="isCollapse ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'"
+                               style="color: #333"></i>
                         </el-radio-button>
                     </el-radio-group>
                     <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen"
@@ -188,7 +202,7 @@
             </template>
         </el-aside>
 
-        <el-container >
+        <el-container>
             <el-header height="100px">
                 <h2>Feedback</h2>
             </el-header>
@@ -293,13 +307,74 @@
 
                 <el-button class="backbutton" @click="back" icon="fa fa-angle-up"></el-button>
             </el-main>
-            <el-footer>
 
-                Copyright @ SPOOKIFY. 2023. All Rights Reserved.
-
-            </el-footer>
         </el-container>
     </el-container>
+    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Services</h5>
+                    <a class="btn btn-link" href="">Introduction</a>
+                    <a class="btn btn-link" href="">How to be Success</a>
+                    <a class="btn btn-link" href="">Apply Product</a>
+                    <a class="btn btn-link" href="">Device Repair</a>
+                    <a class="btn btn-link" href="">Laboratory</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Newsletter</h5>
+                    <p>Sign up and find out more about our Steve Jobs!</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                            SignUp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        Copyright &copy; <a class="border-bottom" href=https://github.com/3checktheerror/spookify>
+                        SPOOKIFY</a>. 2023. All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Myself</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
 </div>
 
 <script>
@@ -612,7 +687,7 @@
             scrollToReviewSection() {
                 window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
             },
-            back(){
+            back() {
                 window.scrollTo({top: 0, behavior: 'smooth'});
             }
         }

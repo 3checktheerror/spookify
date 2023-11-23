@@ -52,42 +52,35 @@
     <el-container>
         <el-aside width="isCollapse ? '64px' : '150px'">
             <template>
-                <div>
-                    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;display: flex; flex-direction: column;">
-                        <el-radio-button :label="false">展开</el-radio-button>
-                        <el-radio-button :label="true">收起</el-radio-button>
+                <div class="fixed-aside">
+                    <el-radio-group v-model="isCollapse" :collapse-transition="false"
+                                    style="display: flex; flex-direction: column;">
+                        <el-radio-button :label="!isCollapse" width="100">
+                            <i :class="isCollapse ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'"
+                               style="color: #333"></i>
+                        </el-radio-button>
                     </el-radio-group>
-                    <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-                        <el-submenu index="1">
-                            <template slot="title">
-                                <i class="el-icon-location"></i>
-
-                                <a v-if="!isCollapse" @click="handleIndexPage1">导航页1</a>
-                            </template>
-                            <el-menu-item-group>
-                                <span slot="title">分组一</span>
-                                <el-menu-item index="1-1">选项1</el-menu-item>
-                                <el-menu-item index="1-2">选项2</el-menu-item>
-                            </el-menu-item-group>
-                            <el-menu-item-group title="分组2">
-                                <el-menu-item index="1-3">选项3</el-menu-item>
-                            </el-menu-item-group>
-                            <el-submenu index="1-4">
-                                <span slot="title">选项4</span>
-                                <el-menu-item index="1-4-1">选项1</el-menu-item>
-                            </el-submenu>
-                        </el-submenu>
-                        <el-menu-item index="2">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">导航二</span>
+                    <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen"
+                             @close="handleClose" :collapse="isCollapse">
+                        <el-menu-item index="1">
+                            <i class="el-icon-user-solid" @click="handleIndexPage1"></i>
+                            <a v-if="!isCollapse" @click="handleIndexPage1">Biography</a>
                         </el-menu-item>
-                        <el-menu-item index="3" disabled>
-                            <i class="el-icon-document"></i>
-                            <span slot="title">导航三</span>
+                        <el-menu-item index="2">
+                            <i class="el-icon-picture" @click="handleIndexPage2"></i>
+                            <a v-if="!isCollapse" @click="handleIndexPage2">Portfolio</a>
+                        </el-menu-item>
+                        <el-menu-item index="3">
+                            <i class="el-icon-document" @click="handleIndexPage3"></i>
+                            <a v-if="!isCollapse" @click="handleIndexPage3">Blog Articles</a>
                         </el-menu-item>
                         <el-menu-item index="4">
-                            <i class="el-icon-setting"></i>
-                            <span slot="title">导航四</span>
+                            <i class="el-icon-s-comment" @click="handleIndexPage4"></i>
+                            <a v-if="!isCollapse" @click="handleIndexPage4">Feedback</a>
+                        </el-menu-item>
+                        <el-menu-item index="5">
+                            <i class="el-icon-message" @click="handleIndexPage5"></i>
+                            <a v-if="!isCollapse" @click="handleIndexPage5">Contact Me</a>
                         </el-menu-item>
                     </el-menu>
                 </div>
@@ -127,7 +120,7 @@
 
 
                     <!-- Navbar Start -->
-                    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+                    <nav class="navbar navbar-expand-lg bg-white navbar-light p-0 wow fadeIn" data-wow-delay="0.1s">
                         <a href="blogArticles" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
                             <h1 class="m-0 text-primary"><i class="far fa-hospital me-3"></i>Steve Jobs</h1>
                         </a>
@@ -447,7 +440,7 @@
                             <div class="row g-5">
                                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <p class="d-inline-block border rounded-pill py-1 px-4">Question</p>
-                                    <h1 class="mb-4">Make Us A Question About Steve JObs</h1>
+                                    <h1 class="mb-4">Ask A Question About Steve Jobs</h1>
                                     <p class="mb-4">Welcome to our interactive session where you get to steer the conversation. Have burning questions about the iconic tech visionary, Steve Jobs? Whether it's about his groundbreaking contributions to the tech industry, his leadership philosophy, or intriguing aspects of his personal life, we're here to provide answers!</p>
                                     <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
                                         <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
@@ -566,7 +559,8 @@
                             <div class="copyright">
                                 <div class="row">
                                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                                        &copy; <a class="border-bottom" href="#">SteveJobs.info</a>, All Right Reserved.
+                                        Copyright &copy; <a class="border-bottom" href=https://github.com/3checktheerror/spookify>
+                                        SPOOKIFY</a>. 2023. All Right Reserved.
                                     </div>
                                     <div class="col-md-6 text-center text-md-end">
                                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
@@ -610,144 +604,165 @@
 
 
 <script>
-        new Vue({
+    new Vue({
         el: '#app',
         data() {
-        return {
-        blogPosts: [
-    { id: 1, title: 'The Quantum Leap of Artificial Intelligence', content: 'Introduction: Explore the cutting-edge intersection of quantum computing and artificial intelligence. This article delves into the potential of quantum computing to revolutionize AI algorithms, unlocking unprecedented computational power and solving complex problems that were once deemed impossible.', showDetails: false },
-    { id: 2, title: 'Mindfulness in the Digital Age', content: 'Introduction: In an era dominated by constant digital stimuli, this article explores the importance of mindfulness practices to maintain focus and well-being. Discover strategies for navigating information overload, fostering digital mindfulness, and striking a balance between technology and mental health.', showDetails: false },
-    { id: 3, title: 'The Next Frontiers of Space Exploration', content: 'Introduction: Journey beyond the red planet as we unravel the exciting prospects and challenges of future space exploration. From the exploration of distant exoplanets to the establishment of lunar colonies, this article paints a visionary picture of humanity next great leaps into the cosmos.', showDetails: false }
-        ],
-        isCollapse: true
-    };
-    },
+            return {
+                blogPosts: [
+                    { id: 1, title: 'The Quantum Leap of Artificial Intelligence', content: 'Introduction: Explore the cutting-edge intersection of quantum computing and artificial intelligence. This article delves into the potential of quantum computing to revolutionize AI algorithms, unlocking unprecedented computational power and solving complex problems that were once deemed impossible.', showDetails: false },
+                    { id: 2, title: 'Mindfulness in the Digital Age', content: 'Introduction: In an era dominated by constant digital stimuli, this article explores the importance of mindfulness practices to maintain focus and well-being. Discover strategies for navigating information overload, fostering digital mindfulness, and striking a balance between technology and mental health.', showDetails: false },
+                    { id: 3, title: 'The Next Frontiers of Space Exploration', content: 'Introduction: Journey beyond the red planet as we unravel the exciting prospects and challenges of future space exploration. From the exploration of distant exoplanets to the establishment of lunar colonies, this article paints a visionary picture of humanity next great leaps into the cosmos.', showDetails: false }
+                ],
+                isCollapse: true
+            };
+        },
         methods: {
-        initWow() {
-        "use strict";
-        // Initiate the wowjs
-        new WOW().init();
-    },
-        spinner() {
-        "use strict";
-        // Spinner
-        var spinner = function () {
-        setTimeout(function () {
-        if ($('#spinner').length > 0) {
-        $('#spinner').removeClass('show');
-    }
-    }, 1);
-    };
-        spinner();
-    },
-        handleScroll() {
-        "use strict";
-        // Sticky Navbar
-        $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-        $('.sticky-top').addClass('shadow-sm').css('top', '0px');
-    } else {
-        $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
-    }
-    });
-    },
-        handleBackToTop() {
-        "use strict";
-        // Back to top button
-        $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
-    });
-    },
-        scrollToTop() {
-        "use strict";
-        $('.back-to-top').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
-        return false;
-    });
-    },
-        handleCounterUp() {
-        "use strict";
-        // Facts counter
-        $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
-    },
-        initDateTimePicker() {
-        "use strict";
-        // Date and time picker
-        $('.date').datetimepicker({
-        format: 'L'
-    });
-        $('.time').datetimepicker({
-        format: 'LT'
-    });
-    },
-        initHeaderCarousel() {
-        "use strict";
-        // Header carousel
-        $(".header-carousel").owlCarousel({
-        autoplay: false,
-        animateOut: 'fadeOutLeft',
-        items: 1,
-        dots: true,
-        loop: true,
-        nav: true,
-        navText: [
-        '<i class="bi bi-chevron-left"></i>',
-        '<i class="bi bi-chevron-right"></i>'
-        ]
-    });
-    },
-        initTestimonialsCarousel() {
-        "use strict";
-        // Testimonials carousel
-        $(".testimonial-carousel").owlCarousel({
-        autoplay: false,
-        smartSpeed: 1000,
-        center: true,
-        dots: false,
-        loop: true,
-        nav: true,
-        navText: [
-        '<i class="bi bi-arrow-left"></i>',
-        '<i class="bi bi-arrow-right"></i>'
-        ],
-        responsive: {
-        0: {
-        items: 1
-    },
-        768: {
-        items: 2
-    }
-    }
-    });
-    },
-        summarizeContent(content) {
-        return content.slice(0, 50) + '...'; // Display only the first 50 characters for summary
-    },
-        toggleDetails(post) {
-        post.showDetails = !post.showDetails;
-    },
-        handleIndexPage1() {
-        window.location.href = 'https://www.baidu.com';
-    }
-    },
+            initWow() {
+                "use strict";
+                // Initiate the wowjs
+                new WOW().init();
+            },
+            spinner() {
+                "use strict";
+                // Spinner
+                var spinner = function () {
+                    setTimeout(function () {
+                        if ($('#spinner').length > 0) {
+                            $('#spinner').removeClass('show');
+                        }
+                    }, 1);
+                };
+                spinner();
+            },
+            handleScroll() {
+                "use strict";
+                // Sticky Navbar
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 300) {
+                        $('.sticky-top').addClass('shadow-sm').css('top', '0px');
+                    } else {
+                        $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
+                    }
+                });
+            },
+            handleBackToTop() {
+                "use strict";
+                // Back to top button
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 300) {
+                        $('.back-to-top').fadeIn('slow');
+                    } else {
+                        $('.back-to-top').fadeOut('slow');
+                    }
+                });
+            },
+            scrollToTop() {
+                "use strict";
+                $('.back-to-top').click(function () {
+                    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+                    return false;
+                });
+            },
+            handleCounterUp() {
+                "use strict";
+                // Facts counter
+                $('[data-toggle="counter-up"]').counterUp({
+                    delay: 10,
+                    time: 2000
+                });
+            },
+            initDateTimePicker() {
+                "use strict";
+                // Date and time picker
+                $('.date').datetimepicker({
+                    format: 'L'
+                });
+                $('.time').datetimepicker({
+                    format: 'LT'
+                });
+            },
+            initHeaderCarousel() {
+                "use strict";
+                // Header carousel
+                $(".header-carousel").owlCarousel({
+                    autoplay: false,
+                    animateOut: 'fadeOutLeft',
+                    items: 1,
+                    dots: true,
+                    loop: true,
+                    nav: true,
+                    navText: [
+                        '<i class="bi bi-chevron-left"></i>',
+                        '<i class="bi bi-chevron-right"></i>'
+                    ]
+                });
+            },
+            initTestimonialsCarousel() {
+                "use strict";
+                // Testimonials carousel
+                $(".testimonial-carousel").owlCarousel({
+                    autoplay: false,
+                    smartSpeed: 1000,
+                    center: true,
+                    dots: false,
+                    loop: true,
+                    nav: true,
+                    navText: [
+                        '<i class="bi bi-arrow-left"></i>',
+                        '<i class="bi bi-arrow-right"></i>'
+                    ],
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 2
+                        }
+                    }
+                });
+            },
+            summarizeContent(content) {
+                return content.slice(0, 50) + '...'; // Display only the first 50 characters for summary
+            },
+            toggleDetails(post) {
+                post.showDetails = !post.showDetails;
+            },
+            handleIndexPage1() {
+                window.location.href = 'https://www.baidu.com';
+            },
+            handleOpen(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            handleClose(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            handleIndexPage1() {
+                window.location.href = 'http://localhost:8082/getPage/Biography';
+            },
+            handleIndexPage2() {
+                window.location.href = 'http://localhost:8082/getPage/portfolio';
+            },
+            handleIndexPage3() {
+                window.location.href = 'http://localhost:8082/getPage/blogArticles';
+            },
+            handleIndexPage4() {
+                window.location.href = 'http://localhost:8082/getPage/Feedback';
+            },
+            handleIndexPage5() {
+                window.location.href = 'http://localhost:8082/getPage/contactMe';
+            },
+        },
         mounted() {
-        this.initWow();
-        this.spinner();
-        this.handleScroll();
-        this.handleBackToTop();
-        this.scrollToTop();
-        this.handleCounterUp();
-        this.initDateTimePicker();
-        this.initHeaderCarousel();
-        this.initTestimonialsCarousel();
-    }
+            this.initWow();
+            this.spinner();
+            this.handleScroll();
+            this.handleBackToTop();
+            this.scrollToTop();
+            this.handleCounterUp();
+            this.initDateTimePicker();
+            this.initHeaderCarousel();
+            this.initTestimonialsCarousel();
+        }
     });
 </script>
 
@@ -1273,6 +1288,18 @@
 
     .footer .copyright a:hover {
         color: var(--primary);
+    }
+    .fixed-aside {
+        position: fixed;
+        z-index: 1;
+        top: 40px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .el-radio-button__inner {
+        width: 100%;
     }
 </style>
 
