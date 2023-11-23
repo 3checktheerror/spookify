@@ -4,73 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/animate/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/animate/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/counterup/counterup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/easing/easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/easing/easing.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/assets/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/assets/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/assets/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/assets/owl.theme.default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/assets/owl.theme.default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/assets/owl.theme.green.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/assets/owl.theme.green.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/assets/owl.video.play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/owlcarousel/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/tempusdominus/css/tempusdominus-bootstrap-4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/tempusdominus/js/moment-timezone.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/tempusdominus/js/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/tempusdominus/js/tempusdominus-bootstrap-4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/waypoints/links.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/waypoints/waypoints.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/wow/wow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/lib/wow/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/animate/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/animate/animate.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/counterup/counterup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/easing/easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/easing/easing.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/assets/ajax-loader.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/assets/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/assets/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/assets/owl.theme.default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/assets/owl.theme.default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/assets/owl.theme.green.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/assets/owl.theme.green.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/assets/owl.video.play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/owlcarousel/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/tempusdominus/css/tempusdominus-bootstrap-4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/tempusdominus/js/moment-timezone.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/tempusdominus/js/moment.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/tempusdominus/js/tempusdominus-bootstrap-4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/waypoints/links.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/waypoints/waypoints.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/wow/wow.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/lib/wow/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/impl/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/impl/CustomerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/impl/VisitorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/service/impl/VisitorServiceImpl.class" afterDir="false" />
-    </list>
+    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,8 +126,33 @@
       <workItem from="1700711104058" duration="3893000" />
       <workItem from="1700717942569" duration="5102000" />
       <workItem from="1700734602442" duration="343000" />
-      <workItem from="1700741915215" duration="3839000" />
+      <workItem from="1700741915215" duration="4153000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
+      <option name="closed" value="true" />
+      <created>1700749073145</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700749073145</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
+      <option name="closed" value="true" />
+      <created>1700749107805</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700749107805</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
+      <option name="closed" value="true" />
+      <created>1700749238789</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700749238789</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
