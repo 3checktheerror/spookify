@@ -1,3 +1,5 @@
+
+
 <html lang="en">
 
 <head>
@@ -15,13 +17,48 @@
 <body class="body">
 <div id="app">
     <el-container>
-        <div class="center-container">
+        <div class="center-container" >
             <el-col>
+
+                <el-row>
+                    <el-form :rules="rules" ref="loginForm" :model="loginForm" class="loginContainer">
+                        <h3 class="loginTitle">Sign in</h3>
+                        <el-form-item prop="selectedUser" >
+                            <el-select v-model="loginForm.selectedUser" placeholder="Select a user"
+                                       @change="updatePassword" style="width: 350px;">
+                                <el-option v-for="user in users" :key="user.username" :label="user.username"
+                                           :value="user.username"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item prop="password">
+                            <el-input type="password" v-model="loginForm.password"
+                                      placeholder="Please enter the password"></el-input>
+                        </el-form-item>
+                        <el-form-item prop="code" label-width="0">
+                            <div style="display: flex; align-items: center;">
+                                <el-input type="text" auto-complete="false" v-model="loginForm.code"
+                                          style="width: 250px;"></el-input>
+                                <el-button type="text" @click="changeCaptcha" style="padding: 0; margin-left: 20px">
+                                    <canvas ref="captchaCanvas" width="80" height="40"
+                                            style="border: 1px solid #a8a4a4; border-radius: 5px;"></canvas>
+                                </el-button>
+                            </div>
+                        </el-form-item>
+                        <el-checkbox v-model="checked" class="loginRemember">Remember Me</el-checkbox>
+                        <el-button type="primary" style="width:100%" @click="submitLogin">Login</el-button>
+                    </el-form>
+                </el-row>
                 <el-row style="margin-left: 50px; margin-top: 50px;">
                     <div class="social-media-icons">
                         <a href="https://github.com/3checktheerror/spookify" target="_blank" rel="noopener noreferrer">
                             <i class="fa fa-github"></i>
                         </a>
+                        <div class="bubble">
+                            <div class="bubble-content">
+                                <p>Click this</p>
+                            </div>
+                            <div class="arrow"></div>
+                        </div>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                             <i class="fa fa-twitter"></i>
                         </a>
@@ -36,29 +73,6 @@
                         </a>
                     </div>
                 </el-row>
-                <el-row>
-                    <el-form :rules="rules" ref="loginForm" :model="loginForm" class="loginContainer">
-                        <h3 class="loginTitle">Sign in to Website</h3>
-                        <el-form-item prop="selectedUser">
-                            <el-select v-model="loginForm.selectedUser" placeholder="Select a user" @change="updatePassword">
-                                <el-option v-for="user in users" :key="user.username" :label="user.username" :value="user.username"></el-option>
-                            </el-select>
-                        </el-form-item>
-                        <el-form-item prop="password">
-                            <el-input type="password" v-model="loginForm.password" placeholder="Please enter the password"></el-input>
-                        </el-form-item>
-                        <el-form-item prop="code" label-width="0">
-                            <div style="display: flex; align-items: center;">
-                                <el-input type="text" auto-complete="false" v-model="loginForm.code" style="width: 250px;"></el-input>
-                                <el-button type="text" @click="changeCaptcha" style="padding: 0; margin-left: 20px">
-                                    <canvas ref="captchaCanvas" width="80" height="40" style="border: 1px solid #a8a4a4; border-radius: 5px;"></canvas>
-                                </el-button>
-                            </div>
-                        </el-form-item>
-                        <el-checkbox v-model="checked" class="loginRemember">Remember Me</el-checkbox>
-                        <el-button type="primary" style="width:100%" @click="submitLogin">Login</el-button>
-                    </el-form>
-                </el-row>
             </el-col>
         </div>
     </el-container>
@@ -72,11 +86,11 @@
             return {
                 captcha: null,
                 users: [
-                    { username: "admin", password: "123456" },
-                    { username: "user1", password: "123456" },
-                    { username: "user2", password: "123456" },
-                    { username: "user3", password: "123456" },
-                    { username: "user4", password: "123456" },
+                    {username: "admin", password: "123456"},
+                    {username: "user1", password: "123456"},
+                    {username: "user2", password: "123456"},
+                    {username: "user3", password: "123456"},
+                    {username: "user4", password: "123456"},
                     // Add more users as needed
                 ],
                 loginForm: {
@@ -87,7 +101,7 @@
                 checked: true,
                 rules: {
                     username: [
-                        { required: true, message: "Please enter the username", trigger: "blur" },
+                        {required: true, message: "Please enter the username", trigger: "blur"},
                         {
                             min: 5,
                             max: 14,
@@ -96,20 +110,21 @@
                         }
                     ],
                     password: [
-                        { required: true, message: "Please enter the password", trigger: "blur" },
+                        {required: true, message: "Please enter the password", trigger: "blur"},
                         {
                             min: 6,
                             message: 'Password length must be greater than 6',
                             trigger: 'blur'
                         }
                     ],
-                    code: [{ required: true, message: "Please enter the verification code", trigger: "blur" }],
+                    code: [{required: true, message: "Please enter the verification code", trigger: "blur"}],
                 }
             }
         },
         mounted() {
             this.generateCaptcha();
             this.updatePassword();
+            document.body.style.zoom = '80%';
         },
         methods: {
             submitLogin() {
@@ -190,17 +205,19 @@
         background-size: 100%;
         overflow: hidden;
     }
+
     .center-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 600px;
+        margin-left: 550px;
     }
+
     .social-media-icons {
         display: flex;
         font-size: 30px;
         justify-content: space-between;
-        width: 300px; /* 调整容器宽度 */
+        width: 300px;
     }
 
     .social-media-icons a {
@@ -217,6 +234,32 @@
     .social-media-icons a:hover {
         background-color: #333;
         color: #fff;
+    }
+    .bubble {
+        margin-top: 50px;
+        position: absolute;
+        display: block;
+    }
+
+    .bubble-content {
+        font-size: 20px;
+        margin-top: 20px;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .arrow {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px;
+        border-color: transparent transparent #f0f0f0 transparent;
+        top: -1px;
+        left: 12%;
+        transform: translateX(-50%);
     }
 </style>
 

@@ -3,11 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Biography page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/wow.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <link href="${pageContext.request.contextPath}/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+          rel="stylesheet"/>
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,9 +29,11 @@
         <el-aside width="isCollapse ? '64px' : '150px'">
             <template>
                 <div class="fixed-aside">
-                    <el-radio-group v-model="isCollapse" :collapse-transition="false" style="display: flex; flex-direction: column;">
+                    <el-radio-group v-model="isCollapse" :collapse-transition="false"
+                                    style="display: flex; flex-direction: column;">
                         <el-radio-button :label="!isCollapse" width="100">
-                            <i :class="isCollapse ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'" style="color: #333"></i>
+                            <i :class="isCollapse ? 'fa fa-angle-double-right' : 'fa fa-angle-double-left'"
+                               style="color: #333"></i>
                         </el-radio-button>
                     </el-radio-group>
                     <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen"
@@ -49,7 +64,7 @@
         </el-aside>
         <el-container>
             <el-header height="800px">
-                <el-row type="flex" justify="center" >
+                <el-row type="flex" justify="center">
                     <el-col :span="9" :offset="15">
                         <div class="introduction">
                             <span class="Beg-name">Steve Jobs</span><br>
@@ -73,7 +88,7 @@
                         </div>
                     </div>
                     <br>
-                    <el-card class="basic-info-card" >
+                    <el-card class="basic-info-card">
                         <div slot="header" class="clearfix">
                             <h3>Basic Information</h3>
                         </div>
@@ -88,8 +103,11 @@
                     <br>
                     <div class="book">
                         <div style="margin-left: 50px; line-height: 1.75">
-                            “Being the richest man in the cemetery doesn't matter to me. … Going to bed at night saying we've done something wonderful – that's what matters to me.”<br><br>
-                            “Technology is nothing. What's important is that you have a faith in people, that they're basically good and smart, and if you give them tools, they'll do wonderful things with them."
+                            “Being the richest man in the cemetery doesn't matter to me. … Going to bed at night saying
+                            we've done something wonderful – that's what matters to me.”<br><br>
+                            “Technology is nothing. What's important is that you have a faith in people, that they're
+                            basically good and smart, and if you give them tools, they'll do wonderful things with
+                            them."
 
                         </div>
                         <div class="cover">
@@ -119,7 +137,7 @@
                 </el-aside>
                 <el-container>
                     <el-main>
-                        <el-card class="Education-card" shadow="hover" >
+                        <el-card class="Education-card" shadow="hover">
                             <div slot="header" class="clearfix">
                                 <h3>Education Experience</h3>
                             </div>
@@ -171,12 +189,14 @@
                                                 <h4>Apple Inc.</h4>
                                                 <el-row type="flex" class="image_in_box">
                                                     <el-col :span="16">
-                                                        <div class="content-timeline" >Co-founded Apple Computer Inc. with Steve Wozniak and
+                                                        <div class="content-timeline">Co-founded Apple Computer Inc.
+                                                            with Steve Wozniak and
                                                             Ronald Wayne.
                                                             They initially introduced the Apple I and later developed
                                                             the successful Apple II.
                                                             However, internal conflicts led to Jobs being ousted by
-                                                            the board in 1985.</div>
+                                                            the board in 1985.
+                                                        </div>
                                                     </el-col>
                                                     <el-col :span="8">
                                                         <img src="/images/Bimage/1976.png" alt="Apple_and_Jobs">
@@ -189,11 +209,13 @@
                                                 <h4>NeXT Computer Inc</h4>
                                                 <el-row type="flex" class="image_in_box">
                                                     <el-col :span="16">
-                                                        <div class="content-timeline">After leaving Apple, Jobs founded NeXT Computer Inc.,
+                                                        <div class="content-timeline">After leaving Apple, Jobs founded
+                                                            NeXT Computer Inc.,
                                                             focusing on advanced workstations.
                                                             Although NeXT's computers had a modest market presence,
                                                             the company's operating system became the foundation for
-                                                            Apple's macOS.</div>
+                                                            Apple's macOS.
+                                                        </div>
                                                     </el-col>
                                                     <el-col :span="8">
                                                         <img src="/images/Bimage/1985.png" alt="Apple_and_Jobs">
@@ -205,11 +227,13 @@
                                             <el-card>
                                                 <h4>Pixar Animation Studios</h4>
                                                 <el-col :span="16">
-                                                    <div class="content-timeline">Jobs acquired The Graphics Group, later known as Pixar Animation
+                                                    <div class="content-timeline">Jobs acquired The Graphics Group,
+                                                        later known as Pixar Animation
                                                         Studios.
                                                         Pixar achieved tremendous success in the animated film
                                                         industry with classics like
-                                                        "Toy Story," "The Incredibles," and "Monsters, Inc."</div>
+                                                        "Toy Story," "The Incredibles," and "Monsters, Inc."
+                                                    </div>
                                                 </el-col>
                                                 <el-col :span="8">
                                                     <img src="/images/Bimage/1986.png" alt="Apple_and_Jobs">
@@ -220,10 +244,12 @@
                                             <el-card>
                                                 <h4>Return to Apple and Innovation</h4>
                                                 <el-col :span="16">
-                                                    <div class="content-timeline">In 1996, Apple acquired NeXT, marking Jobs' return to the company.
+                                                    <div class="content-timeline">In 1996, Apple acquired NeXT, marking
+                                                        Jobs' return to the company.
                                                         He was reappointed as CEO in 1997. Under his
                                                         leadership, Apple launched groundbreaking products such as
-                                                        the iMac, iPod, iPhone, and iPad.</div>
+                                                        the iMac, iPod, iPhone, and iPad.
+                                                    </div>
                                                 </el-col>
                                                 <el-col :span="8">
                                                     <img src="/images/Bimage/1996.png" alt="Apple_and_Jobs">
@@ -235,10 +261,12 @@
                                             <el-card>
                                                 <h4>iTunes and App Store</h4>
                                                 <el-col :span="16">
-                                                    <div class="content-timeline"> Jobs led the introduction of iTunes (2001) and the App Store
+                                                    <div class="content-timeline"> Jobs led the introduction of iTunes
+                                                        (2001) and the App Store
                                                         <br>(2008), pivotal platforms for digital media and application
                                                         <br>distribution that had a profound impact on Apple's
-                                                        <br>performance.</div>
+                                                        <br>performance.
+                                                    </div>
                                                 </el-col>
                                                 <el-col :span="8">
                                                     <img src="/images/Bimage/Appstore.png" alt="Apple_and_Jobs">
@@ -249,10 +277,12 @@
                                             <el-card>
                                                 <h4>Disney and Personal Success</h4>
                                                 <el-col :span="16">
-                                                    <div class="content-timeline">Due to Pixar's success, Jobs became Disney's largest
+                                                    <div class="content-timeline">Due to Pixar's success, Jobs became
+                                                        Disney's largest
                                                         shareholder and joined the board in 2006. His influence on
                                                         Disney's animation and entertainment industry was
-                                                        significant.</div>
+                                                        significant.
+                                                    </div>
                                                 </el-col>
                                                 <el-col :span="8">
                                                     <img src="/images/Bimage/Apple_and_Jobs.png" alt="Apple_and_Jobs">
@@ -286,7 +316,8 @@
                                 passing in 2011,
                                 leaving a lasting legacy as a visionary entrepreneur who transformed the tech
                                 industry.<br>
-                                <el-button type="primary" @click="dialogVisible_Apple_Jobs = true" size="medium">Timeline
+                                <el-button type="primary" @click="dialogVisible_Apple_Jobs = true" size="medium">
+                                    Timeline
                                 </el-button>
                                 <br><br>
                                 <el-dialog
@@ -301,11 +332,13 @@
                                                 <el-card>
                                                     <h4>Co-founding Apple</h4>
                                                     <el-row type="flex" class="image_in_box">
-                                                        <div class="content-timeline">Steve Jobs, along with Steve Wozniak and Ronald Wayne,
+                                                        <div class="content-timeline">Steve Jobs, along with Steve
+                                                            Wozniak and Ronald Wayne,
                                                             co-founded Apple Computer Inc. in Jobs' parents' garage.
                                                             They introduced the Apple I and later the Apple II, which
                                                             played a significant role in the personal computer
-                                                            revolution.</div>
+                                                            revolution.
+                                                        </div>
                                                     </el-row>
                                                 </el-card>
                                             </el-timeline-item>
@@ -314,10 +347,12 @@
                                                 <el-card>
                                                     <h4>NeXT Computer Inc</h4>
                                                     <el-row type="flex" class="image_in_box">
-                                                        <div class="content-timeline">Apple experienced substantial success in the early years, but
+                                                        <div class="content-timeline">Apple experienced substantial
+                                                            success in the early years, but
                                                             internal conflicts arose. In 1985, Jobs was ousted from the
                                                             company by the board of directors due to disagreements over
-                                                            the company's direction and leadership style.</div>
+                                                            the company's direction and leadership style.
+                                                        </div>
                                                     </el-row>
                                                 </el-card>
                                             </el-timeline-item>
@@ -325,42 +360,50 @@
                                                               class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>NeXT and Pixar</h4>
-                                                    <div class="content-timeline">After leaving Apple, Jobs founded NeXT Computer Inc., a company
+                                                    <div class="content-timeline">After leaving Apple, Jobs founded NeXT
+                                                        Computer Inc., a company
                                                         focused on creating advanced workstations. Simultaneously, he
                                                         purchased The Graphics Group, later renamed Pixar Animation
                                                         Studios. While NeXT had a limited impact on the computer market,
-                                                        Pixar became a powerhouse in the animation industry.</div>
+                                                        Pixar became a powerhouse in the animation industry.
+                                                    </div>
                                                 </el-card>
                                             </el-timeline-item>
                                             <el-timeline-item timestamp="1996" placement="top"
                                                               class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>Return to Apple and Innovation</h4>
-                                                    <div class="content-timeline">Apple faced financial challenges in the 1990s, and in 1996, the
+                                                    <div class="content-timeline">Apple faced financial challenges in
+                                                        the 1990s, and in 1996, the
                                                         company acquired NeXT. This move brought Jobs back to Apple, and
                                                         in 1997, he became the CEO again. His return marked a period of
-                                                        significant innovation and revitalization for the company.</div>
+                                                        significant innovation and revitalization for the company.
+                                                    </div>
                                                 </el-card>
                                             </el-timeline-item>
                                             <el-timeline-item timestamp="Late 1990s to 2011" placement="top"
                                                               class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>iMac, iPod, iPhone, and iPad Era</h4>
-                                                    <div class="content-timeline"> Under Jobs' leadership, Apple introduced iconic products,
+                                                    <div class="content-timeline"> Under Jobs' leadership, Apple
+                                                        introduced iconic products,
                                                         including the colorful iMac, the revolutionary iPod, the
                                                         game-changing iPhone, and the iPad. These products not only
                                                         transformed Apple's fortunes but also had a profound impact on
-                                                        the entire tech industry.</div>
+                                                        the entire tech industry.
+                                                    </div>
                                                 </el-card>
                                             </el-timeline-item>
                                             <el-timeline-item timestamp="1986" placement="top"
                                                               class="Timeline_subtitle">
                                                 <el-card>
                                                     <h4>Struggles and Health Issues</h4>
-                                                    <div class="content-timeline">Jobs faced health challenges, including a rare type of pancreatic
+                                                    <div class="content-timeline">Jobs faced health challenges,
+                                                        including a rare type of pancreatic
                                                         cancer known as a pancreatic neuroendocrine tumor. Despite his
                                                         health struggles, he continued to lead Apple and participate in
-                                                        product launches.</div>
+                                                        product launches.
+                                                    </div>
                                                 </el-card>
                                             </el-timeline-item>
                                         </el-timeline>
@@ -416,13 +459,57 @@
                 </el-container>
 
             </el-container>
-            <el-footer height="300px">
-                Privacy
-            </el-footer>
         </el-container>
     </el-container>
+    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Services</h5>
+                    <a class="btn btn-link" href="">Introduction</a>
+                    <a class="btn btn-link" href="">How to be Success</a>
+                    <a class="btn btn-link" href="">Apply Product</a>
+                    <a class="btn btn-link" href="">Device Repair</a>
+                    <a class="btn btn-link" href="">Laboratory</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Newsletter</h5>
+                    <p>Sign up and find out more about our Steve Jobs!</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                            SignUp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
+    </div>
 </div>
 <script>
 
@@ -482,68 +569,79 @@
         text-align: center; /* 文本水平居中 */
         line-height: 1;
     }
-    .el-footer{
+
+    .el-footer {
         background-color: #B3C0D1;
         color: #333;
         line-height: 60px;
     }
+
     .el-aside {
         background: linear-gradient(to right, #ffffff, #b2bfd0);
         color: #333;
         text-align: left;
         line-height: 50px;
     }
+
     .el-main {
         background: linear-gradient(to right, #b1becf, #ffffff);
         color: #333;
         text-align: left;
         line-height: 50px;
     }
+
     body > .el-container {
         margin-bottom: 50px;
     }
-    .introduction{
+
+    .introduction {
         position: relative;
         top: 360px;
     }
-    .Beg-name{
+
+    .Beg-name {
         margin-bottom: 10px;
         font-size: 40px; /* 调整字体大小，根据需要调整值 */
         font-weight: bold;
     }
-    .Beg-l{
+
+    .Beg-l {
         margin-bottom: 10px;
         font-size: 20px; /* 调整字体大小，根据需要调整值 */
         font-weight: 1;
     }
-    .life{
+
+    .life {
         margin-bottom: 10px;
         font-size: 18px; /* 调整字体大小，根据需要调整值 */
         font-weight: normal;
     }
 
 
-    .emphasized-text{
+    .emphasized-text {
         font-style: italic;
         font-weight: bold;
         color: #000000;
-        font-size:20px ;
+        font-size: 20px;
     }
-    .emphasized-text-image{
+
+    .emphasized-text-image {
         text-align: center;
         font-style: italic;
         font-weight: bold;
         color: #000000;
-        font-size:20px ;
+        font-size: 20px;
 
     }
-    h1{
+
+    h1 {
         text-align: center;
-        font-size:32px;
+        font-size: 32px;
         margin-top: 10px;
         margin-bottom: 20px;
     }
-    h2{
+
+    h2 {
         text-align: center;
         padding-top: 3px;
         margin-bottom: 20px;
@@ -552,33 +650,36 @@
         margin-bottom: 1px;
     }
 
-    .quote{
+    .quote {
         font-style: italic;
         line-height: 1.5;
     }
+
     img {
         display: block;
         margin: 0 auto;
         max-width: 100%;
         height: auto;
     }
+
     .text {
         font-size: 17px;
         line-height: 2;
         text-align: left;
     }
 
-    .self-text{
+    .self-text {
         font-size: 16px;
         line-height: 2;
     }
 
-    h3{
+    h3 {
         margin-bottom: auto;
         margin-top: auto;
         margin-left: auto;
     }
-    .clearfix{
+
+    .clearfix {
         margin-top: auto;
         font-size: 15px;
     }
@@ -592,22 +693,24 @@
         padding: 2rem 1.5rem;
         transition: box-shadow .3s ease, transform .2s ease;
     }
+
     .basic-info-card:hover {
         box-shadow: 0 8px 50px #23232333;
     }
-    .skills-certificate-card{
-        width: 480px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 30px
-    }
-    .Commnet-card{
+
+    .skills-certificate-card {
         width: 480px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 30px
     }
 
+    .Commnet-card {
+        width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px
+    }
 
 
     .card-c-title {
@@ -697,38 +800,41 @@
         transition: all 0.5s ease-out;
         color: #ffffff;
     }
-    .card-c:hover .emphasized-text{
+
+    .card-c:hover .emphasized-text {
         transition: all 0.5s ease-out;
         color: #ffffff;
     }
 
 
-
-    .Education-card{
-        width:670px;
-        margin-left: auto;
-        margin-right: auto;
-        border-radius: 30px
-    }
-    .Experience-card{
-        width:670px;
+    .Education-card {
+        width: 670px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 30px
     }
 
-    .Practice-card{
-        width:670px;
+    .Experience-card {
+        width: 670px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 30px
     }
-    .Award-card{
-        width:670px;
+
+    .Practice-card {
+        width: 670px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 30px
     }
+
+    .Award-card {
+        width: 670px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px
+    }
+
     .el-carousel__item h3 {
         color: #475669;
         font-size: 14px;
@@ -744,7 +850,8 @@
     .el-carousel__item:nth-child(2n+1) {
         background-color: #ffffff;
     }
-    .demonstration{
+
+    .demonstration {
         margin-right: auto;
         margin-left: auto;
         text-align: center;
@@ -754,17 +861,19 @@
         height: 100%;
         font-size: 15px;
     }
+
     .carousel-image {
         width: 100%;
         height: 100%;
 
     }
+
     .card-BI {
         width: 280px;
         height: 150px;
         margin-left: auto;
         margin-right: auto;
-        margin-top:20px;
+        margin-top: 20px;
         background: #f5f5f5;
         padding: 2rem 1.5rem;
         transition: box-shadow .3s ease, transform .2s ease;
@@ -797,7 +906,6 @@
     }
 
 
-
     /*Text*/
     .card-BI-title {
         color: #333;
@@ -815,6 +923,7 @@
     .card-BI:hover {
         box-shadow: 0 8px 50px #23232333;
     }
+
     .card-BI-avatar:hover {
         transform: scale(1.1);
     }
@@ -828,9 +937,11 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
     }
-    .el-radio-button__inner{
+
+    .el-radio-button__inner {
         width: 100%;
     }
+
     .book {
         margin-left: auto;
         margin-right: auto;
@@ -896,13 +1007,15 @@
         font-size: 20px;
         font-weight: bolder;
     }
-    .Timeline_subtitle{
+
+    .Timeline_subtitle {
         font-size: 30px;
         line-height: 1.5;
         justify-content: flex-start;
 
     }
-    .content-timeline{
+
+    .content-timeline {
         text-align: left;
         font-size: 17px;
         overflow-wrap: break-word

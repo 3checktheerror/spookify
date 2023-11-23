@@ -43,18 +43,23 @@
                     <el-form :rules="rules" ref="loginForm" :model="loginForm" class="loginContainer">
                         <h3 class="loginTitle">Sign in to Website</h3>
                         <el-form-item prop="selectedUser">
-                            <el-select v-model="loginForm.selectedUser" placeholder="Select a user" @change="updatePassword">
-                                <el-option v-for="user in users" :key="user.username" :label="user.username" :value="user.username"></el-option>
+                            <el-select v-model="loginForm.selectedUser" placeholder="Select a user"
+                                       @change="updatePassword">
+                                <el-option v-for="user in users" :key="user.username" :label="user.username"
+                                           :value="user.username"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item prop="password">
-                            <el-input type="password" v-model="loginForm.password" placeholder="Please enter the password"></el-input>
+                            <el-input type="password" v-model="loginForm.password"
+                                      placeholder="Please enter the password"></el-input>
                         </el-form-item>
                         <el-form-item prop="code" label-width="0">
                             <div style="display: flex; align-items: center;">
-                                <el-input type="text" auto-complete="false" v-model="loginForm.code" style="width: 250px;"></el-input>
+                                <el-input type="text" auto-complete="false" v-model="loginForm.code"
+                                          style="width: 250px;"></el-input>
                                 <el-button type="text" @click="changeCaptcha" style="padding: 0; margin-left: 20px">
-                                    <canvas ref="captchaCanvas" width="80" height="40" style="border: 1px solid #a8a4a4; border-radius: 5px;"></canvas>
+                                    <canvas ref="captchaCanvas" width="80" height="40"
+                                            style="border: 1px solid #a8a4a4; border-radius: 5px;"></canvas>
                                 </el-button>
                             </div>
                         </el-form-item>
@@ -75,11 +80,11 @@
             return {
                 captcha: null,
                 users: [
-                    { username: "admin", password: "123456" },
-                    { username: "user1", password: "123456" },
-                    { username: "user2", password: "123456" },
-                    { username: "user3", password: "123456" },
-                    { username: "user4", password: "123456" },
+                    {username: "admin", password: "123456"},
+                    {username: "user1", password: "123456"},
+                    {username: "user2", password: "123456"},
+                    {username: "user3", password: "123456"},
+                    {username: "user4", password: "123456"},
                     // Add more users as needed
                 ],
                 loginForm: {
@@ -90,7 +95,7 @@
                 checked: true,
                 rules: {
                     username: [
-                        { required: true, message: "Please enter the username", trigger: "blur" },
+                        {required: true, message: "Please enter the username", trigger: "blur"},
                         {
                             min: 5,
                             max: 14,
@@ -99,14 +104,14 @@
                         }
                     ],
                     password: [
-                        { required: true, message: "Please enter the password", trigger: "blur" },
+                        {required: true, message: "Please enter the password", trigger: "blur"},
                         {
                             min: 6,
                             message: 'Password length must be greater than 6',
                             trigger: 'blur'
                         }
                     ],
-                    code: [{ required: true, message: "Please enter the verification code", trigger: "blur" }],
+                    code: [{required: true, message: "Please enter the verification code", trigger: "blur"}],
                 }
             }
         },
@@ -193,17 +198,19 @@
         background-size: 100%;
         overflow: hidden;
     }
+
     .center-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 600px;
+        margin-left: 550px;
     }
+
     .social-media-icons {
         display: flex;
         font-size: 30px;
         justify-content: space-between;
-        width: 300px; /* 调整容器宽度 */
+        width: 300px;
     }
 
     .social-media-icons a {
