@@ -134,7 +134,7 @@
                     if (valid) {
                         if (this.loginForm.code === this.captcha.toString() && this.loginForm.password === selectedUser.password) {
                             alert('Login successful');
-                            window.location.href = 'http://localhost:8082/getPage/Feedback';
+                            window.location.href = 'http://localhost:8082/getPage/Biography';
                         } else {
                             this.$message.error('Incorrect verification code or password. Please try again.');
                         }
