@@ -9,6 +9,7 @@ import org.springframework.util.StringUtils;
 @Service
 @Slf4j
 public class IdServiceImpl implements IdService {
+
     @Override
     public String getNextId(String curMaxId) {
         String oldSubString = curMaxId.substring(IdPos.ID_ENTITY_NUM.getPos(), IdPos.ID_END.getPos());

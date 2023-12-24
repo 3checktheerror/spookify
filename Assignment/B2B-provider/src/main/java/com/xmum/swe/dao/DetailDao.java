@@ -5,6 +5,6 @@ import com.xmum.swe.entities.DO.DetailDO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface ItemDao extends BaseMapper<DetailDO> {
+public interface DetailDao extends BaseMapper<DetailDO> {
 
 }

@@ -5,37 +5,51 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 @Data
-@ApiModel("Params for visitor modification")
+@ApiModel("Params for product modification")
 public class ProductModifyVO {
 
-    @JsonProperty("vId")
-    private String vId;
+    @JsonProperty("pId")
+    private String pId;
 
-    @ApiModelProperty("visitor group")
-    @JsonProperty("vgroupId")
-    private String vgroupId;
+    @JsonProperty("pgroupId")
+    private String pgroupId;
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("pName")
+    private String pName;
 
-    @JsonProperty("username")
-    private String username;
+    @JsonProperty("price")
+    private float price;
 
-    @JsonProperty("password")
-    private String password;
+    @JsonProperty("quantityInStock")
+    private String quantityInStock;
 
-    @JsonProperty("age")
-    private int age;
+    @JsonProperty("manufacturer")
+    private String manufacturer;
 
-    @JsonProperty("gender")
-    private String gender;
+    @JsonProperty("description")
+    private String description;
 
     @JsonProperty("md5")
     private String md5;
 
+    @JsonProperty("status")
+    private String status;
+
+    @JsonProperty("pdCreate")
+    private Timestamp pdCreate;
+
+    @JsonProperty("pdModified")
+    private Timestamp pdModified;
+
+    @JsonProperty("opType")
+    private String opType;
+
+    //  @JsonProperty("data")
+//  private String data;
     @ApiModelProperty("additional params")
     @JsonProperty("map")
     private Map<String, Object> map;

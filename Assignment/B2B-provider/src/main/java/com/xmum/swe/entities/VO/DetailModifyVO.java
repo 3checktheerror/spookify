@@ -5,35 +5,43 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.sql.Timestamp;
 import java.util.Map;
 
 @Data
 @ApiModel("Params for item modification")
 public class DetailModifyVO {
 
-    @JsonProperty("iId")
-    private String iId;
+    @JsonProperty("dId")
+    private String dId;
 
-    @ApiModelProperty("item group")
-    @JsonProperty("igroupId")
-    private String igroupId;
+    @JsonProperty("dgroupId")
+    private String dgroupId;
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("quantity")
+    private int quantity;
 
-    @JsonProperty("gender")
-    private String gender;
+    @JsonProperty("md5")
+    private String md5;
 
-    @JsonProperty("email")
-    private String email;
+    @JsonProperty("dtCreate")
+    private Timestamp dtCreate;
 
-//    @JsonProperty("file")
-//    private byte[] file;
+    @JsonProperty("dtModified")
+    private Timestamp dtModified;
 
+    @JsonProperty("opType")
+    private String opType;
+
+//  @JsonProperty("data")
+//  private String data;
     @ApiModelProperty("additional params")
     @JsonProperty("map")
     private Map<String, Object> map;
 
-    @JsonProperty("fileName")
-    private String fileName;
+    @JsonProperty("token")
+    private String token;
+
+    @JsonProperty("sessionId")
+    private String sessionId;
 }

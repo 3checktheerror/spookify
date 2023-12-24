@@ -6,37 +6,71 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.sql.Blob;
+import java.sql.Timestamp;
 import java.util.Map;
 
 @Data
-@ApiModel("Params for customer modification")
+@ApiModel("Params for order modification")
 public class OrderModifyVO {
-    @JsonProperty("cId")
-    private String cId;
+    @JsonProperty("oId")
+    private String oId;
 
-    @ApiModelProperty("customer group")
-    @JsonProperty("cgroupId")
-    private String cgroupId;
+    @JsonProperty("ogroupId")
+    private String ogroupId;
 
-    @JsonProperty("name")
-    private String name;
+    @JsonProperty("customerId")
+    private String customerId;
 
-    @JsonProperty("age")
-    private int age;
+    @JsonProperty("balance")
+    private float balance;
 
-    @JsonProperty("gender")
-    private String gender;
+    @JsonProperty("payName")
+    private String payName;
 
-    @JsonProperty("file")
-    private Blob file;
+    @JsonProperty("cardNumber")
+    private String cardNumber;
+
+    @JsonProperty("address")
+    private String address;
+
+    @JsonProperty("shippingMethod")
+    private String shippingMethod;
+
+    @JsonProperty("productPrice")
+    private float productPrice;
+
+    @JsonProperty("tax")
+    private float tax;
+
+    @JsonProperty("shippingFee")
+    private float shippingFee;
+
+    @JsonProperty("totalAmount")
+    private float totalAmount;
+
+    @JsonProperty("discountAmount")
+    private float discountAmount;
+
+    @JsonProperty("actualAmount")
+    private float actualAmount;
+
+    @JsonProperty("paymentStatus")
+    private String paymentStatus;
 
     @JsonProperty("md5")
     private String md5;
 
-    @ApiModelProperty("customer identity")
-    @JsonProperty("csType")
-    private String csType;
+    @JsonProperty("odCreate")
+    private Timestamp odCreate;
 
+    @JsonProperty("odModified")
+    private Timestamp odModified;
+
+    @JsonProperty("opType")
+    private String opType;
+
+//  @JsonProperty("data")
+//  private String data;
     @ApiModelProperty("additional params")
     @JsonProperty("map")
     private Map<String, Object> map;

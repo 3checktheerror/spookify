@@ -5,12 +5,15 @@ import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.xmum.swe.dao.CustomerDao;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.xmum.swe.dao.OrderDao;
 import com.xmum.swe.entities.BO.OrderBO;
-import com.xmum.swe.entities.DO.ProductDO;
+import com.xmum.swe.entities.DO.OrderDO;
 import com.xmum.swe.entities.VO.OrderInsertVO;
 import com.xmum.swe.entities.VO.OrderModifyVO;
+import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
+import com.xmum.swe.service.DetailService;
 import com.xmum.swe.service.OrderService;
 import com.xmum.swe.service.IdService;
 import com.xmum.swe.utils.JsonUtil;
@@ -31,114 +34,121 @@ import java.util.Optional;
 public class OrderServiceImpl implements OrderService {
 
     @Resource
-    private CustomerDao customerDao;
+    private OrderDao orderDao;
 
     @Resource
     private IdService idService;
 
-    public ProductDO getCustomerById(String id) {
-        ProductDO customer = customerDao.selectById(id);
-        Optional.ofNullable(customer)
-                .orElseThrow(() -> new SpookifyBusinessException("No such customer!"));
-        return customer;
+    @Resource
+    private DetailService detailService;
+
+    public OrderDO getOrderById(String id) {
+        OrderDO order = orderDao.selectById(id);
+        Optional.ofNullable(order)
+                .orElseThrow(() -> new SpookifyBusinessException("No such order!"));
+        return order;
     }
 
-    public List<ProductDO> getAllCustomers(){
-        List<ProductDO> customers = customerDao.selectList(null);
-        Optional.ofNullable(customers)
-                .orElseThrow(() -> new SpookifyBusinessException("No customer!"));
-        return customers;
+    public List<OrderDO> getAllOrders(){
+        List<OrderDO> orders = orderDao.selectList(null);
+        Optional.ofNullable(orders)
+                .orElseThrow(() -> new SpookifyBusinessException("No orders!"));
+        return orders;
     }
 
-    public ProductDO getCustomerWithMaxId() {
-        ProductDO[] arr = (ProductDO[])customerDao.selectList(new QueryWrapper<ProductDO>().orderByDesc("c_id"))
+    public OrderDO getOrderWithMaxId() {
+        OrderDO[] arr = (OrderDO[])orderDao.selectList(new QueryWrapper<OrderDO>().orderByDesc("o_id"))
                 .stream().
                 limit(1)
-                .toArray(ProductDO[]::new);
+                .toArray(OrderDO[]::new);
         if(ObjectUtil.isEmpty(arr)) return arr[0];
         else {
-            ProductDO cusDO = new ProductDO();
-            cusDO.setCId("SPCT000001");
-            return cusDO;
+            OrderDO orderDO = new OrderDO();
+            orderDO.setOId("SPOD000001");
+            return orderDO;
         }
     }
-    public Map<String, Object> insertICustomer(ProductDO cusDO){
-        int num = customerDao.insert(cusDO);
+    public Map<String, Object> insertIOrder(OrderDO orderDO){
+        int num = orderDao.insert(orderDO);
         Map<String, Object> map = new HashMap<>();
         map.put("num", num);
-        map.put("id", cusDO.getCId());
-        return map;
-
-    }
-
-    public Map<String, Object> updateCustomerById(ProductDO cusDO) {
-        int num = customerDao.updateById(cusDO);
-        Map<String, Object> map = new HashMap<>();
-        map.put("num", num);
-        map.put("id", cusDO.getCId());
+        map.put("id", orderDO.getOId());
         return map;
     }
 
-    public int deleteCustomerWithId(String id) {
-        int num = customerDao.deleteById(id);
+    public Map<String, Object> updateOrderById(OrderDO orderDO) {
+        int num = orderDao.updateById(orderDO);
+        Map<String, Object> map = new HashMap<>();
+        map.put("num", num);
+        map.put("id", orderDO.getOId());
+        return map;
+    }
+
+    public int deleteOrderWithId(String id) {
+        int num = orderDao.deleteById(id);
+        detailService.deleteDetailWithOid(id);
         return num;
     }
 
-    public void getCustomerName(String name) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", name);
-        List<ProductDO> res = customerDao.selectByMap(map);
-        if(!res.isEmpty()) throw new SpookifyBusinessException("customer name cannot be duplicated!");
-    }
-    @Override
-    public Map<String, Object> insertCustomer(OrderInsertVO cusVO) {
-        //Layer 1
-        try {
-            this.getCustomerName(cusVO.getName());
-        }catch (Exception ex) {
-            throw new SpookifyBusinessException("customer name cannot be duplicated!");
-        }
-        String nextId = idService.getNextId(this.getCustomerWithMaxId().getCId());
-        //Layer 2
-        OrderBO cusBO = new OrderBO();
-        BeanUtils.copyProperties(cusVO, cusBO, "map");
-        Timestamp curTime = SpookifyTimeStamp.getInstance().getTimeStamp();
-        cusBO.setCId(nextId);
-        cusBO.setCsCreate(curTime);
-        cusBO.setCsModified(curTime);
-        cusBO.setCsType("Insert");
-        Map<String, Object> map = cusVO.getMap();
-        SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
-        filter.getExcludes().add("data");
-        filter.getExcludes().add("file");
-        JSONObject obj = JSON.parseObject(JSON.toJSONString(cusBO, filter));
-        if(ObjectUtil.isNotNull(map)) obj.putAll(map);
-        cusBO.setData(obj.toJSONString());
-        //Layer 3
-        ProductDO cusDO = new ProductDO();
-        BeanUtils.copyProperties(cusBO, cusDO);
-        return this.insertICustomer(cusDO);
+    public void updateBalanceOfCustomer(String cusId, float deductNum) {
+        if(!cusId.startsWith("SPCS") || cusId.length() != IdPos.ID_END.getPos()) throw new SpookifyBusinessException("cusId is not valid");
+        OrderDO orderDO = orderDao.selectOne(new QueryWrapper<OrderDO>().and((i) -> {
+            i.eq("customer_id", cusId);
+        }));
+        if(ObjectUtil.isNull(orderDO)) throw new SpookifyBusinessException("no such customer!");
+        float remainNum = orderDO.getBalance() - deductNum;
+        OrderDO updateEntity = new OrderDO();
+        updateEntity.setBalance(remainNum);
+        updateEntity.setOpType("Modified");
+        updateEntity.setOdModified(SpookifyTimeStamp.getInstance().getTimeStamp());
+        orderDao.update(updateEntity, new UpdateWrapper<OrderDO>().eq("customer_id", cusId));
     }
 
     @Override
-    public Map<String, Object> modifyCustomer(OrderModifyVO cusVO) {
+    public Map<String, Object> insertOrder(OrderInsertVO orderVO) {
         //Layer 1
-        ProductDO preDO = this.getCustomerById(cusVO.getCId());
+        String nextId = idService.getNextId(this.getOrderWithMaxId().getOId());
+        //Layer 2
+        OrderBO orderBO = new OrderBO();
+        BeanUtils.copyProperties(orderVO, orderBO, "map");
+        Timestamp curTime = SpookifyTimeStamp.getInstance().getTimeStamp();
+        orderBO.setOId(nextId);
+        orderBO.setOdCreate(curTime);
+        orderBO.setOdModified(curTime);
+        orderBO.setOpType("Insert");
+        orderBO.setPaymentStatus("created");
+        Map<String, Object> map = orderVO.getMap();
+        SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
+        filter.getExcludes().add("data");
+        JSONObject obj = JSON.parseObject(JSON.toJSONString(orderBO, filter));
+        if(ObjectUtil.isNotNull(map)) obj.putAll(map);
+        orderBO.setData(obj.toJSONString());
+        //Layer 3
+        OrderDO orderDO = new OrderDO();
+        BeanUtils.copyProperties(orderBO, orderDO);
+        return this.insertIOrder(orderDO);
+    }
+
+    @Override
+    public Map<String, Object> modifyOrder(OrderModifyVO orderVO) {
+        //Layer 1
+        OrderDO preDO = this.getOrderById(orderVO.getOId());
         JSONObject preData = JSON.parseObject(preDO.getData());
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
         filter.getExcludes().add("map");
-        JSONObject VO_data = JSON.parseObject(JSON.toJSONString(cusVO, filter));
-        if(ObjectUtil.isNotNull(cusVO.getMap())) VO_data.putAll(cusVO.getMap());     //get whole VO data
+        JSONObject VO_data = JSON.parseObject(JSON.toJSONString(orderVO, filter));
+        if(ObjectUtil.isNotNull(orderVO.getMap())) VO_data.putAll(orderVO.getMap());     //get whole VO data
         //Layer 2
         JsonUtil.merge(preData, VO_data);
-        preData.put("status", "modified");
+        preData.put("paymentStatus", "pending");
         preData.put("opType", "modify");
-        preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
-        OrderBO cusBO = JSON.parseObject(preData.toJSONString(), OrderBO.class);
-        cusBO.setData(preData.toJSONString());
+        preData.put("odModified", SpookifyTimeStamp.getInstance().getTimeStamp());
+        preData.put("productPrice", detailService.getProductPriceWithOid((orderVO.getOId())));
+        OrderBO orderBO = JSON.parseObject(preData.toJSONString(), OrderBO.class);
+        orderBO.setData(preData.toJSONString());
         //Layer 3
-        ProductDO cusDO = new ProductDO();
-        BeanUtils.copyProperties(cusBO, cusDO);
-        return this.updateCustomerById(cusDO);
+        OrderDO orderDO = new OrderDO();
+        BeanUtils.copyProperties(orderBO, orderDO);
+        return this.updateOrderById(orderDO);
     }
 }

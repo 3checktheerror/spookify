@@ -1,5 +1,6 @@
 package com.xmum.swe.service;
 
+import com.xmum.swe.entities.DO.OrderDO;
 import com.xmum.swe.entities.DO.ProductDO;
 import com.xmum.swe.entities.VO.OrderInsertVO;
 import com.xmum.swe.entities.VO.OrderModifyVO;
@@ -11,21 +12,22 @@ import java.util.Map;
 
 public interface OrderService {
 
-    ProductDO getCustomerById(String id);
+    OrderDO getOrderById(String id);
 
-    List<ProductDO> getAllCustomers();
+    List<OrderDO> getAllOrders();
 
-    ProductDO getCustomerWithMaxId();
+    OrderDO getOrderWithMaxId();
 
-    Map<String, Object> insertICustomer(ProductDO cusDO);
+    Map<String, Object> insertIOrder(OrderDO orderDO);
 
-    Map<String, Object> updateCustomerById(ProductDO cusDO);
+    Map<String, Object> updateOrderById(OrderDO orderDO);
 
-    int deleteCustomerWithId(String id);
+    int deleteOrderWithId(String id);
 
-    void getCustomerName(String name);
+    void updateBalanceOfCustomer(String cusId, float deductNum);
 
-    Map<String, Object> insertCustomer(OrderInsertVO cusVO);
+    Map<String, Object> insertOrder(OrderInsertVO orderVO);
 
-    Map<String, Object> modifyCustomer(OrderModifyVO cusVO);
+    Map<String, Object> modifyOrder(OrderModifyVO orderVO);
+
 }

@@ -2,6 +2,7 @@ package com.xmum.swe.service;
 
 import com.xmum.swe.entities.DO.DetailDO;
 import com.xmum.swe.entities.DO.OrderDO;
+import com.xmum.swe.entities.DO.ProductDO;
 import com.xmum.swe.entities.VO.ProductInsertVO;
 import com.xmum.swe.entities.VO.ProductModifyVO;
 
@@ -11,26 +12,28 @@ import java.util.Map;
 
 public interface ProductService {
 
-    OrderDO getVisitorById(String id);
+    ProductDO getProductById(String id);
 
-    List<OrderDO> getAllVisitors();
+    List<ProductDO> getAllProducts();
 
-    List<DetailDO> getItemsWithVid(String vid);
+//    List<DetailDO> getItemsWithVid(String vid);
 
-    List<String> getIidWithVid(String vid);
+//    List<String> getIidWithVid(String vid);
 
-    OrderDO getVisitorWithMaxId();
+    ProductDO getProductWithMaxId();
 
-    Map<String, Object> insertVisitor(OrderDO orderDO);
+    Map<String, Object> insertProduct(ProductDO productDO);
 
-    boolean checkVisitorName(String name);
+    boolean checkProductName(String name);
 
-    Map<String, Object> updateVisitorById(OrderDO orderDO);
+    Map<String, Object> updateProductById(ProductDO productDO);
 
-    Map<String, Object> deleteVisitorWithItems(String id);
+//    Map<String, Object> deleteVisitorWithItems(String id);
 
-    Map<String, Object> insertVisitor(ProductInsertVO visitorVO);
+    Map<String, Object> insertProduct(ProductInsertVO productVO);
 
-    Map<String, Object> modifyVisitor(ProductModifyVO visitorVO);
+    Map<String, Object> modifyProduct(ProductModifyVO productVO);
+
+    Map<String, Object> deleteProduct(String id);
 
 }
