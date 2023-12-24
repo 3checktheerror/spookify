@@ -90,6 +90,8 @@ CREATE INDEX B2B_detail_1_did_idx ON B2B_detail_1(d_id);
 INSERT INTO B2B_product_1 (p_id, pgroup_id, p_name, price, quantity_in_stock, category, Manufacturer, description, md5, status, pd_create, pd_modified, op_type, data, token, session_id)
 VALUES
     ('SPPD000001', 'PDG1', 'Running Shoes', 49.99, 100, 'Footwear', 'Nike', 'High-performance running shoes', '', 'In stock', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "p_id": "SPPD000001",
+      "pgroup_id": "PDG1",
       "p_name": "Running Shoes",
       "price": 49.99,
       "quantity_in_stock": 100,
@@ -105,6 +107,8 @@ VALUES
       "session_id": ""
     }', '', ''),
     ('SPPD000002', 'PDG1', 'Casual T-Shirt', 19.99, 150, 'Apparel', 'Nike', 'Comfortable and stylish T-shirt', '', 'In stock', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "p_id": "SPPD000002",
+      "pgroup_id": "PDG2",
       "p_name": "Casual T-Shirt",
       "price": 19.99,
       "quantity_in_stock": 150,
@@ -121,6 +125,8 @@ VALUES
     }
     ', '', ''),
     ('SPPD000003', 'PDG1', 'Sports Bag', 29.99, 50, 'Accessories', 'Nike', 'Spacious sports bag for your gear', '', 'In stock', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "p_id": "SPPD000003",
+      "pgroup_id": "PDG3",
       "p_name": "Casual T-Shirt",
       "price": 19.99,
       "quantity_in_stock": 150,
@@ -141,6 +147,8 @@ VALUES
 INSERT INTO B2B_order_1 (o_id, ogroup_id, customer_id, balance, pay_name, card_number, address, shipping_method, product_price, tax, `shipping fee`, total_amount, discount_amount, actual_amount, payment_status, md5, od_create, od_modified, op_type, data, token, session_id)
 VALUES
     ('SPOD000001', 'ODG1', 'SPCS000001', 0.00, 'Xu Zixiang', '1234-5678-9012-3456', '123 Main St', 'Express Shipping', 69.98, 5.00, 10.00, 84.98, 5.00, 79.98, 'pending', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "o_id": "SPOD000001",
+      "ogroup_id": "ODG1",
       "customer_id": "SPCS000001",
       "balance": 0.00,
       "pay_name": "Xu Zixiang",
@@ -163,6 +171,8 @@ VALUES
     }
     ', '', ''),
     ('SPOD000002', 'ODG1', 'SPCS000002', 0.00, 'Qiu Junyi', '9876-5432-1098-7654', '456 Oak St', 'Standard Shipping', 29.99, 2.00, 5.00, 36.99, 0.00, 36.99, 'completed', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "o_id": "SPOD000002",
+      "ogroup_id": "ODG2",
       "customer_id": "SPCS000002",
       "balance": 0.00,
       "pay_name": "Qiu Junyi",
@@ -185,6 +195,8 @@ VALUES
     }
     ', '', ''),
     ('SPOD000003', 'ODG1', 'SPCS000003', 0.00, 'Liu Can', '1111-2222-3333-4444', '789 Pine St', 'Express Shipping', 49.98, 3.00, 8.00, 60.98, 0.00, 60.98, 'completed', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "o_id": "SPOD000003",
+      "ogroup_id": "ODG3",
       "customer_id": "SPCS000003",
       "balance": 0.00,
       "pay_name": "Liu Can",
@@ -211,6 +223,8 @@ VALUES
 INSERT INTO B2B_detail_1 (d_id, dgroup_id, name, unit_price, quantity, subtotal, md5, dt_create, dt_modified, op_type, data, token, session_id, o_id_fk)
 VALUES
     ('SPDT000001', 'DTG1', 'Running Shoes', 49.99, 2, 99.98, '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "d_id": "SPDT000001",
+      "dgroup_id": "DTG1",
       "name": "Running Shoes",
       "unit_price": 49.99,
       "quantity": 2,
@@ -220,10 +234,13 @@ VALUES
       "dt_modified": "2024-01-01 00:00:00.000",
       "op_type": "Insert",
       "token": "",
-      "session_id": ""
+      "session_id": "",
+      "o_id_fk": "SPOD000001"
     }
     ', '', '', 'SPOD000001'),
     ('SPDT000002', 'DTG2', 'Casual T-Shirt', 19.99, 3, 59.97, '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "d_id": "SPDT000002",
+      "dgroup_id": "DTG2",
       "name": "Casual T-Shirt",
       "unit_price": 19.99,
       "quantity": 3,
@@ -233,10 +250,13 @@ VALUES
       "dt_modified": "2024-01-01 00:00:00.000",
       "op_type": "Insert",
       "token": "",
-      "session_id": ""
+      "session_id": "",
+      "o_id_fk": "SPOD000002"
     }
     ', '', '', 'SPOD000002'),
     ('SPDT000003', 'DTG3', 'Sports Bag', 29.99, 1, 29.99, '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
+      "d_id": "SPDT000003",
+      "dgroup_id": "DTG3",
       "name": "Sports Bag",
       "unit_price": 29.99,
       "quantity": 1,
@@ -246,6 +266,7 @@ VALUES
       "dt_modified": "2024-01-01 00:00:00.000",
       "op_type": "Insert",
       "token": "",
-      "session_id": ""
+      "session_id": "",
+      "o_id_fk": "SPOD000003"
     }
     ', '', '', 'SPOD000003');
