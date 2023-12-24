@@ -1,16 +1,17 @@
-package com.xmum.swe.entities.BO;
+package com.xmum.swe.entities.VO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import java.sql.Blob;
-import java.sql.Timestamp;
+
+import java.util.Map;
 
 @Data
-public class ItemNoMapBO {
+@ApiModel("Params for item insertion")
+public class DetailInsertVO {
 
-    @JsonProperty("iId")
-    private String iId;
-
+    @ApiModelProperty("item group")
     @JsonProperty("igroupId")
     private String igroupId;
 
@@ -23,22 +24,12 @@ public class ItemNoMapBO {
     @JsonProperty("email")
     private String email;
 
-
-
-//    @JsonProperty("file")
-//    private byte[] file;
-
     @JsonProperty("md5")
     private String md5;
 
-    @JsonProperty("itCreate")
-    private Timestamp itCreate;
-
-    @JsonProperty("itModified")
-    private Timestamp itModified;
-
-    @JsonProperty("opType")
-    private String opType;
+    @ApiModelProperty("additional params")
+    @JsonProperty("map")
+    private Map<String, Object> map;
 
     @JsonProperty("token")
     private String token;
@@ -46,9 +37,7 @@ public class ItemNoMapBO {
     @JsonProperty("sessionId")
     private String sessionId;
 
-    @JsonProperty("status")
-    private String status;
-
+    @ApiModelProperty("visitor id(for this item)")
     @JsonProperty("vIdFk")
     private String vIdFk;
 

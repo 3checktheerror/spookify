@@ -6,12 +6,13 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.sql.Blob;
-import java.sql.Timestamp;
 import java.util.Map;
 
 @Data
-@ApiModel("Params for customer insertion")
-public class CustomerInsertVO {
+@ApiModel("Params for customer modification")
+public class OrderModifyVO {
+    @JsonProperty("cId")
+    private String cId;
 
     @ApiModelProperty("customer group")
     @JsonProperty("cgroupId")

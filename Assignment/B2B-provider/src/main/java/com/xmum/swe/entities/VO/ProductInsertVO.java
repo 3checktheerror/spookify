@@ -5,21 +5,24 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-import java.sql.Blob;
 import java.util.Map;
 
 @Data
-@ApiModel("Params for customer modification")
-public class CustomerModifyVO {
-    @JsonProperty("cId")
-    private String cId;
+@ApiModel("Params for visitor insertion")
+public class ProductInsertVO {
 
-    @ApiModelProperty("customer group")
-    @JsonProperty("cgroupId")
-    private String cgroupId;
+    @ApiModelProperty("visitor group")
+    @JsonProperty("vgroupId")
+    private String vgroupId;
 
     @JsonProperty("name")
     private String name;
+
+    @JsonProperty("username")
+    private String username;
+
+    @JsonProperty("password")
+    private String password;
 
     @JsonProperty("age")
     private int age;
@@ -27,15 +30,8 @@ public class CustomerModifyVO {
     @JsonProperty("gender")
     private String gender;
 
-    @JsonProperty("file")
-    private Blob file;
-
     @JsonProperty("md5")
     private String md5;
-
-    @ApiModelProperty("customer identity")
-    @JsonProperty("csType")
-    private String csType;
 
     @ApiModelProperty("additional params")
     @JsonProperty("map")

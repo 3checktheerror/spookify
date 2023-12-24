@@ -8,8 +8,11 @@ import lombok.Data;
 import java.util.Map;
 
 @Data
-@ApiModel("Params for visitor insertion")
-public class VisitorInsertVO {
+@ApiModel("Params for visitor modification")
+public class ProductModifyVO {
+
+    @JsonProperty("vId")
+    private String vId;
 
     @ApiModelProperty("visitor group")
     @JsonProperty("vgroupId")

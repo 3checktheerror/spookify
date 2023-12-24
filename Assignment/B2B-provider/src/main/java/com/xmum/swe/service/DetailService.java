@@ -2,8 +2,8 @@ package com.xmum.swe.service;
 
 
 import com.xmum.swe.entities.DO.DetailDO;
-import com.xmum.swe.entities.VO.ItemInsertVO;
-import com.xmum.swe.entities.VO.ItemModifyVO;
+import com.xmum.swe.entities.VO.DetailInsertVO;
+import com.xmum.swe.entities.VO.DetailModifyVO;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 
 
-public interface ItemService {
+public interface DetailService {
 
     DetailDO getItemById(String id);
 
@@ -28,7 +28,7 @@ public interface ItemService {
 
     int deleteItemWithId(String id);
 
-    Map<String, Object> insertItem(ItemInsertVO itemVO, MultipartFile multipartFile);
+    Map<String, Object> insertItem(DetailInsertVO itemVO, MultipartFile multipartFile);
 
-    Map<String, Object> modifyItem(ItemModifyVO itemVO, MultipartFile multipartFile) throws IOException, IllegalAccessException;
+    Map<String, Object> modifyItem(DetailModifyVO itemVO, MultipartFile multipartFile) throws IOException, IllegalAccessException;
 }

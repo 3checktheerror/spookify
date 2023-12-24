@@ -2,14 +2,14 @@ package com.xmum.swe.service;
 
 import com.xmum.swe.entities.DO.DetailDO;
 import com.xmum.swe.entities.DO.OrderDO;
-import com.xmum.swe.entities.VO.VisitorInsertVO;
-import com.xmum.swe.entities.VO.VisitorModifyVO;
+import com.xmum.swe.entities.VO.ProductInsertVO;
+import com.xmum.swe.entities.VO.ProductModifyVO;
 
 import java.util.List;
 import java.util.Map;
 
 
-public interface VisitorService {
+public interface ProductService {
 
     OrderDO getVisitorById(String id);
 
@@ -29,8 +29,8 @@ public interface VisitorService {
 
     Map<String, Object> deleteVisitorWithItems(String id);
 
-    Map<String, Object> insertVisitor(VisitorInsertVO visitorVO);
+    Map<String, Object> insertVisitor(ProductInsertVO visitorVO);
 
-    Map<String, Object> modifyVisitor(VisitorModifyVO visitorVO);
+    Map<String, Object> modifyVisitor(ProductModifyVO visitorVO);
 
 }

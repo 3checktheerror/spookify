@@ -1,17 +1,18 @@
-package com.xmum.swe.entities.BO;
-
+package com.xmum.swe.entities.VO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
 import java.sql.Blob;
-import java.sql.Timestamp;
+import java.util.Map;
 
 @Data
-public class CustomerNoMapBO {
+@ApiModel("Params for customer insertion")
+public class OrderInsertVO {
 
-    @JsonProperty("cId")
-    private String cId;
-
+    @ApiModelProperty("customer group")
     @JsonProperty("cgroupId")
     private String cgroupId;
 
@@ -30,17 +31,13 @@ public class CustomerNoMapBO {
     @JsonProperty("md5")
     private String md5;
 
-    @JsonProperty("csCreate")
-    private Timestamp csCreate;
-
-    @JsonProperty("csModified")
-    private Timestamp csModified;
-
+    @ApiModelProperty("customer identity")
     @JsonProperty("csType")
     private String csType;
 
-    @JsonProperty("data")
-    private String data;
+    @ApiModelProperty("additional params")
+    @JsonProperty("map")
+    private Map<String, Object> map;
 
     @JsonProperty("token")
     private String token;

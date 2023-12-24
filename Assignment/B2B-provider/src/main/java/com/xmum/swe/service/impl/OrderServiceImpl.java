@@ -6,12 +6,12 @@ import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.dao.CustomerDao;
-import com.xmum.swe.entities.BO.CustomerBO;
+import com.xmum.swe.entities.BO.OrderBO;
 import com.xmum.swe.entities.DO.ProductDO;
-import com.xmum.swe.entities.VO.CustomerInsertVO;
-import com.xmum.swe.entities.VO.CustomerModifyVO;
+import com.xmum.swe.entities.VO.OrderInsertVO;
+import com.xmum.swe.entities.VO.OrderModifyVO;
 import com.xmum.swe.exception.SpookifyBusinessException;
-import com.xmum.swe.service.CustomerService;
+import com.xmum.swe.service.OrderService;
 import com.xmum.swe.service.IdService;
 import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
@@ -28,7 +28,7 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-public class CustomerServiceImpl implements CustomerService {
+public class OrderServiceImpl implements OrderService {
 
     @Resource
     private CustomerDao customerDao;
@@ -91,7 +91,7 @@ public class CustomerServiceImpl implements CustomerService {
         if(!res.isEmpty()) throw new SpookifyBusinessException("customer name cannot be duplicated!");
     }
     @Override
-    public Map<String, Object> insertCustomer(CustomerInsertVO cusVO) {
+    public Map<String, Object> insertCustomer(OrderInsertVO cusVO) {
         //Layer 1
         try {
             this.getCustomerName(cusVO.getName());
@@ -100,7 +100,7 @@ public class CustomerServiceImpl implements CustomerService {
         }
         String nextId = idService.getNextId(this.getCustomerWithMaxId().getCId());
         //Layer 2
-        CustomerBO cusBO = new CustomerBO();
+        OrderBO cusBO = new OrderBO();
         BeanUtils.copyProperties(cusVO, cusBO, "map");
         Timestamp curTime = SpookifyTimeStamp.getInstance().getTimeStamp();
         cusBO.setCId(nextId);
@@ -121,7 +121,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Map<String, Object> modifyCustomer(CustomerModifyVO cusVO) {
+    public Map<String, Object> modifyCustomer(OrderModifyVO cusVO) {
         //Layer 1
         ProductDO preDO = this.getCustomerById(cusVO.getCId());
         JSONObject preData = JSON.parseObject(preDO.getData());
@@ -134,7 +134,7 @@ public class CustomerServiceImpl implements CustomerService {
         preData.put("status", "modified");
         preData.put("opType", "modify");
         preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
-        CustomerBO cusBO = JSON.parseObject(preData.toJSONString(), CustomerBO.class);
+        OrderBO cusBO = JSON.parseObject(preData.toJSONString(), OrderBO.class);
         cusBO.setData(preData.toJSONString());
         //Layer 3
         ProductDO cusDO = new ProductDO();

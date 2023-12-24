@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import java.sql.Blob;
+
 import java.util.Map;
 
 @Data
 @ApiModel("Params for item modification")
-public class ItemModifyVO {
+public class DetailModifyVO {
 
     @JsonProperty("iId")
     private String iId;

@@ -4,9 +4,9 @@ package com.xmum.swe.controller;
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.DetailDO;
-import com.xmum.swe.entities.VO.ItemInsertVO;
-import com.xmum.swe.entities.VO.ItemModifyVO;
-import com.xmum.swe.service.ItemService;
+import com.xmum.swe.entities.VO.DetailInsertVO;
+import com.xmum.swe.entities.VO.DetailModifyVO;
+import com.xmum.swe.service.DetailService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -29,19 +29,19 @@ import java.util.*;
 public class ItemController {
 
     @Resource
-    private ItemService itemService;
+    private DetailService detailService;
 
     @SpookifyInfo
     @GetMapping("/getItemById/{id}")
     public CommonResult getItem(@PathVariable("id") String id) {
-        DetailDO item = itemService.getItemById(id);
+        DetailDO item = detailService.getItemById(id);
         return CommonResult.ok(item);
     }
 
     @SpookifyInfo
     @GetMapping("/download/{id}")
     public void downLoadItem(@PathVariable("id") String id, HttpServletResponse response) throws IOException {
-        DetailDO item = itemService.getItemById(id);
+        DetailDO item = detailService.getItemById(id);
         String fileName = item.getFileName();
         response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
         response.setContentType("application/octet-stream");
@@ -55,7 +55,7 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/getAllItems")
     public CommonResult getAllItems(){
-        List<DetailDO> items = itemService.getAllItems();
+        List<DetailDO> items = detailService.getAllItems();
         return CommonResult.ok(items);
     }
 
@@ -63,7 +63,7 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/containsItemName")
     public boolean containsItemWithName(@RequestParam("ItemName") String name){
-        boolean hasItem = itemService.containsItemName(name);
+        boolean hasItem = detailService.containsItemName(name);
         return hasItem;
     }
 
@@ -72,16 +72,16 @@ public class ItemController {
     //map中存了除了空值(比如file)外的所有数据
     @SpookifyInfo
     @PostMapping("/insertItem")
-    public CommonResult insertItem(@Valid ItemInsertVO itemVO, @RequestParam(value = "file", required = false) MultipartFile multipartFile){
-        Map<String, Object> map = itemService.insertItem(itemVO, multipartFile);
+    public CommonResult insertItem(@Valid DetailInsertVO itemVO, @RequestParam(value = "file", required = false) MultipartFile multipartFile){
+        Map<String, Object> map = detailService.insertItem(itemVO, multipartFile);
         return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
     @PostMapping("/modifyItem")
-    public CommonResult modifyItem(@Valid ItemModifyVO itemVO, @RequestParam(value ="file", required = false) MultipartFile multipartFile) throws IOException, IllegalAccessException {
+    public CommonResult modifyItem(@Valid DetailModifyVO itemVO, @RequestParam(value ="file", required = false) MultipartFile multipartFile) throws IOException, IllegalAccessException {
 
-        Map<String, Object> map = itemService.modifyItem(itemVO, multipartFile);
+        Map<String, Object> map = detailService.modifyItem(itemVO, multipartFile);
         return (int)map.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(map);
     }
 
@@ -89,8 +89,8 @@ public class ItemController {
     @GetMapping("/deleteItem/{id}")
     public CommonResult deleteItem(@PathVariable("id") String id){
         //Just check whether id exists
-        itemService.getItemById(id);
-        int num = itemService.deleteItemWithId(id);
+        detailService.getItemById(id);
+        int num = detailService.deleteItemWithId(id);
         return num == 0 ? CommonResult.ok("nothing to be deleted") : CommonResult.ok(num);
     }
 

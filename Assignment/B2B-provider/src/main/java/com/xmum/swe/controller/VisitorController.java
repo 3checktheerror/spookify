@@ -4,9 +4,9 @@ import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.DetailDO;
 import com.xmum.swe.entities.DO.OrderDO;
-import com.xmum.swe.entities.VO.VisitorInsertVO;
-import com.xmum.swe.entities.VO.VisitorModifyVO;
-import com.xmum.swe.service.VisitorService;
+import com.xmum.swe.entities.VO.ProductInsertVO;
+import com.xmum.swe.entities.VO.ProductModifyVO;
+import com.xmum.swe.service.ProductService;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -21,47 +21,47 @@ import java.util.Map;
 public class VisitorController {
 
     @Resource
-    private VisitorService visitorService;
+    private ProductService productService;
 
     @SpookifyInfo
     @GetMapping("/getVisitorById/{id}")
     public CommonResult getVisitor(@PathVariable("id") String id){
-        OrderDO visitor = visitorService.getVisitorById(id);
+        OrderDO visitor = productService.getVisitorById(id);
         return CommonResult.ok(visitor);
     }
 
     @SpookifyInfo
     @GetMapping("/getAllVisitors")
     public CommonResult getAllVisitors(){
-        List<OrderDO> visitors = visitorService.getAllVisitors();
+        List<OrderDO> visitors = productService.getAllVisitors();
         return CommonResult.ok(visitors);
     }
 
     @SpookifyInfo
     @GetMapping("/getitems/{vid}")
     public CommonResult getItems(@PathVariable("vid") String vid){
-        List<DetailDO> items = visitorService.getItemsWithVid(vid);
+        List<DetailDO> items = productService.getItemsWithVid(vid);
         return CommonResult.ok(items);
     }
 
     @SpookifyInfo
     @GetMapping("/getIids/{vid}")
     public CommonResult getIids(@PathVariable("vid") String vid){
-        List<String> ids = visitorService.getIidWithVid(vid);
+        List<String> ids = productService.getIidWithVid(vid);
         return CommonResult.ok(ids);
     }
 
     @SpookifyInfo
     @PostMapping("/insertVisitor")
-    public CommonResult insertVisitor(@RequestBody VisitorInsertVO visitorVO){
-        Map<String, Object> map = visitorService.insertVisitor(visitorVO);
+    public CommonResult insertVisitor(@RequestBody ProductInsertVO visitorVO){
+        Map<String, Object> map = productService.insertVisitor(visitorVO);
         return map.get("Error") == "visitor name exists!" ? CommonResult.fail("visitor name exists!") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
     @PostMapping("/modifyVisitor")
-    public CommonResult modifyVisitor(@RequestBody VisitorModifyVO visitorVO){
-        Map<String, Object> res = visitorService.modifyVisitor(visitorVO);
+    public CommonResult modifyVisitor(@RequestBody ProductModifyVO visitorVO){
+        Map<String, Object> res = productService.modifyVisitor(visitorVO);
         return (int)res.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(res);
     }
 
@@ -69,8 +69,8 @@ public class VisitorController {
     @GetMapping("/deleteVisitor/{id}")
     public CommonResult deleteVisitor(@PathVariable("id") String id){
         //Just check whether id exists
-        visitorService.getVisitorById(id);
-        Map<String, Object> map = visitorService.deleteVisitorWithItems(id);
+        productService.getVisitorById(id);
+        Map<String, Object> map = productService.deleteVisitorWithItems(id);
         return (int)map.get("itemNum") == 0 ? CommonResult.ok("nothing to be deleted") : CommonResult.ok(map);
     }
 }

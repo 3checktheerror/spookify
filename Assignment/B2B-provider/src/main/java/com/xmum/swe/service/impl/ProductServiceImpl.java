@@ -7,14 +7,14 @@ import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.dao.ItemDao;
 import com.xmum.swe.dao.VisitorDao;
-import com.xmum.swe.entities.BO.VisitorBO;
+import com.xmum.swe.entities.BO.ProductBO;
 import com.xmum.swe.entities.DO.DetailDO;
 import com.xmum.swe.entities.DO.OrderDO;
-import com.xmum.swe.entities.VO.VisitorInsertVO;
-import com.xmum.swe.entities.VO.VisitorModifyVO;
+import com.xmum.swe.entities.VO.ProductInsertVO;
+import com.xmum.swe.entities.VO.ProductModifyVO;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.IdService;
-import com.xmum.swe.service.VisitorService;
+import com.xmum.swe.service.ProductService;
 import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-public class VisitorServiceImpl implements VisitorService {
+public class ProductServiceImpl implements ProductService {
     @Resource
     private VisitorDao visitorDao;
 
@@ -113,7 +113,7 @@ public class VisitorServiceImpl implements VisitorService {
     }
 
     @Override
-    public Map<String, Object> insertVisitor(VisitorInsertVO visitorVO) {
+    public Map<String, Object> insertVisitor(ProductInsertVO visitorVO) {
         //Layer 1
         if(this.checkVisitorName(visitorVO.getName())) {
             Map<String, Object> map = new HashMap<>();
@@ -122,28 +122,28 @@ public class VisitorServiceImpl implements VisitorService {
         }
         String nextId = idService.getNextId(this.getVisitorWithMaxId().getVId());
         //Layer 2
-        VisitorBO visitorBO = new VisitorBO();
-        BeanUtils.copyProperties(visitorVO, visitorBO, "map");
+        ProductBO productBO = new ProductBO();
+        BeanUtils.copyProperties(visitorVO, productBO, "map");
         Timestamp curTime = SpookifyTimeStamp.getInstance().getTimeStamp();
-        visitorBO.setVId(nextId);
-        visitorBO.setVtCreate(curTime);
-        visitorBO.setVtModified(curTime);
-        visitorBO.setOpType("Insert");
+        productBO.setVId(nextId);
+        productBO.setVtCreate(curTime);
+        productBO.setVtModified(curTime);
+        productBO.setOpType("Insert");
         Map<String, Object> map = visitorVO.getMap();
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
         filter.getExcludes().add("data");
         filter.getExcludes().add("file");
-        JSONObject obj = JSON.parseObject(JSON.toJSONString(visitorBO, filter));
+        JSONObject obj = JSON.parseObject(JSON.toJSONString(productBO, filter));
         if(ObjectUtil.isNotNull(map)) obj.putAll(map);
-        visitorBO.setData(obj.toJSONString());
+        productBO.setData(obj.toJSONString());
         //Layer 3
         OrderDO orderDO = new OrderDO();
-        BeanUtils.copyProperties(visitorBO, orderDO);
+        BeanUtils.copyProperties(productBO, orderDO);
         return this.insertVisitor(orderDO);
     }
 
     @Override
-    public Map<String, Object> modifyVisitor(VisitorModifyVO visitorVO) {
+    public Map<String, Object> modifyVisitor(ProductModifyVO visitorVO) {
         //Layer 1
         OrderDO preDO = this.getVisitorById(visitorVO.getVId());
         JSONObject preData = JSON.parseObject(preDO.getData());
@@ -156,11 +156,11 @@ public class VisitorServiceImpl implements VisitorService {
         preData.put("status", "modified");
         preData.put("opType", "modify");
         preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
-        VisitorBO visitorBO = JSON.parseObject(preData.toJSONString(), VisitorBO.class);
-        visitorBO.setData(preData.toJSONString());
+        ProductBO productBO = JSON.parseObject(preData.toJSONString(), ProductBO.class);
+        productBO.setData(preData.toJSONString());
         //Layer 3
         OrderDO orderDO = new OrderDO();
-        BeanUtils.copyProperties(visitorBO, orderDO);
+        BeanUtils.copyProperties(productBO, orderDO);
         return this.updateVisitorById(orderDO);
     }
 }
