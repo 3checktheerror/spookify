@@ -3,7 +3,7 @@ package com.xmum.swe.controller;
 
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.entities.CommonResult;
-import com.xmum.swe.entities.DO.CustomerDO;
+import com.xmum.swe.entities.DO.ProductDO;
 import com.xmum.swe.entities.VO.CustomerInsertVO;
 import com.xmum.swe.entities.VO.CustomerModifyVO;
 import com.xmum.swe.service.CustomerService;
@@ -26,14 +26,14 @@ public class CustomerController {
     @SpookifyInfo
     @GetMapping("/getCustomerById/{id}")
     public CommonResult getCustomerById(@PathVariable("id") String id){
-        CustomerDO customer = customerService.getCustomerById(id);
+        ProductDO customer = customerService.getCustomerById(id);
         return CommonResult.ok(customer);
     }
 
     @SpookifyInfo
     @GetMapping("/getAllCustomers")
     public CommonResult getAllCustomers(){
-        List<CustomerDO> customers = customerService.getAllCustomers();
+        List<ProductDO> customers = customerService.getAllCustomers();
         return CommonResult.ok(customers);
     }
 

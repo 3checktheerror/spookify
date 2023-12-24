@@ -7,7 +7,7 @@ import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.dao.CustomerDao;
 import com.xmum.swe.entities.BO.CustomerBO;
-import com.xmum.swe.entities.DO.CustomerDO;
+import com.xmum.swe.entities.DO.ProductDO;
 import com.xmum.swe.entities.VO.CustomerInsertVO;
 import com.xmum.swe.entities.VO.CustomerModifyVO;
 import com.xmum.swe.exception.SpookifyBusinessException;
@@ -36,33 +36,33 @@ public class CustomerServiceImpl implements CustomerService {
     @Resource
     private IdService idService;
 
-    public CustomerDO getCustomerById(String id) {
-        CustomerDO customer = customerDao.selectById(id);
+    public ProductDO getCustomerById(String id) {
+        ProductDO customer = customerDao.selectById(id);
         Optional.ofNullable(customer)
                 .orElseThrow(() -> new SpookifyBusinessException("No such customer!"));
         return customer;
     }
 
-    public List<CustomerDO> getAllCustomers(){
-        List<CustomerDO> customers = customerDao.selectList(null);
+    public List<ProductDO> getAllCustomers(){
+        List<ProductDO> customers = customerDao.selectList(null);
         Optional.ofNullable(customers)
                 .orElseThrow(() -> new SpookifyBusinessException("No customer!"));
         return customers;
     }
 
-    public CustomerDO getCustomerWithMaxId() {
-        CustomerDO[] arr = (CustomerDO[])customerDao.selectList(new QueryWrapper<CustomerDO>().orderByDesc("c_id"))
+    public ProductDO getCustomerWithMaxId() {
+        ProductDO[] arr = (ProductDO[])customerDao.selectList(new QueryWrapper<ProductDO>().orderByDesc("c_id"))
                 .stream().
                 limit(1)
-                .toArray(CustomerDO[]::new);
+                .toArray(ProductDO[]::new);
         if(ObjectUtil.isEmpty(arr)) return arr[0];
         else {
-            CustomerDO cusDO = new CustomerDO();
+            ProductDO cusDO = new ProductDO();
             cusDO.setCId("SPCT000001");
             return cusDO;
         }
     }
-    public Map<String, Object> insertICustomer(CustomerDO cusDO){
+    public Map<String, Object> insertICustomer(ProductDO cusDO){
         int num = customerDao.insert(cusDO);
         Map<String, Object> map = new HashMap<>();
         map.put("num", num);
@@ -71,7 +71,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     }
 
-    public Map<String, Object> updateCustomerById(CustomerDO cusDO) {
+    public Map<String, Object> updateCustomerById(ProductDO cusDO) {
         int num = customerDao.updateById(cusDO);
         Map<String, Object> map = new HashMap<>();
         map.put("num", num);
@@ -87,7 +87,7 @@ public class CustomerServiceImpl implements CustomerService {
     public void getCustomerName(String name) {
         Map<String, Object> map = new HashMap<>();
         map.put("name", name);
-        List<CustomerDO> res = customerDao.selectByMap(map);
+        List<ProductDO> res = customerDao.selectByMap(map);
         if(!res.isEmpty()) throw new SpookifyBusinessException("customer name cannot be duplicated!");
     }
     @Override
@@ -115,7 +115,7 @@ public class CustomerServiceImpl implements CustomerService {
         if(ObjectUtil.isNotNull(map)) obj.putAll(map);
         cusBO.setData(obj.toJSONString());
         //Layer 3
-        CustomerDO cusDO = new CustomerDO();
+        ProductDO cusDO = new ProductDO();
         BeanUtils.copyProperties(cusBO, cusDO);
         return this.insertICustomer(cusDO);
     }
@@ -123,7 +123,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Map<String, Object> modifyCustomer(CustomerModifyVO cusVO) {
         //Layer 1
-        CustomerDO preDO = this.getCustomerById(cusVO.getCId());
+        ProductDO preDO = this.getCustomerById(cusVO.getCId());
         JSONObject preData = JSON.parseObject(preDO.getData());
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
         filter.getExcludes().add("map");
@@ -137,7 +137,7 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerBO cusBO = JSON.parseObject(preData.toJSONString(), CustomerBO.class);
         cusBO.setData(preData.toJSONString());
         //Layer 3
-        CustomerDO cusDO = new CustomerDO();
+        ProductDO cusDO = new ProductDO();
         BeanUtils.copyProperties(cusBO, cusDO);
         return this.updateCustomerById(cusDO);
     }

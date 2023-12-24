@@ -3,7 +3,7 @@ package com.xmum.swe.controller;
 
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.entities.CommonResult;
-import com.xmum.swe.entities.DO.ItemDO;
+import com.xmum.swe.entities.DO.DetailDO;
 import com.xmum.swe.entities.VO.ItemInsertVO;
 import com.xmum.swe.entities.VO.ItemModifyVO;
 import com.xmum.swe.service.ItemService;
@@ -34,14 +34,14 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/getItemById/{id}")
     public CommonResult getItem(@PathVariable("id") String id) {
-        ItemDO item = itemService.getItemById(id);
+        DetailDO item = itemService.getItemById(id);
         return CommonResult.ok(item);
     }
 
     @SpookifyInfo
     @GetMapping("/download/{id}")
     public void downLoadItem(@PathVariable("id") String id, HttpServletResponse response) throws IOException {
-        ItemDO item = itemService.getItemById(id);
+        DetailDO item = itemService.getItemById(id);
         String fileName = item.getFileName();
         response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
         response.setContentType("application/octet-stream");
@@ -55,7 +55,7 @@ public class ItemController {
     @SpookifyInfo
     @GetMapping("/getAllItems")
     public CommonResult getAllItems(){
-        List<ItemDO> items = itemService.getAllItems();
+        List<DetailDO> items = itemService.getAllItems();
         return CommonResult.ok(items);
     }
 

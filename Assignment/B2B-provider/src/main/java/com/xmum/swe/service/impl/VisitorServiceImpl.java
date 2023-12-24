@@ -7,31 +7,21 @@ import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.dao.ItemDao;
 import com.xmum.swe.dao.VisitorDao;
-import com.xmum.swe.entities.BO.ItemBO;
 import com.xmum.swe.entities.BO.VisitorBO;
-import com.xmum.swe.entities.BO.VisitorNoMapBO;
-import com.xmum.swe.entities.CommonResult;
-import com.xmum.swe.entities.DO.CustomerDO;
-import com.xmum.swe.entities.DO.ItemDO;
-import com.xmum.swe.entities.DO.VisitorDO;
-import com.xmum.swe.entities.VO.ItemInsertVO;
+import com.xmum.swe.entities.DO.DetailDO;
+import com.xmum.swe.entities.DO.OrderDO;
 import com.xmum.swe.entities.VO.VisitorInsertVO;
 import com.xmum.swe.entities.VO.VisitorModifyVO;
-import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.IdService;
 import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.JsonUtil;
-import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
@@ -52,69 +42,69 @@ public class VisitorServiceImpl implements VisitorService {
     private IdService idService;
 
 
-    public VisitorDO getVisitorById(String id) {
-        VisitorDO visitor = visitorDao.selectById(id);
+    public OrderDO getVisitorById(String id) {
+        OrderDO visitor = visitorDao.selectById(id);
         Optional.ofNullable(visitor)
                 .orElseThrow(() -> new SpookifyBusinessException("No such visitor!"));
         return visitor;
     }
 
-    public List<VisitorDO> getAllVisitors() {
-        List<VisitorDO> visitors = visitorDao.selectList(null);
+    public List<OrderDO> getAllVisitors() {
+        List<OrderDO> visitors = visitorDao.selectList(null);
         Optional.ofNullable(visitors)
                 .orElseThrow(() -> new SpookifyBusinessException("items list is empty!"));
         return visitors;
     }
 
-    public List<ItemDO> getItemsWithVid(String vid){
-        List<ItemDO> items = itemDao.selectList(new QueryWrapper<ItemDO>().and(i -> i.eq("v_id_fk", vid)));
+    public List<DetailDO> getItemsWithVid(String vid){
+        List<DetailDO> items = itemDao.selectList(new QueryWrapper<DetailDO>().and(i -> i.eq("v_id_fk", vid)));
         return items;
     }
 
     public List<String> getIidWithVid(String vid){
-        List<ItemDO> items = this.getItemsWithVid(vid);
-        List<String> res = items.stream().map(ItemDO::getIId).collect(Collectors.toList());
+        List<DetailDO> items = this.getItemsWithVid(vid);
+        List<String> res = items.stream().map(DetailDO::getIId).collect(Collectors.toList());
         return res;
     }
 
-    public VisitorDO getVisitorWithMaxId() {
-        VisitorDO[] arr = (VisitorDO[])visitorDao.selectList(new QueryWrapper<VisitorDO>().orderByDesc("v_id"))
+    public OrderDO getVisitorWithMaxId() {
+        OrderDO[] arr = (OrderDO[])visitorDao.selectList(new QueryWrapper<OrderDO>().orderByDesc("v_id"))
                 .stream().
                 limit(1)
-                .toArray(VisitorDO[]::new);
+                .toArray(OrderDO[]::new);
         if(ObjectUtil.isNotEmpty(arr)) return arr[0];
         else {
-            VisitorDO visitorDO = new VisitorDO();
-            visitorDO.setVId("SPVT000001");
-            return visitorDO;
+            OrderDO orderDO = new OrderDO();
+            orderDO.setVId("SPVT000001");
+            return orderDO;
         }
     }
 
-    public Map<String, Object> insertVisitor(VisitorDO visitorDO) {
-        int num = visitorDao.insert(visitorDO);
+    public Map<String, Object> insertVisitor(OrderDO orderDO) {
+        int num = visitorDao.insert(orderDO);
         Map<String, Object> map = new HashMap<>();
         map.put("num", num);
-        map.put("id", visitorDO.getVId());
+        map.put("id", orderDO.getVId());
         return map;
     }
 
     public boolean checkVisitorName(String name) {
-        VisitorDO visitor = visitorDao.selectOne(new QueryWrapper<VisitorDO>().eq("name", name));
+        OrderDO visitor = visitorDao.selectOne(new QueryWrapper<OrderDO>().eq("name", name));
         return !ObjectUtil.isNull(visitor);
     }
 
 
-    public Map<String, Object> updateVisitorById(VisitorDO visitorDO) {
-        int num = visitorDao.updateById(visitorDO);
+    public Map<String, Object> updateVisitorById(OrderDO orderDO) {
+        int num = visitorDao.updateById(orderDO);
         Map<String, Object> map = new HashMap<>();
         map.put("num", num);
-        map.put("id", visitorDO.getVId());
+        map.put("id", orderDO.getVId());
         return map;
     }
 
     public Map<String, Object> deleteVisitorWithItems(String id) {
-        int itemNum = itemDao.delete(new QueryWrapper<ItemDO>().and(i -> i.eq("v_id_fk", id)));
-        int visitorNum = visitorDao.delete(new QueryWrapper<VisitorDO>().and(i -> i.eq("v_id", id)));
+        int itemNum = itemDao.delete(new QueryWrapper<DetailDO>().and(i -> i.eq("v_id_fk", id)));
+        int visitorNum = visitorDao.delete(new QueryWrapper<OrderDO>().and(i -> i.eq("v_id", id)));
         if(visitorNum != 1) throw new SpookifyBusinessException("delete more than one visitor at time???");
         Map<String, Object> map = new HashMap<>();
         map.put("itemNum", itemNum);
@@ -147,15 +137,15 @@ public class VisitorServiceImpl implements VisitorService {
         if(ObjectUtil.isNotNull(map)) obj.putAll(map);
         visitorBO.setData(obj.toJSONString());
         //Layer 3
-        VisitorDO visitorDO = new VisitorDO();
-        BeanUtils.copyProperties(visitorBO, visitorDO);
-        return this.insertVisitor(visitorDO);
+        OrderDO orderDO = new OrderDO();
+        BeanUtils.copyProperties(visitorBO, orderDO);
+        return this.insertVisitor(orderDO);
     }
 
     @Override
     public Map<String, Object> modifyVisitor(VisitorModifyVO visitorVO) {
         //Layer 1
-        VisitorDO preDO = this.getVisitorById(visitorVO.getVId());
+        OrderDO preDO = this.getVisitorById(visitorVO.getVId());
         JSONObject preData = JSON.parseObject(preDO.getData());
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
         filter.getExcludes().add("map");
@@ -169,8 +159,8 @@ public class VisitorServiceImpl implements VisitorService {
         VisitorBO visitorBO = JSON.parseObject(preData.toJSONString(), VisitorBO.class);
         visitorBO.setData(preData.toJSONString());
         //Layer 3
-        VisitorDO visitorDO = new VisitorDO();
-        BeanUtils.copyProperties(visitorBO, visitorDO);
-        return this.updateVisitorById(visitorDO);
+        OrderDO orderDO = new OrderDO();
+        BeanUtils.copyProperties(visitorBO, orderDO);
+        return this.updateVisitorById(orderDO);
     }
 }

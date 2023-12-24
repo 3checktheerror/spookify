@@ -14,6 +14,7 @@
         <module>portfolio-provider</module>
         <module>B2B-provider</module>
         <module>common-infrastructure</module>
+        <module>B2B-provider</module>
     </modules>
 
 

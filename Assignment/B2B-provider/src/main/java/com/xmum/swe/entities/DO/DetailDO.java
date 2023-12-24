@@ -8,34 +8,32 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.ibatis.type.BlobTypeHandler;
 
-import java.sql.Blob;
 import java.sql.Timestamp;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "contact_item_1")
-public class ItemDO {
+@TableName(value = "B2B_detail_1")
+public class DetailDO {
 
-    @TableId("i_id")
-    private String iId;
+    @TableId("d_id")
+    private String dId;
 
-    private String igroupId;
+    private String dgroupId;
 
     private String name;
 
-    private String gender;
+    private float unitPrice;
 
-    private String email;
+    private int quantity;
 
-    @TableField(typeHandler = BlobTypeHandler.class)
-    private byte[] file;
+    private float subtotal;
 
     private String md5;
 
-    private Timestamp itCreate;
+    private Timestamp dtCreate;
 
-    private Timestamp itModified;
+    private Timestamp dtModified;
 
     private String opType;
 
@@ -45,10 +43,6 @@ public class ItemDO {
 
     private String sessionId;
 
-    private String status;
-
-    private String vIdFk;
-
-    @TableField("file_name")
-    private String fileName;
+    @TableField("o_id_fk")
+    private String oIdFk;
 }

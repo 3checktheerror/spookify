@@ -6,25 +6,19 @@ import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xmum.swe.dao.ItemDao;
-import com.xmum.swe.dao.VisitorDao;
 import com.xmum.swe.entities.BO.ItemBO;
-import com.xmum.swe.entities.BO.ItemNoMapBO;
-import com.xmum.swe.entities.CommonResult;
-import com.xmum.swe.entities.DO.ItemDO;
+import com.xmum.swe.entities.DO.DetailDO;
 import com.xmum.swe.entities.VO.ItemInsertVO;
 import com.xmum.swe.entities.VO.ItemModifyVO;
-import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.IdService;
 import com.xmum.swe.service.ItemService;
 import com.xmum.swe.service.VisitorService;
 import com.xmum.swe.utils.JsonUtil;
-import com.xmum.swe.utils.MapUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -49,55 +43,55 @@ public class ItemServiceImpl implements ItemService {
 
 
 
-    public ItemDO getItemById(String id) {
-        ItemDO item = itemDao.selectById(id);
+    public DetailDO getItemById(String id) {
+        DetailDO item = itemDao.selectById(id);
         Optional.ofNullable(item)
                 .orElseThrow(() -> new SpookifyBusinessException("No such item!"));
         return item;
     }
 
-    public List<ItemDO> getAllItems() {
-        List<ItemDO> items = itemDao.selectList(null);
+    public List<DetailDO> getAllItems() {
+        List<DetailDO> items = itemDao.selectList(null);
         Optional.ofNullable(items)
                 .orElseThrow(() -> new SpookifyBusinessException("items list is empty!"));
         return items;
     }
 
     public boolean containsItemName(String name) {
-        QueryWrapper<ItemDO> wrapper = new QueryWrapper<>();
-        ItemDO[] items = itemDao
+        QueryWrapper<DetailDO> wrapper = new QueryWrapper<>();
+        DetailDO[] items = itemDao
                 .selectList(wrapper.select("name")
                         .and(i -> i.eq("name", name)))
-                .toArray(new ItemDO[0]);
+                .toArray(new DetailDO[0]);
         return items.length > 0;
     }
 
-    public Map<String, Object> insertItem(ItemDO itemDO) {
-        int num = itemDao.insert(itemDO);
+    public Map<String, Object> insertItem(DetailDO detailDO) {
+        int num = itemDao.insert(detailDO);
         Map<String, Object> map = new HashMap<>();
         map.put("num", num);
-        map.put("id", itemDO.getIId());
+        map.put("id", detailDO.getIId());
         return map;
     }
 
-    public ItemDO getItemWithMaxId(){
-        ItemDO[] arr = (ItemDO[])itemDao.selectList(new QueryWrapper<ItemDO>().orderByDesc("i_id"))
+    public DetailDO getItemWithMaxId(){
+        DetailDO[] arr = (DetailDO[])itemDao.selectList(new QueryWrapper<DetailDO>().orderByDesc("i_id"))
                 .stream().
                 limit(1)
-                .toArray(ItemDO[]::new);
+                .toArray(DetailDO[]::new);
         if(ObjectUtil.isNotEmpty(arr)) return arr[0];
         else {
-            ItemDO itemDO = new ItemDO();
-            itemDO.setIId("SPIT000001");
-            return itemDO;
+            DetailDO detailDO = new DetailDO();
+            detailDO.setIId("SPIT000001");
+            return detailDO;
         }
     }
 
-    public Map<String, Object> updateItemById(ItemDO itemDO) {
-        int num = itemDao.updateById(itemDO);
+    public Map<String, Object> updateItemById(DetailDO detailDO) {
+        int num = itemDao.updateById(detailDO);
         Map<String, Object> map = new HashMap<>();
         map.put("num", num);
-        map.put("id", itemDO.getIId());
+        map.put("id", detailDO.getIId());
         return map;
     }
 
@@ -143,15 +137,15 @@ public class ItemServiceImpl implements ItemService {
         if(ObjectUtil.isNotNull(map)) obj.putAll(map);
         itemBO.setData(obj.toJSONString());
         //Layer 3
-        ItemDO itemDO = new ItemDO();
-        BeanUtils.copyProperties(itemBO, itemDO);
-        return this.insertItem(itemDO);
+        DetailDO detailDO = new DetailDO();
+        BeanUtils.copyProperties(itemBO, detailDO);
+        return this.insertItem(detailDO);
     }
 
     @Override
     public Map<String, Object> modifyItem(ItemModifyVO itemVO, MultipartFile multipartFile) throws IOException {
         //Layer 1
-        ItemDO preDO = this.getItemById(itemVO.getIId());
+        DetailDO preDO = this.getItemById(itemVO.getIId());
         JSONObject preData = JSON.parseObject(preDO.getData());
         String newFileName = null;
         byte[] newFileData = null;
@@ -175,9 +169,9 @@ public class ItemServiceImpl implements ItemService {
         if(ObjectUtil.isNotNull(multipartFile)) itemBO.setFile(newFileData);
         else itemBO.setFile(preDO.getFile());
         //Layer 3
-        ItemDO itemDO = new ItemDO();
-        BeanUtils.copyProperties(itemBO, itemDO);
-        return this.updateItemById(itemDO);
+        DetailDO detailDO = new DetailDO();
+        BeanUtils.copyProperties(itemBO, detailDO);
+        return this.updateItemById(detailDO);
     }
 
 }

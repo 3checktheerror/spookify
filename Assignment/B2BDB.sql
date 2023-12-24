@@ -15,7 +15,7 @@ CREATE TABLE B2B_product_1 (
                                `price` DECIMAL(10, 2)NOT NULL,
                                `quantity_in_stock` INT NOT NULL,
                                `category` varchar(32) NOT NULL,
-                               `Manufacturer`varchar(32) NOT NULL,
+                               `manufacturer`varchar(32) NOT NULL,
                                `description` varchar(512) NOT NULL,
                                `md5` varchar(32),
                                `status` varchar(16),
@@ -45,7 +45,7 @@ CREATE TABLE B2B_order_1 (
                              `shipping_method` varchar(128),
                              `product_price` DECIMAL(10, 2),
                              `tax` DECIMAL(10, 2),
-                             `shipping fee` DECIMAL(10, 2),
+                             `shipping_fee` DECIMAL(10, 2),
                              `total_amount`DECIMAL(10, 2),
                              `discount_amount`DECIMAL(10, 2),
                              `actual_amount`DECIMAL(10, 2),
@@ -67,22 +67,22 @@ CREATE INDEX B2B_order_1_oid_idx ON B2B_order_1(o_id);
 -- ----------------------------
 DROP TABLE IF EXISTS B2B_detail_1;
 CREATE TABLE B2B_detail_1 (
-                            `d_id` varchar(32) NOT NULL,
-                            `dgroup_id` varchar(128) NOT NULL,
-                            `name` varchar(32) NOT NULL,
-                            `unit_price`DECIMAL(10, 2)NOT NULL,
-                            `quantity` INT NOT NULL,
-                            `subtotal`DECIMAL(10, 2) NOT NULL,
-                            `md5` varchar(32),
-                            `dt_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                            `dt_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                            `op_type` char(10) DEFAULT NULL,
-                            `data` JSON,
-                            `token` varchar(128),
-                            `session_id` varchar(128),
-                            `o_id_fk` varchar(32),
-                            PRIMARY KEY (d_id),
-                            FOREIGN KEY (o_id_fk) REFERENCES B2B_order_1(o_id)
+                              `d_id` varchar(32) NOT NULL,
+                              `dgroup_id` varchar(128) NOT NULL,
+                              `name` varchar(32) NOT NULL,
+                              `unit_price`DECIMAL(10, 2)NOT NULL,
+                              `quantity` INT NOT NULL,
+                              `subtotal`DECIMAL(10, 2) NOT NULL,
+                              `md5` varchar(32),
+                              `dt_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                              `dt_modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                              `op_type` char(10) DEFAULT NULL,
+                              `data` JSON,
+                              `token` varchar(128),
+                              `session_id` varchar(128),
+                              `o_id_fk` varchar(32),
+                              PRIMARY KEY (d_id),
+                              FOREIGN KEY (o_id_fk) REFERENCES B2B_order_1(o_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 CREATE INDEX B2B_detail_1_did_idx ON B2B_detail_1(d_id);
 
@@ -144,7 +144,7 @@ VALUES
     ', '', '');
 
 
-INSERT INTO B2B_order_1 (o_id, ogroup_id, customer_id, balance, pay_name, card_number, address, shipping_method, product_price, tax, `shipping fee`, total_amount, discount_amount, actual_amount, payment_status, md5, od_create, od_modified, op_type, data, token, session_id)
+INSERT INTO B2B_order_1 (o_id, ogroup_id, customer_id, balance, pay_name, card_number, address, shipping_method, product_price, tax, `shipping_fee`, total_amount, discount_amount, actual_amount, payment_status, md5, od_create, od_modified, op_type, data, token, session_id)
 VALUES
     ('SPOD000001', 'ODG1', 'SPCS000001', 0.00, 'Xu Zixiang', '1234-5678-9012-3456', '123 Main St', 'Express Shipping', 69.98, 5.00, 10.00, 84.98, 5.00, 79.98, 'pending', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Insert', '{
       "o_id": "SPOD000001",
