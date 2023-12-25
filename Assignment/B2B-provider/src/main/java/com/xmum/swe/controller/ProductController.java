@@ -26,14 +26,14 @@ public class ProductController {
 
     @SpookifyInfo
     @GetMapping("/getProductById/{id}")
-    public CommonResult getVisitor(@PathVariable("id") String id){
+    public CommonResult getProduct(@PathVariable("id") String id){
         ProductDO product = productService.getProductById(id);
         return CommonResult.ok(product);
     }
 
     @SpookifyInfo
     @GetMapping("/getAllProducts")
-    public CommonResult getAllVisitors(){
+    public CommonResult getAllProducts(){
         List<ProductDO> products = productService.getAllProducts();
         return CommonResult.ok(products);
     }
@@ -41,14 +41,14 @@ public class ProductController {
 
     @SpookifyInfo
     @PostMapping("/insertProduct")
-    public CommonResult insertVisitor(@RequestBody ProductInsertVO visitorVO){
+    public CommonResult insertPorduct(@RequestBody ProductInsertVO visitorVO){
         Map<String, Object> map = productService.insertProduct(visitorVO);
-        return map.get("Error") == "visitor name exists!" ? CommonResult.fail("visitor name exists!") : CommonResult.ok(map);
+        return map.get("Error") == "visitor name exists!" ? CommonResult.fail("product name exists!") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
-    @PostMapping("/modifyVisitor")
-    public CommonResult modifyVisitor(@RequestBody ProductModifyVO productVO){
+    @PostMapping("/modifyProduct")
+    public CommonResult modifyProduct(@RequestBody ProductModifyVO productVO){
         Map<String, Object> res = productService.modifyProduct(productVO);
         return (int)res.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(res);
     }

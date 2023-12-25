@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/DetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/VisitorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/dao/ItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/dao/DetailDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/dao/VisitorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DTO/DetailDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DTO/OrderDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DTO/ProductDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/DetailInsertVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/DetailInsertVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/DetailModifyVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/DetailModifyVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/OrderInsertVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/OrderInsertVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/OrderModifyVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/OrderModifyVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductInsertVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductInsertVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductModifyVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductModifyVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/DetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/DetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/IdServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/IdServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

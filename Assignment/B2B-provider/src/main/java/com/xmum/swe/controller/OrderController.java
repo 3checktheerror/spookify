@@ -27,8 +27,8 @@ public class OrderController {
     @SpookifyInfo
     @GetMapping("/getOrderById/{id}")
     public CommonResult getOrderById(@PathVariable("id") String id){
-        ProductDO customer = orderService.getOrderById(id)
-        return CommonResult.ok(customer);
+        OrderDO order = orderService.getOrderById(id);
+        return CommonResult.ok(order);
     }
 
     @SpookifyInfo
@@ -41,7 +41,7 @@ public class OrderController {
     @SpookifyInfo
     @PostMapping("/insertOrder")
     public CommonResult insertOrder(@RequestBody OrderInsertVO orderVO){
-        Map<String, Object> map = orderService.insertOrder(orderVO)
+        Map<String, Object> map = orderService.insertOrder(orderVO);
         return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
     }
 
