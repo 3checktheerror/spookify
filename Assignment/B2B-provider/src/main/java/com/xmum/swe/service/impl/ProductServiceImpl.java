@@ -36,9 +36,6 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Resource
-    private DetailDao detailDao;
-
-    @Resource
     private IdService idService;
 
 
@@ -55,17 +52,6 @@ public class ProductServiceImpl implements ProductService {
                 .orElseThrow(() -> new SpookifyBusinessException("products list is empty!"));
         return products;
     }
-
-//    public List<DetailDO> getItemsWithVid(String vid){
-//        List<DetailDO> items = detailDao.selectList(new QueryWrapper<DetailDO>().and(i -> i.eq("v_id_fk", vid)));
-//        return items;
-//    }
-
-//    public List<String> getIidWithVid(String vid){
-//        List<DetailDO> items = this.getItemsWithVid(vid);
-//        List<String> res = items.stream().map(DetailDO::getIId).collect(Collectors.toList());
-//        return res;
-//    }
 
     public ProductDO getProductWithMaxId() {
         ProductDO[] arr = (ProductDO[])productDao.selectList(new QueryWrapper<ProductDO>().orderByDesc("p_id"))
@@ -101,16 +87,6 @@ public class ProductServiceImpl implements ProductService {
         map.put("id", productDO.getPId());
         return map;
     }
-
-//    public Map<String, Object> deleteVisitorWithItems(String id) {
-//        int itemNum = itemDao.delete(new QueryWrapper<DetailDO>().and(i -> i.eq("v_id_fk", id)));
-//        int visitorNum = visitorDao.delete(new QueryWrapper<OrderDO>().and(i -> i.eq("v_id", id)));
-//        if(visitorNum != 1) throw new SpookifyBusinessException("delete more than one visitor at time???");
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("itemNum", itemNum);
-//        map.put("visitorNum", visitorNum);
-//        return map;
-//    }
 
     @Override
     public Map<String, Object> insertProduct(ProductInsertVO productVO) {

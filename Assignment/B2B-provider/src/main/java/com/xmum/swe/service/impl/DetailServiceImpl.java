@@ -11,7 +11,6 @@ import com.xmum.swe.entities.DO.DetailDO;
 import com.xmum.swe.entities.DO.OrderDO;
 import com.xmum.swe.entities.VO.DetailInsertVO;
 import com.xmum.swe.entities.VO.DetailModifyVO;
-import com.xmum.swe.entities.VO.OrderModifyVO;
 import com.xmum.swe.exception.SpookifyBusinessException;
 import com.xmum.swe.service.IdService;
 import com.xmum.swe.service.DetailService;
@@ -21,9 +20,7 @@ import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
@@ -88,7 +85,19 @@ public class DetailServiceImpl implements DetailService {
     }
 
     public int deleteDetailWithId(String id) {
+        if(this.getAllDetails().size() == 1) {
+            detailDao.deleteById(id);
+            orderService.deleteOrderWithId(this.getDetailById(id).getOIdFk());
+            return 1;
+        }
         int num = detailDao.deleteById(id);
+        DetailModifyVO detailVO = new DetailModifyVO();
+        detailVO.setDId(id);
+        Map<String, Object> map = this.updateProductPrice(detailVO);
+        if((int)map.get("num") == 0) {
+            log.error("Update product price failed!");
+            throw new SpookifyBusinessException("Update product price failed!");
+        }
         return num;
     }
 
@@ -118,6 +127,9 @@ public class DetailServiceImpl implements DetailService {
         //Layer 3
         DetailDO detailDO = new DetailDO();
         BeanUtils.copyProperties(detailBO, detailDO);
+        DetailModifyVO detail = new DetailModifyVO();
+        detailVO.setDId(detailVO.getDId());
+        this.updateProductPrice(detail);
         return this.insertDetail(detailDO);
     }
 
@@ -134,7 +146,7 @@ public class DetailServiceImpl implements DetailService {
         JsonUtil.merge(preData, VO_data);
         preData.put("opType", "modify");
         preData.put("quantity", detailVO.getQuantity());
-        preData.put("subtotal", getSubtotalByDid(detailVO.getDId(), detailVO.getQuantity()));
+        preData.put("subtotal", this.getSubtotalByDid(detailVO.getDId(), detailVO.getQuantity()));
         preData.put("dtModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         DetailBO detailBO = JSON.parseObject(preData.toJSONString(), DetailBO.class);
         detailBO.setData(preData.toJSONString());
@@ -145,7 +157,7 @@ public class DetailServiceImpl implements DetailService {
     }
 
     @Override
-    public Map<String, Object> modifyMultiQuantities(Map<String, Object> map) throws IOException {
+    public Map<String, Object> modifyMultiQuantities(Map<String, Object> map) {
         DetailModifyVO detailVO = new DetailModifyVO();
         for(Map.Entry<String, Object> entry : map.entrySet()) {
             detailVO.setDId(entry.getKey());
@@ -154,14 +166,17 @@ public class DetailServiceImpl implements DetailService {
             this.modifyDetail(detailVO);
         }
         //更新order表
+        Map<String, Object> res = this.updateProductPrice(detailVO);
+        return res;
+    }
+
+    private Map<String, Object> updateProductPrice(DetailModifyVO detailVO) {
         OrderDO orderDO = orderService.getOrderById(this.getOidWithDid(detailVO.getDId()));
         orderDO.setProductPrice(this.getProductPriceWithOid(orderDO.getOId()));
         orderDO.setOdModified(SpookifyTimeStamp.getInstance().getTimeStamp());
         orderDO.setOpType("modify");
-        orderService.updateOrderById(orderDO);
-        Map<String, Object> res = new HashMap<String, Object>();
-        map.put("num", map.size());
-        map.put("status", "success");
+        Map<String, Object> res = orderService.updateOrderById(orderDO);
+        res.put("status", "success");
         return res;
     }
 

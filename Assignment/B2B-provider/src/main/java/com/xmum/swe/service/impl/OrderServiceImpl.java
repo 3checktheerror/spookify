@@ -149,6 +149,15 @@ public class OrderServiceImpl implements OrderService {
         //Layer 3
         OrderDO orderDO = new OrderDO();
         BeanUtils.copyProperties(orderBO, orderDO);
+        this.updateBalanceOfCustomer(this.findCustomerIdWithOid(orderVO.getOId()), orderVO.getActualAmount());
         return this.updateOrderById(orderDO);
+    }
+
+    private String findCustomerIdWithOid(String oid) {
+        OrderDO orderDO = orderDao.selectOne(new QueryWrapper<OrderDO>().and((i) -> {
+            i.eq("o_id", oid);
+        }));
+        if(ObjectUtil.isNull(orderDO)) throw new SpookifyBusinessException("no such order!");
+        return orderDO.getCustomerId();
     }
 }

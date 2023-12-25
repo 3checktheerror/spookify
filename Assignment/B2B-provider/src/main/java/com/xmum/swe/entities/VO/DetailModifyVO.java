@@ -21,6 +21,9 @@ public class DetailModifyVO {
     @JsonProperty("quantity")
     private int quantity;
 
+    @JsonProperty("name")
+    private String name;
+
     @JsonProperty("md5")
     private String md5;
 

@@ -16,10 +16,6 @@ public interface ProductService {
 
     List<ProductDO> getAllProducts();
 
-//    List<DetailDO> getItemsWithVid(String vid);
-
-//    List<String> getIidWithVid(String vid);
-
     ProductDO getProductWithMaxId();
 
     Map<String, Object> insertProduct(ProductDO productDO);
@@ -27,8 +23,6 @@ public interface ProductService {
     boolean checkProductName(String name);
 
     Map<String, Object> updateProductById(ProductDO productDO);
-
-//    Map<String, Object> deleteVisitorWithItems(String id);
 
     Map<String, Object> insertProduct(ProductInsertVO productVO);
 

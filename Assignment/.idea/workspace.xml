@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done" />
+    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/DetailModifyVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/DetailModifyVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +64,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;1810079eeb41ab2b0f7f51311e6a818f&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -115,7 +123,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="65c505c4-538e-4eb4-acc4-1f55c059845b" name="Changes" comment="2nd" />
+      <changelist id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done" />
       <created>1700485075295</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -141,6 +149,8 @@
       <workItem from="1700717942569" duration="5102000" />
       <workItem from="1700734602442" duration="343000" />
       <workItem from="1700741915215" duration="4153000" />
+      <workItem from="1703475079864" duration="770000" />
+      <workItem from="1703509566652" duration="6342000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />
