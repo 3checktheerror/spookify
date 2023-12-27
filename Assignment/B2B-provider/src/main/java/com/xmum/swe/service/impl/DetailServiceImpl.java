@@ -95,10 +95,9 @@ public class DetailServiceImpl implements DetailService {
             orderService.deleteOrderWithId(detailDO.getOIdFk());
             return 1;
         }
+        String oid = getOidWithDid(id);
         int num = detailDao.deleteById(id);
-        DetailModifyVO detailVO = new DetailModifyVO();
-        detailVO.setDId(id);
-        Map<String, Object> map = this.updateProductPrice(detailVO);
+        Map<String, Object> map = this.updateProductPrice(oid);
         if((int)map.get("num") == 0) {
             log.error("Update product price failed!");
             throw new SpookifyBusinessException("Update product price failed!");
@@ -177,6 +176,17 @@ public class DetailServiceImpl implements DetailService {
 
     private Map<String, Object> updateProductPrice(DetailModifyVO detailVO) {
         OrderDO orderDO = orderService.getOrderById(this.getOidWithDid(detailVO.getDId()));
+        orderDO.setProductPrice(this.getProductPriceWithOid(orderDO.getOId()));
+        orderDO.setOdModified(SpookifyTimeStamp.getInstance().getTimeStamp());
+        orderDO.setOpType("modify");
+        orderDO.setPaymentStatus("pending");
+        Map<String, Object> res = orderService.updateOrderById(orderDO);
+        res.put("status", "success");
+        return res;
+    }
+
+    private Map<String, Object> updateProductPrice(String oid) {
+        OrderDO orderDO = orderService.getOrderById(oid);
         orderDO.setProductPrice(this.getProductPriceWithOid(orderDO.getOId()));
         orderDO.setOdModified(SpookifyTimeStamp.getInstance().getTimeStamp());
         orderDO.setOpType("modify");
