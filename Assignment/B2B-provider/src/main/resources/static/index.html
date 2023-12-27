@@ -1,242 +1,180 @@
-
-
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <script src="//unpkg.com/element-ui/lib/umd/locale/en.js"></script>
-    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <title>hello</title>
 </head>
-
-<body class="body">
+<body>
 <div id="app">
-    <el-container>
-        <div class="center-container" >
-            <el-col>
+    <el-header>
+        <h2>Samle</h2>
+    </el-header>
+<!--    取数据-->
+    <el-table class="table">
+        <el-table-column prop="p_id" label="ID" width="250" sortable></el-table-column>
+        <el-table-column prop="p_name" label="Name" width="250"
+                         sortable></el-table-column>
+        <el-table-column prop="itModified" label="Last Modified" width="380" sortable>
+            <template slot-scope="{ row }">
+                {{ formatDate(row.itModified) }}
+            </template>
+        </el-table-column>
+    </el-table>
 
-                <el-row>
-                    <el-form :rules="rules" ref="loginForm" :model="loginForm" class="loginContainer">
-                        <h3 class="loginTitle">Sign in</h3>
-                        <el-form-item prop="selectedUser" >
-                            <el-select v-model="loginForm.selectedUser" placeholder="Select a user"
-                                       @change="updatePassword" style="width: 350px;">
-                                <el-option v-for="user in users" :key="user.username" :label="user.username"
-                                           :value="user.username"></el-option>
-                            </el-select>
-                        </el-form-item>
-                        <el-form-item prop="password">
-                            <el-input type="password" v-model="loginForm.password"
-                                      placeholder="Please enter the password"></el-input>
-                        </el-form-item>
-                        <el-form-item prop="code" label-width="0">
-                            <div style="display: flex; align-items: center;">
-                                <el-input type="text" auto-complete="false" v-model="loginForm.code"
-                                          style="width: 250px;"></el-input>
-                                <el-button type="text" @click="changeCaptcha" style="padding: 0; margin-left: 20px">
-                                    <canvas ref="captchaCanvas" width="80" height="40"
-                                            style="border: 1px solid #a8a4a4; border-radius: 5px;"></canvas>
-                                </el-button>
-                            </div>
-                        </el-form-item>
-                        <el-checkbox v-model="checked" class="loginRemember">Remember Me</el-checkbox>
-                        <el-button type="primary" style="width:100%" @click="submitLogin">Login</el-button>
-                    </el-form>
-                </el-row>
-                <el-row style="margin-left: 50px; margin-top: 50px;">
-                    <div class="social-media-icons">
-                        <a href="https://github.com/3checktheerror/spookify" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github fa-bounce"></i>
-                        </a>
-
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </el-row>
-            </el-col>
+<!--    传数据-->
+    <el-form :model="formData" ref="form" :rules="formRules" label-width="100px">
+        <el-col :span="15">
+            <el-form-item label="Name" prop="name">
+                <el-input v-model="formData.name"></el-input>
+            </el-form-item>
+            <el-form-item label="Gender" prop="gender">
+                <el-select v-model="formData.gender" placeholder="Select">
+                    <el-option label="Male" value="male"></el-option>
+                    <el-option label="Female" value="female"></el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="Age" prop="age">
+                <el-input v-model.number="formData.age"></el-input>
+            </el-form-item>
+            <el-form-item label="Email" prop="email">
+                <el-input v-model="formData.email"></el-input>
+            </el-form-item>
+            <el-form-item label="Message" prop="message">
+                <el-input type="textarea" v-model="formData.message"></el-input>
+            </el-form-item>
+            <el-form-item label="Phone" prop="phone">
+                <el-input v-model="formData.phone"></el-input>
+            </el-form-item>
+            <el-form-item label="Occupation" prop="occupation">
+                <el-input v-model="formData.occupation"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="validateAndSubmit()">Submit</el-button>
+            </el-form-item>
+        </el-col >
+    </el-form>
+    <el-dialog
+            title="Create Successful"
+            :visible.sync="successDialogVisible"
+            width="50%"
+    >
+        <p v-if="responseData">Successfully submitted {{ responseData }} form</p>
+        <div slot="footer" class="dialog-footer">
+            <el-button type="primary" @click="closeSuccessDialog">OK</el-button>
         </div>
-    </el-container>
+    </el-dialog>
+
 </div>
 
 <script>
-    new Vue({
-        el: "#app",
-        name: "Login",
+    new Vue( {
+        el: '#app',
         data() {
             return {
-                captcha: null,
-                users: [
-                    {username: "admin", password: "123456"},
-                    {username: "Xu Zixiang", password: "123456"},
-                    {username: "Qiu Junyi", password: "123456"},
-                    {username: "Luo Xudong", password: "123456"},
-                    {username: "Liu Can", password: "123456"},
-                    {username: "Zhou Ziwei", password: "123456"},
-                    // Add more users as needed
-                ],
-                loginForm: {
-                    selectedUser: "admin", // Default selected user
-                    password: "123456",
-                    code: ""
+                //传的数据
+                formData: {
+                    name: '',
+                    gender: '',
+                    age:'',
+                    email: '',
+                    message: '',
+                    phone: '',
+                    occupation: ''
                 },
-                checked: true,
-                rules: {
-                    username: [
-                        {required: true, message: "Please enter the username", trigger: "blur"},
-                        {
-                            min: 5,
-                            max: 14,
-                            message: 'Length should be between 5 and 14 characters',
-                            trigger: 'blur'
-                        }
+                successDialogVisible: false, // 控制弹窗显示/隐藏
+                beforeUploadCancelled: true, // 添加标志，记录是否因为 before-upload 取消上传
+                //取的数据
+                responseData: null, // 存储后端响应数据
+                ID: null,
+                formRules: {
+                    name: [
+                        { required: true, message: 'Please enter your name', trigger: 'blur' },
+                        // Add other validation rules as needed
                     ],
-                    password: [
-                        {required: true, message: "Please enter the password", trigger: "blur"},
-                        {
-                            min: 6,
-                            message: 'Password length must be greater than 6',
-                            trigger: 'blur'
-                        }
+                    age: [
+                        { type: 'number', message: 'Age must be a number', trigger: 'blur' },
+                        // Add other validation rules as needed
                     ],
-                    code: [{required: true, message: "Please enter the verification code", trigger: "blur"}],
-                }
-            }
+                    // Add rules for other form fields as needed
+                },
+            };
         },
         mounted() {
-            this.generateCaptcha();
-            this.updatePassword();
-            document.body.style.zoom = '80%';
+            this.getData();
+
         },
         methods: {
-            submitLogin() {
-                const selectedUser = this.users.find(user => user.username === this.loginForm.selectedUser);
-                if (!selectedUser) {
-                    this.$message.error('Invalid user selected');
-                    return;
-                }
-
-                this.$refs.loginForm.validate((valid) => {
+            getData() {
+                axios.get('/product/getAllProducts')
+                    .then(response => {
+                        console.log('Response from backend:', response.data);
+                        this.responseData = response.data.data;
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            },
+            validateAndSubmit() {
+                this.$refs.form.validate((valid) => {
                     if (valid) {
-                        if (this.loginForm.code === this.captcha.toString() && this.loginForm.password === selectedUser.password) {
-                            alert('Login successful');
-                            window.location.href = 'http://localhost:8082/getPage/Biography';
-                        } else {
-                            this.$message.error('Incorrect verification code or password. Please try again.');
-                        }
+                        // 所有表单项验证通过，执行提交逻辑
+                        this.submitForm();
                     } else {
-                        this.$message.error('Login error, please enter again');
+                        // 有表单项验证失败，不执行提交逻辑
+                        console.log('Form validation failed');
                     }
                 });
             },
-            updatePassword() {
-                const selectedUser = this.users.find(user => user.username === this.loginForm.selectedUser);
-                if (selectedUser) {
-                    this.loginForm.password = selectedUser.password;
-                }
-            },
-            changeCaptcha() {
-                this.generateCaptcha();
-            },
-            generateCaptcha() {
-                const canvas = this.$refs.captchaCanvas;
-                const context = canvas.getContext('2d');
-                this.captcha = this.generateRandomCaptcha(1000, 9999);
+            submitForm() {
+                // 构建要提交的数据
+                const postData = {
+                    name: this.formData.name,
+                    gender: this.formData.gender,
+                    email: this.formData.name,
+                    message: this.formData.message,
+                    map: {
+                        "phone": this.formData.phone,
+                        "occupation": this.formData.occupation,
+                        "age": this.formData.age
+                    },
+                    igroupId: "a",
+                    md5: null,
+                    token: null,
+                    sessionId: null,
+                    vIdFk: "SPVT000001"
+                };
+                console.log(postData);
 
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                context.font = '20px Arial';
-                context.fillText(this.captcha, 10, 30);
-            },
-            generateRandomCaptcha(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
 
+                // 使用 Axios 发送 POST 请求到后端
+                axios.post('/product/insertProduct', postData, {headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }})
+                    .then(response => {
+                        // 请求成功的处理逻辑
+                        console.log('Response from backend:', response.data);
+                        this.responseData = response.data.data.num;
+                        this.showSuccessDialog();
+                    })
+                    .catch(error => {
+                        // 请求失败的处理逻辑
+                        console.error('请求失败:', error);
+                    });
+            },
+
+            showSuccessDialog() {
+                this.successDialogVisible = true;
+            },
+            closeSuccessDialog() {
+                this.successDialogVisible = false;
+                this.responseData = null; // 关闭弹窗时清空响应数据
+            },
         }
     });
 </script>
 
-<style lang="scoped">
-    .loginContainer {
-        border-radius: 15px;
-        background-clip: padding-box;
-        text-align: left;
-        margin: auto;
-        margin-top: 60px;
-        width: 350px;
-        padding: 15px 35px 15px 35px;
-        background: aliceblue;
-        border: 1px solid blueviolet;
-        box-shadow: 0 0 25px #f885ff;
-    }
-
-    .loginTitle {
-        margin: 0px auto 48px auto;
-        text-align: center;
-        font-size: 30px;
-    }
-
-    .loginRemember {
-        text-align: left;
-        margin: 0px 0px 15px 0px;
-    }
-
-    .body {
-        width: 100vw;
-        height: 100vh;
-        background-image: url("/images/background.png");
-        background-size: 100%;
-        overflow: hidden;
-    }
-
-    .center-container {
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 550px;
-    }
-
-    .social-media-icons {
-        display: flex;
-        font-size: 30px;
-        justify-content: space-between;
-        width: 300px;
-    }
-
-    .social-media-icons a {
-        background-color: #f0f0f0;
-        text-decoration: none;
-        color: #333;
-        display: inline-block;
-        padding: 10px;
-        border: 2px solid #333;
-        border-radius: 10px;
-        transition: background-color 0.3s;
-    }
-
-    .social-media-icons a:hover {
-        background-color: #333;
-        color: #fff;
-    }
-
-
-</style>
-
-
 </body>
 </html>
-

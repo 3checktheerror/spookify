@@ -17,6 +17,7 @@ public class ProductDO {
     @TableId("p_id")
     private String pId;
 
+    @TableField("pgroup_id")
     private String pgroupId;
 
     private String pName;
