@@ -7,12 +7,6 @@
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/BO/ProductBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/BO/ProductBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DO/ProductDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DO/ProductDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductInsertVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductInsertVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/DetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/DetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +72,7 @@
   </component>
   <component name="RunManager" selected="Spring Boot.B2BServer">
     <configuration name="B2BServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="dev" />
       <module name="B2B-provider" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.xmum.swe.B2BServer" />
       <extension name="coverage">
@@ -112,10 +107,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.PortforlioServer (1)" />
+      <item itemvalue="Spring Boot.B2BServer" />
+      <item itemvalue="Spring Boot.PortforlioServer" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.B2BServer" />
+        <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.B2BServer" />
         <item itemvalue="Spring Boot.B2BServer" />
@@ -155,7 +155,7 @@
       <workItem from="1703509566652" duration="6503000" />
       <workItem from="1703516138204" duration="30000" />
       <workItem from="1703581837317" duration="5567000" />
-      <workItem from="1703641319286" duration="1836000" />
+      <workItem from="1703641319286" duration="2567000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />
@@ -237,6 +237,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="rename done" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.xmum.swe.entities.DO.ItemDO" memberName="opType" />

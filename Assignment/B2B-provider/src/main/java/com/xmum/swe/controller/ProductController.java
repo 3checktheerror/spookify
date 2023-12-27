@@ -43,7 +43,7 @@ public class ProductController {
     @PostMapping("/insertProduct")
     public CommonResult insertPorduct(@RequestBody ProductInsertVO productVO){
         Map<String, Object> map = productService.insertProduct(productVO);
-        return map.get("Error") == "visitor name exists!" ? CommonResult.fail("product name exists!") : CommonResult.ok(map);
+        return map.get("Error") == "Product name exists!" ? CommonResult.fail("product name exists!") : CommonResult.ok(map);
     }
 
     @SpookifyInfo
