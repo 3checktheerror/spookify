@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/DetailModifyVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/DetailModifyVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/BO/ProductBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/BO/ProductBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DO/ProductDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DO/ProductDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductInsertVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductInsertVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/DetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/DetailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +152,10 @@
       <workItem from="1700734602442" duration="343000" />
       <workItem from="1700741915215" duration="4153000" />
       <workItem from="1703475079864" duration="770000" />
-      <workItem from="1703509566652" duration="6342000" />
+      <workItem from="1703509566652" duration="6503000" />
+      <workItem from="1703516138204" duration="30000" />
+      <workItem from="1703581837317" duration="5567000" />
+      <workItem from="1703641319286" duration="1836000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />

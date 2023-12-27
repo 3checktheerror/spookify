@@ -26,6 +26,9 @@ public class ProductInsertVO {
     @JsonProperty("quantityInStock")
     private String quantityInStock;
 
+    @JsonProperty("category")
+    private String category;
+
     @JsonProperty("manufacturer")
     private String manufacturer;
 

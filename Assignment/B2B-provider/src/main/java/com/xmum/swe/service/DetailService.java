@@ -27,7 +27,7 @@ public interface DetailService {
 
     int deleteDetailWithId(String id);
 
-    Map<String, Object> insertDetail(DetailInsertVO itemVO);
+    Map<String, Object> insertDetail(DetailInsertVO detailVO);
 
     Map<String, Object> modifyMultiQuantities(Map<String, Object> map) throws IOException, IllegalAccessException;
 

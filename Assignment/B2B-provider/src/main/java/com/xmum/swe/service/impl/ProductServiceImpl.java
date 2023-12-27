@@ -1,12 +1,10 @@
 package com.xmum.swe.service.impl;
 
-import cn.hutool.core.text.replacer.StrReplacer;
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.xmum.swe.dao.DetailDao;
 import com.xmum.swe.dao.ProductDao;
 import com.xmum.swe.entities.BO.ProductBO;
 import com.xmum.swe.entities.DO.ProductDO;
@@ -106,7 +104,6 @@ public class ProductServiceImpl implements ProductService {
         Map<String, Object> map = productVO.getMap();
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
         filter.getExcludes().add("data");
-        filter.getExcludes().add("file");
         JSONObject obj = JSON.parseObject(JSON.toJSONString(productBO, filter));
         if(ObjectUtil.isNotNull(map)) obj.putAll(map);
         productBO.setData(obj.toJSONString());

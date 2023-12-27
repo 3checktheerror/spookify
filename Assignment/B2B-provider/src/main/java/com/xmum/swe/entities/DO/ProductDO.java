@@ -3,6 +3,7 @@ package com.xmum.swe.entities.DO;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,8 @@ public class ProductDO {
 
     @TableField("quantity_in_stock")
     private String quantityInStock;
+
+    private String category;
 
     private String manufacturer;
 

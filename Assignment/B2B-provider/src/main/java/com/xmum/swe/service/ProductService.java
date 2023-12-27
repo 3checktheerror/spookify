@@ -1,7 +1,5 @@
 package com.xmum.swe.service;
 
-import com.xmum.swe.entities.DO.DetailDO;
-import com.xmum.swe.entities.DO.OrderDO;
 import com.xmum.swe.entities.DO.ProductDO;
 import com.xmum.swe.entities.VO.ProductInsertVO;
 import com.xmum.swe.entities.VO.ProductModifyVO;
