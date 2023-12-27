@@ -140,7 +140,7 @@ public class OrderServiceImpl implements OrderService {
         if(ObjectUtil.isNotNull(orderVO.getMap())) VO_data.putAll(orderVO.getMap());     //get whole VO data
         //Layer 2
         JsonUtil.merge(preData, VO_data);
-        preData.put("paymentStatus", "pending");
+        preData.put("paymentStatus", "completed");
         preData.put("opType", "modify");
         preData.put("odModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         preData.put("productPrice", detailService.getProductPriceWithOid((orderVO.getOId())));

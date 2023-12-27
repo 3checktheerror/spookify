@@ -184,6 +184,9 @@ public class DetailServiceImpl implements DetailService {
         orderDO.setOdModified(SpookifyTimeStamp.getInstance().getTimeStamp());
         orderDO.setOpType("modify");
         orderDO.setPaymentStatus("pending");
+        JSONObject jsonObject = JSONObject.parseObject(orderDO.getData());
+        jsonObject.put("odModified", SpookifyTimeStamp.getInstance().getTimeStamp());
+        orderDO.setData(jsonObject.toString());
         Map<String, Object> res = orderService.updateOrderById(orderDO);
         res.put("status", "success");
         return res;

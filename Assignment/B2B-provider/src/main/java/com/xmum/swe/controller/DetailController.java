@@ -4,6 +4,7 @@ package com.xmum.swe.controller;
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.DetailDO;
+import com.xmum.swe.entities.VO.DetailGroupUpdateVO;
 import com.xmum.swe.entities.VO.DetailInsertVO;
 import com.xmum.swe.entities.VO.DetailModifyVO;
 import com.xmum.swe.service.DetailService;
@@ -57,9 +58,9 @@ public class DetailController {
 
     @SpookifyInfo
     @PostMapping("/modifyDetail")
-    public CommonResult modifyItem(@Valid Map<String, Object> map) throws IOException, IllegalAccessException {
+    public CommonResult modifyItem(@Valid @RequestBody DetailGroupUpdateVO updateVO) throws IOException, IllegalAccessException {
 
-        Map<String, Object> res = detailService.modifyMultiQuantities(map);
+        Map<String, Object> res = detailService.modifyMultiQuantities(updateVO.getMap());
         return (int)res.get("num") == 0 ? CommonResult.fail("update failed") : CommonResult.ok(res);
     }
 
