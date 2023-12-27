@@ -27,6 +27,9 @@ public class ProductModifyVO {
     @JsonProperty("quantityInStock")
     private String quantityInStock;
 
+    @JsonProperty("category")
+    private String category;
+
     @JsonProperty("manufacturer")
     private String manufacturer;
 

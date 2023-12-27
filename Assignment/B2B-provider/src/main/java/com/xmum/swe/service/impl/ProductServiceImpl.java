@@ -124,7 +124,6 @@ public class ProductServiceImpl implements ProductService {
         if(ObjectUtil.isNotNull(productVO.getMap())) VO_data.putAll(productVO.getMap());     //get whole VO data
         //Layer 2
         JsonUtil.merge(preData, VO_data);
-        preData.put("status", "modified");
         preData.put("opType", "modify");
         preData.put("pdModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         ProductBO productBO = JSON.parseObject(preData.toJSONString(), ProductBO.class);
