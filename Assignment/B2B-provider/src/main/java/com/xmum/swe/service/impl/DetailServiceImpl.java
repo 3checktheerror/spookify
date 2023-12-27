@@ -176,6 +176,10 @@ public class DetailServiceImpl implements DetailService {
 
     private Map<String, Object> updateProductPrice(DetailModifyVO detailVO) {
         OrderDO orderDO = orderService.getOrderById(this.getOidWithDid(detailVO.getDId()));
+        return updateProductPriceWithOrderDO(orderDO);
+    }
+
+    private Map<String, Object> updateProductPriceWithOrderDO(OrderDO orderDO) {
         orderDO.setProductPrice(this.getProductPriceWithOid(orderDO.getOId()));
         orderDO.setOdModified(SpookifyTimeStamp.getInstance().getTimeStamp());
         orderDO.setOpType("modify");
@@ -187,13 +191,7 @@ public class DetailServiceImpl implements DetailService {
 
     private Map<String, Object> updateProductPrice(String oid) {
         OrderDO orderDO = orderService.getOrderById(oid);
-        orderDO.setProductPrice(this.getProductPriceWithOid(orderDO.getOId()));
-        orderDO.setOdModified(SpookifyTimeStamp.getInstance().getTimeStamp());
-        orderDO.setOpType("modify");
-        orderDO.setPaymentStatus("pending");
-        Map<String, Object> res = orderService.updateOrderById(orderDO);
-        res.put("status", "success");
-        return res;
+        return updateProductPriceWithOrderDO(orderDO);
     }
 
     public float getProductPriceWithOid(String oid) {
