@@ -86,8 +86,9 @@ public class DetailServiceImpl implements DetailService {
 
     public int deleteDetailWithId(String id) {
         if(this.getAllDetails().size() == 1) {
+            DetailDO detailDO = this.getDetailById(id);
             detailDao.deleteById(id);
-            orderService.deleteOrderWithId(this.getDetailById(id).getOIdFk());
+            orderService.deleteOrderWithId(detailDO.getOIdFk());
             return 1;
         }
         int num = detailDao.deleteById(id);
@@ -175,6 +176,7 @@ public class DetailServiceImpl implements DetailService {
         orderDO.setProductPrice(this.getProductPriceWithOid(orderDO.getOId()));
         orderDO.setOdModified(SpookifyTimeStamp.getInstance().getTimeStamp());
         orderDO.setOpType("modify");
+        orderDO.setPaymentStatus("pending");
         Map<String, Object> res = orderService.updateOrderById(orderDO);
         res.put("status", "success");
         return res;
