@@ -84,8 +84,12 @@ public class DetailServiceImpl implements DetailService {
         return map;
     }
 
+    private int getNumOfDetailsWithOid(String oid){
+        return detailDao.selectList(new QueryWrapper<DetailDO>().eq("o_id_fk", oid)).size();
+    }
+
     public int deleteDetailWithId(String id) {
-        if(this.getAllDetails().size() == 1) {
+        if(this.getNumOfDetailsWithOid(this.getOidWithDid(id)) == 1) {
             DetailDO detailDO = this.getDetailById(id);
             detailDao.deleteById(id);
             orderService.deleteOrderWithId(detailDO.getOIdFk());
