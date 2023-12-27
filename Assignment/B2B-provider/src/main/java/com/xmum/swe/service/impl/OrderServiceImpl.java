@@ -61,7 +61,7 @@ public class OrderServiceImpl implements OrderService {
                 .stream().
                 limit(1)
                 .toArray(OrderDO[]::new);
-        if(ObjectUtil.isEmpty(arr)) return arr[0];
+        if(!ObjectUtil.isEmpty(arr)) return arr[0];
         else {
             OrderDO orderDO = new OrderDO();
             orderDO.setOId("SPOD000001");

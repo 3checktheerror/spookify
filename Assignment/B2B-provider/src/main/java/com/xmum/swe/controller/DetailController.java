@@ -50,7 +50,7 @@ public class DetailController {
     //map中存了除了空值(比如file)外的所有数据
     @SpookifyInfo
     @PostMapping("/insertDetail")
-    public CommonResult insertDetail(@Valid DetailInsertVO detailVO){
+    public CommonResult insertDetail(@Valid @RequestBody DetailInsertVO detailVO){
         Map<String, Object> map = detailService.insertDetail(detailVO);
         return (int)map.get("num") == 0 ? CommonResult.fail("insert failed") : CommonResult.ok(map);
     }

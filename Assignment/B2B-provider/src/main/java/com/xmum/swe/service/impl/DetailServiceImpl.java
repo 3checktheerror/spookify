@@ -107,7 +107,7 @@ public class DetailServiceImpl implements DetailService {
         try {
             orderService.getOrderById(detailVO.getOIdFk());    //check if the foreign key exists
         } catch (SpookifyBusinessException sp) {
-            sp.setMsg("Foreign key: oIdFk doesn't exist");
+            throw new SpookifyBusinessException("Foreign key: oIdFk doesn't exist");
         }
         String nextId = idService.getNextId(this.getDetailWithMaxId().getDId());
         //Layer 2

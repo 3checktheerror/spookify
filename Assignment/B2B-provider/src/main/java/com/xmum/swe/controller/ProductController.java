@@ -58,6 +58,6 @@ public class ProductController {
     public CommonResult deleteProduct(@PathVariable("id") String id){
         productService.getProductById(id);
         Map<String, Object> map = productService.deleteProduct(id);
-        return (int)map.get("itemNum") == 0 ? CommonResult.ok("nothing to be deleted") : CommonResult.ok(map);
+        return (int)map.get("num") == 0 ? CommonResult.ok("nothing to be deleted") : CommonResult.ok(map);
     }
 }
