@@ -128,9 +128,9 @@ public class DetailServiceImpl implements DetailService {
         DetailDO detailDO = new DetailDO();
         BeanUtils.copyProperties(detailBO, detailDO);
         DetailModifyVO detail = new DetailModifyVO();
-        detailVO.setDId(detailVO.getDId());
-        this.updateProductPrice(detail);
-        return this.insertDetail(detailDO);
+        detail.setDId(detailDO.getDId());
+        this.insertDetail(detailDO);
+        return this.updateProductPrice(detail);
     }
 
 
