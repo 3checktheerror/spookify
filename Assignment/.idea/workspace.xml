@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/BO/ProductBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/BO/ProductBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DO/ProductDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DO/ProductDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductInsertVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/ProductInsertVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/DetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/DetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/webapp/WEB-INF/jsp/Biography.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/webapp/WEB-INF/jsp/Feedback.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/webapp/WEB-INF/jsp/loginPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/webapp/WEB-INF/jsp/portfolio.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2BDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/B2BDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/com/xmum/swe/aop/ControllerLogWrapper.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -78,6 +83,7 @@
   </component>
   <component name="RunManager" selected="Spring Boot.B2BServer">
     <configuration name="B2BServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="dev" />
       <module name="B2B-provider" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.xmum.swe.B2BServer" />
       <extension name="coverage">
@@ -112,10 +118,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.PortforlioServer (1)" />
+      <item itemvalue="Spring Boot.B2BServer" />
+      <item itemvalue="Spring Boot.PortforlioServer" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.B2BServer" />
+        <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.B2BServer" />
         <item itemvalue="Spring Boot.B2BServer" />
@@ -152,10 +163,9 @@
       <workItem from="1700734602442" duration="343000" />
       <workItem from="1700741915215" duration="4153000" />
       <workItem from="1703475079864" duration="770000" />
-      <workItem from="1703509566652" duration="6503000" />
-      <workItem from="1703516138204" duration="30000" />
-      <workItem from="1703581837317" duration="5567000" />
-      <workItem from="1703641319286" duration="1836000" />
+      <workItem from="1703509566652" duration="6342000" />
+      <workItem from="1703585536708" duration="5983000" />
+      <workItem from="1703641393306" duration="2633000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />

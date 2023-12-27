@@ -10,7 +10,7 @@ USE spookify;
 DROP TABLE IF EXISTS B2B_product_1;
 CREATE TABLE B2B_product_1 (
                                `p_id` varchar(32) NOT NULL,
-                               `pgroup_id` varchar(128) NOT NULL,
+                               `pgroup_id` varchar(128),
                                `p_name` varchar(32) NOT NULL,
                                `price` DECIMAL(10, 2)NOT NULL,
                                `quantity_in_stock` INT NOT NULL,
@@ -36,7 +36,7 @@ CREATE INDEX B2B_product_1_pid_idx ON B2B_product_1(p_id);
 DROP TABLE IF EXISTS B2B_order_1;
 CREATE TABLE B2B_order_1 (
                              `o_id` varchar(32) NOT NULL,
-                             `ogroup_id` varchar(128) NOT NULL,
+                             `ogroup_id` varchar(128),
                              `customer_id` varchar(32) NOT NULL,
                              `balance` DECIMAL(10, 2)NOT NULL,
                              `pay_name`varchar(32),
@@ -68,7 +68,7 @@ CREATE INDEX B2B_order_1_oid_idx ON B2B_order_1(o_id);
 DROP TABLE IF EXISTS B2B_detail_1;
 CREATE TABLE B2B_detail_1 (
                               `d_id` varchar(32) NOT NULL,
-                              `dgroup_id` varchar(128) NOT NULL,
+                              `dgroup_id` varchar(128),
                               `name` varchar(32) NOT NULL,
                               `unit_price`DECIMAL(10, 2)NOT NULL,
                               `quantity` INT NOT NULL,
