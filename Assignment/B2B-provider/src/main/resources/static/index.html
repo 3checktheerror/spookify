@@ -5,51 +5,50 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <title>hello</title>
 </head>
 <body>
 <div id="app">
-    <el-header>
         <h2>Samle</h2>
-    </el-header>
-<!--    取数据-->
-    <el-table class="table">
-        <el-table-column prop="p_id" label="ID" width="250" sortable></el-table-column>
-        <el-table-column prop="p_name" label="Name" width="250"
+<!--    展示所有取得的数据-->
+        <p>{{responseData}}</p>
+    <!--    取出具体数据-->
+        <p>{{responseData[0].pId}}</p>
+
+<!--    展示数据表-->
+    <el-main>
+    <el-table class="table" :data="responseData">
+        <el-table-column prop="pId" label="ID" width="250" sortable></el-table-column>
+        <el-table-column prop="pName" label="Name" width="250"
                          sortable></el-table-column>
-        <el-table-column prop="itModified" label="Last Modified" width="380" sortable>
+        <el-table-column prop="pdModified" label="Last Modified" width="380" sortable>
             <template slot-scope="{ row }">
-                {{ formatDate(row.itModified) }}
+                {{ formatDate(row.pdModified) }}
             </template>
         </el-table-column>
     </el-table>
 
-<!--    传数据-->
+<!--    发数据表-->
     <el-form :model="formData" ref="form" :rules="formRules" label-width="100px">
         <el-col :span="15">
             <el-form-item label="Name" prop="name">
                 <el-input v-model="formData.name"></el-input>
             </el-form-item>
-            <el-form-item label="Gender" prop="gender">
-                <el-select v-model="formData.gender" placeholder="Select">
-                    <el-option label="Male" value="male"></el-option>
-                    <el-option label="Female" value="female"></el-option>
-                </el-select>
+            <el-form-item label="Price" prop="price">
+                <el-input v-model="formData.price"> </el-input>
             </el-form-item>
-            <el-form-item label="Age" prop="age">
-                <el-input v-model.number="formData.age"></el-input>
+            <el-form-item label="Quantity" prop="quantity">
+                <el-input v-model.number="formData.quantity"></el-input>
             </el-form-item>
-            <el-form-item label="Email" prop="email">
-                <el-input v-model="formData.email"></el-input>
+            <el-form-item label="Category" prop="category">
+                <el-input v-model="formData.category"></el-input>
             </el-form-item>
-            <el-form-item label="Message" prop="message">
-                <el-input type="textarea" v-model="formData.message"></el-input>
+            <el-form-item label="Size" prop="size">
+                <el-input v-model="formData.size"></el-input>
             </el-form-item>
-            <el-form-item label="Phone" prop="phone">
-                <el-input v-model="formData.phone"></el-input>
-            </el-form-item>
-            <el-form-item label="Occupation" prop="occupation">
-                <el-input v-model="formData.occupation"></el-input>
+            <el-form-item label="Style" prop="style">
+                <el-input v-model="formData.style"></el-input>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="validateAndSubmit()">Submit</el-button>
@@ -61,11 +60,12 @@
             :visible.sync="successDialogVisible"
             width="50%"
     >
-        <p v-if="responseData">Successfully submitted {{ responseData }} form</p>
+        <p v-if="responseData">Successfully submitted</p>
         <div slot="footer" class="dialog-footer">
             <el-button type="primary" @click="closeSuccessDialog">OK</el-button>
         </div>
     </el-dialog>
+    </el-main>
 
 </div>
 
@@ -77,34 +77,28 @@
                 //传的数据
                 formData: {
                     name: '',
-                    gender: '',
-                    age:'',
-                    email: '',
-                    message: '',
-                    phone: '',
-                    occupation: ''
+                    price:'',
+                    quantity: '',
+                    category: '',
+                    size: '',
+                    style: ''
                 },
                 successDialogVisible: false, // 控制弹窗显示/隐藏
                 beforeUploadCancelled: true, // 添加标志，记录是否因为 before-upload 取消上传
                 //取的数据
                 responseData: null, // 存储后端响应数据
                 ID: null,
+                // 校验
                 formRules: {
                     name: [
                         { required: true, message: 'Please enter your name', trigger: 'blur' },
                         // Add other validation rules as needed
-                    ],
-                    age: [
-                        { type: 'number', message: 'Age must be a number', trigger: 'blur' },
-                        // Add other validation rules as needed
-                    ],
-                    // Add rules for other form fields as needed
+                    ]
                 },
             };
         },
         mounted() {
             this.getData();
-
         },
         methods: {
             getData() {
@@ -131,32 +125,29 @@
             submitForm() {
                 // 构建要提交的数据
                 const postData = {
-                    name: this.formData.name,
-                    gender: this.formData.gender,
-                    email: this.formData.name,
-                    message: this.formData.message,
+                    pName: this.formData.name,
+                    price: this.formData.price,
+                    quantityInStock: this.formData.quantity,
+                    category: this.formData.category,
                     map: {
-                        "phone": this.formData.phone,
-                        "occupation": this.formData.occupation,
-                        "age": this.formData.age
+                        "size": this.formData.size,
+                        "Style": this.formData.style
                     },
-                    igroupId: "a",
                     md5: null,
                     token: null,
                     sessionId: null,
-                    vIdFk: "SPVT000001"
+                    manufacturer: "",
+                    description: ""
+
                 };
                 console.log(postData);
 
 
                 // 使用 Axios 发送 POST 请求到后端
-                axios.post('/product/insertProduct', postData, {headers: {
-                        'Content-Type': 'multipart/form-data'
-                    }})
+                axios.post('/product/insertProduct', postData,)
                     .then(response => {
                         // 请求成功的处理逻辑
                         console.log('Response from backend:', response.data);
-                        this.responseData = response.data.data.num;
                         this.showSuccessDialog();
                     })
                     .catch(error => {
@@ -170,7 +161,9 @@
             },
             closeSuccessDialog() {
                 this.successDialogVisible = false;
-                this.responseData = null; // 关闭弹窗时清空响应数据
+            },
+            formatDate(dateString) {
+                return moment(dateString).format('YYYY-MM-DD HH:mm:ss');
             },
         }
     });
