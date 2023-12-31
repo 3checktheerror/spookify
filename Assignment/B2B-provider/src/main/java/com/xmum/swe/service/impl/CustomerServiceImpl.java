@@ -58,7 +58,7 @@ public class CustomerServiceImpl implements CustomerService {
         if(ObjectUtil.isEmpty(arr)) return arr[0];
         else {
             CustomerDO cusDO = new CustomerDO();
-            cusDO.setCId("SPCT000001");
+            cusDO.setCId("SPCS000001");
             return cusDO;
         }
     }
@@ -68,7 +68,6 @@ public class CustomerServiceImpl implements CustomerService {
         map.put("num", num);
         map.put("id", cusDO.getCId());
         return map;
-
     }
 
     public Map<String, Object> updateCustomerById(CustomerDO cusDO) {
@@ -110,7 +109,6 @@ public class CustomerServiceImpl implements CustomerService {
         Map<String, Object> map = cusVO.getMap();
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
         filter.getExcludes().add("data");
-        filter.getExcludes().add("file");
         JSONObject obj = JSON.parseObject(JSON.toJSONString(cusBO, filter));
         if(ObjectUtil.isNotNull(map)) obj.putAll(map);
         cusBO.setData(obj.toJSONString());
@@ -132,7 +130,7 @@ public class CustomerServiceImpl implements CustomerService {
         //Layer 2
         JsonUtil.merge(preData, VO_data);
         preData.put("status", "modified");
-        preData.put("opType", "modify");
+                preData.put("opType", "modify");
         preData.put("itModified", SpookifyTimeStamp.getInstance().getTimeStamp());
         CustomerBO cusBO = JSON.parseObject(preData.toJSONString(), CustomerBO.class);
         cusBO.setData(preData.toJSONString());
