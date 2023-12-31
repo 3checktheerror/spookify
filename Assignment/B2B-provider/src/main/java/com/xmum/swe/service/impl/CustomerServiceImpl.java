@@ -58,7 +58,7 @@ public class CustomerServiceImpl implements CustomerService {
         if(ObjectUtil.isEmpty(arr)) return arr[0];
         else {
             CustomerDO cusDO = new CustomerDO();
-            cusDO.setCId("SPCT000001");
+            cusDO.setCId("SPCS000001");
             return cusDO;
         }
     }
