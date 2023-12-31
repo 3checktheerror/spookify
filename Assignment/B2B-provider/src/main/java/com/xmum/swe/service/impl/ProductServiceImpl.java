@@ -17,6 +17,7 @@ import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.sql.Timestamp;
@@ -34,8 +35,14 @@ public class ProductServiceImpl implements ProductService {
     @Resource
     private IdService idService;
 
+    @Resource
+    private RedisTemplate redisTemplate;
+
 
     public ProductDO getProductById(String id) {
+//        if(redisTemplate.hasKey(id)) {
+//            return (ProductDO)redisTemplate.opsForValue().get(id);
+//        }
         ProductDO product = productDao.selectById(id);
         Optional.ofNullable(product)
                 .orElseThrow(() -> new SpookifyBusinessException("No such product!"));
@@ -46,6 +53,9 @@ public class ProductServiceImpl implements ProductService {
         List<ProductDO> products = productDao.selectList(null);
         Optional.ofNullable(products)
                 .orElseThrow(() -> new SpookifyBusinessException("products list is empty!"));
+//        products.stream().forEach(product -> {
+//            redisTemplate.opsForValue().set(product.getPId(), product);
+//        });
         return products;
     }
 

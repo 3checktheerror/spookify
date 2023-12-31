@@ -1,6 +1,8 @@
 package com.xmum.swe.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.system.UserInfo;
+import com.alibaba.druid.util.StringUtils;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.filter.SimplePropertyPreFilter;
@@ -17,14 +19,22 @@ import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
+import static com.alibaba.fastjson2.schema.JSONSchema.Type.Const;
 
 @Service
 @Slf4j
@@ -36,8 +46,29 @@ public class CustomerServiceImpl implements CustomerService {
     @Resource
     private IdService idService;
 
+//    @Resource
+//    private RedisTemplate redisTemplate;
+
+    @Override
+    public String login(CustomerInsertVO cusVO, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        cusVO.setSessionId(session.getId());
+        this.insertCustomer(cusVO);
+        return this.doLogin(cusVO.getName().trim(), cusVO.getPassword().trim(), session, request, response).toJSONString();
+    }
+
     public CustomerDO getCustomerById(String id) {
+//        if(redisTemplate.hasKey(id)) {
+//            return (CustomerDO)redisTemplate.opsForValue().get(id);
+//        }
         CustomerDO customer = customerDao.selectById(id);
+        Optional.ofNullable(customer)
+                .orElseThrow(() -> new SpookifyBusinessException("No such customer!"));
+        return customer;
+    }
+
+    @Override
+    public CustomerDO getCustomerByName(String name) {
+        CustomerDO customer = customerDao.selectOne(new QueryWrapper<CustomerDO>().eq("c_name", name));
         Optional.ofNullable(customer)
                 .orElseThrow(() -> new SpookifyBusinessException("No such customer!"));
         return customer;
@@ -47,6 +78,9 @@ public class CustomerServiceImpl implements CustomerService {
         List<CustomerDO> customers = customerDao.selectList(null);
         Optional.ofNullable(customers)
                 .orElseThrow(() -> new SpookifyBusinessException("No customer!"));
+//        customers.stream().forEach(customer -> {
+//            redisTemplate.opsForValue().set(customer.getCId(), customer);
+//        });
         return customers;
     }
 
@@ -138,5 +172,26 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerDO cusDO = new CustomerDO();
         BeanUtils.copyProperties(cusBO, cusDO);
         return this.updateCustomerById(cusDO);
+    }
+
+    private JSONObject doLogin(String username, String password, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        JSONObject res = new JSONObject();
+        res.put("code", 0);
+        if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
+            res.put("msg", "-1");
+            return res;
+        }
+        List<String> passwordList = this.getAllCustomers().stream().map(CustomerDO::getPassword).collect(Collectors.toList());
+        if (!passwordList.contains(password)) {
+            res.put("msg", "-2");
+            return res;
+        }
+        session.setAttribute("spookify-b2b-customer", this.getCustomerByName(username));
+        Cookie cookie_username = new Cookie("cookie_username", username);
+        cookie_username.setMaxAge(30 * 24 * 60 * 60);
+        cookie_username.setPath(request.getContextPath());
+        response.addCookie(cookie_username);
+        res.put("msg", "0");
+        return res;
     }
 }

@@ -6,11 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/B2BServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/B2BServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/DetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/DirectPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/DirectPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/BO/CustomerBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/BO/CustomerBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DO/CustomerDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/DO/CustomerDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/CustomerInsertVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/CustomerInsertVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/CustomerModifyVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/entities/VO/CustomerModifyVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/B2BDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/B2BDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/IdServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/IdServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +67,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev-hotfix-Xu",
+    "git-widget-placeholder": "dev-hotfix-Qiu",
     "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_opened_file_path": "G:/code/myProject/spookify/Assignment/B2B-provider/src/main/java/com/xmum/swe/entities/VO",
+    "last_opened_file_path": "G:/code/myProject/spookify/Assignment/B2B-provider/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,6 +85,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\code\myProject\spookify\Assignment\B2B-provider\src\main\resources" />
       <recent name="G:\code\myProject\spookify\Assignment\B2B-provider\src\main\java\com\xmum\swe\entities\VO" />
       <recent name="G:\code\myProject\spookify\Assignment" />
       <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images\Bimage" />

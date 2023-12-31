@@ -19,6 +19,7 @@ import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.sql.Timestamp;
@@ -39,9 +40,15 @@ public class DetailServiceImpl implements DetailService {
     @Resource
     private IdService idService;
 
+//    @Resource
+//    private RedisTemplate redisTemplate;
+
 
 
     public DetailDO getDetailById(String id) {
+//        if(redisTemplate.hasKey(id)) {
+//            return (DetailDO)redisTemplate.opsForValue().get(id);
+//        }
         DetailDO detail = detailDao.selectById(id);
         Optional.ofNullable(detail)
                 .orElseThrow(() -> new SpookifyBusinessException("No such detail!"));
@@ -52,6 +59,9 @@ public class DetailServiceImpl implements DetailService {
         List<DetailDO> details = detailDao.selectList(null);
         Optional.ofNullable(details)
                 .orElseThrow(() -> new SpookifyBusinessException("Detail list is empty!"));
+//        details.stream().forEach(detail -> {
+//            redisTemplate.opsForValue().set(detail.getDId(), detail);
+//        });
         return details;
     }
 
