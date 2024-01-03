@@ -18,16 +18,16 @@ public class WebConfigurer implements WebMvcConfigurer {
     @Resource
     private LoginInterceptor loginHandlerInterceptor;
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        InterceptorRegistration ir = registry.addInterceptor(loginHandlerInterceptor);
-        // 拦截路径
-//        ir.addPathPatterns("/*");
-        // 不拦截路径
-        List<String> irs = new ArrayList<String>();
-//        irs.add("/api/*");
-//        irs.add("/wechat/*");
-//        irs.add("/oauth");
-        ir.excludePathPatterns(irs);
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        InterceptorRegistration ir = registry.addInterceptor(loginHandlerInterceptor);
+//        // 拦截路径
+////        ir.addPathPatterns("/*");
+//        // 不拦截路径
+//        List<String> irs = new ArrayList<String>();
+////        irs.add("/api/*");
+////        irs.add("/wechat/*");
+////        irs.add("/oauth");
+//        ir.excludePathPatterns(irs);
+//    }
 }

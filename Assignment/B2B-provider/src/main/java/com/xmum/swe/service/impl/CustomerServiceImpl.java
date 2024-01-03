@@ -19,7 +19,6 @@ import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -68,7 +67,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDO getCustomerByName(String name) {
-        CustomerDO customer = customerDao.selectOne(new QueryWrapper<CustomerDO>().eq("c_name", name));
+        CustomerDO customer = customerDao.selectOne(new QueryWrapper<CustomerDO>().eq("name", name));
         Optional.ofNullable(customer)
                 .orElseThrow(() -> new SpookifyBusinessException("No such customer!"));
         return customer;
@@ -89,10 +88,10 @@ public class CustomerServiceImpl implements CustomerService {
                 .stream().
                 limit(1)
                 .toArray(CustomerDO[]::new);
-        if(ObjectUtil.isEmpty(arr)) return arr[0];
+        if(!ObjectUtil.isEmpty(arr)) return arr[0];
         else {
             CustomerDO cusDO = new CustomerDO();
-            cusDO.setCId("SPCS000001");
+            cusDO.setCId("SPCS000000");
             return cusDO;
         }
     }
@@ -127,7 +126,7 @@ public class CustomerServiceImpl implements CustomerService {
     public Map<String, Object> insertCustomer(CustomerInsertVO cusVO) {
         //Layer 1
         try {
-            this.getCustomerName(cusVO.getName());
+             if(!customerDao.selectList(null).isEmpty()) this.getCustomerName(cusVO.getName());
         }catch (Exception ex) {
             throw new SpookifyBusinessException("customer name cannot be duplicated!");
         }

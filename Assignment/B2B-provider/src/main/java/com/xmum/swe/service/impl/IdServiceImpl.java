@@ -3,7 +3,6 @@ package com.xmum.swe.service.impl;
 import com.xmum.swe.enums.IdPos;
 import com.xmum.swe.service.IdService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 

@@ -30,7 +30,7 @@ public class CustomerController {
     private CustomerService customerService;
 
     @SpookifyInfo
-    @GetMapping("/login")
+    @PostMapping("/login")
     public CommonResult login(@RequestBody CustomerInsertVO cusVO, HttpSession session, HttpServletRequest request, HttpServletResponse response){
         String res = customerService.login(cusVO, session, request, response);
         return CommonResult.ok(res);

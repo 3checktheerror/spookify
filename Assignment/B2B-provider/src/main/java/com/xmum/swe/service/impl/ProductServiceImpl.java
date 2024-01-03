@@ -17,7 +17,6 @@ import com.xmum.swe.utils.JsonUtil;
 import com.xmum.swe.utils.SpookifyTimeStamp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.sql.Timestamp;
@@ -35,8 +34,8 @@ public class ProductServiceImpl implements ProductService {
     @Resource
     private IdService idService;
 
-    @Resource
-    private RedisTemplate redisTemplate;
+//    @Resource
+//    private RedisTemplate redisTemplate;
 
 
     public ProductDO getProductById(String id) {
