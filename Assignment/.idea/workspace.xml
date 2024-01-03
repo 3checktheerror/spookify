@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
+      <change afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/LCPAGE/ProductManagement.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_16_2023_11_07_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B2B-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/Interceptor/WebConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/Interceptor/WebConfigurer.java" afterDir="false" />
@@ -32,13 +32,14 @@
       <list>
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="dev-hotfix-Qiu" />
+        <entry key="$PROJECT_DIR$/.." value="dev-hotfix-Liu" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -135,6 +136,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Spring Boot.PortforlioServer (1)" />
       <item itemvalue="Spring Boot.B2BServer" />
       <item itemvalue="Spring Boot.PortforlioServer" />
@@ -143,6 +145,10 @@
       <list>
         <item itemvalue="Spring Boot.B2BServer" />
         <item itemvalue="Spring Boot.PortforlioServer" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Spring Boot.B2BServer" />
+        <item itemvalue="Spring Boot.PortforlioServer" />
+        <item itemvalue="Spring Boot.B2BServer" />
         <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.B2BServer" />
         <item itemvalue="Spring Boot.B2BServer" />
@@ -255,7 +261,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev-hotfix-Qiu" />
+                        <option value="dev-hotfix-Zhou" />
                       </list>
                     </value>
                   </entry>

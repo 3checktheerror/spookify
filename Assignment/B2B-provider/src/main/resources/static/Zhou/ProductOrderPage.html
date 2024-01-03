@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>订单页面</title>
+    <!-- 引入 Vue.js 和 Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>订单信息</h1>
+    <div v-if="orders.length === 0">订单信息</div>
+    <div v-else>
+        <div v-for="(order, index) in orders" :key="index">
+            <h2>oId: {{ order.oId }}</h2>
+            <p>payName: {{ order.payName }}</p>
+            <!-- 在这里添加其他订单信息的展示 -->
+            <hr>
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                orders: [] // 用于存放订单信息的数组
+            };
+        },
+        mounted() {
+            // 在页面加载完成后调用接口获取订单信息
+            this.getOrders();
+        },
+        methods: {
+            getOrders() {
+                // 使用 Axios 调用接口
+                axios.get('http://localhost:8082/order/modifyOrder')
+                    .then(response => {
+                        // 将接口返回的数据存入 orders 数组
+                        this.orders = [response.data];
+                    })
+                    .catch(error => {
+                        console.error('Error to get page', error);
+                    });
+            }
+        }
+    });
+</script>
+</body>
+</html>
