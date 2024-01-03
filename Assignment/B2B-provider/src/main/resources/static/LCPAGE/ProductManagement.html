@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <title>ProductManager</title>
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-container>
+            <el-header>
+                <h2>Product Management System</h2>
+            </el-header>
+            <el-main>
+                <!--表头的搜索栏和添加按钮-->
+                <el-card style="width: 1325px; margin-left: 125px">
+                        <el-row :gutter="20">
+                            <el-col :span="20">
+                                <div>
+                                    <el-input
+                                            placeholder="Please enter ID or name (support fuzzy search)"
+                                            v-model="queryInfo.query"
+                                            clearable
+                                            @clear="getData"
+                                    >
+                                        <el-button
+                                                slot="append"
+                                                icon="el-icon-search"
+                                                @click="filterItems"
+                                        ></el-button>
+                                    </el-input>
+                                </div>
+                            </el-col>
+                            <el-col :span="2" :offset="1">
+                                <div>
+                                    <el-button type="primary" @click="addDialogVisible = true"
+                                    >Add new item
+                                    </el-button
+                                    >
+                                </div>
+                            </el-col>
+                        </el-row>
+
+                    <!--主表单-->
+                        <template>
+                            <div>
+                                <el-table class="table" stripe
+                                          :data="responseData.slice((queryInfo.currentPage -1) * queryInfo.pageSize, queryInfo.pageSize * queryInfo.currentPage)"
+                                          :default-sort="{prop: 'pId', order: 'descending'}">
+                                    <el-table-column prop="pId" label="PID" width="120" sortable></el-table-column>
+                                    <el-table-column prop="pName" label="Product Name" width="250" sortable></el-table-column>
+                                    <el-table-column prop="price" label="Product Price" width="150" sortable>
+                                    </el-table-column>
+                                    <el-table-column prop="quantityInStock" label="Quantity in stock" width="170" >
+                                    </el-table-column>
+                                    <el-table-column prop="category" label="Category" width="140" sortable>
+                                    </el-table-column>
+                                    <el-table-column label="Actions" width="380">
+                                        <template slot-scope="{ row }">
+                                            <el-button type="text"
+                                                       @click="viewDetail(row); detailInfoVisible = true"
+                                                       style="font-size: 16px;">View
+                                            </el-button>
+                                            <el-button type="text" @click="deleteItem(row)"
+                                                       style="font-size: 16px;">Delete
+                                            </el-button>
+                                            <el-button type="text"
+                                                       @click="modifyItem(row) ; modifyDialogVisible = true"
+                                                       style="font-size: 16px;">Modify
+                                            </el-button>
+                                        </template>
+                                    </el-table-column>
+                                </el-table>
+                            </div>
+                        </template>
+                        <el-pagination
+                                @size-change="handleSizeChange"
+                                @current-change="handleCurrentChange"
+                                :current-page="queryInfo.currentPage"
+                                :page-sizes="[1, 2, 5, 10]"
+                                :page-size="queryInfo.pageSize"
+                                layout="total, sizes, prev, pager, next, jumper"
+                        >
+                        </el-pagination>
+
+
+                    </el-card>
+                <!--增加表信息-->
+                    <el-dialog
+                            title="Add new item"
+                            :visible.sync="addDialogVisible"
+                            width="50%"
+                    >
+                    <el-form :model="addForm" ref="form" :rules="formRules" label-width="100dpx">
+                        <el-form-item label="Product Name" prop="Product_Name">
+                            <el-input v-model="addForm.Product_Name"></el-input>
+
+                        </el-form-item>
+                        <el-form-item label="Category" prop="Category">
+                            <el-select v-model="addForm.Category" placeholder="Select">
+                                <el-option label="Shoes" value="Shoes"></el-option>
+                                <el-option label="Apparel" value="Apparel"></el-option>
+                                <el-option label="Pants" value="Pants"></el-option>
+                                <el-option label="Accessories" value="Accessories"></el-option>
+                                <el-option label="BasketBall" value="BasketBall"></el-option>
+                                <el-option label="Run" value="Run"></el-option>
+                                <el-option label="Football" value="Football"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="Manufacturer" prop="Manufacturer">
+                            <el-select v-model="addForm.Manufacturer" placeholder="Select">
+                                <el-option label="PUTIAN" value="putian"></el-option>
+                                <el-option label="QUANZHOU" value="quanzhou"></el-option>
+                                <el-option label="BEIJING" value="beijing"></el-option>
+                                <el-option label="SHANGHAI" value="shanghai"></el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="Product Price" prop="Product_Price">
+                            <el-input v-model="addForm.Product_Price" >
+                            </el-input>
+                        </el-form-item>
+                        <el-form-item label="Quantity in stock" prop="Quantity_instock">
+                            <el-input v-model.number="addForm.Quantity_instock"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Description: " prop="Description: ">
+                            <el-input type="textarea" v-model="addForm.Description "></el-input>
+                        </el-form-item>
+                    </el-form>
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="closeDialog">Cancle</el-button>
+                        <el-button type="primary" @click="validateAndSubmit()">Submit</el-button>
+                    </span>
+                </el-dialog>
+                <!--成功创建显示-->
+                <el-dialog
+                        title="Create Successful"
+                        :visible.sync="successDialogVisible"
+                        width="50%"
+                >
+                    <p v-if="getResponse">Successfully submitted {{ getResponse }} form</p>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button type="primary" @click="closeSuccessDialog">OK</el-button>
+                    </div>
+                </el-dialog>
+                <!--仔细查看某商品内容-->
+                <el-dialog
+                        title="Item Detail"
+                        :visible.sync="detailInfoVisible"
+                        width="80%"
+
+                >
+                    <el-descriptions title="Information">
+                        <el-descriptions-item label="PID">{{detailForm.pId}}</el-descriptions-item>
+                        <el-descriptions-item label="Product Name">{{detailForm.pName}}</el-descriptions-item>
+                        <el-descriptions-item label="Quantity in stock">{{ detailForm.quantityInStock }}</el-descriptions-item>
+                        <el-descriptions-item label="Product Price">{{ detailForm.price }}</el-descriptions-item>
+                        <el-descriptions-item label="Category">{{ parsedData.category }}</el-descriptions-item>
+                        <el-descriptions-item label="Manufacturer">{{ detailForm.manufacturer }}</el-descriptions-item>
+                    </el-descriptions>
+                    <el-row>
+                        <el-descriptions>
+                            <el-descriptions-item label="Description">
+                                <el-tag size="Description">{{ parsedData.description }}</el-tag>
+                            </el-descriptions-item>
+                        </el-descriptions>
+                    </el-row>
+
+                    <span slot="footer" class="dialog-footer">
+                        <el-button type="primary" @click="detailInfoVisible = false">OK</el-button>
+                    </span>
+                </el-dialog>
+
+                <!--编辑表单-->
+                <el-dialog
+                        title="Modify form"
+                        :visible.sync="modifyDialogVisible"
+                        width="50%"
+
+                >
+
+                    <el-form :model="modifyForm" ref="newform" :rules="formRules" label-width="100px">
+                        <el-form-item label="Product_Name" prop="Product_Name">
+                            <el-input v-model="modifyForm.Product_Name"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Product_Price" prop="Product_Price">
+                            <el-input v-model="modifyForm.Product_Price" placeholder="Select">
+                            </el-input>
+                        </el-form-item>
+                        <el-form-item label="Quantity_instock" prop="Quantity_instock">
+                            <el-input v-model.number="modifyForm.Quantity_instock"></el-input>
+                        </el-form-item>
+                        <el-form-item label="Category" prop="Category">
+                            <el-input v-model="modifyForm.Category" placeholder="Select">
+                            </el-input>
+                        </el-form-item>
+                        <el-form-item label="Description" prop="Description">
+                            <el-input type="textarea" v-model="modifyForm.Description"></el-input>
+                        </el-form-item>
+                    </el-form>
+
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="closeDialog2">Cancle</el-button>
+                        <el-button type="primary" @click="validateAndUpdate">Update</el-button>
+
+                    </span>
+                 </el-dialog>
+                <el-dialog
+                        title="Modify Successful"
+                        :visible.sync="updatesuccessDialogVisible"
+                        width="50%"
+                >
+                    <p>Form updated successfully </p>
+                    <div slot="footer" class="dialog-footer">
+                        <el-button type="primary" @click="closeupdateSuccessDialog">OK</el-button>
+                    </div>
+                </el-dialog>
+            </el-main>
+        </el-container>
+    </el-container>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                responseData: [],
+                url: '/images/contactMe.jpg',
+                fill: 'fill',
+                queryInfo: {
+                    query: '',
+                    currentPage: 1,
+                    pageSize: 5,
+                    totalPage: 20
+                },
+                addForm: {
+                    Product_Name: '',
+                    Product_Price: '',
+                    Quantity_instock: '',
+                    Category: '',
+                    Manufacturer: '',
+                    Description: '',
+
+                },
+                detailForm: {},
+                modifyForm: {
+                    pId:'',
+                    Product_Name: '',
+                    Product_Price: '',
+                    Quantity_instock: '',
+                    Category: '',
+                    Manufacturer: '',
+                    Description: '',
+
+                },
+                filItems: [],
+                addDialogVisible: false,
+                detailInfoVisible: false,
+                modifyDialogVisible: false,
+                fileList: [],
+                updatesuccessDialogVisible: false,
+                successDialogVisible: false,
+                beforeUploadCancelled: true,
+                getResponse: null,
+                pId: null,
+                formRules: {
+                    Product_Name: [
+                        {required: true, message: 'Please enter the Product Name', trigger: 'blur'},
+
+                    ],
+                    Product_Price: [
+                        {required: true, validator: this.validateInt, trigger: 'blur'},
+
+                    ],
+                    Quantity_instock: [
+                        {required: true,validator: this.validateInt, trigger: 'blur'},
+
+                    ],
+                    Manufacturer: [
+                        {required: true, message: 'Please enter the Manufacturer Name', trigger: 'blur'},
+
+                    ],
+                    Description: [
+                        {required: true, message: 'Please enter the Description', trigger: 'blur'},
+                    ],
+
+
+                },
+                isCollapse: true,
+            };
+        },
+        computed: {
+            parsedData() {
+                return this.detailForm.data ? JSON.parse(this.detailForm.data) : {};
+            }
+        },
+        mounted() {
+            this.getData();
+        },
+        methods: {
+            getData() {
+                axios.get('/product/getAllProducts')
+                    .then(response => {
+
+                        console.log('Response from backend:', response.data);
+                        this.responseData = response.data.data;
+                    })
+                    .catch(error => {
+
+                        console.error(error);
+                    });
+            },
+            filterItems() {
+                if (this.queryInfo.query === '') {
+                    this.getData();
+                }
+                console.log(this.queryInfo.query);
+                this.responseData = this.responseData.filter((i) => {
+                    return (i.pId || '').toString().toLowerCase().includes(this.queryInfo.query.toLowerCase()) ||
+                        (i.pName || '').toString().toLowerCase().includes(this.queryInfo.query.toLowerCase())
+                });
+                console.log(this.responseData);
+                return this.responseData;
+            },
+            viewDetail(row) {
+                this.detailForm = this.responseData.find(elem => elem.pId === row.pId);
+                console.log(this.detailForm);
+            },
+            deleteItem(row) {
+                axios.get('/product/deleteProduct/' + row.pId)
+                    .then(() => {
+                        this.$message.success('delete success');
+                        this.getData();
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+
+            },
+            modifyItem(row) {
+                console.log(row.pId);
+                if (row.pId !== undefined) {
+                    this.modifyForm.pId = row.pId;
+                }
+            },
+
+
+            handleSizeChange(newSize) {
+                this.queryInfo.pageSize = newSize
+                this.getData()
+                console.log(newSize)
+            },
+
+            handleCurrentChange(newPage) {
+                this.queryInfo.currentPage = newPage
+                this.getData()
+                console.log(newPage)
+            },
+
+
+            validateAndSubmit() {
+                this.$refs.form.validate((valid) => {
+                    if (valid) {
+
+                        this.submitForm();
+                    } else {
+
+                        console.log('Form validation failed');
+                    }
+                });
+            },
+            submitForm() {
+                const postData = {
+                    pName: this.addForm.Product_Name,
+                    category: this.addForm.Category,
+                    quantityInStock: this.addForm.Quantity_instock,
+                    price: this.addForm.Product_Price,
+                    description: this.addForm.Description,
+                    manufacturer:this.addForm.Manufacturer
+                };
+                console.log(postData);
+
+
+                axios.post('/product/insertProduct', postData)
+                    .then(response => {
+                        console.log('Response from backend:', response.data);
+                        this.getResponse = response.data.data;
+                        this.showSuccessDialog();
+                        this.addDialogVisible = false;
+                        this.$refs.form.resetFields();
+                        this.getData();
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+
+            },
+            validateAndUpdate() {
+                this.$refs.newform.validate((valid) => {
+                    if (valid) {
+                        this.updateForm();
+                    } else {
+                        console.log('Form validation failed');
+                    }
+                });
+            },
+            updateForm() {
+                const newData = {
+                    pId: this.modifyForm.pId,
+                    pName: this.modifyForm.Product_Name,
+                    category: this.modifyForm.Category,
+                    price: this.modifyForm.Product_Price,
+                    quantityInStock: this.modifyForm.Quantity_instock,
+                    description: this.modifyForm.Description,
+                };
+                /*if (this.modifyForm.gender !== "") {
+                    newData.gender = this.modifyForm.gender;
+                }
+                */
+
+                console.log(newData);
+
+                axios.post('/product/modifyProduct', newData)
+                    .then(response => {
+
+                        console.log('Response from backend:', response.data);
+                        this.showupdateSuccessDialog();
+                        this.modifyDialogVisible = false;
+                        this.$refs.newform.resetFields();
+                        this.getData()
+                    })
+                    .catch(error => {
+
+                        console.error(error);
+                    });
+
+            },
+            showSuccessDialog() {
+                this.successDialogVisible = true;
+            },
+            showupdateSuccessDialog() {
+                this.updatesuccessDialogVisible = true;
+            },
+            closeSuccessDialog() {
+                this.successDialogVisible = false;
+            },
+            closeupdateSuccessDialog() {
+                this.updatesuccessDialogVisible = false;
+            },
+            closeDialog() {
+                this.addDialogVisible = false;
+            },
+            closeDialog2() {
+                this.modifyDialogVisible = false;
+            },
+            beforeUpload(file) {
+                if (this.beforeUploadCancelled) {
+                    this.beforeUploadCancelled = false;
+                }
+                return false;
+            },
+            handleRemove() {
+
+                if (this.beforeUploadCancelled) {
+                    this.fileList = [];
+                } else {
+                    this.beforeUploadCancelled = true;
+                }
+            },
+            handlePreview() {
+                var event = new MouseEvent('click');
+                const tempData = {
+                    Product_Name: "temp",
+                    Category : "shoe",
+                    Description : "temp",
+                    md5: null,
+                    token: null,
+                    sessionId: null,
+                };
+                axios.post('/product/insertProduct', tempData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+            },
+            validateInt(rule, value, callback) {
+                if (value === '') {
+                    callback();
+                } else {
+                    const isNumber = /^[0-9]*$/.test(value);
+                    if (isNumber) {
+                        const numericValue = parseInt(value, 0);
+                        if (numericValue >= 1 && numericValue <= 30000) {
+                            callback();
+                        } else {
+                            callback(new Error('The input must be an integer between 0 and 30000'));
+                        }
+                    } else {
+                        callback(new Error('The input must be a number'));
+                    }
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
+<style>
+    .fixed-aside {
+        position: fixed;
+        z-index: 1;
+        top: 40px;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .el-radio-button__inner {
+        width: 100%;
+    }
+
+    .el-main {
+        height: 800px;
+
+        color: #333;
+        text-align: left;
+        line-height: 50px;
+    }
+
+    .el-header, .el-footer {
+
+        color: #333;
+        text-align: center;
+        display: flex; /* Use flexbox */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        line-height: 90px;
+        font-size: 30px;
+        letter-spacing: 0px;
+    }
+
+    .el-card-body {
+        width: 100%;
+    }
+    .el-upload-list__item-name [class^=el-icon] {
+        height: 5%;
+        margin-right: 7px;
+        color: #909399;
+        line-height: inherit;
+    }
+
+</style>
