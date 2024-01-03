@@ -58,5 +58,4 @@ public class CustomerController {
         int num = customerService.deleteCustomerWithId(id);
         return num == 0 ? CommonResult.ok("nothing to be deleted") : CommonResult.ok(num);
     }
-
 }

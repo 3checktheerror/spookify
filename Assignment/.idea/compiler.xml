@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="portfolio-provider" />
         <module name="common-infrastructure" />
+        <module name="B2B-provider" />
       </profile>
     </annotationProcessing>
   </component>
