@@ -12,9 +12,10 @@
 
     <modules>
         <module>portfolio-provider</module>
-        <module>B2B-provider</module>
         <module>common-infrastructure</module>
     </modules>
+
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -68,6 +69,12 @@
                 <version>${druid.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -98,11 +105,7 @@
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.xmum.swe</groupId>
-                <artifactId>common-infrastructure</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
