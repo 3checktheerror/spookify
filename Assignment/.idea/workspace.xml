@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
-      <change afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/LCPAGE/ProductManagement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/LCPAGE/ProductManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/LCPAGE/ProductManagement.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +180,8 @@
       <workItem from="1704183189839" duration="5298000" />
       <workItem from="1704190136807" duration="141000" />
       <workItem from="1704207662712" duration="4298000" />
-      <workItem from="1704271183876" duration="4184000" />
+      <workItem from="1704271183876" duration="5265000" />
+      <workItem from="1704285058935" duration="6018000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />

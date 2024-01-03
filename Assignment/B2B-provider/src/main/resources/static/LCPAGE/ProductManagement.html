@@ -99,7 +99,6 @@
                     <el-form :model="addForm" ref="form" :rules="formRules" label-width="100dpx">
                         <el-form-item label="Product Name" prop="Product_Name">
                             <el-input v-model="addForm.Product_Name"></el-input>
-
                         </el-form-item>
                         <el-form-item label="Category" prop="Category">
                             <el-select v-model="addForm.Category" placeholder="Select">
@@ -152,7 +151,6 @@
                         title="Item Detail"
                         :visible.sync="detailInfoVisible"
                         width="80%"
-
                 >
                     <el-descriptions title="Information">
                         <el-descriptions-item label="PID">{{detailForm.pId}}</el-descriptions-item>
@@ -180,12 +178,10 @@
                         title="Modify form"
                         :visible.sync="modifyDialogVisible"
                         width="50%"
-
                 >
-
                     <el-form :model="modifyForm" ref="newform" :rules="formRules" label-width="100px">
                         <el-form-item label="Product_Name" prop="Product_Name">
-                            <el-input v-model="modifyForm.Product_Name"></el-input>
+                            <el-input v-model="modifyForm.Product_Name" ></el-input>
                         </el-form-item>
                         <el-form-item label="Product_Price" prop="Product_Price">
                             <el-input v-model="modifyForm.Product_Price" placeholder="Select">
@@ -230,6 +226,7 @@
         el: '#app',
         data() {
             return {
+                test:1,
                 responseData: [],
                 url: '/images/contactMe.jpg',
                 fill: 'fill',
@@ -349,14 +346,6 @@
                     this.modifyForm.pId = row.pId;
                 }
             },
-
-
-            handleSizeChange(newSize) {
-                this.queryInfo.pageSize = newSize
-                this.getData()
-                console.log(newSize)
-            },
-
             handleCurrentChange(newPage) {
                 this.queryInfo.currentPage = newPage
                 this.getData()
@@ -410,6 +399,7 @@
                     }
                 });
             },
+
             updateForm() {
                 const newData = {
                     pId: this.modifyForm.pId,
