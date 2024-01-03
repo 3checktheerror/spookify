@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName(value = "b2b_customer_1")
+@TableName(value = "B2B_customer_1")
 public class CustomerDO {
 
     @TableId("c_id")
@@ -21,6 +21,8 @@ public class CustomerDO {
     private String cgroupId;
 
     private String name;
+
+    private String password;
 
     private int age;
 

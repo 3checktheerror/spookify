@@ -13,6 +13,7 @@ CREATE TABLE B2B_customer_1 (
                                     `c_id` varchar(32) NOT NULL,
                                     `cgroup_id` varchar(128),
                                     `name` varchar(32),
+                                    `password` varchar(32),
                                     `age` INT,
                                     `gender` varchar(16),
                                     `md5` varchar(32),

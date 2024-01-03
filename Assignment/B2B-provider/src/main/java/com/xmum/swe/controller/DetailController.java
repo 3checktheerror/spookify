@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.*;
 
+//@RefreshScope
 @RestController
 @RequestMapping("/detail")
 @Validated

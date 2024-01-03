@@ -39,9 +39,15 @@ public class DetailServiceImpl implements DetailService {
     @Resource
     private IdService idService;
 
+//    @Resource
+//    private RedisTemplate redisTemplate;
+
 
 
     public DetailDO getDetailById(String id) {
+//        if(redisTemplate.hasKey(id)) {
+//            return (DetailDO)redisTemplate.opsForValue().get(id);
+//        }
         DetailDO detail = detailDao.selectById(id);
         Optional.ofNullable(detail)
                 .orElseThrow(() -> new SpookifyBusinessException("No such detail!"));
@@ -52,6 +58,9 @@ public class DetailServiceImpl implements DetailService {
         List<DetailDO> details = detailDao.selectList(null);
         Optional.ofNullable(details)
                 .orElseThrow(() -> new SpookifyBusinessException("Detail list is empty!"));
+//        details.stream().forEach(detail -> {
+//            redisTemplate.opsForValue().set(detail.getDId(), detail);
+//        });
         return details;
     }
 

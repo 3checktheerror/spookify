@@ -505,7 +505,6 @@
             viewDetail(row) {
                 this.detailForm = this.responseData.find(elem => elem.iId === row.iId);
                 console.log(this.detailForm);
-
             },
             deleteItem(row) {
                 axios.get('/item/deleteItem/' + row.iId)

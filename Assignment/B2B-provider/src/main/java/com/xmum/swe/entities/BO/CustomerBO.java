@@ -18,6 +18,9 @@ public class CustomerBO {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("password")
+    private String password;
+
     @JsonProperty("age")
     private int age;
 

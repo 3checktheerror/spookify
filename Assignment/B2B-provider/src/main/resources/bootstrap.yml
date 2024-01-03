@@ -1,0 +1,16 @@
+#server:
+#  port: 8082
+#
+#spring:
+#  application:
+#    name: B2B-provider
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#      config:
+#        server-addr: localhost:8848
+#        file-extension: yaml
+#        group: DEFAULT_GROUP
+#        namespace: 5d86ed21-f5f1-468d-a746-df84cd5463f2
+#
