@@ -33,8 +33,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.alibaba.fastjson2.schema.JSONSchema.Type.Const;
-
 @Service
 @Slf4j
 public class CustomerServiceImpl implements CustomerService {
