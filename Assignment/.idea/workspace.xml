@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/spookify.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/spookify.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +57,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Qiu&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Luo&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Desktop/Work/assignment/spookify/Assignment/B2B-provider&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Study_material/202309/Programming-Elective-II/Assignment/Code/spookify/Assignment&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -68,8 +77,18 @@
       <recent name="G:\code\myProject\spookify\Assignment" />
       <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images\Bimage" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Study_material\202309\Programming-Elective-II\Assignment1\Code\spookify\Assignment\B2B-provider\target\classes\static\Luo" />
+      <recent name="E:\Study_material\202309\Programming-Elective-II\Assignment1\Code\spookify\Assignment\B2B-provider\src\main\resources\static\Luo" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.PortforlioServer">
+  <component name="RunManager" selected="Spring Boot.B2BServer">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Assignment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="B2BServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="dev" />
       <module name="B2B-provider" />
@@ -115,9 +134,9 @@
       <list>
         <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.B2BServer" />
+        <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.B2BServer" />
-        <item itemvalue="Spring Boot.PortforlioServer" />
-        <item itemvalue="Spring Boot.PortforlioServer" />
+        <item itemvalue="Spring Boot.B2BServer" />
       </list>
     </recent_temporary>
   </component>
@@ -159,6 +178,10 @@
       <workItem from="1703740739165" duration="138000" />
       <workItem from="1703740886474" duration="2913000" />
       <workItem from="1703743808319" duration="545000" />
+      <workItem from="1703925992365" duration="3659000" />
+      <workItem from="1704249273825" duration="666000" />
+      <workItem from="1704296787421" duration="451000" />
+      <workItem from="1704342506181" duration="2848000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />
@@ -246,10 +269,5 @@
         <PinnedItemInfo parentTag="com.xmum.swe.entities.BO.ItemBO" memberName="opType" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="detailVO" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>
