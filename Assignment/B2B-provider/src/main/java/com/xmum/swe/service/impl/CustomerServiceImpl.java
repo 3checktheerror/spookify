@@ -48,8 +48,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public String login(CustomerInsertVO cusVO, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         cusVO.setSessionId(session.getId());
-
-        this.insertCustomer(cusVO);
+        if(!this.getAllCustomers().stream().map(CustomerDO::getName).collect(Collectors.toList()).contains(cusVO.getName().trim()))
+            this.insertCustomer(cusVO);
         return this.doLogin(cusVO.getName().trim(), cusVO.getPassword().trim(), session, request, response).toJSONString();
     }
 
@@ -184,13 +184,12 @@ public class CustomerServiceImpl implements CustomerService {
             return res;
         }
         session.setAttribute("spookify-b2b-customer", this.getCustomerByName(username));
-        Cookie cookie_username = new Cookie("cookie_username", username);
+        Cookie cookie_username = new Cookie("mySessionId", session.getId());
         cookie_username.setMaxAge(30 * 24 * 60 * 60);
         cookie_username.setPath("/");
         response.addCookie(cookie_username);
         response.addHeader("Baeldung-Example-Header", "Value-HttpServletResponse");
         res.put("msg", "0");
-
         return res;
     }
 }

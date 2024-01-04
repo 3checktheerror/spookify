@@ -31,7 +31,12 @@ public class CustomerController {
 
     @SpookifyInfo
     @PostMapping("/login")
-    public CommonResult login(@RequestBody CustomerInsertVO cusVO, HttpSession session, HttpServletRequest request, HttpServletResponse response){
+    public CommonResult login(@RequestBody CustomerInsertVO cusVO, HttpServletRequest request, HttpServletResponse response){
+        HttpSession currentSession = request.getSession(false);
+        if (currentSession != null) {
+            currentSession.invalidate();
+        }
+        HttpSession session = request.getSession(true);
         String res = customerService.login(cusVO, session, request, response);
         return CommonResult.ok(res);
     }
