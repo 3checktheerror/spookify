@@ -24,12 +24,11 @@
                         <el-row :gutter="20" style="margin-bottom: 10px">
                             <el-col :span="18">
                                 <div>
-                                    <input
+                                    <el-input
                                             placeholder="Please enter ID or name (support fuzzy search)"
                                             v-model="queryInfo.query"
                                             clearable
                                             @clear="getData"
-                                            class="inputbox"
                                             autocomplete="off"
                                     >
                                         <el-button
@@ -37,7 +36,8 @@
                                                 icon="el-icon-search"
                                                 @click="filterItems"
                                         ></el-button>
-                                    </input>
+                                    </el-input>
+
                                 </div>
                             </el-col>
                             <el-col :span="5" :offset="1">
@@ -184,39 +184,56 @@
                         width="50%"
                     >
                     <el-form :model="modifyForm" ref="newform" :rules="formRules" label-width="136px" >
+
                         <el-form-item label="Product Name" prop="pName" class="custom-form-item-label">
-                            <el-card>
-                                <div class="flex-container">
+                            <el-card class="flex-container">
+                                <div class="content-and-button">
                                     <span> The Original Product ( ID: {{modifyForm.PID}}) Name is: {{modifyForm.Product_Name}}</span>
-                                    <el-button @click="showname = !showname" type="primary" plain> Edit Name</el-button>
-                                    <el-input v-if="showname" v-model="modifyForm.pName" placeholder="Please Enter the Name you want" ></el-input>
+                                    <el-button @click="showname = !showname" type="primary" plain > Edit Name</el-button>
+                                </div>
+                                <div v-if="showname" >
+                                    <el-input v-model="modifyForm.pName" placeholder="Please Enter the Name you want"  ></el-input>
                                 </div>
                             </el-card>
                         </el-form-item>
+
                         <el-form-item label="Product Price" prop="price" class="custom-form-item-label">
                             <el-card>
                                 <div class="flex-container">
-                                    <span> The Original Product Price is: {{modifyForm.Product_Price}}</span>
-                                    <el-button @click="showpr = !showpr" type="primary" plain>Edit Price</el-button>
-                                    <el-input v-if="showpr" v-model="modifyForm.price" placeholder="Enter the price number" ></el-input>
+                                    <div class="content-and-button">
+                                        <span> The Original Product Price is: {{modifyForm.Product_Price}}</span>
+                                        <el-button @click="showpr = !showpr" type="primary" plain>Edit Price</el-button>
+                                    </div>
+                                    <div v-if="showpr" >
+                                        <el-input v-if="showpr" v-model="modifyForm.price" placeholder="Please Enter the Price you want"  ></el-input>
+                                    </div>
                                 </div>
                             </el-card>
                         </el-form-item>
-                        <el-form-item label="Quantity instock" prop="quantityInStock" class="custom-form-item-label">
+
+                        <el-form-item label="Quantity in stock" prop="quantityInStock" class="custom-form-item-label">
                             <el-card>
                                 <div class="flex-container">
-                                    <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Quantity_instock}}</span>
-                                    <el-button @click="showquant = !showquant" type="primary" plain> Edit Number</el-button>
-                                    <el-input v-if="showquant" v-model="modifyForm.quantityInStock" placeholder="Please, Enter the quantity number" ></el-input>
+                                    <div class="content-and-button">
+                                        <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Quantity_instock}}</span>
+                                        <el-button @click="showquant = !showquant" type="primary" plain> Edit Number</el-button>
+                                    </div>
+                                    <div v-if="showquant" >
+                                        <el-input v-model="modifyForm.quantityInStock" placeholder="Please, Enter the quantity number" ></el-input>
+                                    </div>
                                 </div>
                             </el-card>
                         </el-form-item>
+
                         <el-form-item label="Category" prop="category" class="custom-form-item-label">
                             <el-card>
                                 <div class="flex-container">
-                                    <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Category}}</span>
-                                    <el-button @click="showcat = !showcat" type="primary" plain> Edit Category</el-button>
-                                    <el-select v-if="showcat" v-model="modifyForm.category" >
+                                    <div class="content-and-button">
+                                        <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Category}}</span>
+                                        <el-button @click="showcat = !showcat" type="primary" plain> Edit Category</el-button>
+                                    </div>
+                                    <div v-if="showcat">
+                                    <el-select  v-model="modifyForm.category" >
                                         <el-option label="Shoes" value="Shoes"></el-option>
                                         <el-option label="Apparel" value="Apparel"></el-option>
                                         <el-option label="Pants" value="Pants"></el-option>
@@ -225,31 +242,42 @@
                                         <el-option label="Run" value="Run"></el-option>
                                         <el-option label="Football" value="Football"></el-option>
                                     </el-select>
+                                    </div>
                                 </div>
                             </el-card>
                         </el-form-item>
+
                         <el-form-item label="Manufacturer" prop="manufacturer" class="custom-form-item-label">
                             <el-card>
                                 <div class="flex-container">
-                                    <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Manufacturer}}</span>
-                                    <el-button @click="showmanu = !showmanu" type="primary" plain> Edit Manufacturer</el-button>
-                                    <el-select v-if="showmanu" v-model="modifyForm.manufacturer"  >
-                                        <el-option label="PUTIAN" value="PuTian"></el-option>
-                                        <el-option label="QUANZHOU" value="QuanZhou"></el-option>
-                                        <el-option label="BEIJING" value="BeiJing"></el-option>
-                                        <el-option label="SHANGHAI" value="ShangHai"></el-option>
-                                    </el-select>
+                                    <div class="content-and-button">
+                                        <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Manufacturer}}</span>
+                                        <el-button @click="showmanu = !showmanu" type="primary" plain> Edit Manufacturer</el-button>
+                                    </div>
+                                    <div v-if="showmanu">
+                                        <el-select  v-model="modifyForm.manufacturer"  >
+                                            <el-option label="PUTIAN" value="PuTian"></el-option>
+                                            <el-option label="QUANZHOU" value="QuanZhou"></el-option>
+                                            <el-option label="BEIJING" value="BeiJing"></el-option>
+                                            <el-option label="SHANGHAI" value="ShangHai"></el-option>
+                                        </el-select>
+                                    </div>
+
                                 </div>
                             </el-card>
                         </el-form-item>
                         <el-form-item label="Description" prop="description" class="custom-form-item-label">
                             <el-card>
                                 <div class="flex-container">
-                                <span> The Original quantity in stock for {{modifyForm.Product_Name}} is:
-                                <el-button @click="showdesc = !showdesc" type="primary" plain> Edit Description</el-button>
-                                <br>
-                                {{modifyForm.Description}}</span>
-                                <el-input v-if="showdesc" type="textarea" v-model="modifyForm.description" placeholder="Edit Here"></el-input>
+                                    <div class="content-and-button">
+                                        <span> The Original quantity in stock for {{modifyForm.Product_Name}} is:
+                                        <el-button @click="showdesc = !showdesc" type="primary" plain> Edit Description</el-button>
+                                        <br>
+                                        {{modifyForm.Description}}</span>
+                                    </div>
+                                    <div v-if="showdesc">
+                                        <el-input v-if="showdesc" type="textarea" v-model="modifyForm.description" placeholder="Edit Here"></el-input>
+                                    </div>
                                 </div>
                             </el-card>
                         </el-form-item>
@@ -650,23 +678,6 @@
     body {
         font-family: 'Roboto', sans-serif;
     }
-    .inputbox {
-        border: none;
-        outline: none;
-        border-radius: 15px;
-        padding: 1em;
-        background-color: #ccc;
-        box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
-        transition: 300ms ease-in-out;
-        width: 800px;
-    }
-
-    .inputbox:focus {
-        background-color: white;
-        transform: scale(1.05);
-        box-shadow: 13px 13px 100px #969696,
-        -13px -13px 100px #ffffff;
-    }
     .btn {
         padding: 1.1em 2em;
         background: none;
@@ -711,72 +722,13 @@
     .flex-container {
         display: flex;
         justify-content: space-between;
-        align-items: center; /* 垂直居中 */
         padding-right: 20px; /* 为了使按钮与卡片的右边界保持 20px 距离 */
+        flex-direction: column;  /* 使子元素垂直堆叠 */
     }
-    .card {
-        position: relative;
-        width: 200px;
-        height: 250px;
-        border-radius: 14px;
-        z-index: 1111;
-        overflow: hidden;
+    .content-and-button {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between; /* 保持 span 和 button 水平分布 */
         align-items: center;
-        justify-content: center;
-        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-    ;
-    }
-
-    .bg {
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        width: 190px;
-        height: 240px;
-        z-index: 2;
-        background: rgba(255, 255, 255, .95);
-        backdrop-filter: blur(24px);
-        border-radius: 10px;
-        overflow: hidden;
-        outline: 2px solid white;
-    }
-
-    .blob {
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 50%;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background-color: #ff0000;
-        opacity: 1;
-        filter: blur(12px);
-        animation: blob-bounce 5s infinite ease;
-    }
-
-    @keyframes blob-bounce {
-        0% {
-            transform: translate(-100%, -100%) translate3d(0, 0, 0);
-        }
-
-        25% {
-            transform: translate(-100%, -100%) translate3d(100%, 0, 0);
-        }
-
-        50% {
-            transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
-        }
-
-        75% {
-            transform: translate(-100%, -100%) translate3d(0, 100%, 0);
-        }
-
-        100% {
-            transform: translate(-100%, -100%) translate3d(0, 0, 0);
-        }
     }
 
 

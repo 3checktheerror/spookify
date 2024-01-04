@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/LCPAGE/ProductManagement.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/LCPAGE/ProductManagement.html" afterDir="false" />
     </list>
@@ -176,7 +174,7 @@
       <workItem from="1703925188880" duration="1469000" />
       <workItem from="1703934603364" duration="38000" />
       <workItem from="1703992751073" duration="1182000" />
-      <workItem from="1704346556261" duration="15324000" />
+      <workItem from="1704346556261" duration="18660000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />
