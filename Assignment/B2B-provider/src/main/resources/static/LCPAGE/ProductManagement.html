@@ -7,40 +7,44 @@
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+
     <title>ProductManager</title>
 </head>
 <body>
 <div id="app">
-    <el-container>
-        <el-container>
+    <el-container >
+        <el-container >
             <el-header>
                 <h2>Product Management System</h2>
             </el-header>
             <el-main>
                 <!--表头的搜索栏和添加按钮-->
-                <el-card style="width: 1325px; margin-left: 125px">
-                        <el-row :gutter="20">
-                            <el-col :span="20">
+                <el-card  style="width: 1325px; margin-left: 125px">
+                        <el-row :gutter="20" style="margin-bottom: 10px">
+                            <el-col :span="18">
                                 <div>
-                                    <el-input
+                                    <input
                                             placeholder="Please enter ID or name (support fuzzy search)"
                                             v-model="queryInfo.query"
                                             clearable
                                             @clear="getData"
+                                            class="inputbox"
+                                            autocomplete="off"
                                     >
                                         <el-button
                                                 slot="append"
                                                 icon="el-icon-search"
                                                 @click="filterItems"
                                         ></el-button>
-                                    </el-input>
+                                    </input>
                                 </div>
                             </el-col>
-                            <el-col :span="2" :offset="1">
+                            <el-col :span="5" :offset="1">
                                 <div>
-                                    <el-button type="primary" @click="addDialogVisible = true"
+                                    <button class="btn" @click="addDialogVisible = true"
                                     >Add new item
-                                    </el-button
+                                    </button
                                     >
                                 </div>
                             </el-col>
@@ -96,7 +100,7 @@
                             :visible.sync="addDialogVisible"
                             width="50%"
                     >
-                    <el-form :model="addForm" ref="form" :rules="formRules" label-width="100dpx">
+                    <el-form :model="addForm" ref="form" :rules="formRules" label-width="130px" style="padding-left: 30px; ">
                         <el-form-item label="Product Name" prop="Product_Name">
                             <el-input v-model="addForm.Product_Name"></el-input>
                         </el-form-item>
@@ -113,10 +117,10 @@
                         </el-form-item>
                         <el-form-item label="Manufacturer" prop="Manufacturer">
                             <el-select v-model="addForm.Manufacturer" placeholder="Select">
-                                <el-option label="PUTIAN" value="putian"></el-option>
-                                <el-option label="QUANZHOU" value="quanzhou"></el-option>
-                                <el-option label="BEIJING" value="beijing"></el-option>
-                                <el-option label="SHANGHAI" value="shanghai"></el-option>
+                                <el-option label="PUTIAN" value="PuTian"></el-option>
+                                <el-option label="QUANZHOU" value="QuanZhou"></el-option>
+                                <el-option label="BEIJING" value="BeiJing"></el-option>
+                                <el-option label="SHANGHAI" value="ShangHai"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item label="Product Price" prop="Product_Price">
@@ -134,25 +138,25 @@
                         <el-button @click="closeDialog">Cancle</el-button>
                         <el-button type="primary" @click="validateAndSubmit()">Submit</el-button>
                     </span>
-                </el-dialog>
-                <!--成功创建显示-->
-                <el-dialog
+                    </el-dialog>
+                 <!--成功创建显示-->
+                    <el-dialog
                         title="Create Successful"
                         :visible.sync="successDialogVisible"
                         width="50%"
-                >
+                    >
                     <p v-if="getResponse">Successfully submitted {{ getResponse }} form</p>
                     <div slot="footer" class="dialog-footer">
                         <el-button type="primary" @click="closeSuccessDialog">OK</el-button>
                     </div>
-                </el-dialog>
-                <!--仔细查看某商品内容-->
-                <el-dialog
+                    </el-dialog>
+                    <!--仔细查看某商品内容-->
+                    <el-dialog
                         title="Item Detail"
                         :visible.sync="detailInfoVisible"
                         width="80%"
-                >
-                    <el-descriptions title="Information">
+                    >
+                    <el-descriptions title="Information" style="margin-top: 10px; margin-bottom: 10px;font-size: 20px;">
                         <el-descriptions-item label="PID">{{detailForm.pId}}</el-descriptions-item>
                         <el-descriptions-item label="Product Name">{{detailForm.pName}}</el-descriptions-item>
                         <el-descriptions-item label="Quantity in stock">{{ detailForm.quantityInStock }}</el-descriptions-item>
@@ -161,7 +165,7 @@
                         <el-descriptions-item label="Manufacturer">{{ detailForm.manufacturer }}</el-descriptions-item>
                     </el-descriptions>
                     <el-row>
-                        <el-descriptions>
+                        <el-descriptions style="margin-top: 10px; margin-bottom: 10px;font-size: 20px;">
                             <el-descriptions-item label="Description">
                                 <el-tag size="Description">{{ parsedData.description }}</el-tag>
                             </el-descriptions-item>
@@ -171,31 +175,83 @@
                     <span slot="footer" class="dialog-footer">
                         <el-button type="primary" @click="detailInfoVisible = false">OK</el-button>
                     </span>
-                </el-dialog>
+                    </el-dialog>
 
-                <!--编辑表单-->
-                <el-dialog
+                    <!--编辑表单-->
+                    <el-dialog
                         title="Modify form"
                         :visible.sync="modifyDialogVisible"
                         width="50%"
-                >
-                    <el-form :model="modifyForm" ref="newform" :rules="formRules" label-width="100px">
-                        <el-form-item label="Product_Name" prop="Product_Name">
-                            <el-input v-model="modifyForm.Product_Name" ></el-input>
+                    >
+                    <el-form :model="modifyForm" ref="newform" :rules="formRules" label-width="136px" >
+                        <el-form-item label="Product Name" prop="pName" class="custom-form-item-label">
+                            <el-card>
+                                <div class="flex-container">
+                                    <span> The Original Product ( ID: {{modifyForm.PID}}) Name is: {{modifyForm.Product_Name}}</span>
+                                    <el-button @click="showname = !showname" type="primary" plain> Edit Name</el-button>
+                                    <el-input v-if="showname" v-model="modifyForm.pName" placeholder="Please Enter the Name you want" ></el-input>
+                                </div>
+                            </el-card>
                         </el-form-item>
-                        <el-form-item label="Product_Price" prop="Product_Price">
-                            <el-input v-model="modifyForm.Product_Price" placeholder="Select">
-                            </el-input>
+                        <el-form-item label="Product Price" prop="price" class="custom-form-item-label">
+                            <el-card>
+                                <div class="flex-container">
+                                    <span> The Original Product Price is: {{modifyForm.Product_Price}}</span>
+                                    <el-button @click="showpr = !showpr" type="primary" plain>Edit Price</el-button>
+                                    <el-input v-if="showpr" v-model="modifyForm.price" placeholder="Enter the price number" ></el-input>
+                                </div>
+                            </el-card>
                         </el-form-item>
-                        <el-form-item label="Quantity_instock" prop="Quantity_instock">
-                            <el-input v-model.number="modifyForm.Quantity_instock"></el-input>
+                        <el-form-item label="Quantity instock" prop="quantityInStock" class="custom-form-item-label">
+                            <el-card>
+                                <div class="flex-container">
+                                    <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Quantity_instock}}</span>
+                                    <el-button @click="showquant = !showquant" type="primary" plain> Edit Number</el-button>
+                                    <el-input v-if="showquant" v-model="modifyForm.quantityInStock" placeholder="Please, Enter the quantity number" ></el-input>
+                                </div>
+                            </el-card>
                         </el-form-item>
-                        <el-form-item label="Category" prop="Category">
-                            <el-input v-model="modifyForm.Category" placeholder="Select">
-                            </el-input>
+                        <el-form-item label="Category" prop="category" class="custom-form-item-label">
+                            <el-card>
+                                <div class="flex-container">
+                                    <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Category}}</span>
+                                    <el-button @click="showcat = !showcat" type="primary" plain> Edit Category</el-button>
+                                    <el-select v-if="showcat" v-model="modifyForm.category" >
+                                        <el-option label="Shoes" value="Shoes"></el-option>
+                                        <el-option label="Apparel" value="Apparel"></el-option>
+                                        <el-option label="Pants" value="Pants"></el-option>
+                                        <el-option label="Accessories" value="Accessories"></el-option>
+                                        <el-option label="BasketBall" value="BasketBall"></el-option>
+                                        <el-option label="Run" value="Run"></el-option>
+                                        <el-option label="Football" value="Football"></el-option>
+                                    </el-select>
+                                </div>
+                            </el-card>
                         </el-form-item>
-                        <el-form-item label="Description" prop="Description">
-                            <el-input type="textarea" v-model="modifyForm.Description"></el-input>
+                        <el-form-item label="Manufacturer" prop="manufacturer" class="custom-form-item-label">
+                            <el-card>
+                                <div class="flex-container">
+                                    <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Manufacturer}}</span>
+                                    <el-button @click="showmanu = !showmanu" type="primary" plain> Edit Manufacturer</el-button>
+                                    <el-select v-if="showmanu" v-model="modifyForm.manufacturer"  >
+                                        <el-option label="PUTIAN" value="PuTian"></el-option>
+                                        <el-option label="QUANZHOU" value="QuanZhou"></el-option>
+                                        <el-option label="BEIJING" value="BeiJing"></el-option>
+                                        <el-option label="SHANGHAI" value="ShangHai"></el-option>
+                                    </el-select>
+                                </div>
+                            </el-card>
+                        </el-form-item>
+                        <el-form-item label="Description" prop="description" class="custom-form-item-label">
+                            <el-card>
+                                <div class="flex-container">
+                                <span> The Original quantity in stock for {{modifyForm.Product_Name}} is:
+                                <el-button @click="showdesc = !showdesc" type="primary" plain> Edit Description</el-button>
+                                <br>
+                                {{modifyForm.Description}}</span>
+                                <el-input v-if="showdesc" type="textarea" v-model="modifyForm.description" placeholder="Edit Here"></el-input>
+                                </div>
+                            </el-card>
                         </el-form-item>
                     </el-form>
 
@@ -205,16 +261,16 @@
 
                     </span>
                  </el-dialog>
-                <el-dialog
+                    <el-dialog
                         title="Modify Successful"
                         :visible.sync="updatesuccessDialogVisible"
                         width="50%"
-                >
+                    >
                     <p>Form updated successfully </p>
                     <div slot="footer" class="dialog-footer">
                         <el-button type="primary" @click="closeupdateSuccessDialog">OK</el-button>
                     </div>
-                </el-dialog>
+                    </el-dialog>
             </el-main>
         </el-container>
     </el-container>
@@ -247,7 +303,7 @@
                 },
                 detailForm: {},
                 modifyForm: {
-                    pId:'',
+                    PID:'',
                     Product_Name: '',
                     Product_Price: '',
                     Quantity_instock: '',
@@ -260,6 +316,12 @@
                 addDialogVisible: false,
                 detailInfoVisible: false,
                 modifyDialogVisible: false,
+                showname:false,
+                showpr:false,
+                showquant:false,
+                showcat:false,
+                showmanu:false,
+                showdesc:false,
                 fileList: [],
                 updatesuccessDialogVisible: false,
                 successDialogVisible: false,
@@ -269,10 +331,9 @@
                 formRules: {
                     Product_Name: [
                         {required: true, message: 'Please enter the Product Name', trigger: 'blur'},
-
                     ],
                     Product_Price: [
-                        {required: true, validator: this.validateInt, trigger: 'blur'},
+                        {required: true, validator: this.validateprice, trigger: 'blur'},
 
                     ],
                     Quantity_instock: [
@@ -280,13 +341,30 @@
 
                     ],
                     Manufacturer: [
-                        {required: true, message: 'Please enter the Manufacturer Name', trigger: 'blur'},
+                        {required: true, message: 'Please select the Manufacturer Name', trigger: 'blur'},
 
                     ],
                     Description: [
                         {required: true, message: 'Please enter the Description', trigger: 'blur'},
                     ],
+                    pName: [
+                        {required: true, message: 'Please enter the Product Name', trigger: 'blur'},
+                    ],
+                    price: [
+                        {required: true, validator: this.validateprice, trigger: 'blur'},
 
+                    ],
+                    quantityInStock: [
+                        {required: true,validator: this.validateInt, trigger: 'blur'},
+
+                    ],
+                    manufacturer: [
+                        {required: true, message: 'Please select the Manufacturer ', trigger: 'blur'},
+
+                    ],
+                    description: [
+                        {required: true, message: 'Please enter the Description', trigger: 'blur'},
+                    ],
 
                 },
                 isCollapse: true,
@@ -299,6 +377,7 @@
         },
         mounted() {
             this.getData();
+            document.body.style.zoom = '80%';
         },
         methods: {
             getData() {
@@ -341,18 +420,24 @@
 
             },
             modifyItem(row) {
+                this.modifyForm = this.responseData.find(elem => elem.pId === row.pId);
                 console.log(row.pId);
                 if (row.pId !== undefined) {
-                    this.modifyForm.pId = row.pId;
+                    this.modifyForm.PID = row.pId;
+                    this.modifyForm.Product_Name = row.pName;
+                    this.modifyForm.Product_Price = row.price;
+                    this.modifyForm.Quantity_instock = row.quantityInStock;
+                    this.modifyForm.Manufacturer = row.manufacturer;
+                    this.modifyForm.Category = row.category;
+                    this.modifyForm.Description = row.description;
                 }
+
             },
             handleCurrentChange(newPage) {
                 this.queryInfo.currentPage = newPage
                 this.getData()
                 console.log(newPage)
             },
-
-
             validateAndSubmit() {
                 this.$refs.form.validate((valid) => {
                     if (valid) {
@@ -375,7 +460,6 @@
                 };
                 console.log(postData);
 
-
                 axios.post('/product/insertProduct', postData)
                     .then(response => {
                         console.log('Response from backend:', response.data);
@@ -388,7 +472,6 @@
                     .catch(error => {
                         console.error(error);
                     });
-
             },
             validateAndUpdate() {
                 this.$refs.newform.validate((valid) => {
@@ -403,11 +486,11 @@
             updateForm() {
                 const newData = {
                     pId: this.modifyForm.pId,
-                    pName: this.modifyForm.Product_Name,
-                    category: this.modifyForm.Category,
-                    price: this.modifyForm.Product_Price,
-                    quantityInStock: this.modifyForm.Quantity_instock,
-                    description: this.modifyForm.Description,
+                    pName: this.modifyForm.pName,
+                    category: this.modifyForm.category,
+                    price: this.modifyForm.price,
+                    quantityInStock: this.modifyForm.quantityInStock,
+                    description: this.modifyForm.description,
                 };
                 /*if (this.modifyForm.gender !== "") {
                     newData.gender = this.modifyForm.gender;
@@ -495,6 +578,23 @@
                         callback(new Error('The input must be a number'));
                     }
                 }
+            },
+            validateprice(rule, value, callback) {
+                if (value === '') {
+                    callback();
+                } else {
+                    const isNumber = /^[0-9]+(\.[0-9]+)?$/.test(value);
+                    if (isNumber) {
+                        const numericValue = parseFloat(value);
+                        if (numericValue > 0 && numericValue <= 30000) {
+                            callback();
+                        } else {
+                            callback(new Error('The input must be an integer between 0 and 30000'));
+                        }
+                    } else {
+                        callback(new Error('The input must be a number'));
+                    }
+                }
             }
         }
     });
@@ -544,5 +644,140 @@
         color: #909399;
         line-height: inherit;
     }
+    .custom-form-item-label .el-form-item__label {
+        margin-top: 20px;
+    }
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    .inputbox {
+        border: none;
+        outline: none;
+        border-radius: 15px;
+        padding: 1em;
+        background-color: #ccc;
+        box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+        transition: 300ms ease-in-out;
+        width: 800px;
+    }
+
+    .inputbox:focus {
+        background-color: white;
+        transform: scale(1.05);
+        box-shadow: 13px 13px 100px #969696,
+        -13px -13px 100px #ffffff;
+    }
+    .btn {
+        padding: 1.1em 2em;
+        background: none;
+        border: 2px solid #fff;
+        font-size: 15px;
+        color: #131313;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+        border-radius: 12px;
+        background-color: #ecd448;
+        font-weight: bolder;
+        box-shadow: 0 2px 0 2px #000;
+    }
+
+    .btn:before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 120%;
+        background-color: #ff6700;
+        top: 50%;
+        transform: skewX(30deg) translate(-150%, -50%);
+        transition: all 0.5s;
+    }
+
+    .btn:hover {
+        background-color: #4cc9f0;
+        color: #fff;
+        box-shadow: 0 2px 0 2px #0d3b66;
+    }
+
+    .btn:hover::before {
+        transform: skewX(30deg) translate(150%, -50%);
+        transition-delay: 0.1s;
+    }
+
+    .btn:active {
+        transform: scale(0.9);
+    }
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* 垂直居中 */
+        padding-right: 20px; /* 为了使按钮与卡片的右边界保持 20px 距离 */
+    }
+    .card {
+        position: relative;
+        width: 200px;
+        height: 250px;
+        border-radius: 14px;
+        z-index: 1111;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    ;
+    }
+
+    .bg {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 190px;
+        height: 240px;
+        z-index: 2;
+        background: rgba(255, 255, 255, .95);
+        backdrop-filter: blur(24px);
+        border-radius: 10px;
+        overflow: hidden;
+        outline: 2px solid white;
+    }
+
+    .blob {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #ff0000;
+        opacity: 1;
+        filter: blur(12px);
+        animation: blob-bounce 5s infinite ease;
+    }
+
+    @keyframes blob-bounce {
+        0% {
+            transform: translate(-100%, -100%) translate3d(0, 0, 0);
+        }
+
+        25% {
+            transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+        }
+
+        50% {
+            transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+        }
+
+        75% {
+            transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+        }
+
+        100% {
+            transform: translate(-100%, -100%) translate3d(0, 0, 0);
+        }
+    }
+
 
 </style>
