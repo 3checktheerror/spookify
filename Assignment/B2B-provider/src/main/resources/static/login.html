@@ -19,7 +19,6 @@
 
     <div class="center-container" >
         <el-col>
-
             <el-row>
                 <el-form :rules="rules" ref="loginForm" :model="loginForm" class="loginContainer">
                     <h3 class="loginTitle">Sign in</h3>
@@ -74,6 +73,7 @@
 </div>
 
 <script>
+    axios.defaults.withCredentials = true;
     new Vue({
         el: "#app",
         name: "Login",
@@ -89,9 +89,10 @@
                     {username: "Zhou Ziwei", password: "123456", cId: ""},
                     // Add more users as needed
                 ],
+                index: 0,
                 loginForm: {
-                    selectedUser: "admin", // Default selected user
-                    password: "123456",
+                    selectedUser: "admin",
+                    password: "",
                     code: ""
                 },
                 checked: true,
@@ -121,7 +122,26 @@
             this.generateCaptcha();
             this.updatePassword();
         },
+        // created() {
+        //     // 页面加载时检查 Session 和 Cookie 是否存在保存的密码
+        //     const storedPassword = this.getPasswordFromSession();
+        //     if (storedPassword) {
+        //         this.loginForm.password = storedPassword;
+        //     }
+        // },
         methods: {
+
+            // const sessionCookie = document.cookie.split('; ').find(row => row.startsWith('sessionCookie='));
+            // getPasswordFromSession(name) {
+            //     const cookies = document.cookie.split("; ");
+            //     for (let i = 0; i < cookies.length; i++) {
+            //         const cookie = cookies[i].split("=");
+            //         if (cookie[0] === name) {
+            //             return cookie[1];
+            //         }
+            //     }
+            //     return null;
+            // },
             submitLogin() {
                 const selectedUser = this.users.find(user => user.username === this.loginForm.selectedUser);
                 if (!selectedUser) {
@@ -135,7 +155,7 @@
                             alert('Login successful');
                             // localStorage.setItem('User ID', JSON.stringify({ ID: 'value' }));
                             this.SendtoBackend();
-                            // window.location.href = 'http://localhost:8082/Biography';
+                            window.location.href = 'http://localhost:8082';
                         } else {
                             this.$message.error('Incorrect verification code or password. Please try again.');
                         }
@@ -146,8 +166,8 @@
             },
             SendtoBackend(){
                 const postData = {
-                    name:this.users[0].username,
-                    password:this.users[0].password
+                    name:this.users[this.index].username,
+                    password:this.users[this.index].password
                 };
                 console.log(postData);
                 axios.post('/customer/login', postData,)
@@ -162,6 +182,7 @@
                 const selectedUser = this.users.find(user => user.username === this.loginForm.selectedUser);
                 if (selectedUser) {
                     this.loginForm.password = selectedUser.password;
+                    this.index = this.users.indexOf(selectedUser);
                 }
             },
             changeCaptcha() {

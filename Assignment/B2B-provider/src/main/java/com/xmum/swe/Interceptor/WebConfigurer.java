@@ -1,6 +1,7 @@
 package com.xmum.swe.Interceptor;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -30,4 +31,11 @@ public class WebConfigurer implements WebMvcConfigurer {
 ////        irs.add("/oauth");
 //        ir.excludePathPatterns(irs);
 //    }
+
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .exposedHeaders("Access-Control-Expose-Headers");
+    }
 }

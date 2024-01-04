@@ -27,10 +27,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.alibaba.fastjson2.schema.JSONSchema.Type.Const;
@@ -51,6 +48,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public String login(CustomerInsertVO cusVO, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         cusVO.setSessionId(session.getId());
+
         this.insertCustomer(cusVO);
         return this.doLogin(cusVO.getName().trim(), cusVO.getPassword().trim(), session, request, response).toJSONString();
     }
@@ -188,9 +186,11 @@ public class CustomerServiceImpl implements CustomerService {
         session.setAttribute("spookify-b2b-customer", this.getCustomerByName(username));
         Cookie cookie_username = new Cookie("cookie_username", username);
         cookie_username.setMaxAge(30 * 24 * 60 * 60);
-        cookie_username.setPath(request.getContextPath());
+        cookie_username.setPath("/");
         response.addCookie(cookie_username);
+        response.addHeader("Baeldung-Example-Header", "Value-HttpServletResponse");
         res.put("msg", "0");
+
         return res;
     }
 }
