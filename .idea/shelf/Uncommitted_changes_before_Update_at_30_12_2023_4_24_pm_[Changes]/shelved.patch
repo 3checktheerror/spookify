@@ -1,0 +1,186 @@
+Index: Assignment/portfolio-provider/target/classes/application-dev.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 8082\r\n\r\n\r\nspring:\r\n  banner:\r\n    location: classpath:banner/banner.txt\r\n  mvc:\r\n    view:\r\n      prefix: /WEB-INF/jsp\r\n      suffix: .jsp\r\n    static-path-pattern: /**\r\n\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8\r\n    username: root\r\n    password: 123456\r\n  servlet:\r\n    multipart:\r\n      enabled: true\r\n      max-file-size: 10MB\r\n      max-request-size: 10MB\r\n\r\nmybatis:\r\n  mapperLocations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n\r\n\r\n\r\nmybatis-plus:\r\n  mapper-locations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n  global-config:\r\n    db-config:\r\n      update-strategy: not_empty\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assignment/portfolio-provider/target/classes/application-dev.yml b/Assignment/portfolio-provider/target/classes/application-dev.yml
+--- a/Assignment/portfolio-provider/target/classes/application-dev.yml	(revision e4bf7b5a2f365f79f89cf4b0cb98dfd3b4ef84cc)
++++ b/Assignment/portfolio-provider/target/classes/application-dev.yml	(date 1703847265750)
+@@ -15,7 +15,7 @@
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+     username: root
+-    password: 123456
++    password: lxd20030213
+   servlet:
+     multipart:
+       enabled: true
+Index: Assignment/.idea/sqldialects.xml
+===================================================================
+diff --git a/Assignment/.idea/sqldialects.xml b/Assignment/.idea/sqldialects.xml
+deleted file mode 100644
+--- a/Assignment/.idea/sqldialects.xml	(revision e4bf7b5a2f365f79f89cf4b0cb98dfd3b4ef84cc)
++++ /dev/null	(revision e4bf7b5a2f365f79f89cf4b0cb98dfd3b4ef84cc)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="SqlDialectMappings">
+-    <file url="file://$PROJECT_DIR$/spookifyDB.sql" dialect="GenericSQL" />
+-    <file url="PROJECT" dialect="MySQL" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Assignment/B2B-provider/src/main/resources/application-dev.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 8082\r\n\r\n\r\nspring:\r\n  banner:\r\n    location: classpath:banner/banner.txt\r\n\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8\r\n    username: root\r\n    password: 123456\r\n  servlet:\r\n    multipart:\r\n      enabled: true\r\n      max-file-size: 10MB\r\n      max-request-size: 10MB\r\n\r\nmybatis:\r\n  mapperLocations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n\r\n\r\n\r\nmybatis-plus:\r\n  mapper-locations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n  global-config:\r\n    db-config:\r\n      update-strategy: not_empty\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assignment/B2B-provider/src/main/resources/application-dev.yml b/Assignment/B2B-provider/src/main/resources/application-dev.yml
+--- a/Assignment/B2B-provider/src/main/resources/application-dev.yml	(revision e4bf7b5a2f365f79f89cf4b0cb98dfd3b4ef84cc)
++++ b/Assignment/B2B-provider/src/main/resources/application-dev.yml	(date 1703906993869)
+@@ -10,7 +10,7 @@
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+     username: root
+-    password: 123456
++    password: lxd20030213
+   servlet:
+     multipart:
+       enabled: true
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"69c6736f-9d4c-4180-81ef-504ae8d021b9\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_1.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_1.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_7_43_pm__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_7_43_pm__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/.idea/dataSources.local.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application-dev.yml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application-dev.yml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"dev\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;3checktheerror&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"33d8838d-bcb1-401a-b35d-b5ebdb143fb8\" />\r\n        <option name=\"url\" value=\"https://github.com/3checktheerror/spookify.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2XbuCv9zzVDUw9wK01HlNPNCx5L\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Luo&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;E:/Study_material/202309/Programming-Elective-II/Assignment1/Code/spookify&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"69c6736f-9d4c-4180-81ef-504ae8d021b9\" name=\"Changes\" comment=\"\" />\r\n      <created>1698909976665</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1698909976665</updated>\r\n      <workItem from=\"1698909978155\" duration=\"6858000\" />\r\n      <workItem from=\"1698917319846\" duration=\"136000\" />\r\n      <workItem from=\"1698921739165\" duration=\"134000\" />\r\n      <workItem from=\"1698971299151\" duration=\"654000\" />\r\n      <workItem from=\"1699230410917\" duration=\"114000\" />\r\n      <workItem from=\"1700638441962\" duration=\"2161000\" />\r\n      <workItem from=\"1700640631791\" duration=\"366000\" />\r\n      <workItem from=\"1700741902754\" duration=\"1000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"Branch\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"master\" />\r\n                </option>\r\n              </RecentGroup>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"dev-test-bak\" />\r\n                </option>\r\n              </RecentGroup>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"origin/dev-test\" />\r\n                </option>\r\n              </RecentGroup>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"origin/dev\" />\r\n                </option>\r\n              </RecentGroup>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"origin/dev-test-bak\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n        <entry key=\"User\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"*\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"COLUMN_ID_WIDTH\">\r\n                <map>\r\n                  <entry key=\"Table.Default.Author.ColumnIdWidth\" value=\"108\" />\r\n                  <entry key=\"Table.Default.Date.ColumnIdWidth\" value=\"110\" />\r\n                  <entry key=\"Table.Space.CommitStatus.ColumnIdWidth\" value=\"109\" />\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e4bf7b5a2f365f79f89cf4b0cb98dfd3b4ef84cc)
++++ b/.idea/workspace.xml	(date 1703924695674)
+@@ -5,32 +5,28 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="69c6736f-9d4c-4180-81ef-504ae8d021b9" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_1.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_7_43_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_7_43_pm__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/dataSources.local.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assignment/.idea/sqldialects.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/resources/application-dev.yml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="HTML File" />
++      </list>
++    </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="dev" />
++        <entry key="$PROJECT_DIR$" value="dev-hotfix-Luo" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -52,6 +48,12 @@
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
++  <component name="PackageJsonUpdateNotifier">
++    <dismissed value="$PROJECT_DIR$/Assignment/package.json" />
++  </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="ProjectErrors" />
++  </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 2
+ }</component>
+@@ -59,21 +61,22 @@
+   <component name="ProjectViewState">
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Luo&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;E:/Study_material/202309/Programming-Elective-II/Assignment1/Code/spookify&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "DefaultHtmlFileTemplate": "HTML File",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "dev-hotfix",
++    "last_opened_file_path": "E:/Study_material/202309/Programming-Elective-II/Assignment1/Code/spookify",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -90,6 +93,9 @@
+       <workItem from="1700638441962" duration="2161000" />
+       <workItem from="1700640631791" duration="366000" />
+       <workItem from="1700741902754" duration="1000" />
++      <workItem from="1703847103738" duration="846000" />
++      <workItem from="1703906584988" duration="1132000" />
++      <workItem from="1703921145676" duration="1740000" />
+     </task>
+     <servers />
+   </component>
+Index: Assignment/portfolio-provider/src/main/resources/application-dev.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:\r\n  port: 8082\r\n\r\n\r\nspring:\r\n  banner:\r\n    location: classpath:banner/banner.txt\r\n  mvc:\r\n    view:\r\n      prefix: /WEB-INF/jsp\r\n      suffix: .jsp\r\n    static-path-pattern: /**\r\n\r\n  datasource:\r\n    driver-class-name: com.mysql.cj.jdbc.Driver\r\n    url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8\r\n    username: root\r\n    password: 123456\r\n  servlet:\r\n    multipart:\r\n      enabled: true\r\n      max-file-size: 10MB\r\n      max-request-size: 10MB\r\n\r\nmybatis:\r\n  mapperLocations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n\r\n\r\n\r\nmybatis-plus:\r\n  mapper-locations: classpath:mapper/*.xml\r\n  configuration:\r\n    map-underscore-to-camel-case: true\r\n  global-config:\r\n    db-config:\r\n      update-strategy: not_empty\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Assignment/portfolio-provider/src/main/resources/application-dev.yml b/Assignment/portfolio-provider/src/main/resources/application-dev.yml
+--- a/Assignment/portfolio-provider/src/main/resources/application-dev.yml	(revision e4bf7b5a2f365f79f89cf4b0cb98dfd3b4ef84cc)
++++ b/Assignment/portfolio-provider/src/main/resources/application-dev.yml	(date 1703847265760)
+@@ -15,7 +15,7 @@
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/spookify?useUnicode=true&allowPublicKeyRetrieval=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+     username: root
+-    password: 123456
++    password: lxd20030213
+   servlet:
+     multipart:
+       enabled: true
