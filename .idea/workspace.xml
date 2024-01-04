@@ -6,31 +6,79 @@
   <component name="ChangeListManager">
     <list default="true" id="69c6736f-9d4c-4180-81ef-504ae8d021b9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_7_43_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_7_43_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/spookify.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/spookify.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_2_12_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_20_2023_3_12_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_14_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_11_20_2023_2_27_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_16_15_27__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/shelf/Uncommitted_changes_before_Update_at_2023_11_19_20_32__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/portfolio-provider/src/main/webapp/WEB-INF/jsp/blogArticles.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/annotation/SpookifyInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/entities/CommonResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/enums/IdPos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/exception/SpookifyBusinessException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/listener/SpooifyEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/listener/SpookifyEventData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/listener/SpookifyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/listener/impl/SpookifyEventDataImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/utils/MapUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/common-infrastructure/target/classes/com/xmum/swe/utils/SpookifyTimeStamp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/portfolio-provider/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application-dev.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application-sit.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/banner/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/PortforlioServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/config/AsyncConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/config/JacksonConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/config/SwaggerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/controller/DirectPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/controller/ItemController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/controller/VisitorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/dao/CustomerDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/dao/ItemDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/dao/SaveMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/dao/VisitorDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/BO/CustomerBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/BO/CustomerNoMapBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/BO/ItemBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/BO/ItemNoMapBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/BO/VisitorBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/BO/VisitorNoMapBO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/DO/CustomerDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/DO/ItemDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/DO/Save.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/DO/VisitorDO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/VO/CustomerInsertVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/VO/CustomerModifyVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/VO/ItemInsertVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/VO/ItemModifyVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/VO/VisitorInsertVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/entities/VO/VisitorModifyVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/service/ItemService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/service/SaveService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/service/VisitorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/service/impl/CustomerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/service/impl/ItemServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/service/impl/SaveServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/com/xmum/swe/service/impl/VisitorServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/portfolio-provider/target/classes/static/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="dev-hotfix-Luo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,6 +100,19 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/Assignment/package.json" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -59,21 +120,39 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Luo&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Study_material/202309/Programming-Elective-II/Assignment1/Code/spookify&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "dev-hotfix",
+    "last_opened_file_path": "E:/Study_material/202309/Programming-Elective-II/Assignment1/Code/spookify/Assignment",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="PortforlioServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="portfolio-provider" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xmum.swe.PortforlioServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,6 +169,10 @@
       <workItem from="1700638441962" duration="2161000" />
       <workItem from="1700640631791" duration="366000" />
       <workItem from="1700741902754" duration="1000" />
+      <workItem from="1703847103738" duration="846000" />
+      <workItem from="1703906584988" duration="1132000" />
+      <workItem from="1703921145676" duration="2288000" />
+      <workItem from="1703925267098" duration="724000" />
     </task>
     <servers />
   </component>
