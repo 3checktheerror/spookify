@@ -42,7 +42,13 @@ public class OrderServiceImpl implements OrderService {
     @Resource
     private DetailService detailService;
 
+//    @Resource
+//    private RedisTemplate redisTemplate;
+
     public OrderDO getOrderById(String id) {
+//        if(redisTemplate.hasKey(id)) {
+//            return (OrderDO)redisTemplate.opsForValue().get(id);
+//        }
         OrderDO order = orderDao.selectById(id);
         Optional.ofNullable(order)
                 .orElseThrow(() -> new SpookifyBusinessException("No such order!"));
@@ -53,6 +59,9 @@ public class OrderServiceImpl implements OrderService {
         List<OrderDO> orders = orderDao.selectList(null);
         Optional.ofNullable(orders)
                 .orElseThrow(() -> new SpookifyBusinessException("No orders!"));
+//        orders.stream().forEach(order -> {
+//            redisTemplate.opsForValue().set(order.getOId(), order);
+//        });
         return orders;
     }
 

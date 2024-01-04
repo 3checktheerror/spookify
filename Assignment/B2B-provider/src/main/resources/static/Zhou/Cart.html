@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>购物车页面</title>
+    <!-- 引入 Vue.js 和 Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>购物车</h1>
+    <div v-if="orders.length === 0">购物车是空的</div>
+    <div v-else>
+        <div v-for="(order, index) in orders" :key="index">
+            <input type="checkbox" v-model="selectedOrders" :value="order.oId">
+            <h2>订单号: {{ order.oId }}</h2>
+            <p>产品信息: {{ order.productInfo }}</p>
+            <p>数量: {{ order.quantity }}</p>
+            <!-- 其他订单信息... -->
+            <hr>
+        </div>
+        <button @click="goToPayment">下单</button>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                orders: [], // 存放订单信息的数组
+                selectedOrders: [] // 存放用户勾选的订单号
+            };
+        },
+        mounted() {
+            // 在页面加载完成后调用接口获取订单信息
+            this.getOrders();
+        },
+        methods: {
+            getOrders() {
+                // 使用 Axios 调用接口
+                axios.get('http://localhost:8082/order/getAllOrders')
+                    .then(response => {
+                        // 将接口返回的数据存入 orders 数组
+                        this.orders = response.data.data;
+                    })
+                    .catch(error => {
+                        console.error('获取订单信息失败:', error);
+                    });
+            },
+            goToPayment() {
+                // 将用户勾选的订单号传递给支付页面
+                window.location.href = `payment.html?selectedOrders=${this.selectedOrders.join(',')}`;
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -34,8 +34,14 @@ public class ProductServiceImpl implements ProductService {
     @Resource
     private IdService idService;
 
+//    @Resource
+//    private RedisTemplate redisTemplate;
+
 
     public ProductDO getProductById(String id) {
+//        if(redisTemplate.hasKey(id)) {
+//            return (ProductDO)redisTemplate.opsForValue().get(id);
+//        }
         ProductDO product = productDao.selectById(id);
         Optional.ofNullable(product)
                 .orElseThrow(() -> new SpookifyBusinessException("No such product!"));
@@ -46,6 +52,9 @@ public class ProductServiceImpl implements ProductService {
         List<ProductDO> products = productDao.selectList(null);
         Optional.ofNullable(products)
                 .orElseThrow(() -> new SpookifyBusinessException("products list is empty!"));
+//        products.stream().forEach(product -> {
+//            redisTemplate.opsForValue().set(product.getPId(), product);
+//        });
         return products;
     }
 

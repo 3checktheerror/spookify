@@ -7,6 +7,26 @@ USE spookify;
 -- ----------------------------
 -- Table structure for product
 -- ----------------------------
+
+DROP TABLE IF EXISTS B2B_customer_1;
+CREATE TABLE B2B_customer_1 (
+                                    `c_id` varchar(32) NOT NULL,
+                                    `cgroup_id` varchar(128),
+                                    `name` varchar(32),
+                                    `password` varchar(32),
+                                    `age` INT,
+                                    `gender` varchar(16),
+                                    `md5` varchar(32),
+                                    `cs_create` timestamp NOT NULL DEFAULT '2023-01-01 00:00:00.000',
+                                    `cs_modified` timestamp NOT NULL DEFAULT '2023-01-01 00:00:00.000',
+                                    `op_type` char(10) DEFAULT NULL,
+                                    `data` JSON,
+                                    `token` varchar(128),
+                                    `session_id` varchar(128),
+                                    PRIMARY KEY (c_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE INDEX B2B_customer_1_cid_idx ON B2B_customer_1(c_id);
+
 DROP TABLE IF EXISTS B2B_product_1;
 CREATE TABLE B2B_product_1 (
                                `p_id` varchar(32) NOT NULL,
@@ -270,3 +290,14 @@ VALUES
       "o_id_fk": "SPOD000003"
     }
     ', '', '', 'SPOD000003');
+
+INSERT INTO B2B_customer_1 (c_id, cgroup_id, name, age, gender, md5, cs_create, cs_modified, op_type, data, token, session_id) VALUES ('SPCS000001','CSG1','Steve Jobs',21,'Male',NULL,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'Insert',
+                                                                                                                                       '{
+                                                                                                                                         "name":"Steve Jobs",
+                                                                                                                                         "gender":"Male",
+                                                                                                                                         "age":66,
+                                                                                                                                         "md5":"",
+                                                                                                                                         "token":"",
+                                                                                                                                         "op_type":"Insert",
+                                                                                                                                         "session_id":""
+                                                                                                                                       }',NULL,NULL);

@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+//@EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = "com.xmum.swe")
 @EnableAsync
 public class B2BServer {

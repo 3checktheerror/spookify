@@ -16,7 +16,7 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-
+//@RefreshScope
 @Controller
 @RequestMapping("getPage")
 public class DirectPageController {

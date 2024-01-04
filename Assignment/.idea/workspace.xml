@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="done2" />
+    <list default="true" id="e4529d72-2133-4ef7-959e-eb242dbb3a0d" name="Changes" comment="rename done">
+      <change afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/LCPAGE/ProductManagement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/Interceptor/WebConfigurer.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/Interceptor/WebConfigurer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/DetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/IdServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/IdServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/B2B-provider/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B2BDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/B2BDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio-provider/src/main/webapp/WEB-INF/jsp/contactMe.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,13 +32,14 @@
       <list>
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="dev-hotfix" />
+        <entry key="$PROJECT_DIR$/.." value="dev-hotfix-Liu" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -46,9 +64,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Luo&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-hotfix-Xu&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Study_material/202309/Programming-Elective-II/Assignment/Code/spookify/Assignment&quot;,
+    &quot;last_opened_file_path&quot;: &quot;G:/code/myProject/spookify/Assignment/B2B-provider/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -57,27 +75,30 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;1810079eeb41ab2b0f7f51311e6a818f&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\code\myProject\spookify\Assignment\B2B-provider\src\main\resources" />
+      <recent name="G:\code\myProject\spookify\Assignment\B2B-provider\src\main\java\com\xmum\swe\entities\VO" />
       <recent name="G:\code\myProject\spookify\Assignment" />
       <recent name="E:\ProgramEProjectfile\spookify\Assignment\portfolio-provider\src\main\resources\static\images\Bimage" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Study_material\202309\Programming-Elective-II\Assignment1\Code\spookify\Assignment\B2B-provider\target\classes\static\Luo" />
-      <recent name="E:\Study_material\202309\Programming-Elective-II\Assignment1\Code\spookify\Assignment\B2B-provider\src\main\resources\static\Luo" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.xmum.swe.dao" />
+      <recent name="com.xmum.swe.service" />
+      <recent name="com.xmum.swe.service.impl" />
+      <recent name="com.xmum.swe.entities.DO" />
+      <recent name="com.xmum.swe.entities.BO" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.B2BServer">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Assignment" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="B2BServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" value="dev" />
       <module name="B2B-provider" />
@@ -115,12 +136,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Spring Boot.PortforlioServer (1)" />
       <item itemvalue="Spring Boot.B2BServer" />
       <item itemvalue="Spring Boot.PortforlioServer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.B2BServer" />
+        <item itemvalue="Spring Boot.PortforlioServer" />
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="Spring Boot.B2BServer" />
         <item itemvalue="Spring Boot.PortforlioServer" />
         <item itemvalue="Spring Boot.B2BServer" />
         <item itemvalue="Spring Boot.PortforlioServer" />
@@ -167,10 +193,11 @@
       <workItem from="1703740739165" duration="138000" />
       <workItem from="1703740886474" duration="2913000" />
       <workItem from="1703743808319" duration="545000" />
-      <workItem from="1703925992365" duration="3659000" />
-      <workItem from="1704249273825" duration="666000" />
-      <workItem from="1704296787421" duration="451000" />
-      <workItem from="1704342506181" duration="3291000" />
+      <workItem from="1703833535371" duration="2005000" />
+      <workItem from="1703925188880" duration="1469000" />
+      <workItem from="1703934603364" duration="38000" />
+      <workItem from="1703992751073" duration="1182000" />
+      <workItem from="1704267253784" duration="5649000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix">
       <option name="closed" value="true" />
@@ -212,23 +239,7 @@
       <option name="project" value="LOCAL" />
       <updated>1703392677087</updated>
     </task>
-    <task id="LOCAL-00006" summary="done1">
-      <option name="closed" value="true" />
-      <created>1704353455107</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1704353455107</updated>
-    </task>
-    <task id="LOCAL-00007" summary="done2">
-      <option name="closed" value="true" />
-      <created>1704353559197</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1704353559197</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +261,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev-hotfix-Qiu" />
+                        <option value="dev-hotfix-Zhou" />
                       </list>
                     </value>
                   </entry>
@@ -265,11 +276,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/dev-hotfix' into dev-hotfix" />
     <MESSAGE value="rename done" />
-    <MESSAGE value="done1" />
-    <MESSAGE value="done2" />
-    <option name="LAST_COMMIT_MESSAGE" value="done2" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename done" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/B2B-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.xmum.swe.entities.DO.ItemDO" memberName="opType" />
