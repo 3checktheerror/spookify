@@ -15,6 +15,8 @@ public interface CustomerService {
 
     String login(CustomerInsertVO cusVO, HttpSession session, HttpServletRequest request, HttpServletResponse response);
 
+    CustomerDO getCustomerInfoBySessionId(String sessionId);
+
     CustomerDO getCustomerById(String id);
 
     CustomerDO getCustomerByName(String name);

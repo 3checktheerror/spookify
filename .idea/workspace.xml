@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69c6736f-9d4c-4180-81ef-504ae8d021b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_11_2023_6_56_pm__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/java/com/xmum/swe/Interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/java/com/xmum/swe/Interceptor/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/java/com/xmum/swe/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/java/com/xmum/swe/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/java/com/xmum/swe/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/java/com/xmum/swe/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment/B2B-provider/src/main/java/com/xmum/swe/service/impl/CustomerServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +114,7 @@
       <workItem from="1700741902754" duration="1000" />
       <workItem from="1704279840012" duration="3132000" />
       <workItem from="1704292592202" duration="797000" />
-      <workItem from="1704348755141" duration="960000" />
+      <workItem from="1704348755141" duration="7353000" />
     </task>
     <servers />
   </component>

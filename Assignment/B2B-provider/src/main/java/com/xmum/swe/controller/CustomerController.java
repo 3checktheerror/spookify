@@ -1,6 +1,7 @@
 package com.xmum.swe.controller;
 
 
+import cn.hutool.log.Log;
 import com.xmum.swe.annotation.SpookifyInfo;
 import com.xmum.swe.entities.CommonResult;
 import com.xmum.swe.entities.DO.CustomerDO;
@@ -31,10 +32,18 @@ public class CustomerController {
 
     @SpookifyInfo
     @PostMapping("/login")
-    public CommonResult login(@RequestBody CustomerInsertVO cusVO, HttpSession session, HttpServletRequest request, HttpServletResponse response){
+    public CommonResult login(@RequestBody CustomerInsertVO cusVO, HttpServletRequest request, HttpServletResponse response){
+        HttpSession session = request.getSession(true);
         String res = customerService.login(cusVO, session, request, response);
         return CommonResult.ok(res);
     }
+
+    @SpookifyInfo
+    @GetMapping("/getCustomerInfo")
+    public CommonResult getCustomerById(HttpSession session){
+        return CommonResult.ok(customerService.getCustomerInfoBySessionId(session.getId()));
+    }
+
 
     @SpookifyInfo
     @GetMapping("/getCustomerById/{id}")

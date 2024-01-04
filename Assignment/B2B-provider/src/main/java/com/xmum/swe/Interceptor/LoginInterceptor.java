@@ -39,7 +39,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             response.sendRedirect(request.getContextPath() + "/login");
             return false;
         }
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(true);
         //if session expired  自动续期
         Object obj = session.getAttribute("spookify-b2b-customer");
         if (ObjectUtil.isNull(obj)) {

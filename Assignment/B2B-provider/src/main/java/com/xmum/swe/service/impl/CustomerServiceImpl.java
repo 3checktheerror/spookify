@@ -50,7 +50,17 @@ public class CustomerServiceImpl implements CustomerService {
     public String login(CustomerInsertVO cusVO, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         cusVO.setSessionId(session.getId());
         this.insertCustomer(cusVO);
+        if(this.getAllCustomers().stream().map(CustomerDO::getName).collect(Collectors.toList()).contains(cusVO.getName().trim()))
+            return "Customer has been login!";
         return this.doLogin(cusVO.getName().trim(), cusVO.getPassword().trim(), session, request, response).toJSONString();
+    }
+
+    @Override
+    public CustomerDO getCustomerInfoBySessionId(String sessionId) {
+        CustomerDO customer = customerDao.selectOne(new QueryWrapper<CustomerDO>().eq("session_id", sessionId));
+        Optional.ofNullable(customer)
+                .orElseThrow(() -> new SpookifyBusinessException("No such customer!"));
+        return customer;
     }
 
     public CustomerDO getCustomerById(String id) {
@@ -186,7 +196,7 @@ public class CustomerServiceImpl implements CustomerService {
         session.setAttribute("spookify-b2b-customer", this.getCustomerByName(username));
         Cookie cookie_username = new Cookie("cookie_username", username);
         cookie_username.setMaxAge(30 * 24 * 60 * 60);
-        cookie_username.setPath(request.getContextPath());
+        cookie_username.setPath("/");
         response.addCookie(cookie_username);
         res.put("msg", "0");
         return res;
