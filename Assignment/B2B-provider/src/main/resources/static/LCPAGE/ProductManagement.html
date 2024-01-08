@@ -20,24 +20,25 @@
             </el-header>
             <el-main>
                 <!--表头的搜索栏和添加按钮-->
-                <el-card  style="width: 1325px; margin-left: 125px">
+                <el-card class="card" style="width: 1325px; margin-left: 125px">
                         <el-row :gutter="20" style="margin-bottom: 10px">
                             <el-col :span="18">
-                                <div>
-                                    <el-input
+                                <div class="group">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" class="icon"
+                                         @click="filterItems">
+                                        <g>
+                                            <path
+                                                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                    <input class="input"
+                                            type="search"
                                             placeholder="Please enter ID or name (support fuzzy search)"
                                             v-model="queryInfo.query"
-                                            clearable
                                             @clear="getData"
                                             autocomplete="off"
-                                    >
-                                        <el-button
-                                                slot="append"
-                                                icon="el-icon-search"
-                                                @click="filterItems"
-                                        ></el-button>
-                                    </el-input>
-
+                                    />
                                 </div>
                             </el-col>
                             <el-col :span="5" :offset="1">
@@ -189,7 +190,7 @@
                             <el-card class="flex-container">
                                 <div class="content-and-button">
                                     <span> The Original Product ( ID: {{modifyForm.PID}}) Name is: {{modifyForm.Product_Name}}</span>
-                                    <el-button @click="showname = !showname" type="primary" plain > Edit Name</el-button>
+                                    <button @click="showname = !showname; event.preventDefault();" class="comic-button" type="button" >Edit Name!</button>
                                 </div>
                                 <div v-if="showname" >
                                     <el-input v-model="modifyForm.pName" placeholder="Please Enter the Name you want"  ></el-input>
@@ -198,39 +199,37 @@
                         </el-form-item>
 
                         <el-form-item label="Product Price" prop="price" class="custom-form-item-label">
-                            <el-card>
-                                <div class="flex-container">
-                                    <div class="content-and-button">
-                                        <span> The Original Product Price is: {{modifyForm.Product_Price}}</span>
-                                        <el-button @click="showpr = !showpr" type="primary" plain>Edit Price</el-button>
-                                    </div>
-                                    <div v-if="showpr" >
-                                        <el-input v-if="showpr" v-model="modifyForm.price" placeholder="Please Enter the Price you want"  ></el-input>
-                                    </div>
+                            <el-card class="flex-container">
+                                <div class="content-and-button">
+                                    <span> The Original Product Price is: {{modifyForm.Product_Price}}</span>
+                                    <button @click="showpr = !showpr; event.preventDefault();" class="comic-button"
+                                            type="button">Edit Price!
+                                    </button>
+                                </div>
+                                <div v-if="showpr">
+                                    <el-input v-if="showpr" v-model="modifyForm.price"
+                                              placeholder="Please Enter the Price you want"></el-input>
                                 </div>
                             </el-card>
                         </el-form-item>
 
                         <el-form-item label="Quantity in stock" prop="quantityInStock" class="custom-form-item-label">
-                            <el-card>
-                                <div class="flex-container">
+                            <el-card class="flex-container">
                                     <div class="content-and-button">
                                         <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Quantity_instock}}</span>
-                                        <el-button @click="showquant = !showquant" type="primary" plain> Edit Number</el-button>
+                                        <button @click="showquant = !showquant; event.preventDefault();" class="comic-button" type="button" >Edit Number!</button>
                                     </div>
                                     <div v-if="showquant" >
                                         <el-input v-model="modifyForm.quantityInStock" placeholder="Please, Enter the quantity number" ></el-input>
                                     </div>
-                                </div>
                             </el-card>
                         </el-form-item>
 
                         <el-form-item label="Category" prop="category" class="custom-form-item-label">
-                            <el-card>
-                                <div class="flex-container">
+                            <el-card class="flex-container">
                                     <div class="content-and-button">
                                         <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Category}}</span>
-                                        <el-button @click="showcat = !showcat" type="primary" plain> Edit Category</el-button>
+                                        <button @click="showcat = !showcat; event.preventDefault();" class="comic-button" type="button" >Edit Category!</button>
                                     </div>
                                     <div v-if="showcat">
                                     <el-select  v-model="modifyForm.category" >
@@ -243,16 +242,14 @@
                                         <el-option label="Football" value="Football"></el-option>
                                     </el-select>
                                     </div>
-                                </div>
                             </el-card>
                         </el-form-item>
 
                         <el-form-item label="Manufacturer" prop="manufacturer" class="custom-form-item-label">
-                            <el-card>
-                                <div class="flex-container">
+                            <el-card class="flex-container">
                                     <div class="content-and-button">
                                         <span> The Original quantity in stock for {{modifyForm.Product_Name}} is: {{modifyForm.Manufacturer}}</span>
-                                        <el-button @click="showmanu = !showmanu" type="primary" plain> Edit Manufacturer</el-button>
+                                        <button @click="showmanu = !showmanu; event.preventDefault();" class="comic-button" type="button" >Edit Manufacturer!</button>
                                     </div>
                                     <div v-if="showmanu">
                                         <el-select  v-model="modifyForm.manufacturer"  >
@@ -262,23 +259,19 @@
                                             <el-option label="SHANGHAI" value="ShangHai"></el-option>
                                         </el-select>
                                     </div>
-
-                                </div>
                             </el-card>
                         </el-form-item>
                         <el-form-item label="Description" prop="description" class="custom-form-item-label">
-                            <el-card>
-                                <div class="flex-container">
+                            <el-card class="flex-container">
                                     <div class="content-and-button">
                                         <span> The Original quantity in stock for {{modifyForm.Product_Name}} is:
-                                        <el-button @click="showdesc = !showdesc" type="primary" plain> Edit Description</el-button>
+                                        <button @click="showdesc = !showdesc; event.preventDefault();" class="comic-button" type="button" >Edit Description!</button>
                                         <br>
                                         {{modifyForm.Description}}</span>
                                     </div>
                                     <div v-if="showdesc">
                                         <el-input v-if="showdesc" type="textarea" v-model="modifyForm.description" placeholder="Edit Here"></el-input>
                                     </div>
-                                </div>
                             </el-card>
                         </el-form-item>
                     </el-form>
@@ -617,7 +610,7 @@
                         if (numericValue > 0 && numericValue <= 30000) {
                             callback();
                         } else {
-                            callback(new Error('The input must be an integer between 0 and 30000'));
+                            callback(new Error('The input must be between 0 and 30000'));
                         }
                     } else {
                         callback(new Error('The input must be a number'));
@@ -722,14 +715,98 @@
     .flex-container {
         display: flex;
         justify-content: space-between;
-        padding-right: 20px; /* 为了使按钮与卡片的右边界保持 20px 距离 */
-        flex-direction: column;  /* 使子元素垂直堆叠 */
+        padding-right: 20px;
+        flex-direction: column;
+        border-radius:20px;
     }
     .content-and-button {
         display: flex;
-        justify-content: space-between; /* 保持 span 和 button 水平分布 */
+        justify-content: space-between;
         align-items: center;
     }
+
+    .card {
+        cursor: pointer;
+        background: rgb(255, 255, 255);
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 255, .2);
+        transition: all .2s;
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    }
+
+    .card:hover {
+        box-shadow: -12px 12px 2px -1px rgba(0, 0, 255, .2);
+    }
+    .group {
+        display: flex;
+        line-height: 28px;
+        align-items: center;
+        position: relative;
+        max-width: 500px;
+    }
+
+    .input {
+        width: 900px;
+        height: 40px;
+        line-height: 28px;
+        padding: 0 1rem;
+        padding-left: 2.5rem;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        outline: none;
+        background-color: #f3f3f4;
+        color: #0d0c22;
+        transition: 0.3s ease;
+    }
+
+    .input::placeholder {
+        color: #9e9ea7;
+    }
+
+    .input:focus,
+    input:hover {
+        outline: none;
+        border-color: rgba(0, 48, 73, 0.4);
+        background-color: #fff;
+        box-shadow: 0 0 0 4px rgb(0 48 73 / 10%);
+    }
+    .icon {
+        position: absolute;
+        left: 1rem;
+        fill: #9e9ea7;
+        width: 1rem;
+        height: 1rem;
+
+    }
+    .comic-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #ff5252;
+        border: 2px solid #000;
+        border-radius: 10px;
+        box-shadow: 5px 5px 0px #000;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .comic-button:hover {
+        background-color: #fff;
+        color: #ff5252;
+        border: 2px solid #ff5252;
+        box-shadow: 5px 5px 0px #ff5252;
+    }
+
+    .comic-button:active {
+        background-color: #fcf414;
+        box-shadow: none;
+        transform: translateY(4px);
+    }
+
 
 
 </style>
